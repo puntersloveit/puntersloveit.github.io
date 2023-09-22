@@ -26,5 +26,5 @@ jobs:
 
       - name: update ncaa data
         env:
-          SOME_SECRET: ${{ secrets.API_KEY }}
+          API_KEY: ${{ secrets.API_KEY }}
         run: python scripts/update_ncaa_data.py
