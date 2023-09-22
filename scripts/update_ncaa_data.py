@@ -13,6 +13,7 @@ try:
     API_KEY = os.environ['API_KEY']
 except KeyError:
     print('Token not available!')
+print(API_KEY)
 
 current_year = datetime.datetime.now().year
 current_month = datetime.datetime.now().month
