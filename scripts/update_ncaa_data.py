@@ -12,7 +12,7 @@ from functions import *
 try:
     API_KEY = os.environ['API_KEY']
 except KeyError:
-    API_KEY = 'Token not available!'
+    print('Token not available!')
 
 current_year = datetime.datetime.now().year
 current_month = datetime.datetime.now().month
@@ -322,7 +322,7 @@ game_ratings[['away_color',
               'home_team', 
               'game_rating']]\
     .sort_values('game_rating', ascending=False)\
-        .to_csv('../_data/ncaa_game_ratings.csv', index=False)
+        .to_csv('_data/ncaa_game_ratings.csv', index=False)
 
 unique_seasons = []
 for y in range(game_ratings.season.max(), 2014, -1):
@@ -336,5 +336,5 @@ for y in range(game_ratings.season.max(), 2014, -1):
     }       
     )
 
-with open('../_data/unique_seasons.yml', 'w') as file:
+with open('_data/unique_seasons.yml', 'w') as file:
     yaml.dump(unique_seasons, file)
