@@ -9,7 +9,10 @@ import yaml
 from cfbd.rest import ApiException
 from functions import *
 
-API_KEY = 'EhusUpx7CV6ZSzFLyEcLtktcyWiMLETDQ7KM7vDTdqvKPqc+Sw3JLBpFetZ6PAQU'
+try:
+    API_KEY = os.environ['API_KEY']
+except KeyError:
+    API_KEY = 'Token not available!'
 
 current_year = datetime.datetime.now().year
 current_month = datetime.datetime.now().month
@@ -21,7 +24,7 @@ configuration = cfbd.Configuration()
 configuration.api_key['Authorization'] = API_KEY
 configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-sql_connection = sqlite3.connect('puntersloveit.db')
+sql_connection = sqlite3.connect('_data/puntersloveit.db')
 sql_cursor = sql_connection.cursor()
 
 GAMES_COLUMNS = [

@@ -1,3 +1,4 @@
+import os
 import cfbd
 import math
 import sqlite3
@@ -8,7 +9,10 @@ import yaml
 from cfbd.rest import ApiException
 from functions import *
 
-API_KEY = 'EhusUpx7CV6ZSzFLyEcLtktcyWiMLETDQ7KM7vDTdqvKPqc+Sw3JLBpFetZ6PAQU'
+try:
+    API_KEY = os.environ['API_KEY']
+except KeyError:
+    API_KEY = 'Token not available!'
 
 current_year = datetime.datetime.now().year
 current_month = datetime.datetime.now().month
@@ -20,7 +24,7 @@ configuration = cfbd.Configuration()
 configuration.api_key['Authorization'] = API_KEY
 configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-sql_connection = sqlite3.connect('puntersloveit.db')
+sql_connection = sqlite3.connect('_data/puntersloveit.db')
 sql_cursor = sql_connection.cursor()
 
 GAMES_COLUMNS = [
@@ -155,7 +159,6 @@ max_week_current_season = int(
         .loc[0, 'max(week)']
     )
 
-# create an instance of the API class
 api_instance = cfbd.RankingsApi(cfbd.ApiClient(configuration))
 
 for season_type in ['regular', 'postseason']:
@@ -323,11 +326,13 @@ game_ratings[['away_color',
 
 unique_seasons = []
 for y in range(game_ratings.season.max(), 2014, -1):
-    weeks = game_ratings.query(f'season == {y}').week.unique().tolist().__repr__().replace("[", '').replace("]", '').replace(" ", '')
+    weeks = game_ratings.query(f'season == {y}').week.unique().tolist()
+    if y == CURRENT_SEASON:
+        weeks = weeks[::-1]
     unique_seasons.append(
     {
         'season': y,
-        'weeks': game_ratings.query(f'season == {y}').week.unique().tolist() + ['All']
+        'weeks': weeks + ['All']
     }       
     )
 
