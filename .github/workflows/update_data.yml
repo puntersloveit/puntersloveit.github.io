@@ -31,13 +31,14 @@ jobs:
           API_KEY: ${{ secrets.API_KEY }}
         run: python scripts/update_ncaa_data.py
         
-      - name: Commit files
+      - name: commit files
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git commit -a -m "Update files in _data"
           
-      - name: Push changes
-        uses: ad-m/github-push-action@master
+      - name: push changes
+        uses: ad-m/github-push-action@v0.6.0
         with:
-          force_with_lease: true
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main 
