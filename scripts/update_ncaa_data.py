@@ -187,6 +187,8 @@ new_ids_from_games_table = set(pd.read_sql_query(f'select id from ncaa_games whe
 new_ids_from_stats_table = set(pd.read_sql_query(f'select id from ncaa_game_stats_summary where id not in {current_ratings_ids}', sql_connection).values.flatten())
 new_ids_from_both = new_ids_from_games_table.intersection(new_ids_from_stats_table)
 
+new_ids_from_both_tuple = str(tuple(new_ids_from_both)).replace(",", "") if len(new_ids_from_both) == 1 else tuple(new_ids_from_both)
+
 query = f'''
 SELECT 
     games.id as game_id,
@@ -245,7 +247,7 @@ LEFT JOIN ncaa_teams_info AS home_team_info
 LEFT JOIN ncaa_teams_info AS away_team_info
     ON games.away_id = away_team_info.id
 
-WHERE games.id in {tuple(new_ids_from_both)}
+WHERE games.id in {new_ids_from_both_tuple}
 
 '''
 df = pd.read_sql_query(query, sql_connection)
