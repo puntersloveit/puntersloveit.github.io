@@ -107,6 +107,9 @@ EXCIT_IND_DIVIDER = math.log(10, 4) / 10
 SCORE_DIFF_DIVIDER = 29 / 10
 YARDS_DIVIDER = math.sqrt(700) / 10
 
+SATURATION_AMOUNT = 0.5
+LIGHTENING_AMOUNT = 0.3
+
 ### Games Data
 api_instance = cfbd.GamesApi(cfbd.ApiClient(configuration))
 
@@ -184,17 +187,17 @@ except ApiException as e:
     print("Exception when calling TeamsApi->get_teams: %s\n" % e)
 
 
-df = pd.DataFrame([i for i in map(cfbd.models.team.Team.to_dict, api_response)])[TEAM_INFO_COLUMNS]
-df['logo1'] = df.logos.apply(lambda x: x[0] if x is not None else None)
-df['logo2'] = df.logos.apply(lambda x: x[1] if x is not None and len(x) > 1 else None)
-df.drop(columns='logos', inplace=True)
-df.to_sql('ncaa_teams_info', sql_connection, if_exists='replace', index=False)
+team_info_df = pd.DataFrame([i for i in map(cfbd.models.team.Team.to_dict, api_response)])[TEAM_INFO_COLUMNS]
+team_info_df['logo1'] = team_info_df.logos.apply(lambda x: x[0] if x is not None else None)
+team_info_df['logo2'] = team_info_df.logos.apply(lambda x: x[1] if x is not None and len(x) > 1 else None)
+team_info_df.drop(columns='logos', inplace=True)
+team_info_df.to_sql('ncaa_teams_info', sql_connection, if_exists='replace', index=False)
 
 # load logos to ncaa logos directory
 os.makedirs(LOGOS_DIRECTORY, exist_ok=True)
-for i in range(df.shape[0]):
-    if df.loc[i, 'logo1'] is not None:
-        download_file(df.loc[i, 'logo1'], f'{LOGOS_DIRECTORY}{df.loc[i, "id"]}.png')
+for i in range(team_info_df.shape[0]):
+    if team_info_df.loc[i, 'logo1'] is not None:
+        download_file(team_info_df.loc[i, 'logo1'], f'{LOGOS_DIRECTORY}{team_info_df.loc[i, "id"]}.png')
 
 ### Table With Ratings
 query = '''
@@ -256,7 +259,7 @@ LEFT JOIN ncaa_teams_info AS away_team_info
     ON games.away_id = away_team_info.id
 
 '''
-df = pd.read_sql_query(query, sql_connection)
+game_ratings = pd.read_sql_query(query, sql_connection)
 
 for col in ['rushingTDs',
             'puntReturnTDs',
@@ -270,36 +273,77 @@ for col in ['rushingTDs',
             'rushingYards',
             'netPassingYards',
             'totalYards']:
-    df[col].fillna(df[col].median(), inplace=True)
+    game_ratings[col].fillna(game_ratings[col].median(), inplace=True)
 
-df.loc[:, 'excitement_index'].fillna(df['excitement_index'].median(), inplace=True)
+game_ratings.loc[:, 'excitement_index'].fillna(game_ratings['excitement_index'].median(), inplace=True)
 
-df['totalTDs'] = df['rushingTDs'] + df['puntReturnTDs'] + df['passingTDs'] + df['kickReturnTDs'] + df['interceptionTDs']
-df = df.drop(['rushingTDs', 'puntReturnTDs', 'passingTDs', 'kickReturnTDs', 'interceptionTDs', 'defensiveTDs', 'rushingYards', 'netPassingYards',], axis=1)
+game_ratings['totalTDs'] = game_ratings['rushingTDs'] + game_ratings['puntReturnTDs'] + game_ratings['passingTDs'] + game_ratings['kickReturnTDs'] + game_ratings['interceptionTDs']
+game_ratings = game_ratings.drop(['rushingTDs', 'puntReturnTDs', 'passingTDs', 'kickReturnTDs', 'interceptionTDs', 'defensiveTDs', 'rushingYards', 'netPassingYards',], axis=1)
 
-df['tds_rating'] = df['totalTDs'].apply(lambda x: min(10, max(0, x - 4)))
-df['sacks_rating'] = df['sacks'].apply(lambda x: min(12, x) / 1.2)
-df['interceptions_rating'] = df['interceptions'].apply(lambda x: min(5, x) / 0.5)
-df['yards_rating'] = df['totalYards'].apply(lambda x: math.sqrt(min(700, max(0, x - 500))) / YARDS_DIVIDER)
+game_ratings['tds_rating'] = game_ratings['totalTDs'].apply(lambda x: min(10, max(0, x - 4)))
+game_ratings['sacks_rating'] = game_ratings['sacks'].apply(lambda x: min(12, x) / 1.2)
+game_ratings['interceptions_rating'] = game_ratings['interceptions'].apply(lambda x: min(5, x) / 0.5)
+game_ratings['yards_rating'] = game_ratings['totalYards'].apply(lambda x: math.sqrt(min(700, max(0, x - 500))) / YARDS_DIVIDER)
 
-df['stat_rating'] = df['tds_rating'] * 0.1\
-                  + df['sacks_rating'] * 0.1\
-                  + df['interceptions_rating'] * 0.1\
-                  + df['yards_rating'] * 0.7
+game_ratings['stat_rating'] = game_ratings['tds_rating'] * 0.1\
+                  + game_ratings['sacks_rating'] * 0.1\
+                  + game_ratings['interceptions_rating'] * 0.1\
+                  + game_ratings['yards_rating'] * 0.7
 
-df.loc[:, 'efficiency_rating'] = df.loc[:, 'scores_sum'].apply(lambda x: math.sqrt(x) / SCORES_SUM_DIVIDER)
-df.loc[:, 'overtimes_rating'] = df.loc[:, 'number_of_quarters'].apply(lambda x: 2 if x > 9 else 1 if x > 4 else 0)
-df.loc[:, 'excitement_rating'] = df.loc[:, 'excitement_index'].apply(lambda x: math.log(max(x, 1), 4) / EXCIT_IND_DIVIDER if x < 10 else 10)
-df.loc[:, 'score_diff_rating'] = df.loc[:, 'scores_diff'].apply(lambda x: 0 if x > 29 else (30 - x) / SCORE_DIFF_DIVIDER)
-df.loc[:, 'leader_changes_rating'] = df.loc[:, 'score_changes'].apply(lambda x: 10 if x > 4 else 9 if x == 4 else 6 if x == 3 else 3 if x == 2 else 0)
+game_ratings.loc[:, 'efficiency_rating'] = game_ratings.loc[:, 'scores_sum'].apply(lambda x: math.sqrt(x) / SCORES_SUM_DIVIDER)
+game_ratings.loc[:, 'overtimes_rating'] = game_ratings.loc[:, 'number_of_quarters'].apply(lambda x: 2 if x > 9 else 1 if x > 4 else 0)
+game_ratings.loc[:, 'excitement_rating'] = game_ratings.loc[:, 'excitement_index'].apply(lambda x: math.log(max(x, 1), 4) / EXCIT_IND_DIVIDER if x < 10 else 10)
+game_ratings.loc[:, 'score_diff_rating'] = game_ratings.loc[:, 'scores_diff'].apply(lambda x: 0 if x > 29 else (30 - x) / SCORE_DIFF_DIVIDER)
+game_ratings.loc[:, 'leader_changes_rating'] = game_ratings.loc[:, 'score_changes'].apply(lambda x: 10 if x > 4 else 9 if x == 4 else 6 if x == 3 else 3 if x == 2 else 0)
 
-df.loc[:, 'game_rating'] = (df.loc[:, 'efficiency_rating'] + df.loc[:, 'overtimes_rating']).apply(lambda x: min(x, 10)) * 0.25\
-                         + df.loc[:, 'score_diff_rating'] * 0.25\
-                         + df.loc[:, 'stat_rating'] * 0.25\
-                         + df.loc[:, 'excitement_rating'] * 0.2\
-                         + df.loc[:, 'leader_changes_rating'] * 0.05
+game_ratings.loc[:, 'game_rating'] = (game_ratings.loc[:, 'efficiency_rating'] + game_ratings.loc[:, 'overtimes_rating']).apply(lambda x: min(x, 10)) * 0.25\
+                         + game_ratings.loc[:, 'score_diff_rating'] * 0.25\
+                         + game_ratings.loc[:, 'stat_rating'] * 0.25\
+                         + game_ratings.loc[:, 'excitement_rating'] * 0.2\
+                         + game_ratings.loc[:, 'leader_changes_rating'] * 0.05
 
 delete_irrelevant_notes = lambda x: '' if x is None else x if x.__contains__('bowl') or x.__contains__('kickoff') or x.__contains__('championship') or x.__contains__('classic') else ''
-df['notes'] = df.notes.apply(lambda x: x.lower().replace('"', '') if x is not None else None).apply(delete_irrelevant_notes)
+game_ratings['notes'] = game_ratings.notes.apply(lambda x: x.lower().replace('"', '') if x is not None else None).apply(delete_irrelevant_notes)
 
-df[GAME_RATING_COLUMNS].to_sql('ncaa_game_ratings', sql_connection, if_exists='replace', index=False)
+game_ratings[GAME_RATING_COLUMNS].to_sql('ncaa_game_ratings', sql_connection, if_exists='replace', index=False)
+
+### Prepare Game Ratings to Site
+add_rank_to_team_name = lambda x: f'{x[0]}({int(x[1])})' if x[1] != -1 else x[0]
+game_ratings['away_rank'] = game_ratings['away_rank'].fillna(-1).astype(int)
+game_ratings['home_rank'] = game_ratings['home_rank'].fillna(-1).astype(int)
+game_ratings['week'] = game_ratings['week'].astype(str)
+game_ratings.loc[game_ratings.season_type == 'postseason', 'week'] = 'Bowls'
+game_ratings['away_team'] = game_ratings[['away_team', 'away_rank']].apply(add_rank_to_team_name, axis=1)
+game_ratings['home_team'] = game_ratings[['home_team', 'home_rank']].apply(add_rank_to_team_name, axis=1)
+game_ratings['game_rating'] = game_ratings['game_rating'].round(2)
+
+game_ratings['away_color'] = game_ratings['away_color'].apply(lambda x: saturate_hex_color(x, SATURATION_AMOUNT, LIGHTENING_AMOUNT))
+game_ratings['home_color'] = game_ratings['home_color'].apply(lambda x: saturate_hex_color(x, SATURATION_AMOUNT, LIGHTENING_AMOUNT))
+
+game_ratings[['away_color', 
+              'home_color', 
+              'season', 
+              'week', 
+              'notes', 
+              'away_id', 
+              'home_id', 
+              'away_team',
+              'home_team', 
+              'game_rating']]\
+    .sort_values('game_rating', ascending=False)\
+        .to_csv('_data/ncaa_game_ratings.csv', index=False)
+
+unique_seasons = []
+for y in range(game_ratings.season.max(), game_ratings.season.min()-1, -1):
+    weeks = game_ratings.query(f'season == {y}').week.unique().tolist()
+    if y == CURRENT_SEASON:
+        weeks = weeks[::-1]
+    unique_seasons.append(
+    {
+        'season': y,
+        'weeks': weeks + ['All']
+    }       
+    )
+
+with open('_data/ncaa_unique_seasons.yml', 'w') as file:
+    yaml.dump(unique_seasons, file)

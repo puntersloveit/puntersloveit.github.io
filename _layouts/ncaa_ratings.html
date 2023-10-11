@@ -1,0 +1,119 @@
+---
+layout: default
+---
+<!DOCTYPE html>
+
+<style>
+  .bordered-row {
+      border: 1px solid black;
+  }
+
+  .border-table-style tr {
+    border: 3px solid gray;
+    color: black;
+  }
+
+  .hidden-style{
+    display: none;
+  }  
+</style>
+
+
+
+<html>
+  <head>
+    <script>
+      function filterRecords() {
+        // Get the selected year and week from the dropdowns
+        const selectedYear = parseInt(document.getElementById("season").value);
+        const selectedWeek = document.getElementById("week").value.replace(/\s/g, "");
+
+        const fragment = document.createDocumentFragment();
+
+        Array.from(rows).forEach(row => {
+          const year = parseInt(row.getElementsByTagName("td")[2].textContent);
+          const week = row.getElementsByTagName("td")[3].textContent.replace(/\s/g, "");
+        
+          row.style.display = (year === selectedYear && (selectedWeek === "All" || week === selectedWeek)) ? "" : "none";
+
+          fragment.appendChild(row); // Append the row to the fragment
+        });
+
+        table.appendChild(fragment); // Append the fragment to the table
+      }
+      function updateWeeks() {
+          var selectedSeason = document.getElementById("season").value;
+          var weekSelect = document.getElementById("week");
+          var data = JSON.parse(`{{ site.data.ncaa_unique_seasons | jsonify }}`);
+          // Clear existing options
+          weekSelect.innerHTML = "";
+          // Find the selected year in the data
+          var selectedData = data.find(function(item) {
+              return item.season == selectedSeason;
+          });
+        
+          // Add options for selected Season
+          if (selectedData) {
+              selectedData.weeks.forEach(function(week) {
+                  var option = document.createElement("option");
+                  option.value = week;
+                  option.text = week;
+                  weekSelect.appendChild(option);
+              });
+          }
+        }        
+    </script> 
+  </head>
+
+  <body>
+    <h1>NCAAF Game Ratings</h1>
+    <label for="season">Select Year:</label>
+    <select id="season" onchange="updateWeeks();filterRecords()" >
+      {% for data in site.data.ncaa_unique_seasons %}
+          <option value="{{ data.season }}">{{ data.season }}</option>
+      {% endfor %}
+    </select>
+
+    <label for="week">Select Week:</label>
+    <select id="week" onchange="filterRecords()">
+    </select>
+
+    {% assign table_rows = site.data.ncaa_game_ratings %}
+    <table id="NcaafGameRatings" class="border-table-style" style="display: none;">
+        {% for row in table_rows %}
+            <tr title="{{ row.notes }}">
+                {% for pair in row %}
+                  {% if forloop.index0 == 0 %}
+                    {% assign away_color = pair[1] %}
+                  {% endif %}
+                  {% if forloop.index0 == 1 %}
+                    {% assign home_color = pair[1] %}
+                  {% endif %}                  
+                  {% if forloop.index0 >= 7 %}
+                    {% if forloop.index0 == 7 %}
+                      <td style="background-color:{{ away_color }}">{{ pair[1] }}</td>
+                    {% endif %}
+                    {% if forloop.index0 == 8 %}
+                      <td style="background-color:{{ home_color }}">{{ pair[1] }}</td>
+                    {% endif %}
+                    {% if forloop.index0 == 9 %}
+                      <td style="background-color:rgb(203, 203, 203)">{{ pair[1] }}</td>
+                    {% endif %}                    
+                  {% else %}
+                    <td class="hidden-style">{{ pair[1] }}</td>
+                  {% endif %}
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+
+    <script>
+      const table = document.getElementById("NcaafGameRatings");
+      const rows = table.getElementsByTagName("tr");    
+      updateWeeks()
+      filterRecords()
+      table.style.display = "";
+    </script>   
+  </body>
+
+</html>
