@@ -44,7 +44,7 @@ layout: default
       function updateWeeks() {
           var selectedSeason = document.getElementById("season").value;
           var weekSelect = document.getElementById("week");
-          var data = JSON.parse(`{{ site.data.unique_seasons | jsonify }}`);
+          var data = JSON.parse(`{{ site.data.nfl_unique_seasons | jsonify }}`);
           // Clear existing options
           weekSelect.innerHTML = "";
           // Find the selected year in the data
@@ -66,10 +66,10 @@ layout: default
   </head>
 
   <body>
-    <h1>Game Ratings</h1>
+    <h1>NFL Game Ratings</h1>
     <label for="season">Select Year:</label>
     <select id="season" onchange="updateWeeks();filterRecords()" >
-      {% for data in site.data.unique_seasons %}
+      {% for data in site.data.nfl_unique_seasons %}
           <option value="{{ data.season }}">{{ data.season }}</option>
       {% endfor %}
     </select>
@@ -78,8 +78,8 @@ layout: default
     <select id="week" onchange="filterRecords()">
     </select>
 
-    {% assign table_rows = site.data.ncaa_game_ratings %}
-    <table id="NcaafGameRatings" class="border-table-style" style="display: none;">
+    {% assign table_rows = site.data.nfl_game_ratings %}
+    <table id="NFLGameRatings" class="border-table-style" style="display: none;">
         {% for row in table_rows %}
             <tr title="{{ row.notes }}">
                 {% for pair in row %}
@@ -89,14 +89,14 @@ layout: default
                   {% if forloop.index0 == 1 %}
                     {% assign home_color = pair[1] %}
                   {% endif %}                  
-                  {% if forloop.index0 >= 7 %}
-                    {% if forloop.index0 == 7 %}
+                  {% if forloop.index0 >= 4 %}
+                    {% if forloop.index0 == 4 %}
                       <td style="background-color:{{ away_color }}">{{ pair[1] }}</td>
                     {% endif %}
-                    {% if forloop.index0 == 8 %}
+                    {% if forloop.index0 == 5 %}
                       <td style="background-color:{{ home_color }}">{{ pair[1] }}</td>
                     {% endif %}
-                    {% if forloop.index0 == 9 %}
+                    {% if forloop.index0 == 6 %}
                       <td style="background-color:rgb(203, 203, 203)">{{ pair[1] }}</td>
                     {% endif %}                    
                   {% else %}
@@ -108,7 +108,7 @@ layout: default
     </table>
 
     <script>
-      const table = document.getElementById("NcaafGameRatings");
+      const table = document.getElementById("NFLGameRatings");
       const rows = table.getElementsByTagName("tr");    
       updateWeeks()
       filterRecords()

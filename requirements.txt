@@ -2,3 +2,4 @@ pyyaml
 pandas
 cfbd
 requests
+nfl_data_py
