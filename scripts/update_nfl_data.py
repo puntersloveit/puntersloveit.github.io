@@ -73,7 +73,7 @@ game_stats_summary_df.to_sql('nfl_game_stats_summary', sql_connection, if_exists
 # Table With Ratings
 current_ratings_ids = tuple(pd.read_sql_query(f'select game_id from nfl_game_ratings', sql_connection).values.flatten())
 new_ids_from_games_table = set(pd.read_sql_query(
-                                    f'select game_id from nfl_game_stats_summary where id not in {current_ratings_ids}', 
+                                    f'select game_id from nfl_game_stats_summary where game_id not in {current_ratings_ids}', 
                                     sql_connection
                                                 ).values.flatten()
                               )
