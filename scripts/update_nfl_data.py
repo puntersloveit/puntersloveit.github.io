@@ -80,7 +80,7 @@ new_ids_from_games_table = set(pd.read_sql_query(
 new_ids_from_games_table_tuple = str(tuple(new_ids_from_games_table))\
     .replace(",", "") if len(new_ids_from_games_table) == 1 else tuple(new_ids_from_games_table)
 
-query = '''
+query = f'''
 SELECT
     game_id,
     season,
