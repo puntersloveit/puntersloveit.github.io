@@ -36,7 +36,7 @@ For example, if teams you like are playing and the rating shows a ```GR > 5```(t
 
 # When game ratings update?
  - NFL, everyday 6 and 8 UTC. Additional for sunday only - 4
- - NCAA, everyday 7 UTC
+ - NCAA, everyday 4 and 7 UTC
 
 UTC time its: -8 USA Pacific, -5 USA Eastern, +1 Berlin, Madrid, Paris, Rome, +2 Kiyv, Cairo, Jerusalem, +3 Moscow, Istanbul, +4 Dubai, Tbilisi, +5 Tashkent, Karachi, +6 Almaty, Dhaka, +7 Jakarta, Bangkok, +8 Shanghai, Taipei, Singapoure, +9 Tokyo, Seoul, +10 Sidney, Vladivostok, +12 Auckland, Petropavlovsk-Kamchatsky
 
