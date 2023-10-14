@@ -3,6 +3,7 @@ name: Update NCAAF Data
 on:
   schedule:
     - cron: '0 7 * * *'
+    - cron: '0 4 * * *'    
   workflow_dispatch:
 
 jobs:
