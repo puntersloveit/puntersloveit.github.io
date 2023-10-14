@@ -3,6 +3,9 @@ layout: page
 title: About
 permalink: /about
 ---
+# What is it site?
+This site contains game ratings for two most popular american football competitions: NFL and NCAA Football. Here we have no game results, stats or game tapes, only ratings.
+
 # Why do these ratings at all, I watch all the games live
 This ratings is for those who for some reason (for example, time zone) can not watch games live, but wants to watch the most interesting for him game tapes after the end of the game week or in the offseason.
 
@@ -30,6 +33,12 @@ This ratings is for those who for some reason (for example, time zone) can not w
 
 These are factors that everyone has to consider for themselves.   
 For example, if teams you like are playing and the rating shows a ```GR > 5```(this game is above average), you will probably be satisfied watching this game.
+
+# When game ratings update?
+ - NFL, everyday 6 and 8 UTC. Additional for sunday only - 4
+ - NCAA, everyday 7 UTC
+
+UTC time its: -8 USA Pacific, -5 USA Eastern, +1 Berlin, Madrid, Paris, Rome, +2 Kiyv, Cairo, Jerusalem, +3 Moscow, Istanbul, +4 Dubai, Tbilisi, +5 Tashkent, Karachi, +6 Almaty, Dhaka, +7 Jakarta, Bangkok, +8 Shanghai, Taipei, Singapoure, +9 Tokyo, Seoul, +10 Sidney, Vladivostok, +12 Auckland, Petropavlovsk-Kamchatsky
 
 # Where do I watch game tapes?
 Every man for himself
