@@ -3,7 +3,7 @@ name: Update NCAAF Data
 on:
   schedule:
     - cron: '0 7 * * *'
-    - cron: '0 4 * * *'    
+    - cron: '0 4 * * 0'    
   workflow_dispatch:
 
 jobs:
@@ -34,8 +34,8 @@ jobs:
         
       - name: Commit to the repo
         run: |
-          git config --global user.name 'superserejka'
-          git config --global user.email 'superserejka@users.noreply.github.com'
+          git config --global user.name 'puntersloveit'
+          git config --global user.email 'puntersloveit@users.noreply.github.com'
           git add .
           git commit -am "updated files"
           git push
