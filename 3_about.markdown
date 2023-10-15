@@ -35,10 +35,10 @@ These are factors that everyone has to consider for themselves.
 For example, if teams you like are playing and the rating shows a ```GR > 5```(this game is above average), you will probably be satisfied watching this game.
 
 # When game ratings update?
- - NFL, everyday 6:00 and 8:00 UTC. Additional for sunday only - 4:00 UTC
- - NCAA, everyday 4:00 and 7:00 UTC
+ - NFL, everyday 6:00 and 8:00 UTC. Additional for monday morning only - 4:00 UTC
+ - NCAA, everyday 7:00 UTC. Additional for sunday morning only - 4:00 UTC
 
-UTC time its: -8 USA Pacific, -5 USA Eastern, +1 Berlin, Madrid, Paris, Rome, +2 Kiyv, Cairo, Jerusalem, +3 Moscow, Istanbul, +4 Dubai, Tbilisi, +5 Tashkent, Karachi, +6 Almaty, Dhaka, +7 Jakarta, Bangkok, +8 Shanghai, Taipei, Singapoure, +9 Tokyo, Seoul, +10 Sidney, Vladivostok, +12 Auckland, Petropavlovsk-Kamchatsky
+UTC time its: -8 USA&Canada Pacific, -6 Mexico City, Guatemala City, Tegucigalpa, San José, San Salvador, -5 USA&Canada Eastern, -4 Santiago, Santo Domingo, Caracas, La Paz, -3 São Paulo, Buenos Aires, Montevideo, +1 Berlin, Madrid, Paris, Rome, +2 Kiyv, Cairo, Jerusalem, +3 Moscow, Istanbul, +4 Dubai, Tbilisi, +5 Tashkent, Karachi, Dushanbe, Yekaterinburg +6 Almaty, Dhaka, +7 Jakarta, Bangkok, Novosibirsk, +8 Shanghai, Taipei, Singapoure, +9 Tokyo, Seoul, +10 Sidney, Vladivostok, +12 Auckland, Petropavlovsk-Kamchatsky
 
 # Where do I watch game tapes?
 Every man for himself
