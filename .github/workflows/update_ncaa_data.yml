@@ -32,10 +32,15 @@ jobs:
           API_KEY: ${{ secrets.API_KEY }}
         run: python scripts/update_ncaa_data.py
         
-      - name: Commit to the repo
+      - name: commit files
         run: |
-          git config --global user.name 'puntersloveit'
-          git config --global user.email 'puntersloveit@users.noreply.github.com'
-          git add .
-          git commit -am "updated files"
-          git push
+          git config --local user.email "puntersloveit@github.com"
+          git config --local user.name "puntersloveit"
+          git add -A
+          git diff-index --quiet HEAD || (git commit -a -m "updated files" --allow-empty)
+
+      - name: push changes
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main 
