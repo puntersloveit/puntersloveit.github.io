@@ -3,45 +3,44 @@ layout: page
 title: About
 permalink: /about
 ---
-# What is it site?
-This site contains game ratings for two most popular american football competitions: NFL and NCAA Football. Here we have no game results, stats or game tapes, only ratings.
+# What is This Site About?
+This site contains game ratings for the two most popular American football competitions: the NFL and NCAA Football. We present no game results, stats, or game tapes - only ratings.
 
-# Why do these ratings at all, I watch all the games live
-This ratings is for those who for some reason (for example, time zone) can not watch games live, but wants to watch the most interesting for him game tapes after the end of the game week or in the offseason.
+# Why Do We Need These Ratings, I Watch All the Games Live
+These ratings are intended for those who, for various reasons (for example, time zones), cannot watch games live, but wish to view the most exciting game tapes after the end of the game week or during the offseason.
 
-# How read game rating (```GR```) values?
-- ```GR > 5.5```, game slightly above average
-- ```GR > 6.5```, 30% best games
-- ```GR > 7.5```, 10% best games. These games are in the top 100 in NCAAF and top 30 in NFL for the season
-- ```GR > 7.8```, 5% best games. These games are in the top 50 in NCAAF and top 10 in NFL for the season
-- ```GR > 8.4```, 1% best games. These games are in the top 10 in NCAAF and top 3 in NFL for the season
-- ```GR > 9```, incredible game. These games come around once every few years
-- ```GR = 10```, unreachable ideal. These games not exist
+# How to Read Game Rating (```GR```) Values?
+- ```GR > 5.5```, The game is slightly above average.
+- ```GR > 6.5```, 30% of the best games.
+- ```GR > 7.5```, 10% of the best games. These games are in the top 100 in NCAAF and top 30 in the NFL for the season.
+- ```GR > 7.8```, 5% of the best games. These games are in the top 50 in NCAAF and top 10 in the NFL for the season.
+- ```GR > 8.4```, 1% of the best games. These games are in the top 10 in NCAAF and top 3 in the NFL for the season.
+- ```GR > 9```, Represents an incredible game. These games come around once every few years.
+- ```GR = 10```, An unreachable ideal. These games do not exist.
 
-# What factors does the rating take into account?
-- score efficiency
-- how close result is, overtime
-- game stats (yards, touchdowns, fumbles, sacks, interceptions)
-- outcome surprise, twists and turns during the game
-- number of leadership changes
+# What Factors Does the Rating Take into Account?
+- Score efficiency
+- Proximity of the result, including overtime
+- Game stats (yards, touchdowns, fumbles, sacks, interceptions)
+- Surprising outcomes, twists, and turns during the game
+- Number of leadership changes
 
-# What factors does the rating NOT take into account?
-- teams power or popularity
-- players power or popularity, spectacular stunts from the players
-- your or my sympathies for a particular team
-- having Taylor Swift in the bleachers
+What Factors Does the Rating NOT Take into Account?
+- Team's power or popularity
+- Players' power or popularity, including spectacular stunts from the players
+- Personal bias or preference for a particular team
+- Having Taylor Swift in the bleachers
 
-These are factors that everyone has to consider for themselves.   
-For example, if teams you like are playing and the rating shows a ```GR > 5```(this game is above average), you will probably be satisfied watching this game.
+Everyone must consider these factors individually. For instance, if teams you favor are playing and the rating shows a ```GR > 5``` (indicating the game is above average), you will likely enjoy watching this game.
 
-# When game ratings update?
- - NFL, everyday 6:00 and 8:00 UTC. Additional for monday morning only - 4:00 UTC
- - NCAA, everyday 7:00 UTC. Additional for sunday morning only - 4:00 UTC
+# When Do Game Ratings Update?
+- NFL ratings update daily at 6:00 and 8:00 UTC, with an additional update at 4:00 UTC on Monday mornings.
+- NCAA ratings update daily at 7:00 UTC, with an additional update at 4:00 UTC on Sunday mornings.
 
-UTC time its: -8 USA&Canada Pacific, -6 Mexico City, Guatemala City, Tegucigalpa, San José, San Salvador, -5 USA&Canada Eastern, -4 Santiago, Santo Domingo, Caracas, La Paz, -3 São Paulo, Buenos Aires, Montevideo, +1 Berlin, Madrid, Paris, Rome, +2 Kiyv, Cairo, Jerusalem, +3 Moscow, Istanbul, +4 Dubai, Tbilisi, +5 Tashkent, Karachi, Dushanbe, Yekaterinburg +6 Almaty, Dhaka, +7 Jakarta, Bangkok, Novosibirsk, +8 Shanghai, Taipei, Singapoure, +9 Tokyo, Seoul, +10 Sidney, Vladivostok, +12 Auckland, Petropavlovsk-Kamchatsky
+UTC time its: -8 USA&Canada Pacific, -6 Mexico City, Guatemala City, Tegucigalpa, San José, San Salvador, -5 USA&Canada Eastern, -4 Santiago, Santo Domingo, Caracas, La Paz, -3 São Paulo, Buenos Aires, Montevideo, +1 Berlin, Madrid, Paris, Rome, +2 Kiyv, Cairo, Jerusalem, +3 Moscow, Istanbul, +4 Dubai, Tbilisi, +5 Tashkent, Karachi, Dushanbe, Yekaterinburg +6 Almaty, Dhaka, +7 Jakarta, Bangkok, Novosibirsk, +8 Shanghai, Taipei, Singapore, +9 Tokyo, Seoul, +10 Sidney, Vladivostok, +12 Auckland, Petropavlovsk-Kamchatsky
 
 # Where do I watch game tapes?
-Every man for himself
+Every man for himself.
 
 # Special Thanks
 Inspired by [wikihoops](https://wikihoops.com/about/)   
