@@ -1,8 +1,3 @@
----
-layout: page
-title: About
-permalink: /about
----
 # What is this site about?
 This site contains game ratings for the two most popular American football competitions: the NFL and NCAA Football. We present no game results, stats, or game tapes - only ratings.
 
@@ -44,4 +39,5 @@ Every man for himself.
 
 # Special Thanks
 Inspired by [wikihoops](https://wikihoops.com/about/)   
-Stats from [CollegeFootballData](https://collegefootballdata.com/) and [nfl_data_py](https://github.com/cooperdff/nfl_data_py)
+Stats from [CollegeFootballData](https://collegefootballdata.com/) and [nfl_data_py](https://github.com/cooperdff/nfl_data_py)   
+[![built with Codeium](https://codeium.com/badges/main)](https://codeium.com)
