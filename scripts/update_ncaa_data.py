@@ -190,6 +190,10 @@ new_ids_from_both = new_ids_from_games_table.intersection(new_ids_from_stats_tab
 
 new_ids_from_both_tuple = str(tuple(new_ids_from_both)).replace(",", "") if len(new_ids_from_both) == 1 else tuple(new_ids_from_both)
 
+max_week_current_season = int(
+    pd.read_sql_query(f'select max(week) from ncaa_rankings where season == {CURRENT_SEASON}', sql_connection)\
+        .loc[0, 'max(week)']
+    )
 query = f'''
 SELECT 
     games.id as game_id,
@@ -233,16 +237,22 @@ SELECT
 FROM ncaa_games AS games
 LEFT JOIN ncaa_game_stats_summary AS stats
     ON games.id = stats.id
-LEFT JOIN ncaa_rankings AS home_ranks
+LEFT JOIN (
+            select 
+                rank, 
+                school 
+            from ncaa_rankings
+            where season == {CURRENT_SEASON} and week == {max_week_current_season}
+           ) AS home_ranks
     ON games.home_team = home_ranks.school
-       AND games.season = home_ranks.season
-       AND games.week = home_ranks.week
-       AND games.season_type = home_ranks.season_type
-LEFT JOIN ncaa_rankings AS away_ranks
+LEFT JOIN (
+            select 
+                rank, 
+                school 
+            from ncaa_rankings
+            where season == {CURRENT_SEASON} and week == {max_week_current_season}
+           ) AS away_ranks
     ON games.away_team = away_ranks.school
-       AND games.season = away_ranks.season
-       AND games.week = away_ranks.week
-       AND games.season_type = away_ranks.season_type
 LEFT JOIN ncaa_teams_info AS home_team_info
     ON games.home_id = home_team_info.id
 LEFT JOIN ncaa_teams_info AS away_team_info
