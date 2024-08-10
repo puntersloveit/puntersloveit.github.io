@@ -10,10 +10,10 @@ from cfbd.rest import ApiException
 from functions import *
 
 try:
-    API_KEY = os.environ['API_KEY']
+    #API_KEY = os.environ['API_KEY']
+    API_KEY = 'EhusUpx7CV6ZSzFLyEcLtktcyWiMLETDQ7KM7vDTdqvKPqc+Sw3JLBpFetZ6PAQU'
 except KeyError:
     print('Token not available!')
-print(API_KEY)
 
 current_year = datetime.datetime.now().year
 current_month = datetime.datetime.now().month
@@ -155,10 +155,13 @@ for game_id in new_game_ids:
         print(f"Exception when calling GamesApi->get_team_game_stats with game id {game_id}: {e}\n")
 
 ### AP TOP 25 Data
-max_week_current_season = int(
-    pd.read_sql_query(f'select max(week) from ncaa_rankings where season == {CURRENT_SEASON}', sql_connection)\
-        .loc[0, 'max(week)']
-    )
+try:
+    max_week_current_season = int(
+        pd.read_sql_query(f'select max(week) from ncaa_rankings where season == {CURRENT_SEASON}', sql_connection)\
+            .loc[0, 'max(week)']
+        )
+except:
+    max_week_current_season = 0
 
 api_instance = cfbd.RankingsApi(cfbd.ApiClient(configuration))
 
@@ -190,10 +193,13 @@ new_ids_from_both = new_ids_from_games_table.intersection(new_ids_from_stats_tab
 
 new_ids_from_both_tuple = str(tuple(new_ids_from_both)).replace(",", "") if len(new_ids_from_both) == 1 else tuple(new_ids_from_both)
 
-max_week_current_season = int(
-    pd.read_sql_query(f'select max(week) from ncaa_rankings where season == {CURRENT_SEASON}', sql_connection)\
-        .loc[0, 'max(week)']
-    )
+try:
+    max_week_current_season = int(
+        pd.read_sql_query(f'select max(week) from ncaa_rankings where season == {CURRENT_SEASON}', sql_connection)\
+            .loc[0, 'max(week)']
+        )
+except:
+    max_week_current_season = 0
 query = f'''
 SELECT 
     games.id as game_id,

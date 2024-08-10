@@ -10,7 +10,7 @@ from functions import saturate_hex_color
 
 current_year = datetime.datetime.now().year
 current_month = datetime.datetime.now().month
-CURRENT_SEASON = current_year if current_month > 7 else current_year - 1
+CURRENT_SEASON = current_year if current_month > 8 else current_year - 1
 
 sql_connection = sqlite3.connect('_data/puntersloveit.db')
 sql_cursor = sql_connection.cursor()
