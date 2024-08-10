@@ -10,8 +10,7 @@ from cfbd.rest import ApiException
 from functions import *
 
 try:
-    #API_KEY = os.environ['API_KEY']
-    API_KEY = 'EhusUpx7CV6ZSzFLyEcLtktcyWiMLETDQ7KM7vDTdqvKPqc+Sw3JLBpFetZ6PAQU'
+    API_KEY = os.environ['API_KEY']
 except KeyError:
     print('Token not available!')
 
