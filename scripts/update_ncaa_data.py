@@ -361,6 +361,11 @@ for y in range(game_ratings.season.max(), game_ratings.season.min()-1, -1):
         'weeks': weeks + ['All']
     }       
     )
+unique_seasons.append(
+    {
+        'season': -1,
+        'weeks': ['All']
+    })
 
 with open('_data/ncaa_unique_seasons.yml', 'w') as file:
     yaml.dump(unique_seasons, file)

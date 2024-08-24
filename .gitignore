@@ -5,3 +5,5 @@ _site
 vendor
 team_logos
 *.ipynb
+*.pyc
+.DS_Store
