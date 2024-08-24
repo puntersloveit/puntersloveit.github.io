@@ -526,3 +526,6 @@
   - '17'
   - Playoff
   - All
+- season: -1
+  weeks:
+  - All
