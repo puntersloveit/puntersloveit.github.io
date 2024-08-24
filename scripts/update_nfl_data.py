@@ -174,7 +174,12 @@ for y in range(rating_df.season.max(), rating_df.season.min()-1, -1):
     {
         'season': y,
         'weeks': weeks + ['All']
-    }       
+    }
     )
+unique_seasons.append(
+    {
+        'season': -1,
+        'weeks': ['All']
+    })
 with open('_data/nfl_unique_seasons.yml', 'w') as file:
     yaml.dump(unique_seasons, file)
