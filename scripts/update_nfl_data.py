@@ -48,7 +48,11 @@ game_ids_from_db = set(
     pd.read_sql_query(f'SELECT game_id FROM nfl_game_ratings WHERE season == {CURRENT_SEASON}', sql_connection).values.flatten()
 )
 
-pbp_data = nfl.import_pbp_data([CURRENT_SEASON], PBP_COLUMNS).query('game_id not in @game_ids_from_db')
+try:
+    pbp_data = nfl.import_pbp_data([CURRENT_SEASON], PBP_COLUMNS).query('game_id not in @game_ids_from_db')
+except:
+    direct_path = f'https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_{CURRENT_SEASON}.parquet'
+    pbp_data = pd.read_parquet(direct_path)[PBP_COLUMNS].query('game_id not in @game_ids_from_db')
 pbp_data.query('~(score_differential.isna() | score_differential_post.isna())', inplace=True)
 pbp_data['leader_changes'] = np.sign(pbp_data.score_differential_post) != np.sign(pbp_data.score_differential)
 
