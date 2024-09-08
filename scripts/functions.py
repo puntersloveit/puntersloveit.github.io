@@ -17,7 +17,10 @@ def saturate_hex_color(hex_color, saturation_amount, lightening_amount):
         str: The saturated hexadecimal color code.
     """
     # Remove the '#' symbol if present
-    hex_color = hex_color.lstrip('#')
+    if hex_color is None:
+        return '#FFFFFF'
+    else:
+        hex_color = hex_color.lstrip('#')
 
     # Convert hexadecimal color to RGB
     rgb_color = tuple(int(hex_color[i:i+2], 16) for i in (0, 2, 4))
