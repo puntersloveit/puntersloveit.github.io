@@ -28,6 +28,163 @@ These ratings are intended for those who, for various reasons (for example, time
 
 Everyone must consider these factors individually. For instance, if teams you favor are playing and the rating shows a ```GR > 5``` (indicating the game is above average), you will likely enjoy watching this game.
 
+# Game Rating Formulas
+## NFL
+### stat_rating
+1. **Touchdowns rating:**
+
+   $$ \text{tds\_rating} = \min(10, \ \text{touchdown}) $$
+
+2. **Sacks rating:**
+
+   $$ \text{sacks\_rating} = \dfrac{\min(12, \ \text{sack})}{1.2} $$
+
+3. **Interceptions rating:**
+
+   $$ \text{interceptions\_rating} = \dfrac{\min(7, \ \text{interception})}{0.7} $$
+
+4. **Yards rating:**
+
+   $$ \text{yards\_rating} = \dfrac{\sqrt{\min\left(650,\ \max\left(0,\ \text{yards} - 350\right)\right)}}{\text{YARDS\_DIVIDER}} $$
+    Where
+   $$ \text{YARDS\_DIVIDER} = \dfrac{\sqrt{650}}{10} $$
+
+5. **Overall statistical rating, calculated from all previous ratings:**
+
+   $$ \text{stat\_rating} = 0.3 \times \text{tds\_rating} + 0.1 \times \text{sacks\_rating} + 0.1 \times \text{interceptions\_rating} + 0.5 \times \text{yards\_rating} $$
+
+### Separately, we calculate several ratings reflecting the game's excitement
+1. **Efficiency rating:**
+
+   $$ \text{efficiency\_rating} = \dfrac{\sqrt{\text{scores\_sum}}}{\text{SCORES\_SUM\_DIVIDER}} $$
+    Where
+   $$ \text{SCORES\_SUM\_DIVIDER} = \dfrac{\sqrt{100}}{10} $$
+
+2. **Score difference rating:**
+
+   $$ \text{score\_diff\_rating} = \begin{cases}
+   7.5, & \text{if } \text{scores\_diff} = 0 \\
+   \max\left(-10,\ \dfrac{20 - \text{scores\_diff}}{\text{SCORE\_DIFF\_DIVIDER}}\right), & \text{otherwise}
+   \end{cases} $$
+   Where
+   $$ \text{SCORE\_DIFF\_DIVIDER} = \dfrac{19}{10} $$
+
+3. **Win probability shifts rating:**
+
+   $$ \text{win\_prob\_shifts\_rating} = \min\left(10,\ \dfrac{\sqrt{\text{win\_prob\_shifts}}}{\text{WIN\_PROB\_SHIFTS\_DIVIDER}}
+   \right) $$
+   Where
+   $$ \text{WIN\_PROB\_SHIFTS\_DIVIDER} = \dfrac{\sqrt{40}}{10} $$
+
+4. **Maximum win chances difference rating:**
+
+   $$ \text{win\_chances\_max\_diff\_rating} = 10 \times \text{win\_chances\_max\_diff} $$
+
+5. **Leader changes rating:**
+
+    $$ \text{leader\_changes\_rating} = \min(10, \ \text{leader\_changes}) $$
+
+### Overall game rating
+1. **First, calculate**
+
+    $$ \text{game\_rating} = 0.25 \times \min\left(\text{efficiency\_rating} + \text{overtime},\ 10\right) + 0.25 \times \text{win\_prob\_shifts\_rating} + 0.20 \times \text{score\_diff\_rating} + 0.10 \times \text{win\_chances\_max\_diff\_rating} + 0.10 \times \text{stat\_rating} + 0.10 \times \text{leader\_changes\_rating} $$
+
+2. **Adjustment of the overall game rating:**
+
+    If $$ \text{tds\_rating} = 0, $$ then:
+
+    $$ \text{game\_rating} = \max(0,\ \text{game\_rating} - 2) $$
+## NCAAF
+### stat_rating
+1. **Touchdowns rating:**
+
+   $$ \text{tds\_rating} = \min(10, \ \max(0, \ \text{totalTDs} - 4)) $$
+
+2. **Sacks rating:**
+
+   $$ \text{sacks\_rating} = \dfrac{\min(12, \ \text{sacks})}{1.2} $$
+
+3. **Interceptions rating:**
+
+   $$ \text{interceptions\_rating} = \dfrac{\min(5, \ \text{interceptions})}{0.5} $$
+
+4. **Yards rating:**
+
+   $$ \text{yards\_rating} = \dfrac{\sqrt{\min(700,\ \max(0,\ \text{totalYards} - 500))}}{\text{YARDS\_DIVIDER}} $$
+   Where
+   $$ \text{YARDS\_DIVIDER} = \dfrac{\sqrt{700}}{10} $$
+
+5. **Overall statistical rating, calculated from all previous ratings:**
+
+   $$ \text{stat\_rating} = 0.1 \times \text{tds\_rating} + 0.1 \times \text{sacks\_rating} + 0.1 \times \text{interceptions\_rating} + 0.7 \times \text{yards\_rating} $$
+
+### Additional game excitement ratings
+1. **Efficiency rating:**
+
+   $$ \text{efficiency\_rating} = \dfrac{\sqrt{\text{scores\_sum}}}{\text{SCORES\_SUM\_DIVIDER}} $$
+      Where
+   $$ \text{SCORES\_SUM\_DIVIDER} = \dfrac{\sqrt{144}}{10} $$
+
+2. **Overtimes rating:**
+
+   $$ \text{overtimes\_rating} = \begin{cases} 
+   2, & \text{if } \text{number\_of\_quarters} > 9 \\
+   1, & \text{if } \text{number\_of\_quarters} > 4 \\
+   0, & \text{otherwise}
+   \end{cases} $$
+
+3. **Excitement rating:**
+
+   $$ \text{excitement\_rating} = \begin{cases} 
+   \dfrac{\log(\max(\text{excitement\_index}, 1), 4)}{\text{EXCIT\_IND\_DIVIDER}}, & \text{if } \text{excitement\_index} < 10 \\
+   10, & \text{otherwise}
+   \end{cases} $$
+   Where
+   $$ \text{EXCIT\_IND\_DIVIDER} = \dfrac{\log(10, 4)}{10} $$
+    _What is [excitement\_index](https://collegefootballdata.com/glossary)_
+
+4. **Score difference rating:**
+
+   $$ \text{score\_diff\_rating} = \begin{cases} 
+   0, & \text{if } \text{scores\_diff} > 29 \\
+   \dfrac{30 - \text{scores\_diff}}{\text{SCORE\_DIFF\_DIVIDER}}, & \text{otherwise}
+   \end{cases} $$
+   Where
+   $$ \text{SCORE\_DIFF\_DIVIDER} = \dfrac{29}{10} $$
+
+5. **Leader changes rating:**
+
+   $$ \text{leader\_changes\_rating} = \begin{cases} 
+   10, & \text{if } \text{score\_changes} > 4 \\
+   9, & \text{if } \text{score\_changes} = 4 \\
+   6, & \text{if } \text{score\_changes} = 3 \\
+   3, & \text{if } \text{score\_changes} = 2 \\
+   0, & \text{otherwise}
+   \end{cases} $$
+
+### Overall game rating
+
+$$ \text{game\_rating} = 0.25 \times \min\left(\text{efficiency\_rating} + \text{overtimes\_rating},\ 10\right) + 0.25 \times \text{score\_diff\_rating} + 0.25 \times \text{stat\_rating} + 0.20 \times \text{excitement\_rating} + 0.05 \times \text{leader\_changes\_rating} $$
+
+### Constants
+
+1. **SCORES_SUM_DIVIDER:**
+
+   
+
+2. **EXCIT_IND_DIVIDER:**
+
+
+
+3. **SCORE_DIFF_DIVIDER:**
+
+
+
+4. **YARDS_DIVIDER:**
+
+
+
+
 # When do game ratings update?
 - NFL ratings update daily at ~6:30 and ~8:30 UTC, with an additional update at ~4:30 UTC on Monday mornings.
 - NCAA ratings update daily at ~7:30 UTC, with an additional update at ~4:30 UTC on Sunday mornings.
@@ -40,4 +197,3 @@ Every man for himself.
 # Special Thanks
 Inspired by [wikihoops](https://wikihoops.com/about/)   
 Stats from [CollegeFootballData](https://collegefootballdata.com/) and [nfl_data_py](https://github.com/cooperdff/nfl_data_py)   
-[![built with Codeium](https://codeium.com/badges/main)](https://codeium.com)

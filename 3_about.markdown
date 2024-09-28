@@ -23,7 +23,9 @@ These ratings are intended for those who, for various reasons (for example, time
 - Proximity of the result, including overtime
 - Game stats (yards, touchdowns, fumbles, sacks, interceptions)
 - Surprising outcomes, twists, and turns during the game
-- Number of leadership changes
+- Number of leadership changes   
+
+In [README](https://github.com/puntersloveit/puntersloveit.github.io#game-rating-formulas) you can see exact formulas.
 
 # What factors does the rating NOT take into account?
 - Team's power or popularity
