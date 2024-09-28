@@ -2,176 +2,193 @@
 layout: default
 ---
 <!DOCTYPE html>
-
-<style>
-  .bordered-row {
-      border: 1px solid black;
-  }
-
-  .border-table-style tr {
-    border: 3px solid gray;
-    color: black;
-  }
-
-  .hidden-style{
-    display: none;
-  }  
-</style>
-
 <html>
   <head>
-    <script>
-      function filterRecords() {
-        const selectedYear = parseInt(document.getElementById("season").value);
-        const selectedWeek = document.getElementById("week").value.replace(/\s/g, "");
-        const selectedTeam = document.getElementById("team").value.replace(/\s/g, "");
-
-        let noRecordsFound = true;
-
-        Array.from(rows).forEach(row => {
-          const year = parseInt(row.getElementsByTagName("td")[2].textContent);
-          const week = row.getElementsByTagName("td")[3].textContent.replace(/\s/g, "");
-          const awayTeam = row.getElementsByTagName("td")[4].textContent.replace(/\s/g, "").replace(/\(\d+\)/g, "");
-          const homeTeam = row.getElementsByTagName("td")[5].textContent.replace(/\s/g, "").replace(/\(\d+\)/g, "");
-
-          const matchesTeam = (selectedTeam === "All" || awayTeam === selectedTeam || homeTeam === selectedTeam);
-          const matchesWeek = (selectedWeek === "All" || week === selectedWeek);
-          const matchesYear = (selectedYear === -1 || year === selectedYear);
-
-          if (selectedWeek === "All") {
-            row.getElementsByTagName("td")[3].style.display = "";
-          } else {
-            row.getElementsByTagName("td")[3].style.display = "none";
-         }
-
-          if (selectedYear === -1) {
-            row.getElementsByTagName("td")[2].style.display = "";
-          } else {
-            row.getElementsByTagName("td")[2].style.display = "none";
-          }
-
-          const shouldDisplayRow = matchesTeam && matchesWeek && matchesYear;
-
-          if (shouldDisplayRow) {
-              row.style.display = "";
-              noRecordsFound = false;
-          } else {
-              row.style.display = "none";
-          }
-        });
-
-        const messageElement = document.getElementById("no-records-message");
-        if (noRecordsFound) {
-            messageElement.textContent = `No records found for ${selectedTeam} in Week ${selectedWeek}, ${selectedYear}.`;
-            messageElement.style.display = "block";
-        } else {
-            messageElement.style.display = "none";
-        }
+    <style>
+      .bordered-row {
+        border: 1px solid black;
       }
 
-      function updateWeeks() {
-          var selectedSeason = document.getElementById("season").value;
-          var weekSelect = document.getElementById("week");
-          var data = JSON.parse(`{{ site.data.ncaa_unique_seasons | jsonify }}`);
-          weekSelect.innerHTML = "";
-          var selectedData = data.find(function(item) {
-              return item.season == selectedSeason;
+      .border-table-style tr {
+        border: 3px solid gray;
+        color: black;
+      }
+
+      .hidden-style {
+        display: none;
+      }
+
+      #no-records-message {
+        display: none;
+        color: rgb(152, 11, 0);
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const seasonDropdown = document.getElementById("season");
+        const weekDropdown = document.getElementById("week");
+        const teamDropdown = document.getElementById("team");
+        const messageElement = document.getElementById("no-records-message");
+        const table = document.getElementById("NcaafGameRatings");
+        const rows = table.getElementsByTagName("tr");
+
+        const dataSeasons = JSON.parse(`{{ site.data.ncaa_unique_seasons | jsonify }}`);
+        const dataTeams = JSON.parse(`{{ site.data.ncaa_teams | jsonify }}`);
+
+        function initializeDropdowns() {
+          populateSeasonDropdown();
+          populateTeamDropdown();
+          updateWeeks();
+          filterRecords();
+          table.style.display = "";
+        }
+
+        function populateSeasonDropdown() {
+          dataSeasons.forEach(season => {
+            const option = document.createElement("option");
+            option.value = season.season;
+            option.textContent = season.season == -1 ? "All Years" : season.season;
+            seasonDropdown.appendChild(option);
           });
+        }
+
+        function populateTeamDropdown() {
+          const allOption = document.createElement("option");
+          allOption.value = "All";
+          allOption.textContent = "All Teams";
+          teamDropdown.appendChild(allOption);
+
+          dataTeams.teams.forEach(team => {
+            const option = document.createElement("option");
+            option.value = team;
+            option.textContent = team;
+            teamDropdown.appendChild(option);
+          });
+        }
+
+        function updateWeeks() {
+          const selectedSeason = seasonDropdown.value;
+          weekDropdown.innerHTML = "";
+          const selectedData = dataSeasons.find(item => item.season == selectedSeason);
 
           if (selectedData) {
-              selectedData.weeks.forEach(function(week) {
-                  var option = document.createElement("option");
-                  option.value = week;
-                  option.text = week;
-                  weekSelect.appendChild(option);
-              });
+            selectedData.weeks.forEach(week => {
+              const option = document.createElement("option");
+              option.value = week;
+              option.textContent = week;
+              weekDropdown.appendChild(option);
+            });
           }
-        }        
+          filterRecords();
+        }
 
-      function updateTeams() {
-        var teamSelect = document.getElementById("team");
-        var data = JSON.parse(`{{ site.data.ncaa_teams | jsonify }}`);
-        teamSelect.innerHTML = "";
-        var allOption = document.createElement("option");
-        allOption.value = "All";
-        allOption.text = "All Teams";
-        teamSelect.appendChild(allOption);
+        function filterRecords() {
+          const selectedYear = seasonDropdown.value;
+          const selectedWeek = weekDropdown.value;
+          const selectedTeam = teamDropdown.value.trim();
+          let noRecordsFound = true;
 
-        data.teams.forEach(function(team) {
-            var option = document.createElement("option");
-            option.value = team;
-            option.text = team;
-            teamSelect.appendChild(option);
-        });
-      }
-    </script> 
+          const isBowlsWeek = selectedWeek.toLowerCase() === "bowls";
+          const showYearColumn = selectedYear === "-1";
+          const showWeekColumn = selectedWeek === "All" && !isBowlsWeek;
+          const showBowlsColumn = isBowlsWeek;
+
+          toggleColumnDisplay(0, showYearColumn); // 'Year' column
+          toggleColumnDisplay(1, showWeekColumn); // 'Week' column
+          toggleColumnDisplay(2, showBowlsColumn); // 'Bowls' column
+
+          for (const row of rows) {
+            const cells = row.children;
+            const year = cells[0].textContent.trim();
+            const week = cells[1].textContent.trim().toLowerCase();
+            const notes = cells[2].textContent.trim();
+            const awayTeam = cells[3].textContent.trim().replace(/\(\d+\)/g, "");
+            const homeTeam = cells[4].textContent.trim().replace(/\(\d+\)/g, "");
+
+            const matchesTeam = selectedTeam === "All" || awayTeam === selectedTeam || homeTeam === selectedTeam;
+            const matchesWeek = selectedWeek === "All" || week === selectedWeek.toLowerCase();
+            const matchesYear = selectedYear === "-1" || year === selectedYear;
+
+            const shouldDisplayRow = matchesTeam && matchesWeek && matchesYear;
+
+            row.style.display = shouldDisplayRow ? "" : "none";
+            if (shouldDisplayRow) {
+              noRecordsFound = false;
+            }
+          }
+
+          if (noRecordsFound) {
+            messageElement.textContent = `No records found for ${selectedTeam} in Week ${selectedWeek}, ${selectedYear}.`;
+            messageElement.style.display = "block";
+          } else {
+            messageElement.style.display = "none";
+          }
+        }
+
+        function toggleColumnDisplay(columnIndex, showColumn) {
+          const displayStyle = showColumn ? "" : "none";
+          // Handle header row
+          const headerCells = document.querySelectorAll("#NcaafGameRatings thead th");
+          if (headerCells.length > 0) {
+            headerCells[columnIndex].style.display = displayStyle;
+          }
+          // Iterate over all rows to show/hide the column
+          for (const row of rows) {
+            const cell = row.children[columnIndex];
+            if (cell) {
+              cell.style.display = displayStyle;
+            }
+          }
+        }
+
+        // Initialize page
+        initializeDropdowns();
+        seasonDropdown.addEventListener("change", updateWeeks);
+        weekDropdown.addEventListener("change", filterRecords);
+        teamDropdown.addEventListener("change", filterRecords);
+      });
+    </script>
   </head>
 
   <body>
     <h1>NCAAF Game Ratings</h1>
     <label for="season">Select Year:</label>
-    <select id="season" onchange="updateWeeks();filterRecords()" >
-      {% for data in site.data.ncaa_unique_seasons %}
-        {% if data.season == -1 %}
-          <option value="{{ data.season }}">All Years</option>
-        {% else %}
-          <option value="{{ data.season }}">{{ data.season }}</option>
-        {% endif %}
-      {% endfor %}
-    </select>
+    <select id="season"></select>
 
     <label for="week">Select Week:</label>
-    <select id="week" onchange="filterRecords()">
-    </select>
+    <select id="week"></select>
 
     <label for="team">Select Team:</label>
-    <select id="team" onchange="filterRecords()">
-    </select>
+    <select id="team"></select>
 
-    <div id="no-records-message" style="display: none; color: rgb(152, 11, 0);"></div>
+    <div id="no-records-message"></div>
 
-    {% assign table_rows = site.data.ncaa_game_ratings %}
     <table id="NcaafGameRatings" class="border-table-style" style="display: none;">
+      <thead>
+        <tr>
+          <th>Year</th>
+          <th>Week</th>
+          <th>Bowls</th>
+          <th>Away Team</th>
+          <th>Home Team</th>
+          <th>Game Rating</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% assign table_rows = site.data.ncaa_game_ratings %}
         {% for row in table_rows %}
-            <tr title="{{ row.notes }}">
-                {% for pair in row %}
-                  {% if forloop.index0 == 0 %}
-                    {% assign away_color = pair[1] %}
-                  {% endif %}
-                  {% if forloop.index0 == 1 %}
-                    {% assign home_color = pair[1] %}
-                  {% endif %}
-                  {% if forloop.index0 >= 2 %}
-                    {% if forloop.index0 == 2 %}
-                      <td style="background-color:rgb(203, 203, 203)">{{ pair[1] }}</td>
-                    {% endif %}
-                    {% if forloop.index0 == 3 %}
-                      <td style="background-color:rgb(203, 203, 203)">{{ pair[1] }}</td>
-                    {% endif %}
-                    {% if forloop.index0 == 7 %}
-                      <td style="background-color:{{ away_color }}">{{ pair[1] }}</td>
-                    {% endif %}
-                    {% if forloop.index0 == 8 %}
-                      <td style="background-color:{{ home_color }}">{{ pair[1] }}</td>
-                    {% endif %}
-                    {% if forloop.index0 == 9 %}
-                      <td style="background-color:rgb(203, 203, 203)">{{ pair[1] }}</td>
-                    {% endif %}                    
-                  {% else %}
-                    <td class="hidden-style">{{ pair[1] }}</td>
-                  {% endif %}
-                {% endfor %}
-            </tr>
+          <tr>
+            {% assign away_color = row.away_color %}
+            {% assign home_color = row.home_color %}
+            <td>{{ row.season }}</td>
+            <td>{{ row.week }}</td>
+            <td style="background-color: rgba(135, 207, 235, 0.332); width: 200px">{{ row.notes }}</td>
+            <td style="background-color:{{ away_color }}">{{ row.away_team }}</td>
+            <td style="background-color:{{ home_color }}">{{ row.home_team }}</td>
+            <td>{{ row.game_rating }}</td>
+          </tr>
         {% endfor %}
+      </tbody>
     </table>
-
-    <script>
-      const table = document.getElementById("NcaafGameRatings");
-      const rows = table.getElementsByTagName("tr");
-      updateWeeks();
-      updateTeams();
-      filterRecords();
-      table.style.display = "";
-    </script>   
   </body>
 </html>
