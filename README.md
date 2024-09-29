@@ -33,128 +33,133 @@ Everyone must consider these factors individually. For instance, if teams you fa
 ### stat_rating
 1. **Touchdowns rating:**
 
-   ![tds_rating](https://latex.codecogs.com/png.latex?\dpi{110}\text{tds_rating}=\min(10,\ \text{touchdown}))
+   <img src="https://latex.codecogs.com/png.latex?\dpi{110}\text{tds\_rating}=\min(10,\ \text{touchdown})" alt="tds_rating">
 
 2. **Sacks rating:**
 
-   ![sacks_rating](https://latex.codecogs.com/png.latex?\dpi{110}\text{sacks_rating}=\dfrac{\min(12,\ \text{sack})}{1.2})
+   <img src="https://latex.codecogs.com/png.latex?\dpi{110}\text{sacks\_rating}=\dfrac{\min(12,\ \text{sack})}{1.2}" alt="sacks_rating">
 
 3. **Interceptions rating:**
 
-   ![interceptions_rating](https://latex.codecogs.com/png.latex?\dpi{110}\text{interceptions_rating}=\dfrac{\min(7,\ \text{interception})}{0.7})
+   <img src="https://latex.codecogs.com/png.latex?\dpi{110}\text{interceptions\_rating}=\dfrac{\min(7,\ \text{interception})}{0.7}" alt="interceptions_rating">
 
 4. **Yards rating:**
 
-   ![yards_rating](https://latex.codecogs.com/png.latex?\dpi{110}\text{yards_rating}=\dfrac{\sqrt{\min\left(650,\ \max\left(0,\ \text{yards} - 350\right)\right)}}{\text{YARDS\_DIVIDER}})
+   <img src="https://latex.codecogs.com/png.latex?\dpi{110}\text{yards\_rating}=\dfrac{\sqrt{\min(650,\ \max(0,\ \text{yards}-350))}}{\text{YARDS\{DIVIDER\}}}" alt="yards_rating">
+
 
    Where  
-   ![YARDS_DIVIDER](https://latex.codecogs.com/png.latex?\dpi{110}\text{YARDS\_DIVIDER}=\dfrac{\sqrt{650}}{10})
+   <img src="https://latex.codecogs.com/png.latex?\dpi{110}\text{YARDS\_DIVIDER}=\dfrac{\sqrt{650}}{10}" alt="YARDS_DIVIDER">
 
 5. **Overall statistical rating, calculated from all previous ratings:**
 
-   ![stat_rating](https://latex.codecogs.com/png.latex?\dpi{110}\text{stat_rating}=0.3\times\text{tds_rating}+0.1\times\text{sacks_rating}+0.1\times\text{interceptions_rating}+0.5\times\text{yards_rating})
+   <img src="https://latex.codecogs.com/png.latex?\dpi{110}\text{stat\_rating}=0.3\times\text{tds\_rating}+0.1\times\text{sacks\_rating}+0.1\times\text{interceptions\_rating}+0.5\times\text{yards\_rating}" alt="stat_rating">
 
-### Separately, we calculate several ratings reflecting the game's excitement
+
+
+### Additional game excitement ratings
 1. **Efficiency rating:**
 
-   ![efficiency_rating](https://latex.codecogs.com/png.latex?\dpi{110}\text{efficiency_rating}=\dfrac{\sqrt{\text{scores\_sum}}}{\text{SCORES\_SUM\_DIVIDER}})
+   <img src="https://latex.codecogs.com/png.latex?\dpi{110}\text{efficiency\_rating}=\dfrac{\sqrt{\text{scores\_sum}}}{\text{SCORES\_SUM\_DIVIDER}}" alt="efficiency_rating">
 
    Where  
-   ![SCORES_SUM_DIVIDER](https://latex.codecogs.com/png.latex?\dpi{110}\text{SCORES\_SUM\_DIVIDER}=\dfrac{\sqrt{100}}{10})
+   <img src="https://latex.codecogs.com/png.latex?\dpi{110}\text{SCORES\_SUM\_DIVIDER}=\dfrac{\sqrt{100}}{10}" alt="SCORES_SUM_DIVIDER">
 
 2. **Score difference rating:**
 
-   ![score_diff_rating](https://latex.codecogs.com/png.latex?\dpi{110}\text{score_diff_rating}=\begin{cases}7.5,\text{if}\ \text{scores\_diff}=0\\\max\left(-10,\ \dfrac{20-\text{scores\_diff}}{\text{SCORE\_DIFF\_DIVIDER}}\right),\text{otherwise}\end{cases})
+   <img src="https://latex.codecogs.com/png.latex?\dpi{110}\text{score\_diff\_rating}=\begin{cases}7.5,&\text{if}\ \text{scores\_diff}=0\\\max\left(-10,\ \dfrac{20-\text{scores\_diff}}{\text{SCORE\_DIFF\_DIVIDER}}\right),&\text{otherwise}\end{cases}" alt="score_diff_rating">
 
    Where  
-   ![SCORE_DIFF_DIVIDER](https://latex.codecogs.com/png.latex?\dpi{110}\text{SCORE\_DIFF\_DIVIDER}=\dfrac{19}{10})
+   <img src="https://latex.codecogs.com/png.latex?\dpi{110}\text{SCORE\_DIFF\_DIVIDER}=\dfrac{19}{10}" alt="SCORE_DIFF_DIVIDER">
 
 3. **Win probability shifts rating:**
 
-   ![win_prob_shifts_rating](https://latex.codecogs.com/png.latex?\dpi{110}\text{win_prob_shifts_rating}=\min\left(10,\ \dfrac{\sqrt{\text{win\_prob\_shifts}}}{\text{WIN\_PROB\_SHIFTS\_DIVIDER}}\right))
+   <img src="https://latex.codecogs.com/png.latex?\dpi{110}\text{win\_prob\_shifts\_rating}=\min\left(10,\ \dfrac{\sqrt{\text{win\_prob\_shifts}}}{\text{WIN\_PROB\_SHIFTS\_DIVIDER}}\right)" alt="win_prob_shifts_rating">
 
    Where  
-   ![WIN_PROB_SHIFTS_DIVIDER](https://latex.codecogs.com/png.latex?\dpi{110}\text{WIN\_PROB\_SHIFTS\_DIVIDER}=\dfrac{\sqrt{40}}{10})
+   <img src="https://latex.codecogs.com/png.latex?\dpi{110}\text{WIN\_PROB\_SHIFTS\_DIVIDER}=\dfrac{\sqrt{40}}{10}" alt="WIN_PROB_SHIFTS_DIVIDER">
 
 4. **Maximum win chances difference rating:**
 
-   ![win_chances_max_diff_rating](https://latex.codecogs.com/png.latex?\dpi{110}\text{win_chances_max_diff_rating}=10\times\text{win_chances_max_diff})
+   <img src="https://latex.codecogs.com/png.latex?\dpi{110}\text{win\_chances\_max\_diff\_rating}=10\times\text{win\_chances\_max\_diff}" alt="win_chances_max_diff_rating">
 
 5. **Leader changes rating:**
 
-   ![leader_changes_rating](https://latex.codecogs.com/png.latex?\dpi{110}\text{leader_changes_rating}=\min(10,\ \text{leader_changes}))
+   <img src="https://latex.codecogs.com/png.latex?\dpi{110}\text{leader\_changes\_rating}=\min(10,\ \text{leader\_changes})" alt="leader_changes_rating">
 
 ### Overall game rating
 1. **First, calculate**
 
-   ![game_rating](https://latex.codecogs.com/png.latex?\dpi{110}\text{game_rating}=0.25\times\min\left(\text{efficiency_rating}+\text{overtime},\ 10\right)+0.25\times\text{win_prob_shifts_rating}+0.2\times\text{score_diff_rating}+0.1\times\text{win_chances_max_diff_rating}+0.1\times\text{stat_rating}+0.1\times\text{leader_changes_rating})
+   <img src="https://latex.codecogs.com/png.latex?\dpi{110}\text{game\_rating}=0.25\times\min\left(\text{efficiency\_rating}+\text{overtime},\ 10\right)+0.25\times\text{win\_prob\_shifts\_rating}+0.2\times\text{score\_diff\_rating}+0.1\times\text{win\_chances\_max\_diff\_rating}+0.1\times\text{stat\_rating}+0.1\times\text{leader\_changes\_rating}" alt="game_rating">
 
 2. **Adjustment of the overall game rating:**
 
    If  
-   ![tds_rating](https://latex.codecogs.com/png.latex?\dpi{110}\text{tds_rating}=0),  
+   <img src="https://latex.codecogs.com/png.latex?\dpi{110}\text{tds\_rating}=0" alt="tds_rating">
+
    then:
 
-   ![game_rating_adjusted](https://latex.codecogs.com/png.latex?\dpi{110}\text{game_rating}=\max(0,\ \text{game_rating}-2))
+   <img src="https://latex.codecogs.com/png.latex?\dpi{110}\text{game\_rating}=\max(0,\ \text{game\_rating}-2)" alt="game_rating_adjusted">
 
 ## NCAAF
 ### stat_rating
 1. **Touchdowns rating:**
 
-   ![tds_rating](https://latex.codecogs.com/png.latex?\dpi{110}\text{tds_rating}=\min(10,\ \max(0,\ \text{totalTDs}-4)))
+   <img src="https://latex.codecogs.com/png.latex?\dpi{110}\text{tds\_rating}=\min(10,\ \max(0,\ \text{totalTDs}-4))" alt="tds_rating">
 
 2. **Sacks rating:**
 
-   ![sacks_rating](https://latex.codecogs.com/png.latex?\dpi{110}\text{sacks_rating}=\dfrac{\min(12,\ \text{sacks})}{1.2})
+   <img src="https://latex.codecogs.com/png.latex?\dpi{110}\text{sacks\_rating}=\dfrac{\min(12,\ \text{sacks})}{1.2}" alt="sacks_rating">
 
 3. **Interceptions rating:**
 
-   ![interceptions_rating](https://latex.codecogs.com/png.latex?\dpi{110}\text{interceptions_rating}=\dfrac{\min(5,\ \text{interceptions})}{0.5})
+   <img src="https://latex.codecogs.com/png.latex?\dpi{110}\text{interceptions\_rating}=\dfrac{\min(5,\ \text{interceptions})}{0.5}" alt="interceptions_rating">
 
 4. **Yards rating:**
 
-   ![yards_rating](https://latex.codecogs.com/png.latex?\dpi{110}\text{yards_rating}=\dfrac{\sqrt{\min(700,\ \max(0,\ \text{totalYards}-500))}}{\text{YARDS_DIVIDER}})
+   <img src="https://latex.codecogs.com/png.latex?\dpi{110}\text{yards\_rating}=\dfrac{\sqrt{\min(700,\ \max(0,\ \text{totalYards}-500))}}{\text{YARDS\_DIVIDER}}" alt="yards_rating">
 
    Where  
-   ![YARDS_DIVIDER](https://latex.codecogs.com/png.latex?\dpi{110}\text{YARDS_DIVIDER}=\dfrac{\sqrt{700}}{10})
+   <img src="https://latex.codecogs.com/png.latex?\dpi{110}\text{YARDS\_DIVIDER}=\dfrac{\sqrt{700}}{10}" alt="YARDS_DIVIDER">
 
 5. **Overall statistical rating, calculated from all previous ratings:**
 
-   ![stat_rating](https://latex.codecogs.com/png.latex?\dpi{110}\text{stat_rating}=0.1\times\text{tds_rating}+0.1\times\text{sacks_rating}+0.1\times\text{interceptions_rating}+0.7\times\text{yards_rating})
+   <img src="https://latex.codecogs.com/png.latex?\dpi{110}\text{stat\_rating}=0.1\times\text{tds\_rating}+0.1\times\text{sacks\_rating}+0.1\times\text{interceptions\_rating}+0.7\times\text{yards\_rating}" alt="stat_rating">
 
 ### Additional game excitement ratings
 1. **Efficiency rating:**
 
-   ![efficiency_rating](https://latex.codecogs.com/png.latex?\dpi{110}\text{efficiency_rating}=\dfrac{\sqrt{\text{scores_sum}}}{\text{SCORES_SUM_DIVIDER}})
+   <img src="https://latex.codecogs.com/png.latex?\dpi{110}\text{efficiency\_rating}=\dfrac{\sqrt{\text{scores\_sum}}}{\text{SCORES\_SUM\_DIVIDER}}" alt="efficiency_rating">
 
    Where  
-   ![SCORES_SUM_DIVIDER](https://latex.codecogs.com/png.latex?\dpi{110}\text{SCORES_SUM_DIVIDER}=\dfrac{\sqrt{144}}{10})
+   <img src="https://latex.codecogs.com/png.latex?\dpi{110}\text{SCORES\_SUM\_DIVIDER}=\dfrac{\sqrt{144}}{10}" alt="SCORES_SUM_DIVIDER">
 
 2. **Overtimes rating:**
 
-   ![overtimes_rating](https://latex.codecogs.com/png.latex?\dpi{110}\text{overtimes_rating}=\begin{cases}2,&\text{if}\ \text{number_of_quarters}>9\\1,&\text{if}\ \text{number_of_quarters}>4\\0,&\text{otherwise}\end{cases})
+   <img src="https://latex.codecogs.com/png.latex?\dpi{110}\text{overtimes\_rating}=\begin{cases}2,&\text{if}\ \text{number\_of\_quarters}>9\\1,&\text{if}\ \text{number\_of\_quarters}>4\\0,&\text{otherwise}\end{cases}" alt="overtimes_rating">
 
 3. **Excitement rating:**
 
-   ![excitement_rating](https://latex.codecogs.com/png.latex?\dpi{110}\text{excitement_rating}=\begin{cases}\dfrac{\log(\max(\text{excitement_index},1),4)}{\text{EXCIT_IND_DIVIDER}},&\text{if}\ \text{excitement_index}<10\\10,&\text{otherwise}\end{cases})
+   <img src="https://latex.codecogs.com/png.latex?\dpi{110}\text{excitement\_rating}=\begin{cases}\dfrac{\log(\max(\text{excitement\_index},1),4)}{\text{EXCIT\_IND\_DIVIDER}},&\text{if}\ \text{excitement\_index}<10\\10,&\text{otherwise}\end{cases}" alt="excitement_rating">
 
    Where  
-   ![EXCIT_IND_DIVIDER](https://latex.codecogs.com/png.latex?\dpi{110}\text{EXCIT_IND_DIVIDER}=\dfrac{\log(10,4)}{10})
+   <img src="https://latex.codecogs.com/png.latex?\dpi{110}\text{EXCIT\_IND\_DIVIDER}=\dfrac{\log(10,4)}{10}" alt="EXCIT_IND_DIVIDER">
 
 4. **Score difference rating:**
 
-   ![score_diff_rating](https://latex.codecogs.com/png.latex?\dpi{110}\text{score_diff_rating}=\begin{cases}0,&\text{if}\ \text{scores_diff}>29\\\dfrac{30-\text{scores_diff}}{\text{SCORE_DIFF_DIVIDER}},&\text{otherwise}\end{cases})
+   <img src="https://latex.codecogs.com/png.latex?\dpi{110}\text{score\_diff\_rating}=\begin{cases}0,&\text{if}\ \text{scores\_diff}>29\\\dfrac{30-\text{scores\_diff}}{\text{SCORE\_DIFF\_DIVIDER}},&\text{otherwise}\end{cases}" alt="score_diff_rating">
 
    Where  
-   ![SCORE_DIFF_DIVIDER](https://latex.codecogs.com/png.latex?\dpi{110}\text{SCORE_DIFF_DIVIDER}=\dfrac{29}{10})
+   <img src="https://latex.codecogs.com/png.latex?\dpi{110}\text{SCORE\_DIFF\_DIVIDER}=\dfrac{29}{10}" alt="SCORE_DIFF_DIVIDER">
 
 5. **Leader changes rating:**
 
-   ![leader_changes_rating](https://latex.codecogs.com/png.latex?\dpi{110}\text{leader_changes_rating}=\begin{cases}10,&\text{if}\ \text{score_changes}>4\\9,&\text{if}\ \text{score_changes}=4\\6,&\text{if}\ \text{score_changes}=3\\3,&\text{if}\ \text{score_changes}=2\\0,&\text{otherwise}\end{cases})
+   <img src="https://latex.codecogs.com/png.latex?\dpi{110}\text{leader\_changes\_rating}=\begin{cases}10,&\text{if}\ \text{score\_changes}>4\\9,&\text{if}\ \text{score\_changes}=4\\6,&\text{if}\ \text{score\_changes}=3\\3,&\text{if}\ \text{score\_changes}=2\\0,&\text{otherwise}\end{cases}" alt="leader_changes_rating">
 
 ### Overall game rating
 
-   ![game_rating](https://latex.codecogs.com/png.latex?\dpi{110}\text{game_rating}=0.25\times\min\left(\text{efficiency_rating}+\text{overtimes_rating},10\right)+0.25\times\text{score_diff_rating}+0.25\times\text{stat_rating}+0.2\times\text{excitement_rating}+0.05\times\text{leader_changes_rating})
+   <img src="https://latex.codecogs.com/png.latex?\dpi{110}\text{game\_rating}=0.25\times\min\left(\text{efficiency\_rating}+\text{overtimes\_rating},10\right)+0.25\times\text{score\_diff\_rating}+0.25\times\text{stat\_rating}+0.2\times\text{excitement\_rating}+0.05\times\text{leader\_changes\_rating}" alt="game_rating">
+
 
 # When do game ratings update?
 - NFL ratings update daily at ~6:30 and ~8:30 UTC, with an additional update at ~4:30 UTC on Monday mornings.
