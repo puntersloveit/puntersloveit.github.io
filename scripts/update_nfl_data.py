@@ -169,6 +169,8 @@ rating_df[['away_color',
     .sort_values('game_rating', ascending=False)\
         .to_csv('_data/nfl_game_ratings.csv', index=False)
 
+rating_df.to_csv('_data/nfl_game_ratings_extended.csv', index=False)
+
 unique_seasons = []
 for y in range(rating_df.season.max(), rating_df.season.min()-1, -1):
     weeks = rating_df.query(f'season == {y}').week.unique().tolist()

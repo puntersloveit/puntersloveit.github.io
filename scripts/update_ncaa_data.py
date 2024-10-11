@@ -350,6 +350,8 @@ game_ratings[['away_color',
     .sort_values('game_rating', ascending=False)\
         .to_csv('_data/ncaa_game_ratings.csv', index=False)
 
+game_ratings.to_csv('_data/ncaa_game_ratings_extended.csv', index=False)
+
 unique_seasons = []
 for y in range(game_ratings.season.max(), game_ratings.season.min()-1, -1):
     weeks = game_ratings.query(f'season == {y}').week.unique().tolist()
