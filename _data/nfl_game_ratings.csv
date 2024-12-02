@@ -5401,1341 +5401,1342 @@ away_color,home_color,season,week,away_team,home_team,game_rating
 #947373,#3f728c,2022,11,Washington Commanders,Houston Texans,4.14
 #5f72aa,#b49fa4,1999,5,New York Giants,Arizona Cardinals,4.14
 #c0999f,#376ea6,2017,7,Atlanta Falcons,New England Patriots,4.14
+#36a283,#fcfcfc,2009,4,New York Jets,New Orleans Saints,4.14
 #376ea6,#847fa4,2003,8,Denver Broncos,Baltimore Ravens,4.14
-#376ea6,#c0999f,2017,10,Dallas Cowboys,Atlanta Falcons,4.14
 #a09ca6,#3ba6b2,2004,Playoff,Minnesota Vikings,Philadelphia Eagles,4.14
+#3ba6b2,#e8cac0,2016,13,Philadelphia Eagles,Cincinnati Bengals,4.14
+#376ea6,#c0999f,2017,10,Dallas Cowboys,Atlanta Falcons,4.14
 #7cb4d3,#d07373,2009,16,Detroit Lions,San Francisco 49ers,4.14
 #5f72aa,#c0999f,2007,6,New York Giants,Atlanta Falcons,4.14
-#3ba6b2,#e8cac0,2016,13,Philadelphia Eagles,Cincinnati Bengals,4.14
-#36a283,#fcfcfc,2009,4,New York Jets,New Orleans Saints,4.14
-#e6beb3,#3ba6b2,2016,1,Cleveland Browns,Philadelphia Eagles,4.13
 #6288cb,#376ea6,2002,16,Los Angeles Rams,Seattle Seahawks,4.13
-#376ea6,#8bbed8,2008,15,Denver Broncos,Carolina Panthers,4.13
 #c0999f,#3ba6b2,2003,1,Tampa Bay Buccaneers,Philadelphia Eagles,4.13
+#4db3c4,#376ea6,2019,12,Jacksonville Jaguars,Tennessee Titans,4.13
+#36a283,#376ea6,2022,17,New York Jets,Seattle Seahawks,4.13
 #6288cb,#787878,2015,5,Los Angeles Rams,Green Bay Packers,4.13
 #e6beb3,#376ea6,2019,8,Cleveland Browns,New England Patriots,4.13
-#376ea6,#8bbed8,2003,7,Tennessee Titans,Carolina Panthers,4.13
-#4db3c4,#376ea6,2019,12,Jacksonville Jaguars,Tennessee Titans,4.13
-#3e77ba,#376ea6,2017,4,Indianapolis Colts,Seattle Seahawks,4.13
-#36a283,#376ea6,2022,17,New York Jets,Seattle Seahawks,4.13
+#e6beb3,#3ba6b2,2016,1,Cleveland Browns,Philadelphia Eagles,4.13
+#376ea6,#8bbed8,2008,15,Denver Broncos,Carolina Panthers,4.13
 #3ba6b2,#376ea6,2008,9,Philadelphia Eagles,Seattle Seahawks,4.13
-#c0999f,#3ba6b2,2001,Playoff,Tampa Bay Buccaneers,Philadelphia Eagles,4.12
+#376ea6,#8bbed8,2003,7,Tennessee Titans,Carolina Panthers,4.13
+#3e77ba,#376ea6,2017,4,Indianapolis Colts,Seattle Seahawks,4.13
 #8bbed8,#64c5cc,2021,12,Carolina Panthers,Miami Dolphins,4.12
+#c0999f,#3ba6b2,2001,Playoff,Tampa Bay Buccaneers,Philadelphia Eagles,4.12
 #5e6470,#5f72aa,2010,4,Chicago Bears,New York Giants,4.12
 #5f72aa,#dababf,2013,4,New York Giants,Kansas City Chiefs,4.12
-#c0999f,#787878,2002,Playoff,Atlanta Falcons,Green Bay Packers,4.12
 #5e6470,#36a283,2006,11,Chicago Bears,New York Jets,4.12
+#c0999f,#787878,2002,Playoff,Atlanta Falcons,Green Bay Packers,4.12
 #64c5cc,#5d84c9,2023,4,Miami Dolphins,Buffalo Bills,4.12
-#847fa4,#88b9d8,2007,12,Baltimore Ravens,Los Angeles Chargers,4.11
 #3e77ba,#4db3c4,2012,10,Indianapolis Colts,Jacksonville Jaguars,4.11
+#847fa4,#88b9d8,2007,12,Baltimore Ravens,Los Angeles Chargers,4.11
+#d07373,#a09ca6,1999,7,San Francisco 49ers,Minnesota Vikings,4.11
+#64c5cc,#e8cac0,2016,4,Miami Dolphins,Cincinnati Bengals,4.11
+#dababf,#a09ca6,2003,16,Kansas City Chiefs,Minnesota Vikings,4.11
+#a09ca6,#376ea6,2013,11,Minnesota Vikings,Seattle Seahawks,4.11
 #a09ca6,#fcfcfc,2014,3,Minnesota Vikings,New Orleans Saints,4.11
 #88b9d8,#376ea6,2009,16,Los Angeles Chargers,Tennessee Titans,4.11
-#dababf,#a09ca6,2003,16,Kansas City Chiefs,Minnesota Vikings,4.11
-#d07373,#a09ca6,1999,7,San Francisco 49ers,Minnesota Vikings,4.11
-#a09ca6,#376ea6,2013,11,Minnesota Vikings,Seattle Seahawks,4.11
-#64c5cc,#e8cac0,2016,4,Miami Dolphins,Cincinnati Bengals,4.11
-#64c5cc,#5d84c9,2008,14,Miami Dolphins,Buffalo Bills,4.1
-#4c4c4c,#847fa4,2017,4,Pittsburgh Steelers,Baltimore Ravens,4.1
-#376ea6,#e6beb3,2019,1,Tennessee Titans,Cleveland Browns,4.1
-#e6beb3,#5f72aa,2004,3,Cleveland Browns,New York Giants,4.1
-#36a283,#376ea6,2005,13,New York Jets,New England Patriots,4.1
-#5f72aa,#787878,2010,16,New York Giants,Green Bay Packers,4.1
-#787878,#36a283,2002,17,Green Bay Packers,New York Jets,4.1
-#fcfcfc,#c0999f,2005,17,New Orleans Saints,Tampa Bay Buccaneers,4.1
-#5d84c9,#a09ca6,2018,3,Buffalo Bills,Minnesota Vikings,4.1
 #8bbed8,#fcfcfc,2005,15,Carolina Panthers,New Orleans Saints,4.1
-#6288cb,#b49fa4,2023,12,Los Angeles Rams,Arizona Cardinals,4.09
-#787878,#8bbed8,2001,3,Green Bay Packers,Carolina Panthers,4.09
-#787878,#7cb4d3,2005,1,Green Bay Packers,Detroit Lions,4.09
-#4c4c4c,#847fa4,2004,2,Pittsburgh Steelers,Baltimore Ravens,4.09
+#64c5cc,#5d84c9,2008,14,Miami Dolphins,Buffalo Bills,4.1
+#5d84c9,#a09ca6,2018,3,Buffalo Bills,Minnesota Vikings,4.1
+#376ea6,#e6beb3,2019,1,Tennessee Titans,Cleveland Browns,4.1
+#36a283,#376ea6,2005,13,New York Jets,New England Patriots,4.1
+#e6beb3,#5f72aa,2004,3,Cleveland Browns,New York Giants,4.1
+#5f72aa,#787878,2010,16,New York Giants,Green Bay Packers,4.1
+#fcfcfc,#c0999f,2005,17,New Orleans Saints,Tampa Bay Buccaneers,4.1
+#4c4c4c,#847fa4,2017,4,Pittsburgh Steelers,Baltimore Ravens,4.1
+#787878,#36a283,2002,17,Green Bay Packers,New York Jets,4.1
 #4c4c4c,#88b9d8,2014,11,Las Vegas Raiders,Los Angeles Chargers,4.09
+#6288cb,#b49fa4,2023,12,Los Angeles Rams,Arizona Cardinals,4.09
+#4c4c4c,#847fa4,2004,2,Pittsburgh Steelers,Baltimore Ravens,4.09
+#787878,#7cb4d3,2005,1,Green Bay Packers,Detroit Lions,4.09
 #dababf,#88b9d8,2006,15,Kansas City Chiefs,Los Angeles Chargers,4.09
+#787878,#8bbed8,2001,3,Green Bay Packers,Carolina Panthers,4.09
 #4c4c4c,#376ea6,2016,Playoff,Pittsburgh Steelers,New England Patriots,4.08
-#c0999f,#8bbed8,2008,4,Atlanta Falcons,Carolina Panthers,4.08
-#5e6470,#6288cb,2020,7,Chicago Bears,Los Angeles Rams,4.08
+#c0999f,#b49fa4,2001,3,Atlanta Falcons,Arizona Cardinals,4.08
+#d07373,#6288cb,1999,5,San Francisco 49ers,Los Angeles Rams,4.08
 #8bbed8,#3f728c,2021,3,Carolina Panthers,Houston Texans,4.08
 #376ea6,#376ea6,2002,11,Denver Broncos,Seattle Seahawks,4.08
 #64c5cc,#36a283,2011,6,Miami Dolphins,New York Jets,4.08
-#c0999f,#b49fa4,2001,3,Atlanta Falcons,Arizona Cardinals,4.08
 #3e77ba,#376ea6,2013,Playoff,Indianapolis Colts,New England Patriots,4.08
 #7cb4d3,#4db3c4,2020,6,Detroit Lions,Jacksonville Jaguars,4.08
-#d07373,#6288cb,1999,5,San Francisco 49ers,Los Angeles Rams,4.08
-#376ea6,#4c4c4c,2012,14,Denver Broncos,Las Vegas Raiders,4.07
-#dababf,#376ea6,2001,4,Kansas City Chiefs,Denver Broncos,4.07
-#e8cac0,#36a283,2022,3,Cincinnati Bengals,New York Jets,4.07
-#787878,#6288cb,2009,3,Green Bay Packers,Los Angeles Rams,4.07
-#fcfcfc,#376ea6,2012,8,New Orleans Saints,Denver Broncos,4.07
-#e8cac0,#4db3c4,1999,17,Cincinnati Bengals,Jacksonville Jaguars,4.07
-#dababf,#4c4c4c,2013,15,Kansas City Chiefs,Las Vegas Raiders,4.07
-#847fa4,#947373,2020,4,Baltimore Ravens,Washington Commanders,4.07
+#c0999f,#8bbed8,2008,4,Atlanta Falcons,Carolina Panthers,4.08
+#5e6470,#6288cb,2020,7,Chicago Bears,Los Angeles Rams,4.08
 #376ea6,#88b9d8,2010,11,Denver Broncos,Los Angeles Chargers,4.07
 #88b9d8,#e6beb3,2018,6,Los Angeles Chargers,Cleveland Browns,4.07
+#947373,#787878,2013,2,Washington Commanders,Green Bay Packers,4.07
+#376ea6,#4c4c4c,2012,14,Denver Broncos,Las Vegas Raiders,4.07
+#e8cac0,#36a283,2022,3,Cincinnati Bengals,New York Jets,4.07
 #64c5cc,#88b9d8,2000,11,Miami Dolphins,Los Angeles Chargers,4.07
 #88b9d8,#4c4c4c,2018,10,Los Angeles Chargers,Las Vegas Raiders,4.07
-#4c4c4c,#8bbed8,2012,16,Las Vegas Raiders,Carolina Panthers,4.07
-#947373,#787878,2013,2,Washington Commanders,Green Bay Packers,4.07
 #376ea6,#376ea6,2022,17,Dallas Cowboys,Tennessee Titans,4.07
-#64c5cc,#376ea6,1999,12,Miami Dolphins,Dallas Cowboys,4.06
+#4c4c4c,#8bbed8,2012,16,Las Vegas Raiders,Carolina Panthers,4.07
+#787878,#6288cb,2009,3,Green Bay Packers,Los Angeles Rams,4.07
+#dababf,#376ea6,2001,4,Kansas City Chiefs,Denver Broncos,4.07
+#e8cac0,#4db3c4,1999,17,Cincinnati Bengals,Jacksonville Jaguars,4.07
+#847fa4,#947373,2020,4,Baltimore Ravens,Washington Commanders,4.07
+#fcfcfc,#376ea6,2012,8,New Orleans Saints,Denver Broncos,4.07
+#dababf,#4c4c4c,2013,15,Kansas City Chiefs,Las Vegas Raiders,4.07
+#5e6470,#8bbed8,2010,5,Chicago Bears,Carolina Panthers,4.06
 #c0999f,#4db3c4,2019,13,Tampa Bay Buccaneers,Jacksonville Jaguars,4.06
 #7cb4d3,#376ea6,2021,17,Detroit Lions,Seattle Seahawks,4.06
-#787878,#5e6470,2006,17,Green Bay Packers,Chicago Bears,4.06
+#64c5cc,#376ea6,1999,12,Miami Dolphins,Dallas Cowboys,4.06
 #787878,#3ba6b2,2006,4,Green Bay Packers,Philadelphia Eagles,4.06
-#e6beb3,#376ea6,2009,2,Cleveland Browns,Denver Broncos,4.06
 #3e77ba,#4db3c4,2015,14,Indianapolis Colts,Jacksonville Jaguars,4.06
 #947373,#4c4c4c,2000,16,Washington Commanders,Pittsburgh Steelers,4.06
-#5e6470,#8bbed8,2010,5,Chicago Bears,Carolina Panthers,4.06
-#fcfcfc,#c0999f,2003,7,New Orleans Saints,Atlanta Falcons,4.06
+#e6beb3,#376ea6,2009,2,Cleveland Browns,Denver Broncos,4.06
 #6288cb,#3f728c,2013,6,Los Angeles Rams,Houston Texans,4.06
-#376ea6,#64c5cc,2017,13,Denver Broncos,Miami Dolphins,4.05
+#787878,#5e6470,2006,17,Green Bay Packers,Chicago Bears,4.06
+#fcfcfc,#c0999f,2003,7,New Orleans Saints,Atlanta Falcons,4.06
 #376ea6,#376ea6,2012,2,Dallas Cowboys,Seattle Seahawks,4.05
-#36a283,#847fa4,2013,12,New York Jets,Baltimore Ravens,4.05
-#e6beb3,#4c4c4c,2001,17,Cleveland Browns,Pittsburgh Steelers,4.05
-#5f72aa,#fcfcfc,2011,12,New York Giants,New Orleans Saints,4.05
-#b49fa4,#7cb4d3,2015,5,Arizona Cardinals,Detroit Lions,4.05
-#3e77ba,#5d84c9,2021,11,Indianapolis Colts,Buffalo Bills,4.05
-#e6beb3,#4db3c4,1999,6,Cleveland Browns,Jacksonville Jaguars,4.05
 #fcfcfc,#5e6470,2006,Playoff,New Orleans Saints,Chicago Bears,4.05
-#e8cac0,#376ea6,2011,8,Cincinnati Bengals,Seattle Seahawks,4.04
-#64c5cc,#dababf,2017,16,Miami Dolphins,Kansas City Chiefs,4.04
-#3f728c,#947373,2002,16,Houston Texans,Washington Commanders,4.04
-#3e77ba,#376ea6,2004,17,Indianapolis Colts,Denver Broncos,4.04
-#7cb4d3,#4db3c4,2012,9,Detroit Lions,Jacksonville Jaguars,4.04
-#e6beb3,#847fa4,2016,10,Cleveland Browns,Baltimore Ravens,4.04
-#7cb4d3,#a09ca6,2018,9,Detroit Lions,Minnesota Vikings,4.04
-#a09ca6,#787878,2022,17,Minnesota Vikings,Green Bay Packers,4.04
+#b49fa4,#7cb4d3,2015,5,Arizona Cardinals,Detroit Lions,4.05
+#5f72aa,#fcfcfc,2011,12,New York Giants,New Orleans Saints,4.05
+#e6beb3,#4c4c4c,2001,17,Cleveland Browns,Pittsburgh Steelers,4.05
+#3e77ba,#5d84c9,2021,11,Indianapolis Colts,Buffalo Bills,4.05
+#376ea6,#64c5cc,2017,13,Denver Broncos,Miami Dolphins,4.05
+#36a283,#847fa4,2013,12,New York Jets,Baltimore Ravens,4.05
+#e6beb3,#4db3c4,1999,6,Cleveland Browns,Jacksonville Jaguars,4.05
 #7cb4d3,#787878,2013,5,Detroit Lions,Green Bay Packers,4.04
-#947373,#5d84c9,2003,7,Washington Commanders,Buffalo Bills,4.04
+#3e77ba,#376ea6,2004,17,Indianapolis Colts,Denver Broncos,4.04
+#7cb4d3,#a09ca6,2018,9,Detroit Lions,Minnesota Vikings,4.04
+#3f728c,#947373,2002,16,Houston Texans,Washington Commanders,4.04
+#64c5cc,#dababf,2017,16,Miami Dolphins,Kansas City Chiefs,4.04
+#7cb4d3,#4db3c4,2012,9,Detroit Lions,Jacksonville Jaguars,4.04
 #c0999f,#3ba6b2,2000,Playoff,Tampa Bay Buccaneers,Philadelphia Eagles,4.04
-#8bbed8,#c0999f,2021,18,Carolina Panthers,Tampa Bay Buccaneers,4.04
+#947373,#5d84c9,2003,7,Washington Commanders,Buffalo Bills,4.04
+#a09ca6,#787878,2022,17,Minnesota Vikings,Green Bay Packers,4.04
+#e8cac0,#376ea6,2011,8,Cincinnati Bengals,Seattle Seahawks,4.04
 #a09ca6,#787878,2012,Playoff,Minnesota Vikings,Green Bay Packers,4.04
+#e6beb3,#847fa4,2016,10,Cleveland Browns,Baltimore Ravens,4.04
+#8bbed8,#c0999f,2021,18,Carolina Panthers,Tampa Bay Buccaneers,4.04
 #e6beb3,#3f728c,2023,Playoff,Cleveland Browns,Houston Texans,4.03
 #376ea6,#376ea6,2002,15,New England Patriots,Tennessee Titans,4.03
 #36a283,#5e6470,2018,8,New York Jets,Chicago Bears,4.03
-#c0999f,#376ea6,2022,1,Tampa Bay Buccaneers,Dallas Cowboys,4.03
-#5f72aa,#3ba6b2,2009,8,New York Giants,Philadelphia Eagles,4.03
-#a09ca6,#3ba6b2,2022,2,Minnesota Vikings,Philadelphia Eagles,4.03
 #8bbed8,#fcfcfc,2011,17,Carolina Panthers,New Orleans Saints,4.03
-#4db3c4,#4c4c4c,1999,4,Jacksonville Jaguars,Pittsburgh Steelers,4.03
 #5f72aa,#fcfcfc,2005,2,New York Giants,New Orleans Saints,4.03
 #947373,#4c4c4c,2012,8,Washington Commanders,Pittsburgh Steelers,4.03
-#5e6470,#e8cac0,2017,14,Chicago Bears,Cincinnati Bengals,4.02
-#b49fa4,#787878,2006,8,Arizona Cardinals,Green Bay Packers,4.02
+#c0999f,#376ea6,2022,1,Tampa Bay Buccaneers,Dallas Cowboys,4.03
+#a09ca6,#3ba6b2,2022,2,Minnesota Vikings,Philadelphia Eagles,4.03
+#4db3c4,#4c4c4c,1999,4,Jacksonville Jaguars,Pittsburgh Steelers,4.03
+#5f72aa,#3ba6b2,2009,8,New York Giants,Philadelphia Eagles,4.03
 #dababf,#376ea6,2006,2,Kansas City Chiefs,Denver Broncos,4.02
-#3ba6b2,#b49fa4,2000,7,Philadelphia Eagles,Arizona Cardinals,4.02
-#5f72aa,#64c5cc,2023,5,New York Giants,Miami Dolphins,4.02
+#b49fa4,#787878,2006,8,Arizona Cardinals,Green Bay Packers,4.02
 #e6beb3,#3f728c,2018,13,Cleveland Browns,Houston Texans,4.02
+#5f72aa,#64c5cc,2023,5,New York Giants,Miami Dolphins,4.02
+#3ba6b2,#b49fa4,2000,7,Philadelphia Eagles,Arizona Cardinals,4.02
+#5e6470,#e8cac0,2017,14,Chicago Bears,Cincinnati Bengals,4.02
 #d07373,#fcfcfc,1999,10,San Francisco 49ers,New Orleans Saints,4.02
-#e6beb3,#5f72aa,2020,15,Cleveland Browns,New York Giants,4.01
-#e6beb3,#d07373,2011,8,Cleveland Browns,San Francisco 49ers,4.01
-#6288cb,#8bbed8,2004,14,Los Angeles Rams,Carolina Panthers,4.01
-#7cb4d3,#b49fa4,2012,15,Detroit Lions,Arizona Cardinals,4.01
-#376ea6,#3e77ba,2001,17,Denver Broncos,Indianapolis Colts,4.01
-#fcfcfc,#8bbed8,2021,2,New Orleans Saints,Carolina Panthers,4.01
+#3f728c,#4c4c4c,2014,2,Houston Texans,Las Vegas Raiders,4.01
+#376ea6,#3ba6b2,2014,12,Tennessee Titans,Philadelphia Eagles,4.01
 #376ea6,#8bbed8,2021,9,New England Patriots,Carolina Panthers,4.01
 #3f728c,#36a283,2004,13,Houston Texans,New York Jets,4.01
-#3f728c,#4c4c4c,2014,2,Houston Texans,Las Vegas Raiders,4.01
-#4c4c4c,#376ea6,2002,10,Las Vegas Raiders,Denver Broncos,4.01
-#376ea6,#3ba6b2,2014,12,Tennessee Titans,Philadelphia Eagles,4.01
-#3f728c,#376ea6,2016,7,Houston Texans,Denver Broncos,4.01
-#8bbed8,#7cb4d3,2023,5,Carolina Panthers,Detroit Lions,4.01
+#6288cb,#8bbed8,2004,14,Los Angeles Rams,Carolina Panthers,4.01
+#7cb4d3,#b49fa4,2012,15,Detroit Lions,Arizona Cardinals,4.01
 #787878,#7cb4d3,2009,12,Green Bay Packers,Detroit Lions,4.01
-#e6beb3,#3e77ba,2005,3,Cleveland Browns,Indianapolis Colts,4.0
-#5e6470,#b49fa4,2024,9,Chicago Bears,Arizona Cardinals,4.0
-#4c4c4c,#e6beb3,2014,6,Pittsburgh Steelers,Cleveland Browns,4.0
-#6288cb,#8bbed8,2013,7,Los Angeles Rams,Carolina Panthers,4.0
-#376ea6,#c0999f,2010,16,Seattle Seahawks,Tampa Bay Buccaneers,4.0
-#6288cb,#36a283,2001,6,Los Angeles Rams,New York Jets,4.0
-#36a283,#5d84c9,2013,11,New York Jets,Buffalo Bills,4.0
-#3f728c,#376ea6,2012,13,Houston Texans,Tennessee Titans,4.0
-#5e6470,#36a283,2022,12,Chicago Bears,New York Jets,4.0
-#36a283,#376ea6,2012,10,New York Jets,Seattle Seahawks,4.0
+#fcfcfc,#8bbed8,2021,2,New Orleans Saints,Carolina Panthers,4.01
+#8bbed8,#7cb4d3,2023,5,Carolina Panthers,Detroit Lions,4.01
+#376ea6,#3e77ba,2001,17,Denver Broncos,Indianapolis Colts,4.01
+#4c4c4c,#376ea6,2002,10,Las Vegas Raiders,Denver Broncos,4.01
+#e6beb3,#d07373,2011,8,Cleveland Browns,San Francisco 49ers,4.01
+#e6beb3,#5f72aa,2020,15,Cleveland Browns,New York Giants,4.01
+#3f728c,#376ea6,2016,7,Houston Texans,Denver Broncos,4.01
+#a09ca6,#3e77ba,2000,17,Minnesota Vikings,Indianapolis Colts,4.0
 #e8cac0,#e6beb3,2016,14,Cincinnati Bengals,Cleveland Browns,4.0
+#e6beb3,#3e77ba,2005,3,Cleveland Browns,Indianapolis Colts,4.0
 #64c5cc,#e6beb3,2019,12,Miami Dolphins,Cleveland Browns,4.0
+#36a283,#376ea6,2012,10,New York Jets,Seattle Seahawks,4.0
+#3f728c,#376ea6,2012,13,Houston Texans,Tennessee Titans,4.0
+#36a283,#5d84c9,2013,11,New York Jets,Buffalo Bills,4.0
+#5e6470,#b49fa4,2024,9,Chicago Bears,Arizona Cardinals,4.0
+#6288cb,#36a283,2001,6,Los Angeles Rams,New York Jets,4.0
+#376ea6,#c0999f,2010,16,Seattle Seahawks,Tampa Bay Buccaneers,4.0
+#6288cb,#8bbed8,2013,7,Los Angeles Rams,Carolina Panthers,4.0
+#847fa4,#dababf,2010,Playoff,Baltimore Ravens,Kansas City Chiefs,4.0
 #376ea6,#376ea6,2018,10,New England Patriots,Tennessee Titans,4.0
 #c0999f,#7cb4d3,2019,15,Tampa Bay Buccaneers,Detroit Lions,4.0
-#847fa4,#dababf,2010,Playoff,Baltimore Ravens,Kansas City Chiefs,4.0
-#a09ca6,#3e77ba,2000,17,Minnesota Vikings,Indianapolis Colts,4.0
-#d07373,#88b9d8,2000,14,San Francisco 49ers,Los Angeles Chargers,3.99
-#5f72aa,#376ea6,2009,12,New York Giants,Denver Broncos,3.99
-#e8cac0,#376ea6,2000,11,Cincinnati Bengals,Dallas Cowboys,3.99
-#4c4c4c,#5d84c9,2023,Playoff,Pittsburgh Steelers,Buffalo Bills,3.99
-#5e6470,#787878,2022,2,Chicago Bears,Green Bay Packers,3.99
+#4c4c4c,#e6beb3,2014,6,Pittsburgh Steelers,Cleveland Browns,4.0
+#5e6470,#36a283,2022,12,Chicago Bears,New York Jets,4.0
 #64c5cc,#7cb4d3,2000,10,Miami Dolphins,Detroit Lions,3.99
 #5f72aa,#d07373,2023,3,New York Giants,San Francisco 49ers,3.99
+#5e6470,#787878,2022,2,Chicago Bears,Green Bay Packers,3.99
+#4c4c4c,#5d84c9,2023,Playoff,Pittsburgh Steelers,Buffalo Bills,3.99
+#5f72aa,#376ea6,2009,12,New York Giants,Denver Broncos,3.99
 #c0999f,#947373,2018,9,Atlanta Falcons,Washington Commanders,3.99
 #376ea6,#b49fa4,2010,14,Denver Broncos,Arizona Cardinals,3.99
+#e8cac0,#376ea6,2000,11,Cincinnati Bengals,Dallas Cowboys,3.99
+#d07373,#88b9d8,2000,14,San Francisco 49ers,Los Angeles Chargers,3.99
 #8bbed8,#376ea6,2007,9,Carolina Panthers,Tennessee Titans,3.98
-#e6beb3,#e8cac0,2006,2,Cleveland Browns,Cincinnati Bengals,3.98
 #b49fa4,#787878,1999,17,Arizona Cardinals,Green Bay Packers,3.98
-#5e6470,#d07373,2000,16,Chicago Bears,San Francisco 49ers,3.98
+#e6beb3,#e8cac0,2006,2,Cleveland Browns,Cincinnati Bengals,3.98
 #3f728c,#847fa4,2023,1,Houston Texans,Baltimore Ravens,3.98
-#376ea6,#787878,2021,10,Seattle Seahawks,Green Bay Packers,3.98
 #64c5cc,#fcfcfc,2013,4,Miami Dolphins,New Orleans Saints,3.98
-#787878,#a09ca6,2022,1,Green Bay Packers,Minnesota Vikings,3.98
 #3ba6b2,#c0999f,2023,Playoff,Philadelphia Eagles,Tampa Bay Buccaneers,3.98
-#b49fa4,#3ba6b2,2002,11,Arizona Cardinals,Philadelphia Eagles,3.97
-#fcfcfc,#5f72aa,2006,16,New Orleans Saints,New York Giants,3.97
+#787878,#a09ca6,2022,1,Green Bay Packers,Minnesota Vikings,3.98
+#376ea6,#787878,2021,10,Seattle Seahawks,Green Bay Packers,3.98
+#5e6470,#d07373,2000,16,Chicago Bears,San Francisco 49ers,3.98
 #947373,#b49fa4,2024,4,Washington Commanders,Arizona Cardinals,3.97
-#847fa4,#4c4c4c,2003,1,Baltimore Ravens,Pittsburgh Steelers,3.97
 #c0999f,#4c4c4c,2018,5,Atlanta Falcons,Pittsburgh Steelers,3.97
-#947373,#b49fa4,2020,2,Washington Commanders,Arizona Cardinals,3.97
 #4c4c4c,#dababf,2014,15,Las Vegas Raiders,Kansas City Chiefs,3.97
-#b49fa4,#c0999f,2006,4,Arizona Cardinals,Atlanta Falcons,3.97
-#b49fa4,#dababf,2010,11,Arizona Cardinals,Kansas City Chiefs,3.97
 #847fa4,#36a283,2022,1,Baltimore Ravens,New York Jets,3.97
+#b49fa4,#3ba6b2,2002,11,Arizona Cardinals,Philadelphia Eagles,3.97
+#b49fa4,#c0999f,2006,4,Arizona Cardinals,Atlanta Falcons,3.97
+#847fa4,#4c4c4c,2003,1,Baltimore Ravens,Pittsburgh Steelers,3.97
+#fcfcfc,#5f72aa,2006,16,New Orleans Saints,New York Giants,3.97
+#b49fa4,#dababf,2010,11,Arizona Cardinals,Kansas City Chiefs,3.97
 #4c4c4c,#d07373,2011,15,Pittsburgh Steelers,San Francisco 49ers,3.97
+#947373,#b49fa4,2020,2,Washington Commanders,Arizona Cardinals,3.97
+#3f728c,#3e77ba,2005,10,Houston Texans,Indianapolis Colts,3.96
 #5d84c9,#b49fa4,2008,5,Buffalo Bills,Arizona Cardinals,3.96
+#a09ca6,#847fa4,2001,17,Minnesota Vikings,Baltimore Ravens,3.96
 #847fa4,#3f728c,2020,2,Baltimore Ravens,Houston Texans,3.96
+#e6beb3,#947373,2024,5,Cleveland Browns,Washington Commanders,3.96
+#a09ca6,#5e6470,2022,18,Minnesota Vikings,Chicago Bears,3.96
 #e8cac0,#3ba6b2,2000,17,Cincinnati Bengals,Philadelphia Eagles,3.96
 #376ea6,#3f728c,2019,17,Tennessee Titans,Houston Texans,3.96
-#e8cac0,#4c4c4c,2023,16,Cincinnati Bengals,Pittsburgh Steelers,3.96
-#a09ca6,#5e6470,2022,18,Minnesota Vikings,Chicago Bears,3.96
 #fcfcfc,#8bbed8,2009,17,New Orleans Saints,Carolina Panthers,3.96
+#e8cac0,#4c4c4c,2023,16,Cincinnati Bengals,Pittsburgh Steelers,3.96
 #3ba6b2,#5f72aa,2000,9,Philadelphia Eagles,New York Giants,3.96
-#3f728c,#3e77ba,2005,10,Houston Texans,Indianapolis Colts,3.96
-#e6beb3,#947373,2024,5,Cleveland Browns,Washington Commanders,3.96
-#a09ca6,#847fa4,2001,17,Minnesota Vikings,Baltimore Ravens,3.96
-#4db3c4,#3e77ba,2020,17,Jacksonville Jaguars,Indianapolis Colts,3.95
-#4db3c4,#3f728c,2017,1,Jacksonville Jaguars,Houston Texans,3.95
-#64c5cc,#5d84c9,2018,17,Miami Dolphins,Buffalo Bills,3.95
 #4db3c4,#5e6470,2008,14,Jacksonville Jaguars,Chicago Bears,3.95
-#36a283,#376ea6,2007,15,New York Jets,New England Patriots,3.94
+#4db3c4,#3e77ba,2020,17,Jacksonville Jaguars,Indianapolis Colts,3.95
+#64c5cc,#5d84c9,2018,17,Miami Dolphins,Buffalo Bills,3.95
+#4db3c4,#3f728c,2017,1,Jacksonville Jaguars,Houston Texans,3.95
 #5e6470,#b49fa4,2012,16,Chicago Bears,Arizona Cardinals,3.94
-#c0999f,#3ba6b2,2004,Playoff,Atlanta Falcons,Philadelphia Eagles,3.94
 #376ea6,#376ea6,2009,8,Seattle Seahawks,Dallas Cowboys,3.94
-#787878,#d07373,2020,9,Green Bay Packers,San Francisco 49ers,3.94
-#6288cb,#d07373,2021,10,Los Angeles Rams,San Francisco 49ers,3.94
 #d07373,#6288cb,2009,17,San Francisco 49ers,Los Angeles Rams,3.94
+#6288cb,#d07373,2021,10,Los Angeles Rams,San Francisco 49ers,3.94
 #787878,#d07373,2019,Playoff,Green Bay Packers,San Francisco 49ers,3.94
-#5d84c9,#a09ca6,2010,13,Buffalo Bills,Minnesota Vikings,3.93
+#c0999f,#3ba6b2,2004,Playoff,Atlanta Falcons,Philadelphia Eagles,3.94
+#787878,#d07373,2020,9,Green Bay Packers,San Francisco 49ers,3.94
+#36a283,#376ea6,2007,15,New York Jets,New England Patriots,3.94
 #4db3c4,#376ea6,2013,6,Jacksonville Jaguars,Denver Broncos,3.93
+#3e77ba,#376ea6,2004,Playoff,Indianapolis Colts,New England Patriots,3.93
+#4c4c4c,#4c4c4c,2003,14,Las Vegas Raiders,Pittsburgh Steelers,3.93
+#5d84c9,#a09ca6,2010,13,Buffalo Bills,Minnesota Vikings,3.93
+#5e6470,#a09ca6,2005,17,Chicago Bears,Minnesota Vikings,3.93
+#e6beb3,#4c4c4c,2010,6,Cleveland Browns,Pittsburgh Steelers,3.93
 #64c5cc,#376ea6,2004,5,Miami Dolphins,New England Patriots,3.93
 #376ea6,#b49fa4,2002,10,Seattle Seahawks,Arizona Cardinals,3.93
-#4c4c4c,#4c4c4c,2003,14,Las Vegas Raiders,Pittsburgh Steelers,3.93
-#5e6470,#a09ca6,2005,17,Chicago Bears,Minnesota Vikings,3.93
-#3e77ba,#376ea6,2004,Playoff,Indianapolis Colts,New England Patriots,3.93
-#e6beb3,#4c4c4c,2010,6,Cleveland Browns,Pittsburgh Steelers,3.93
 #6288cb,#376ea6,2011,14,Los Angeles Rams,Seattle Seahawks,3.93
-#5f72aa,#376ea6,2019,6,New York Giants,New England Patriots,3.92
 #4c4c4c,#d07373,1999,9,Pittsburgh Steelers,San Francisco 49ers,3.92
-#3f728c,#376ea6,2016,Playoff,Houston Texans,New England Patriots,3.92
-#e6beb3,#e8cac0,2009,12,Cleveland Browns,Cincinnati Bengals,3.92
-#376ea6,#3ba6b2,2003,14,Dallas Cowboys,Philadelphia Eagles,3.92
 #e8cac0,#376ea6,2014,5,Cincinnati Bengals,New England Patriots,3.92
+#376ea6,#376ea6,2017,Playoff,Tennessee Titans,New England Patriots,3.92
 #d07373,#fcfcfc,2000,10,San Francisco 49ers,New Orleans Saints,3.92
+#376ea6,#3ba6b2,2003,14,Dallas Cowboys,Philadelphia Eagles,3.92
 #376ea6,#c0999f,2016,4,Denver Broncos,Tampa Bay Buccaneers,3.92
 #5f72aa,#947373,2008,13,New York Giants,Washington Commanders,3.92
-#376ea6,#376ea6,2017,Playoff,Tennessee Titans,New England Patriots,3.92
+#e6beb3,#e8cac0,2009,12,Cleveland Browns,Cincinnati Bengals,3.92
+#5f72aa,#376ea6,2019,6,New York Giants,New England Patriots,3.92
+#3f728c,#376ea6,2016,Playoff,Houston Texans,New England Patriots,3.92
 #8bbed8,#a09ca6,2014,13,Carolina Panthers,Minnesota Vikings,3.92
-#3f728c,#376ea6,2024,6,Houston Texans,New England Patriots,3.91
-#5d84c9,#376ea6,2018,16,Buffalo Bills,New England Patriots,3.91
+#376ea6,#4c4c4c,2017,11,Tennessee Titans,Pittsburgh Steelers,3.91
 #376ea6,#4c4c4c,1999,3,Seattle Seahawks,Pittsburgh Steelers,3.91
 #5e6470,#4db3c4,2020,16,Chicago Bears,Jacksonville Jaguars,3.91
-#8bbed8,#5f72aa,2021,7,Carolina Panthers,New York Giants,3.91
+#3f728c,#376ea6,2024,6,Houston Texans,New England Patriots,3.91
+#5d84c9,#376ea6,2018,16,Buffalo Bills,New England Patriots,3.91
 #c0999f,#4db3c4,2023,4,Atlanta Falcons,Jacksonville Jaguars,3.91
-#376ea6,#4c4c4c,2017,11,Tennessee Titans,Pittsburgh Steelers,3.91
-#6288cb,#787878,2023,9,Los Angeles Rams,Green Bay Packers,3.9
+#8bbed8,#5f72aa,2021,7,Carolina Panthers,New York Giants,3.91
+#e6beb3,#376ea6,2015,15,Cleveland Browns,Seattle Seahawks,3.9
+#64c5cc,#36a283,2013,13,Miami Dolphins,New York Jets,3.9
 #36a283,#847fa4,2005,4,New York Jets,Baltimore Ravens,3.9
+#6288cb,#787878,2023,9,Los Angeles Rams,Green Bay Packers,3.9
 #5e6470,#a09ca6,2002,8,Chicago Bears,Minnesota Vikings,3.9
-#376ea6,#64c5cc,2001,4,New England Patriots,Miami Dolphins,3.9
 #947373,#5f72aa,2021,18,Washington Commanders,New York Giants,3.9
 #376ea6,#dababf,2021,13,Denver Broncos,Kansas City Chiefs,3.9
-#64c5cc,#36a283,2013,13,Miami Dolphins,New York Jets,3.9
-#e6beb3,#376ea6,2015,15,Cleveland Browns,Seattle Seahawks,3.9
-#847fa4,#64c5cc,2002,11,Baltimore Ravens,Miami Dolphins,3.89
-#c0999f,#3ba6b2,2002,Playoff,Atlanta Falcons,Philadelphia Eagles,3.89
+#376ea6,#64c5cc,2001,4,New England Patriots,Miami Dolphins,3.9
+#dababf,#4c4c4c,2021,10,Kansas City Chiefs,Las Vegas Raiders,3.89
+#376ea6,#3ba6b2,2001,3,Dallas Cowboys,Philadelphia Eagles,3.89
+#376ea6,#dababf,2023,6,Denver Broncos,Kansas City Chiefs,3.89
 #a09ca6,#d07373,2019,Playoff,Minnesota Vikings,San Francisco 49ers,3.89
 #88b9d8,#64c5cc,2019,4,Los Angeles Chargers,Miami Dolphins,3.89
-#376ea6,#dababf,2023,6,Denver Broncos,Kansas City Chiefs,3.89
-#376ea6,#376ea6,2004,16,Denver Broncos,Tennessee Titans,3.89
-#dababf,#4c4c4c,2021,10,Kansas City Chiefs,Las Vegas Raiders,3.89
-#fcfcfc,#c0999f,1999,13,New Orleans Saints,Atlanta Falcons,3.89
+#c0999f,#3ba6b2,2002,Playoff,Atlanta Falcons,Philadelphia Eagles,3.89
 #3ba6b2,#5f72aa,2018,6,Philadelphia Eagles,New York Giants,3.89
-#787878,#5e6470,2007,16,Green Bay Packers,Chicago Bears,3.89
-#5e6470,#a09ca6,2015,15,Chicago Bears,Minnesota Vikings,3.89
 #3ba6b2,#376ea6,2014,13,Philadelphia Eagles,Dallas Cowboys,3.89
-#b49fa4,#376ea6,2005,8,Arizona Cardinals,Dallas Cowboys,3.89
+#5e6470,#a09ca6,2015,15,Chicago Bears,Minnesota Vikings,3.89
+#787878,#5e6470,2007,16,Green Bay Packers,Chicago Bears,3.89
 #3e77ba,#e6beb3,2003,1,Indianapolis Colts,Cleveland Browns,3.89
-#376ea6,#3ba6b2,2001,3,Dallas Cowboys,Philadelphia Eagles,3.89
-#5d84c9,#4db3c4,2003,2,Buffalo Bills,Jacksonville Jaguars,3.88
-#376ea6,#376ea6,2003,11,Dallas Cowboys,New England Patriots,3.88
+#fcfcfc,#c0999f,1999,13,New Orleans Saints,Atlanta Falcons,3.89
+#b49fa4,#376ea6,2005,8,Arizona Cardinals,Dallas Cowboys,3.89
+#376ea6,#376ea6,2004,16,Denver Broncos,Tennessee Titans,3.89
+#847fa4,#64c5cc,2002,11,Baltimore Ravens,Miami Dolphins,3.89
 #dababf,#3f728c,2007,1,Kansas City Chiefs,Houston Texans,3.88
-#fcfcfc,#8bbed8,2008,7,New Orleans Saints,Carolina Panthers,3.88
-#36a283,#376ea6,2009,11,New York Jets,New England Patriots,3.88
 #3e77ba,#dababf,2018,Playoff,Indianapolis Colts,Kansas City Chiefs,3.88
-#376ea6,#5d84c9,2024,7,Tennessee Titans,Buffalo Bills,3.88
-#947373,#376ea6,2006,2,Washington Commanders,Dallas Cowboys,3.88
 #c0999f,#e8cac0,2022,7,Atlanta Falcons,Cincinnati Bengals,3.88
+#36a283,#376ea6,2009,11,New York Jets,New England Patriots,3.88
+#5d84c9,#4db3c4,2003,2,Buffalo Bills,Jacksonville Jaguars,3.88
 #dababf,#e6beb3,2012,14,Kansas City Chiefs,Cleveland Browns,3.88
+#376ea6,#5d84c9,2024,7,Tennessee Titans,Buffalo Bills,3.88
 #947373,#5d84c9,2021,3,Washington Commanders,Buffalo Bills,3.88
-#b49fa4,#376ea6,2021,1,Arizona Cardinals,Tennessee Titans,3.87
-#5f72aa,#d07373,2012,6,New York Giants,San Francisco 49ers,3.87
-#e6beb3,#376ea6,2007,5,Cleveland Browns,New England Patriots,3.87
-#5e6470,#c0999f,2016,10,Chicago Bears,Tampa Bay Buccaneers,3.87
+#fcfcfc,#8bbed8,2008,7,New Orleans Saints,Carolina Panthers,3.88
+#376ea6,#376ea6,2003,11,Dallas Cowboys,New England Patriots,3.88
+#947373,#376ea6,2006,2,Washington Commanders,Dallas Cowboys,3.88
 #3f728c,#376ea6,2004,9,Houston Texans,Denver Broncos,3.87
 #3ba6b2,#5f72aa,2004,12,Philadelphia Eagles,New York Giants,3.87
-#e8cac0,#5e6470,2005,3,Cincinnati Bengals,Chicago Bears,3.86
-#a09ca6,#376ea6,2002,4,Minnesota Vikings,Seattle Seahawks,3.86
-#8bbed8,#4c4c4c,2008,10,Carolina Panthers,Las Vegas Raiders,3.86
-#7cb4d3,#787878,2007,17,Detroit Lions,Green Bay Packers,3.86
-#3ba6b2,#b49fa4,2001,8,Philadelphia Eagles,Arizona Cardinals,3.86
-#4db3c4,#5e6470,2001,17,Jacksonville Jaguars,Chicago Bears,3.86
+#5f72aa,#d07373,2012,6,New York Giants,San Francisco 49ers,3.87
+#5e6470,#c0999f,2016,10,Chicago Bears,Tampa Bay Buccaneers,3.87
+#e6beb3,#376ea6,2007,5,Cleveland Browns,New England Patriots,3.87
+#b49fa4,#376ea6,2021,1,Arizona Cardinals,Tennessee Titans,3.87
 #fcfcfc,#a09ca6,2000,Playoff,New Orleans Saints,Minnesota Vikings,3.86
+#3ba6b2,#b49fa4,2001,8,Philadelphia Eagles,Arizona Cardinals,3.86
+#8bbed8,#4c4c4c,2008,10,Carolina Panthers,Las Vegas Raiders,3.86
+#a09ca6,#376ea6,2002,4,Minnesota Vikings,Seattle Seahawks,3.86
+#4db3c4,#5e6470,2001,17,Jacksonville Jaguars,Chicago Bears,3.86
+#e8cac0,#5e6470,2005,3,Cincinnati Bengals,Chicago Bears,3.86
 #4c4c4c,#5f72aa,2001,11,Las Vegas Raiders,New York Giants,3.86
+#7cb4d3,#787878,2007,17,Detroit Lions,Green Bay Packers,3.86
+#376ea6,#dababf,2004,15,Denver Broncos,Kansas City Chiefs,3.85
+#d07373,#6288cb,2013,4,San Francisco 49ers,Los Angeles Rams,3.85
 #dababf,#947373,2009,6,Kansas City Chiefs,Washington Commanders,3.85
 #e6beb3,#4c4c4c,2015,10,Cleveland Browns,Pittsburgh Steelers,3.85
-#7cb4d3,#376ea6,2005,11,Detroit Lions,Dallas Cowboys,3.85
-#4c4c4c,#376ea6,2007,14,Pittsburgh Steelers,New England Patriots,3.85
-#947373,#847fa4,2008,14,Washington Commanders,Baltimore Ravens,3.85
-#d07373,#6288cb,2013,4,San Francisco 49ers,Los Angeles Rams,3.85
-#3f728c,#3e77ba,2007,16,Houston Texans,Indianapolis Colts,3.85
-#c0999f,#a09ca6,2019,1,Atlanta Falcons,Minnesota Vikings,3.85
-#376ea6,#dababf,2004,15,Denver Broncos,Kansas City Chiefs,3.85
 #8bbed8,#64c5cc,2001,8,Carolina Panthers,Miami Dolphins,3.85
+#947373,#847fa4,2008,14,Washington Commanders,Baltimore Ravens,3.85
+#3f728c,#3e77ba,2007,16,Houston Texans,Indianapolis Colts,3.85
+#7cb4d3,#376ea6,2005,11,Detroit Lions,Dallas Cowboys,3.85
+#c0999f,#a09ca6,2019,1,Atlanta Falcons,Minnesota Vikings,3.85
+#4c4c4c,#376ea6,2007,14,Pittsburgh Steelers,New England Patriots,3.85
+#64c5cc,#3f728c,2012,1,Miami Dolphins,Houston Texans,3.84
+#947373,#88b9d8,2017,14,Washington Commanders,Los Angeles Chargers,3.84
+#64c5cc,#36a283,2020,12,Miami Dolphins,New York Jets,3.84
+#376ea6,#36a283,2004,15,Seattle Seahawks,New York Jets,3.84
+#a09ca6,#5f72aa,2019,5,Minnesota Vikings,New York Giants,3.84
 #5d84c9,#376ea6,2016,4,Buffalo Bills,New England Patriots,3.84
 #c0999f,#c0999f,2021,2,Atlanta Falcons,Tampa Bay Buccaneers,3.84
-#64c5cc,#3f728c,2012,1,Miami Dolphins,Houston Texans,3.84
-#376ea6,#36a283,2004,15,Seattle Seahawks,New York Jets,3.84
-#7cb4d3,#947373,1999,Playoff,Detroit Lions,Washington Commanders,3.84
-#64c5cc,#36a283,2020,12,Miami Dolphins,New York Jets,3.84
 #3ba6b2,#c0999f,2021,Playoff,Philadelphia Eagles,Tampa Bay Buccaneers,3.84
 #e8cac0,#4db3c4,2017,9,Cincinnati Bengals,Jacksonville Jaguars,3.84
-#947373,#88b9d8,2017,14,Washington Commanders,Los Angeles Chargers,3.84
-#a09ca6,#5f72aa,2019,5,Minnesota Vikings,New York Giants,3.84
-#376ea6,#5d84c9,2008,1,Seattle Seahawks,Buffalo Bills,3.83
+#7cb4d3,#947373,1999,Playoff,Detroit Lions,Washington Commanders,3.84
 #64c5cc,#4c4c4c,2014,4,Miami Dolphins,Las Vegas Raiders,3.83
-#d07373,#376ea6,2010,1,San Francisco 49ers,Seattle Seahawks,3.83
-#376ea6,#3f728c,2013,16,Denver Broncos,Houston Texans,3.83
-#376ea6,#b49fa4,2019,4,Seattle Seahawks,Arizona Cardinals,3.83
-#787878,#b49fa4,2000,4,Green Bay Packers,Arizona Cardinals,3.83
-#376ea6,#787878,2015,14,Dallas Cowboys,Green Bay Packers,3.83
-#4c4c4c,#e8cac0,1999,6,Pittsburgh Steelers,Cincinnati Bengals,3.83
 #8bbed8,#376ea6,2015,12,Carolina Panthers,Dallas Cowboys,3.83
+#376ea6,#b49fa4,2019,4,Seattle Seahawks,Arizona Cardinals,3.83
 #5f72aa,#a09ca6,2010,14,New York Giants,Minnesota Vikings,3.83
 #376ea6,#c0999f,2008,7,Seattle Seahawks,Tampa Bay Buccaneers,3.83
-#3f728c,#5d84c9,2005,1,Houston Texans,Buffalo Bills,3.82
+#376ea6,#787878,2015,14,Dallas Cowboys,Green Bay Packers,3.83
+#787878,#b49fa4,2000,4,Green Bay Packers,Arizona Cardinals,3.83
+#4c4c4c,#e8cac0,1999,6,Pittsburgh Steelers,Cincinnati Bengals,3.83
+#d07373,#376ea6,2010,1,San Francisco 49ers,Seattle Seahawks,3.83
+#376ea6,#5d84c9,2008,1,Seattle Seahawks,Buffalo Bills,3.83
+#376ea6,#3f728c,2013,16,Denver Broncos,Houston Texans,3.83
+#a09ca6,#5e6470,2012,12,Minnesota Vikings,Chicago Bears,3.82
+#dababf,#88b9d8,2012,9,Kansas City Chiefs,Los Angeles Chargers,3.82
+#dababf,#3e77ba,2006,Playoff,Kansas City Chiefs,Indianapolis Colts,3.82
 #fcfcfc,#947373,2015,10,New Orleans Saints,Washington Commanders,3.82
-#4db3c4,#3e77ba,2000,4,Jacksonville Jaguars,Indianapolis Colts,3.82
+#376ea6,#e6beb3,2001,1,Seattle Seahawks,Cleveland Browns,3.82
 #fcfcfc,#36a283,2021,14,New Orleans Saints,New York Jets,3.82
+#4db3c4,#3e77ba,2000,4,Jacksonville Jaguars,Indianapolis Colts,3.82
+#3f728c,#5d84c9,2005,1,Houston Texans,Buffalo Bills,3.82
+#d07373,#947373,2023,17,San Francisco 49ers,Washington Commanders,3.82
+#376ea6,#4db3c4,2002,16,Tennessee Titans,Jacksonville Jaguars,3.82
 #3f728c,#36a283,2023,14,Houston Texans,New York Jets,3.82
 #3ba6b2,#376ea6,2023,14,Philadelphia Eagles,Dallas Cowboys,3.82
-#376ea6,#e6beb3,2001,1,Seattle Seahawks,Cleveland Browns,3.82
-#dababf,#88b9d8,2012,9,Kansas City Chiefs,Los Angeles Chargers,3.82
-#376ea6,#4db3c4,2002,16,Tennessee Titans,Jacksonville Jaguars,3.82
-#a09ca6,#5e6470,2012,12,Minnesota Vikings,Chicago Bears,3.82
-#d07373,#947373,2023,17,San Francisco 49ers,Washington Commanders,3.82
-#dababf,#3e77ba,2006,Playoff,Kansas City Chiefs,Indianapolis Colts,3.82
-#4c4c4c,#5d84c9,2001,3,Pittsburgh Steelers,Buffalo Bills,3.81
-#847fa4,#3f728c,2008,10,Baltimore Ravens,Houston Texans,3.81
-#947373,#b49fa4,2018,1,Washington Commanders,Arizona Cardinals,3.81
 #e6beb3,#e8cac0,2014,10,Cleveland Browns,Cincinnati Bengals,3.81
-#c0999f,#7cb4d3,2000,3,Tampa Bay Buccaneers,Detroit Lions,3.81
-#5e6470,#64c5cc,2010,11,Chicago Bears,Miami Dolphins,3.81
+#d07373,#4c4c4c,2007,3,San Francisco 49ers,Pittsburgh Steelers,3.81
+#4c4c4c,#5d84c9,2001,3,Pittsburgh Steelers,Buffalo Bills,3.81
+#947373,#b49fa4,2018,1,Washington Commanders,Arizona Cardinals,3.81
 #376ea6,#4db3c4,2018,3,Tennessee Titans,Jacksonville Jaguars,3.81
+#c0999f,#7cb4d3,2000,3,Tampa Bay Buccaneers,Detroit Lions,3.81
 #e6beb3,#376ea6,2008,14,Cleveland Browns,Tennessee Titans,3.81
 #376ea6,#e6beb3,2008,1,Dallas Cowboys,Cleveland Browns,3.81
-#d07373,#4c4c4c,2007,3,San Francisco 49ers,Pittsburgh Steelers,3.81
-#3ba6b2,#7cb4d3,2004,3,Philadelphia Eagles,Detroit Lions,3.8
-#3ba6b2,#376ea6,2000,1,Philadelphia Eagles,Dallas Cowboys,3.8
+#5e6470,#64c5cc,2010,11,Chicago Bears,Miami Dolphins,3.81
+#847fa4,#3f728c,2008,10,Baltimore Ravens,Houston Texans,3.81
 #847fa4,#4c4c4c,2006,16,Baltimore Ravens,Pittsburgh Steelers,3.8
+#3ba6b2,#376ea6,2000,1,Philadelphia Eagles,Dallas Cowboys,3.8
+#3ba6b2,#7cb4d3,2004,3,Philadelphia Eagles,Detroit Lions,3.8
 #376ea6,#7cb4d3,2006,1,Seattle Seahawks,Detroit Lions,3.8
 #5e6470,#e6beb3,2021,3,Chicago Bears,Cleveland Browns,3.79
-#88b9d8,#3e77ba,2022,16,Los Angeles Chargers,Indianapolis Colts,3.79
 #947373,#5f72aa,2006,5,Washington Commanders,New York Giants,3.79
-#c0999f,#fcfcfc,2006,3,Atlanta Falcons,New Orleans Saints,3.79
+#b49fa4,#376ea6,2007,14,Arizona Cardinals,Seattle Seahawks,3.79
 #e8cac0,#e6beb3,2023,1,Cincinnati Bengals,Cleveland Browns,3.79
 #376ea6,#d07373,2014,13,Seattle Seahawks,San Francisco 49ers,3.79
-#b49fa4,#376ea6,2007,14,Arizona Cardinals,Seattle Seahawks,3.79
-#8bbed8,#5d84c9,2021,15,Carolina Panthers,Buffalo Bills,3.78
-#6288cb,#947373,2020,5,Los Angeles Rams,Washington Commanders,3.78
-#947373,#3ba6b2,2011,17,Washington Commanders,Philadelphia Eagles,3.78
-#4c4c4c,#4db3c4,2001,1,Pittsburgh Steelers,Jacksonville Jaguars,3.78
-#a09ca6,#88b9d8,2019,15,Minnesota Vikings,Los Angeles Chargers,3.78
-#4db3c4,#88b9d8,2022,3,Jacksonville Jaguars,Los Angeles Chargers,3.78
-#3e77ba,#376ea6,2001,3,Indianapolis Colts,New England Patriots,3.78
-#64c5cc,#36a283,2012,8,Miami Dolphins,New York Jets,3.78
-#d07373,#5d84c9,2016,6,San Francisco 49ers,Buffalo Bills,3.78
-#e8cac0,#e6beb3,2008,16,Cincinnati Bengals,Cleveland Browns,3.78
+#c0999f,#fcfcfc,2006,3,Atlanta Falcons,New Orleans Saints,3.79
+#88b9d8,#3e77ba,2022,16,Los Angeles Chargers,Indianapolis Colts,3.79
 #787878,#a09ca6,2023,17,Green Bay Packers,Minnesota Vikings,3.78
+#3e77ba,#376ea6,2001,3,Indianapolis Colts,New England Patriots,3.78
+#a09ca6,#88b9d8,2019,15,Minnesota Vikings,Los Angeles Chargers,3.78
+#4c4c4c,#4db3c4,2001,1,Pittsburgh Steelers,Jacksonville Jaguars,3.78
+#d07373,#5d84c9,2016,6,San Francisco 49ers,Buffalo Bills,3.78
+#4db3c4,#88b9d8,2022,3,Jacksonville Jaguars,Los Angeles Chargers,3.78
+#6288cb,#947373,2020,5,Los Angeles Rams,Washington Commanders,3.78
+#8bbed8,#5d84c9,2021,15,Carolina Panthers,Buffalo Bills,3.78
+#e8cac0,#e6beb3,2008,16,Cincinnati Bengals,Cleveland Browns,3.78
+#64c5cc,#36a283,2012,8,Miami Dolphins,New York Jets,3.78
 #376ea6,#376ea6,2012,1,New England Patriots,Tennessee Titans,3.78
-#d07373,#c0999f,2013,15,San Francisco 49ers,Tampa Bay Buccaneers,3.77
-#376ea6,#5d84c9,2019,12,Denver Broncos,Buffalo Bills,3.77
-#3ba6b2,#c0999f,2021,1,Philadelphia Eagles,Atlanta Falcons,3.77
-#5f72aa,#847fa4,2020,16,New York Giants,Baltimore Ravens,3.77
-#787878,#d07373,1999,12,Green Bay Packers,San Francisco 49ers,3.77
-#376ea6,#8bbed8,2003,Playoff,Dallas Cowboys,Carolina Panthers,3.77
+#947373,#3ba6b2,2011,17,Washington Commanders,Philadelphia Eagles,3.78
 #4c4c4c,#e6beb3,2016,11,Pittsburgh Steelers,Cleveland Browns,3.77
+#5f72aa,#847fa4,2020,16,New York Giants,Baltimore Ravens,3.77
+#376ea6,#5d84c9,2019,12,Denver Broncos,Buffalo Bills,3.77
+#376ea6,#8bbed8,2003,Playoff,Dallas Cowboys,Carolina Panthers,3.77
+#3ba6b2,#c0999f,2021,1,Philadelphia Eagles,Atlanta Falcons,3.77
+#787878,#d07373,1999,12,Green Bay Packers,San Francisco 49ers,3.77
+#d07373,#c0999f,2013,15,San Francisco 49ers,Tampa Bay Buccaneers,3.77
+#e6beb3,#6288cb,2015,7,Cleveland Browns,Los Angeles Rams,3.76
+#b49fa4,#fcfcfc,2019,8,Arizona Cardinals,New Orleans Saints,3.76
 #4c4c4c,#88b9d8,2002,14,Las Vegas Raiders,Los Angeles Chargers,3.76
 #3ba6b2,#b49fa4,2012,3,Philadelphia Eagles,Arizona Cardinals,3.76
-#376ea6,#376ea6,2019,6,Tennessee Titans,Denver Broncos,3.76
-#b49fa4,#fcfcfc,2019,8,Arizona Cardinals,New Orleans Saints,3.76
 #4db3c4,#7cb4d3,2008,10,Jacksonville Jaguars,Detroit Lions,3.76
-#e6beb3,#6288cb,2015,7,Cleveland Browns,Los Angeles Rams,3.76
-#36a283,#dababf,2014,9,New York Jets,Kansas City Chiefs,3.75
+#376ea6,#376ea6,2019,6,Tennessee Titans,Denver Broncos,3.76
+#376ea6,#dababf,2010,16,Tennessee Titans,Kansas City Chiefs,3.75
+#6288cb,#5e6470,2012,3,Los Angeles Rams,Chicago Bears,3.75
 #376ea6,#a09ca6,2004,7,Tennessee Titans,Minnesota Vikings,3.75
 #6288cb,#3f728c,2021,8,Los Angeles Rams,Houston Texans,3.75
-#6288cb,#5e6470,2012,3,Los Angeles Rams,Chicago Bears,3.75
-#376ea6,#dababf,2010,16,Tennessee Titans,Kansas City Chiefs,3.75
-#b49fa4,#c0999f,2018,15,Arizona Cardinals,Atlanta Falcons,3.75
-#376ea6,#b49fa4,2006,10,Dallas Cowboys,Arizona Cardinals,3.75
-#947373,#5f72aa,1999,2,Washington Commanders,New York Giants,3.75
 #3e77ba,#376ea6,2014,17,Indianapolis Colts,Tennessee Titans,3.75
+#947373,#5f72aa,1999,2,Washington Commanders,New York Giants,3.75
+#376ea6,#b49fa4,2006,10,Dallas Cowboys,Arizona Cardinals,3.75
 #c0999f,#c0999f,2003,3,Tampa Bay Buccaneers,Atlanta Falcons,3.75
-#64c5cc,#5d84c9,2003,16,Miami Dolphins,Buffalo Bills,3.74
-#88b9d8,#376ea6,2017,12,Los Angeles Chargers,Dallas Cowboys,3.74
-#376ea6,#dababf,2022,16,Seattle Seahawks,Kansas City Chiefs,3.74
+#36a283,#dababf,2014,9,New York Jets,Kansas City Chiefs,3.75
+#b49fa4,#c0999f,2018,15,Arizona Cardinals,Atlanta Falcons,3.75
 #3ba6b2,#376ea6,2005,8,Philadelphia Eagles,Denver Broncos,3.74
-#4c4c4c,#b49fa4,2002,12,Las Vegas Raiders,Arizona Cardinals,3.74
-#3ba6b2,#376ea6,2005,5,Philadelphia Eagles,Dallas Cowboys,3.74
-#4c4c4c,#847fa4,2014,2,Pittsburgh Steelers,Baltimore Ravens,3.74
 #376ea6,#64c5cc,1999,9,Tennessee Titans,Miami Dolphins,3.74
-#7cb4d3,#3e77ba,2024,12,Detroit Lions,Indianapolis Colts,3.74
+#88b9d8,#376ea6,2017,12,Los Angeles Chargers,Dallas Cowboys,3.74
 #4c4c4c,#376ea6,2016,17,Las Vegas Raiders,Denver Broncos,3.74
+#7cb4d3,#3e77ba,2024,12,Detroit Lions,Indianapolis Colts,3.74
+#4c4c4c,#b49fa4,2002,12,Las Vegas Raiders,Arizona Cardinals,3.74
+#64c5cc,#5d84c9,2003,16,Miami Dolphins,Buffalo Bills,3.74
 #36a283,#3ba6b2,2011,15,New York Jets,Philadelphia Eagles,3.74
-#5f72aa,#3ba6b2,2021,16,New York Giants,Philadelphia Eagles,3.73
+#376ea6,#dababf,2022,16,Seattle Seahawks,Kansas City Chiefs,3.74
+#4c4c4c,#847fa4,2014,2,Pittsburgh Steelers,Baltimore Ravens,3.74
+#3ba6b2,#376ea6,2005,5,Philadelphia Eagles,Dallas Cowboys,3.74
 #6288cb,#d07373,2008,11,Los Angeles Rams,San Francisco 49ers,3.73
 #4c4c4c,#c0999f,2010,3,Pittsburgh Steelers,Tampa Bay Buccaneers,3.73
-#376ea6,#787878,2011,4,Denver Broncos,Green Bay Packers,3.72
+#5f72aa,#3ba6b2,2021,16,New York Giants,Philadelphia Eagles,3.73
 #787878,#c0999f,2016,Playoff,Green Bay Packers,Atlanta Falcons,3.72
+#4c4c4c,#376ea6,2013,3,Las Vegas Raiders,Denver Broncos,3.72
+#d07373,#e6beb3,2007,17,San Francisco 49ers,Cleveland Browns,3.72
+#e8cac0,#847fa4,1999,16,Cincinnati Bengals,Baltimore Ravens,3.72
 #3e77ba,#4c4c4c,2002,7,Indianapolis Colts,Pittsburgh Steelers,3.72
 #4c4c4c,#5f72aa,2000,15,Pittsburgh Steelers,New York Giants,3.72
-#4c4c4c,#376ea6,2013,3,Las Vegas Raiders,Denver Broncos,3.72
-#3ba6b2,#947373,2022,3,Philadelphia Eagles,Washington Commanders,3.72
-#e8cac0,#847fa4,1999,16,Cincinnati Bengals,Baltimore Ravens,3.72
-#d07373,#e6beb3,2007,17,San Francisco 49ers,Cleveland Browns,3.72
-#6288cb,#b49fa4,2004,15,Los Angeles Rams,Arizona Cardinals,3.72
 #e6beb3,#847fa4,2005,6,Cleveland Browns,Baltimore Ravens,3.72
+#376ea6,#787878,2011,4,Denver Broncos,Green Bay Packers,3.72
 #4c4c4c,#64c5cc,2011,13,Las Vegas Raiders,Miami Dolphins,3.72
-#fcfcfc,#4c4c4c,2012,11,New Orleans Saints,Las Vegas Raiders,3.71
-#64c5cc,#dababf,2023,Playoff,Miami Dolphins,Kansas City Chiefs,3.71
+#3ba6b2,#947373,2022,3,Philadelphia Eagles,Washington Commanders,3.72
+#6288cb,#b49fa4,2004,15,Los Angeles Rams,Arizona Cardinals,3.72
 #376ea6,#5f72aa,2002,3,Seattle Seahawks,New York Giants,3.71
+#64c5cc,#dababf,2023,Playoff,Miami Dolphins,Kansas City Chiefs,3.71
 #787878,#7cb4d3,2017,17,Green Bay Packers,Detroit Lions,3.71
+#fcfcfc,#4c4c4c,2012,11,New Orleans Saints,Las Vegas Raiders,3.71
 #6288cb,#88b9d8,2022,17,Los Angeles Rams,Los Angeles Chargers,3.71
-#64c5cc,#787878,2018,10,Miami Dolphins,Green Bay Packers,3.7
-#5d84c9,#376ea6,2024,8,Buffalo Bills,Seattle Seahawks,3.7
+#376ea6,#64c5cc,2024,12,New England Patriots,Miami Dolphins,3.7
 #5f72aa,#fcfcfc,2023,15,New York Giants,New Orleans Saints,3.7
 #3e77ba,#6288cb,2001,16,Indianapolis Colts,Los Angeles Rams,3.7
-#376ea6,#64c5cc,2024,12,New England Patriots,Miami Dolphins,3.7
-#3f728c,#847fa4,2023,Playoff,Houston Texans,Baltimore Ravens,3.69
+#64c5cc,#787878,2018,10,Miami Dolphins,Green Bay Packers,3.7
+#5d84c9,#376ea6,2024,8,Buffalo Bills,Seattle Seahawks,3.7
+#4db3c4,#e6beb3,2000,1,Jacksonville Jaguars,Cleveland Browns,3.69
+#c0999f,#fcfcfc,2011,16,Atlanta Falcons,New Orleans Saints,3.69
 #5f72aa,#3f728c,2010,5,New York Giants,Houston Texans,3.69
 #7cb4d3,#d07373,2008,3,Detroit Lions,San Francisco 49ers,3.69
 #4db3c4,#3f728c,2018,17,Jacksonville Jaguars,Houston Texans,3.69
-#376ea6,#a09ca6,2014,2,New England Patriots,Minnesota Vikings,3.69
-#c0999f,#fcfcfc,2011,16,Atlanta Falcons,New Orleans Saints,3.69
-#4db3c4,#e6beb3,2000,1,Jacksonville Jaguars,Cleveland Browns,3.69
 #376ea6,#7cb4d3,2023,15,Denver Broncos,Detroit Lions,3.69
-#c0999f,#c0999f,2008,2,Atlanta Falcons,Tampa Bay Buccaneers,3.68
+#3f728c,#847fa4,2023,Playoff,Houston Texans,Baltimore Ravens,3.69
+#376ea6,#a09ca6,2014,2,New England Patriots,Minnesota Vikings,3.69
+#787878,#7cb4d3,2013,13,Green Bay Packers,Detroit Lions,3.68
+#947373,#8bbed8,2015,11,Washington Commanders,Carolina Panthers,3.68
+#376ea6,#a09ca6,2003,14,Seattle Seahawks,Minnesota Vikings,3.68
 #c0999f,#5e6470,2001,14,Tampa Bay Buccaneers,Chicago Bears,3.68
-#e6beb3,#5d84c9,2016,15,Cleveland Browns,Buffalo Bills,3.68
+#c0999f,#c0999f,2008,2,Atlanta Falcons,Tampa Bay Buccaneers,3.68
+#5f72aa,#7cb4d3,2014,1,New York Giants,Detroit Lions,3.68
 #376ea6,#4c4c4c,2020,10,Denver Broncos,Las Vegas Raiders,3.68
 #d07373,#376ea6,2023,12,San Francisco 49ers,Seattle Seahawks,3.68
-#5f72aa,#7cb4d3,2014,1,New York Giants,Detroit Lions,3.68
-#787878,#7cb4d3,2013,13,Green Bay Packers,Detroit Lions,3.68
-#376ea6,#a09ca6,2003,14,Seattle Seahawks,Minnesota Vikings,3.68
 #c0999f,#5f72aa,2011,Playoff,Atlanta Falcons,New York Giants,3.68
-#947373,#8bbed8,2015,11,Washington Commanders,Carolina Panthers,3.68
-#376ea6,#3e77ba,2009,4,Seattle Seahawks,Indianapolis Colts,3.67
-#a09ca6,#5f72aa,2024,1,Minnesota Vikings,New York Giants,3.67
-#787878,#7cb4d3,2004,6,Green Bay Packers,Detroit Lions,3.67
+#e6beb3,#5d84c9,2016,15,Cleveland Browns,Buffalo Bills,3.68
+#6288cb,#b49fa4,2013,14,Los Angeles Rams,Arizona Cardinals,3.67
 #787878,#d07373,2015,4,Green Bay Packers,San Francisco 49ers,3.67
+#a09ca6,#5f72aa,2024,1,Minnesota Vikings,New York Giants,3.67
 #d07373,#8bbed8,2022,5,San Francisco 49ers,Carolina Panthers,3.67
 #c0999f,#376ea6,2013,3,Tampa Bay Buccaneers,New England Patriots,3.67
-#6288cb,#b49fa4,2013,14,Los Angeles Rams,Arizona Cardinals,3.67
-#376ea6,#e8cac0,2004,9,Dallas Cowboys,Cincinnati Bengals,3.67
-#787878,#c0999f,2020,6,Green Bay Packers,Tampa Bay Buccaneers,3.67
-#3e77ba,#376ea6,2009,5,Indianapolis Colts,Tennessee Titans,3.67
+#787878,#7cb4d3,2004,6,Green Bay Packers,Detroit Lions,3.67
 #c0999f,#6288cb,2001,17,Atlanta Falcons,Los Angeles Rams,3.67
-#5e6470,#6288cb,2021,1,Chicago Bears,Los Angeles Rams,3.66
-#847fa4,#4c4c4c,2001,Playoff,Baltimore Ravens,Pittsburgh Steelers,3.66
+#376ea6,#e8cac0,2004,9,Dallas Cowboys,Cincinnati Bengals,3.67
+#3e77ba,#376ea6,2009,5,Indianapolis Colts,Tennessee Titans,3.67
+#787878,#c0999f,2020,6,Green Bay Packers,Tampa Bay Buccaneers,3.67
+#376ea6,#3e77ba,2009,4,Seattle Seahawks,Indianapolis Colts,3.67
 #376ea6,#4c4c4c,2008,15,New England Patriots,Las Vegas Raiders,3.66
-#a09ca6,#5e6470,2005,6,Minnesota Vikings,Chicago Bears,3.66
-#b49fa4,#6288cb,2014,15,Arizona Cardinals,Los Angeles Rams,3.66
-#6288cb,#fcfcfc,2010,14,Los Angeles Rams,New Orleans Saints,3.66
-#7cb4d3,#c0999f,2002,16,Detroit Lions,Atlanta Falcons,3.66
-#b49fa4,#376ea6,2003,5,Arizona Cardinals,Dallas Cowboys,3.66
+#3ba6b2,#4c4c4c,2013,9,Philadelphia Eagles,Las Vegas Raiders,3.66
 #5d84c9,#c0999f,2005,2,Buffalo Bills,Tampa Bay Buccaneers,3.66
 #8bbed8,#b49fa4,2021,10,Carolina Panthers,Arizona Cardinals,3.66
+#b49fa4,#6288cb,2014,15,Arizona Cardinals,Los Angeles Rams,3.66
+#a09ca6,#5e6470,2005,6,Minnesota Vikings,Chicago Bears,3.66
+#7cb4d3,#c0999f,2002,16,Detroit Lions,Atlanta Falcons,3.66
+#847fa4,#4c4c4c,2001,Playoff,Baltimore Ravens,Pittsburgh Steelers,3.66
+#b49fa4,#376ea6,2003,5,Arizona Cardinals,Dallas Cowboys,3.66
 #847fa4,#3e77ba,2009,Playoff,Baltimore Ravens,Indianapolis Colts,3.66
-#3ba6b2,#4c4c4c,2013,9,Philadelphia Eagles,Las Vegas Raiders,3.66
+#6288cb,#fcfcfc,2010,14,Los Angeles Rams,New Orleans Saints,3.66
 #8bbed8,#5e6470,2024,5,Carolina Panthers,Chicago Bears,3.66
-#8bbed8,#376ea6,2005,Playoff,Carolina Panthers,Seattle Seahawks,3.65
-#4db3c4,#376ea6,1999,16,Jacksonville Jaguars,Tennessee Titans,3.65
-#947373,#fcfcfc,2001,16,Washington Commanders,New Orleans Saints,3.65
-#d07373,#36a283,2020,2,San Francisco 49ers,New York Jets,3.65
-#64c5cc,#c0999f,2021,5,Miami Dolphins,Tampa Bay Buccaneers,3.65
-#c0999f,#3ba6b2,1999,2,Tampa Bay Buccaneers,Philadelphia Eagles,3.65
-#5f72aa,#c0999f,2021,11,New York Giants,Tampa Bay Buccaneers,3.65
-#7cb4d3,#8bbed8,2002,2,Detroit Lions,Carolina Panthers,3.65
+#5e6470,#6288cb,2021,1,Chicago Bears,Los Angeles Rams,3.66
 #947373,#787878,2002,7,Washington Commanders,Green Bay Packers,3.65
-#6288cb,#dababf,2022,12,Los Angeles Rams,Kansas City Chiefs,3.64
-#376ea6,#847fa4,2001,4,Tennessee Titans,Baltimore Ravens,3.64
-#3e77ba,#8bbed8,2007,8,Indianapolis Colts,Carolina Panthers,3.64
+#7cb4d3,#8bbed8,2002,2,Detroit Lions,Carolina Panthers,3.65
+#c0999f,#3ba6b2,1999,2,Tampa Bay Buccaneers,Philadelphia Eagles,3.65
+#947373,#fcfcfc,2001,16,Washington Commanders,New Orleans Saints,3.65
+#8bbed8,#376ea6,2005,Playoff,Carolina Panthers,Seattle Seahawks,3.65
+#5f72aa,#c0999f,2021,11,New York Giants,Tampa Bay Buccaneers,3.65
+#d07373,#36a283,2020,2,San Francisco 49ers,New York Jets,3.65
+#4db3c4,#376ea6,1999,16,Jacksonville Jaguars,Tennessee Titans,3.65
+#64c5cc,#c0999f,2021,5,Miami Dolphins,Tampa Bay Buccaneers,3.65
 #e8cac0,#4c4c4c,2015,1,Cincinnati Bengals,Las Vegas Raiders,3.64
-#c0999f,#8bbed8,2013,13,Tampa Bay Buccaneers,Carolina Panthers,3.64
-#fcfcfc,#3e77ba,2007,1,New Orleans Saints,Indianapolis Colts,3.64
-#e8cac0,#dababf,2012,11,Cincinnati Bengals,Kansas City Chiefs,3.64
-#4db3c4,#d07373,2009,12,Jacksonville Jaguars,San Francisco 49ers,3.64
 #b49fa4,#fcfcfc,2013,3,Arizona Cardinals,New Orleans Saints,3.64
+#6288cb,#dababf,2022,12,Los Angeles Rams,Kansas City Chiefs,3.64
+#e8cac0,#dababf,2012,11,Cincinnati Bengals,Kansas City Chiefs,3.64
+#3e77ba,#8bbed8,2007,8,Indianapolis Colts,Carolina Panthers,3.64
+#376ea6,#847fa4,2001,4,Tennessee Titans,Baltimore Ravens,3.64
 #64c5cc,#8bbed8,2017,10,Miami Dolphins,Carolina Panthers,3.64
+#fcfcfc,#3e77ba,2007,1,New Orleans Saints,Indianapolis Colts,3.64
+#c0999f,#8bbed8,2013,13,Tampa Bay Buccaneers,Carolina Panthers,3.64
+#4db3c4,#d07373,2009,12,Jacksonville Jaguars,San Francisco 49ers,3.64
 #3f728c,#4db3c4,2004,16,Houston Texans,Jacksonville Jaguars,3.63
-#8bbed8,#c0999f,2013,8,Carolina Panthers,Tampa Bay Buccaneers,3.63
-#7cb4d3,#8bbed8,2020,11,Detroit Lions,Carolina Panthers,3.63
-#64c5cc,#5d84c9,2007,14,Miami Dolphins,Buffalo Bills,3.63
-#dababf,#376ea6,2005,3,Kansas City Chiefs,Denver Broncos,3.63
-#4c4c4c,#3f728c,2023,4,Pittsburgh Steelers,Houston Texans,3.63
 #c0999f,#d07373,2010,11,Tampa Bay Buccaneers,San Francisco 49ers,3.63
-#376ea6,#4db3c4,2023,11,Tennessee Titans,Jacksonville Jaguars,3.63
 #376ea6,#dababf,2014,4,New England Patriots,Kansas City Chiefs,3.63
-#8bbed8,#e8cac0,2022,9,Carolina Panthers,Cincinnati Bengals,3.62
-#5f72aa,#947373,2018,14,New York Giants,Washington Commanders,3.62
-#6288cb,#c0999f,2007,3,Los Angeles Rams,Tampa Bay Buccaneers,3.62
-#376ea6,#5f72aa,2021,15,Dallas Cowboys,New York Giants,3.62
-#b49fa4,#5f72aa,2020,14,Arizona Cardinals,New York Giants,3.62
+#8bbed8,#c0999f,2013,8,Carolina Panthers,Tampa Bay Buccaneers,3.63
+#64c5cc,#5d84c9,2007,14,Miami Dolphins,Buffalo Bills,3.63
+#376ea6,#4db3c4,2023,11,Tennessee Titans,Jacksonville Jaguars,3.63
+#4c4c4c,#3f728c,2023,4,Pittsburgh Steelers,Houston Texans,3.63
+#7cb4d3,#8bbed8,2020,11,Detroit Lions,Carolina Panthers,3.63
+#dababf,#376ea6,2005,3,Kansas City Chiefs,Denver Broncos,3.63
+#376ea6,#c0999f,2011,15,Dallas Cowboys,Tampa Bay Buccaneers,3.62
+#3e77ba,#376ea6,2012,11,Indianapolis Colts,New England Patriots,3.62
 #3f728c,#4db3c4,2019,9,Houston Texans,Jacksonville Jaguars,3.62
-#a09ca6,#4c4c4c,2017,2,Minnesota Vikings,Pittsburgh Steelers,3.62
 #5e6470,#a09ca6,2017,17,Chicago Bears,Minnesota Vikings,3.62
 #3f728c,#3e77ba,2006,2,Houston Texans,Indianapolis Colts,3.62
-#b49fa4,#3ba6b2,2000,12,Arizona Cardinals,Philadelphia Eagles,3.62
-#3e77ba,#376ea6,2011,8,Indianapolis Colts,Tennessee Titans,3.62
-#3e77ba,#376ea6,2012,11,Indianapolis Colts,New England Patriots,3.62
-#376ea6,#36a283,2007,1,New England Patriots,New York Jets,3.62
-#376ea6,#c0999f,2011,15,Dallas Cowboys,Tampa Bay Buccaneers,3.62
-#36a283,#5d84c9,2021,18,New York Jets,Buffalo Bills,3.62
 #376ea6,#5f72aa,2018,15,Tennessee Titans,New York Giants,3.62
-#376ea6,#947373,2014,17,Dallas Cowboys,Washington Commanders,3.61
-#6288cb,#4c4c4c,2006,15,Los Angeles Rams,Las Vegas Raiders,3.61
-#847fa4,#dababf,2012,5,Baltimore Ravens,Kansas City Chiefs,3.61
+#8bbed8,#e8cac0,2022,9,Carolina Panthers,Cincinnati Bengals,3.62
+#a09ca6,#4c4c4c,2017,2,Minnesota Vikings,Pittsburgh Steelers,3.62
+#6288cb,#c0999f,2007,3,Los Angeles Rams,Tampa Bay Buccaneers,3.62
+#5f72aa,#947373,2018,14,New York Giants,Washington Commanders,3.62
+#b49fa4,#3ba6b2,2000,12,Arizona Cardinals,Philadelphia Eagles,3.62
+#376ea6,#36a283,2007,1,New England Patriots,New York Jets,3.62
+#3e77ba,#376ea6,2011,8,Indianapolis Colts,Tennessee Titans,3.62
+#b49fa4,#5f72aa,2020,14,Arizona Cardinals,New York Giants,3.62
+#36a283,#5d84c9,2021,18,New York Jets,Buffalo Bills,3.62
+#376ea6,#5f72aa,2021,15,Dallas Cowboys,New York Giants,3.62
 #4c4c4c,#376ea6,2006,6,Las Vegas Raiders,Denver Broncos,3.61
+#847fa4,#dababf,2012,5,Baltimore Ravens,Kansas City Chiefs,3.61
+#6288cb,#4c4c4c,2006,15,Los Angeles Rams,Las Vegas Raiders,3.61
 #4c4c4c,#88b9d8,2005,13,Las Vegas Raiders,Los Angeles Chargers,3.61
+#376ea6,#947373,2014,17,Dallas Cowboys,Washington Commanders,3.61
 #787878,#5f72aa,2012,12,Green Bay Packers,New York Giants,3.6
-#3f728c,#a09ca6,2016,5,Houston Texans,Minnesota Vikings,3.6
-#b49fa4,#d07373,2011,11,Arizona Cardinals,San Francisco 49ers,3.6
 #3f728c,#6288cb,2017,10,Houston Texans,Los Angeles Rams,3.6
-#c0999f,#c0999f,2011,17,Tampa Bay Buccaneers,Atlanta Falcons,3.59
-#376ea6,#88b9d8,2008,6,New England Patriots,Los Angeles Chargers,3.59
-#3ba6b2,#787878,2000,3,Philadelphia Eagles,Green Bay Packers,3.59
-#88b9d8,#376ea6,2002,5,Los Angeles Chargers,Denver Broncos,3.59
-#d07373,#4c4c4c,2015,2,San Francisco 49ers,Pittsburgh Steelers,3.59
-#5f72aa,#947373,2014,4,New York Giants,Washington Commanders,3.59
-#c0999f,#fcfcfc,2013,17,Tampa Bay Buccaneers,New Orleans Saints,3.59
-#5e6470,#a09ca6,2010,15,Chicago Bears,Minnesota Vikings,3.59
+#b49fa4,#d07373,2011,11,Arizona Cardinals,San Francisco 49ers,3.6
+#3f728c,#a09ca6,2016,5,Houston Texans,Minnesota Vikings,3.6
 #5e6470,#6288cb,1999,16,Chicago Bears,Los Angeles Rams,3.59
-#36a283,#64c5cc,2022,18,New York Jets,Miami Dolphins,3.59
-#e8cac0,#376ea6,2023,4,Cincinnati Bengals,Tennessee Titans,3.59
+#376ea6,#88b9d8,2008,6,New England Patriots,Los Angeles Chargers,3.59
 #376ea6,#c0999f,2000,14,Seattle Seahawks,Atlanta Falcons,3.59
-#376ea6,#d07373,2024,4,New England Patriots,San Francisco 49ers,3.58
-#c0999f,#fcfcfc,2000,16,Atlanta Falcons,New Orleans Saints,3.58
+#d07373,#4c4c4c,2015,2,San Francisco 49ers,Pittsburgh Steelers,3.59
+#3ba6b2,#787878,2000,3,Philadelphia Eagles,Green Bay Packers,3.59
+#c0999f,#fcfcfc,2013,17,Tampa Bay Buccaneers,New Orleans Saints,3.59
+#88b9d8,#376ea6,2002,5,Los Angeles Chargers,Denver Broncos,3.59
+#e8cac0,#376ea6,2023,4,Cincinnati Bengals,Tennessee Titans,3.59
+#36a283,#64c5cc,2022,18,New York Jets,Miami Dolphins,3.59
+#5e6470,#a09ca6,2010,15,Chicago Bears,Minnesota Vikings,3.59
+#c0999f,#c0999f,2011,17,Tampa Bay Buccaneers,Atlanta Falcons,3.59
+#5f72aa,#947373,2014,4,New York Giants,Washington Commanders,3.59
 #847fa4,#e8cac0,2017,1,Baltimore Ravens,Cincinnati Bengals,3.58
+#c0999f,#fcfcfc,2000,16,Atlanta Falcons,New Orleans Saints,3.58
 #d07373,#376ea6,2016,3,San Francisco 49ers,Seattle Seahawks,3.58
-#8bbed8,#a09ca6,2013,6,Carolina Panthers,Minnesota Vikings,3.58
 #376ea6,#5d84c9,2008,17,New England Patriots,Buffalo Bills,3.58
+#8bbed8,#a09ca6,2013,6,Carolina Panthers,Minnesota Vikings,3.58
+#376ea6,#d07373,2024,4,New England Patriots,San Francisco 49ers,3.58
 #a09ca6,#6288cb,2003,13,Minnesota Vikings,Los Angeles Rams,3.58
-#dababf,#b49fa4,2022,1,Kansas City Chiefs,Arizona Cardinals,3.57
-#4c4c4c,#e8cac0,2006,14,Las Vegas Raiders,Cincinnati Bengals,3.57
 #376ea6,#d07373,2007,4,Seattle Seahawks,San Francisco 49ers,3.57
-#376ea6,#64c5cc,2006,14,New England Patriots,Miami Dolphins,3.57
 #e6beb3,#e8cac0,2023,18,Cleveland Browns,Cincinnati Bengals,3.57
-#8bbed8,#3ba6b2,2014,10,Carolina Panthers,Philadelphia Eagles,3.57
-#8bbed8,#787878,2014,7,Carolina Panthers,Green Bay Packers,3.57
-#fcfcfc,#d07373,2007,8,New Orleans Saints,San Francisco 49ers,3.57
+#376ea6,#64c5cc,2006,14,New England Patriots,Miami Dolphins,3.57
 #b49fa4,#36a283,2020,5,Arizona Cardinals,New York Jets,3.57
 #6288cb,#8bbed8,2006,11,Los Angeles Rams,Carolina Panthers,3.57
+#8bbed8,#787878,2014,7,Carolina Panthers,Green Bay Packers,3.57
+#8bbed8,#3ba6b2,2014,10,Carolina Panthers,Philadelphia Eagles,3.57
+#dababf,#b49fa4,2022,1,Kansas City Chiefs,Arizona Cardinals,3.57
+#fcfcfc,#d07373,2007,8,New Orleans Saints,San Francisco 49ers,3.57
+#4c4c4c,#e8cac0,2006,14,Las Vegas Raiders,Cincinnati Bengals,3.57
 #376ea6,#3f728c,2014,13,Tennessee Titans,Houston Texans,3.56
-#6288cb,#376ea6,2023,8,Los Angeles Rams,Dallas Cowboys,3.56
-#64c5cc,#fcfcfc,2021,16,Miami Dolphins,New Orleans Saints,3.56
 #376ea6,#3e77ba,2014,4,Tennessee Titans,Indianapolis Colts,3.56
-#4db3c4,#847fa4,2008,17,Jacksonville Jaguars,Baltimore Ravens,3.56
-#64c5cc,#376ea6,2015,6,Miami Dolphins,Tennessee Titans,3.56
-#e8cac0,#a09ca6,2009,14,Cincinnati Bengals,Minnesota Vikings,3.56
-#376ea6,#3ba6b2,2022,13,Tennessee Titans,Philadelphia Eagles,3.56
-#c0999f,#7cb4d3,2005,12,Atlanta Falcons,Detroit Lions,3.56
+#64c5cc,#fcfcfc,2021,16,Miami Dolphins,New Orleans Saints,3.56
 #3f728c,#64c5cc,2022,12,Houston Texans,Miami Dolphins,3.56
+#4db3c4,#847fa4,2008,17,Jacksonville Jaguars,Baltimore Ravens,3.56
+#c0999f,#7cb4d3,2005,12,Atlanta Falcons,Detroit Lions,3.56
+#e8cac0,#a09ca6,2009,14,Cincinnati Bengals,Minnesota Vikings,3.56
+#6288cb,#376ea6,2023,8,Los Angeles Rams,Dallas Cowboys,3.56
+#376ea6,#3ba6b2,2022,13,Tennessee Titans,Philadelphia Eagles,3.56
+#64c5cc,#376ea6,2015,6,Miami Dolphins,Tennessee Titans,3.56
 #3e77ba,#4db3c4,2007,7,Indianapolis Colts,Jacksonville Jaguars,3.56
-#dababf,#4c4c4c,2022,18,Kansas City Chiefs,Las Vegas Raiders,3.55
-#3ba6b2,#847fa4,2008,12,Philadelphia Eagles,Baltimore Ravens,3.55
-#3e77ba,#5d84c9,1999,17,Indianapolis Colts,Buffalo Bills,3.55
-#a09ca6,#3ba6b2,2017,Playoff,Minnesota Vikings,Philadelphia Eagles,3.55
+#947373,#3ba6b2,2004,11,Washington Commanders,Philadelphia Eagles,3.55
+#8bbed8,#4c4c4c,2018,10,Carolina Panthers,Pittsburgh Steelers,3.55
 #64c5cc,#a09ca6,2018,15,Miami Dolphins,Minnesota Vikings,3.55
 #376ea6,#3ba6b2,2002,3,Dallas Cowboys,Philadelphia Eagles,3.55
 #8bbed8,#847fa4,2014,4,Carolina Panthers,Baltimore Ravens,3.55
+#3ba6b2,#847fa4,2008,12,Philadelphia Eagles,Baltimore Ravens,3.55
 #376ea6,#5f72aa,2023,4,Seattle Seahawks,New York Giants,3.55
-#947373,#3ba6b2,2004,11,Washington Commanders,Philadelphia Eagles,3.55
-#8bbed8,#4c4c4c,2018,10,Carolina Panthers,Pittsburgh Steelers,3.55
-#6288cb,#b49fa4,2007,17,Los Angeles Rams,Arizona Cardinals,3.54
-#4db3c4,#376ea6,2018,14,Jacksonville Jaguars,Tennessee Titans,3.54
-#376ea6,#5f72aa,2008,9,Dallas Cowboys,New York Giants,3.54
+#3e77ba,#5d84c9,1999,17,Indianapolis Colts,Buffalo Bills,3.55
+#dababf,#4c4c4c,2022,18,Kansas City Chiefs,Las Vegas Raiders,3.55
+#a09ca6,#3ba6b2,2017,Playoff,Minnesota Vikings,Philadelphia Eagles,3.55
 #7cb4d3,#787878,2002,10,Detroit Lions,Green Bay Packers,3.54
+#6288cb,#b49fa4,2007,17,Los Angeles Rams,Arizona Cardinals,3.54
 #376ea6,#376ea6,2021,12,Tennessee Titans,New England Patriots,3.54
+#376ea6,#64c5cc,2007,7,New England Patriots,Miami Dolphins,3.54
+#64c5cc,#847fa4,2023,17,Miami Dolphins,Baltimore Ravens,3.54
+#64c5cc,#88b9d8,2003,8,Miami Dolphins,Los Angeles Chargers,3.54
+#4db3c4,#376ea6,2018,14,Jacksonville Jaguars,Tennessee Titans,3.54
 #c0999f,#a09ca6,2007,1,Atlanta Falcons,Minnesota Vikings,3.54
 #36a283,#4db3c4,2018,4,New York Jets,Jacksonville Jaguars,3.54
+#376ea6,#5f72aa,2008,9,Dallas Cowboys,New York Giants,3.54
 #7cb4d3,#a09ca6,2019,14,Detroit Lions,Minnesota Vikings,3.54
-#64c5cc,#88b9d8,2003,8,Miami Dolphins,Los Angeles Chargers,3.54
-#64c5cc,#847fa4,2023,17,Miami Dolphins,Baltimore Ravens,3.54
-#376ea6,#64c5cc,2007,7,New England Patriots,Miami Dolphins,3.54
 #64c5cc,#376ea6,2017,12,Miami Dolphins,New England Patriots,3.53
-#d07373,#fcfcfc,2006,13,San Francisco 49ers,New Orleans Saints,3.53
 #7cb4d3,#a09ca6,2009,10,Detroit Lions,Minnesota Vikings,3.53
-#e6beb3,#4c4c4c,2013,17,Cleveland Browns,Pittsburgh Steelers,3.53
-#dababf,#36a283,2001,9,Kansas City Chiefs,New York Jets,3.53
-#dababf,#3f728c,2003,3,Kansas City Chiefs,Houston Texans,3.53
+#d07373,#fcfcfc,2006,13,San Francisco 49ers,New Orleans Saints,3.53
 #3f728c,#376ea6,2003,6,Houston Texans,Tennessee Titans,3.53
+#e6beb3,#4c4c4c,2013,17,Cleveland Browns,Pittsburgh Steelers,3.53
 #376ea6,#847fa4,2000,Playoff,Denver Broncos,Baltimore Ravens,3.53
+#dababf,#3f728c,2003,3,Kansas City Chiefs,Houston Texans,3.53
+#dababf,#36a283,2001,9,Kansas City Chiefs,New York Jets,3.53
 #e6beb3,#c0999f,2002,6,Cleveland Browns,Tampa Bay Buccaneers,3.52
-#64c5cc,#5d84c9,2013,16,Miami Dolphins,Buffalo Bills,3.52
 #b49fa4,#787878,2024,6,Arizona Cardinals,Green Bay Packers,3.52
-#b49fa4,#8bbed8,2001,16,Arizona Cardinals,Carolina Panthers,3.52
 #376ea6,#36a283,2021,2,New England Patriots,New York Jets,3.52
-#6288cb,#d07373,2002,5,Los Angeles Rams,San Francisco 49ers,3.51
-#64c5cc,#4c4c4c,2016,Playoff,Miami Dolphins,Pittsburgh Steelers,3.51
-#fcfcfc,#8bbed8,2007,12,New Orleans Saints,Carolina Panthers,3.51
+#b49fa4,#8bbed8,2001,16,Arizona Cardinals,Carolina Panthers,3.52
+#64c5cc,#5d84c9,2013,16,Miami Dolphins,Buffalo Bills,3.52
 #947373,#fcfcfc,2018,5,Washington Commanders,New Orleans Saints,3.51
-#c0999f,#376ea6,2020,3,Tampa Bay Buccaneers,Denver Broncos,3.51
 #376ea6,#376ea6,2015,15,Tennessee Titans,New England Patriots,3.51
-#3f728c,#c0999f,2015,4,Houston Texans,Atlanta Falcons,3.5
-#4db3c4,#64c5cc,2012,15,Jacksonville Jaguars,Miami Dolphins,3.5
-#787878,#5e6470,2000,14,Green Bay Packers,Chicago Bears,3.5
-#3ba6b2,#376ea6,2017,11,Philadelphia Eagles,Dallas Cowboys,3.5
-#fcfcfc,#3f728c,2015,12,New Orleans Saints,Houston Texans,3.5
+#fcfcfc,#8bbed8,2007,12,New Orleans Saints,Carolina Panthers,3.51
+#6288cb,#d07373,2002,5,Los Angeles Rams,San Francisco 49ers,3.51
+#c0999f,#376ea6,2020,3,Tampa Bay Buccaneers,Denver Broncos,3.51
+#64c5cc,#4c4c4c,2016,Playoff,Miami Dolphins,Pittsburgh Steelers,3.51
 #e6beb3,#4c4c4c,2006,14,Cleveland Browns,Pittsburgh Steelers,3.5
+#376ea6,#fcfcfc,2013,10,Dallas Cowboys,New Orleans Saints,3.5
+#4db3c4,#64c5cc,2012,15,Jacksonville Jaguars,Miami Dolphins,3.5
+#fcfcfc,#3f728c,2015,12,New Orleans Saints,Houston Texans,3.5
+#e6beb3,#787878,2013,7,Cleveland Browns,Green Bay Packers,3.5
+#3f728c,#c0999f,2015,4,Houston Texans,Atlanta Falcons,3.5
 #376ea6,#e8cac0,2007,4,New England Patriots,Cincinnati Bengals,3.5
 #376ea6,#a09ca6,2006,8,New England Patriots,Minnesota Vikings,3.5
-#376ea6,#fcfcfc,2013,10,Dallas Cowboys,New Orleans Saints,3.5
-#e6beb3,#787878,2013,7,Cleveland Browns,Green Bay Packers,3.5
+#787878,#5e6470,2000,14,Green Bay Packers,Chicago Bears,3.5
+#3ba6b2,#376ea6,2017,11,Philadelphia Eagles,Dallas Cowboys,3.5
 #d07373,#b49fa4,2010,12,San Francisco 49ers,Arizona Cardinals,3.49
-#376ea6,#3e77ba,2004,Playoff,Denver Broncos,Indianapolis Colts,3.49
-#5f72aa,#376ea6,2003,16,New York Giants,Dallas Cowboys,3.49
-#c0999f,#3ba6b2,2000,5,Atlanta Falcons,Philadelphia Eagles,3.49
-#5e6470,#88b9d8,2023,8,Chicago Bears,Los Angeles Chargers,3.49
-#6288cb,#c0999f,2019,7,Los Angeles Rams,Atlanta Falcons,3.49
-#376ea6,#e6beb3,2016,5,New England Patriots,Cleveland Browns,3.49
-#d07373,#6288cb,2017,17,San Francisco 49ers,Los Angeles Rams,3.49
-#5f72aa,#6288cb,1999,15,New York Giants,Los Angeles Rams,3.49
-#7cb4d3,#5e6470,2011,10,Detroit Lions,Chicago Bears,3.49
-#5d84c9,#4db3c4,2007,12,Buffalo Bills,Jacksonville Jaguars,3.49
 #d07373,#376ea6,2015,11,San Francisco 49ers,Seattle Seahawks,3.49
-#5d84c9,#c0999f,2013,14,Buffalo Bills,Tampa Bay Buccaneers,3.48
-#376ea6,#5d84c9,2023,15,Dallas Cowboys,Buffalo Bills,3.48
+#d07373,#6288cb,2017,17,San Francisco 49ers,Los Angeles Rams,3.49
+#5d84c9,#4db3c4,2007,12,Buffalo Bills,Jacksonville Jaguars,3.49
+#5f72aa,#6288cb,1999,15,New York Giants,Los Angeles Rams,3.49
+#376ea6,#e6beb3,2016,5,New England Patriots,Cleveland Browns,3.49
+#376ea6,#3e77ba,2004,Playoff,Denver Broncos,Indianapolis Colts,3.49
+#c0999f,#3ba6b2,2000,5,Atlanta Falcons,Philadelphia Eagles,3.49
+#5f72aa,#376ea6,2003,16,New York Giants,Dallas Cowboys,3.49
+#7cb4d3,#5e6470,2011,10,Detroit Lions,Chicago Bears,3.49
+#6288cb,#c0999f,2019,7,Los Angeles Rams,Atlanta Falcons,3.49
+#5e6470,#88b9d8,2023,8,Chicago Bears,Los Angeles Chargers,3.49
 #b49fa4,#376ea6,2005,3,Arizona Cardinals,Seattle Seahawks,3.48
+#5d84c9,#c0999f,2013,14,Buffalo Bills,Tampa Bay Buccaneers,3.48
+#376ea6,#88b9d8,2015,13,Denver Broncos,Los Angeles Chargers,3.48
+#376ea6,#5d84c9,2023,15,Dallas Cowboys,Buffalo Bills,3.48
 #4c4c4c,#3e77ba,2004,5,Las Vegas Raiders,Indianapolis Colts,3.48
 #4c4c4c,#3ba6b2,2022,8,Pittsburgh Steelers,Philadelphia Eagles,3.48
-#376ea6,#88b9d8,2015,13,Denver Broncos,Los Angeles Chargers,3.48
 #dababf,#376ea6,2019,7,Kansas City Chiefs,Denver Broncos,3.48
+#36a283,#dababf,2005,1,New York Jets,Kansas City Chiefs,3.47
+#e6beb3,#5d84c9,2009,5,Cleveland Browns,Buffalo Bills,3.47
+#b49fa4,#d07373,2023,4,Arizona Cardinals,San Francisco 49ers,3.47
 #dababf,#c0999f,2008,3,Kansas City Chiefs,Atlanta Falcons,3.47
 #b49fa4,#376ea6,2020,6,Arizona Cardinals,Dallas Cowboys,3.47
-#b49fa4,#d07373,2023,4,Arizona Cardinals,San Francisco 49ers,3.47
 #376ea6,#947373,2020,7,Dallas Cowboys,Washington Commanders,3.47
 #5e6470,#c0999f,1999,7,Chicago Bears,Tampa Bay Buccaneers,3.47
-#e6beb3,#5d84c9,2009,5,Cleveland Browns,Buffalo Bills,3.47
-#847fa4,#e6beb3,2009,10,Baltimore Ravens,Cleveland Browns,3.47
 #376ea6,#6288cb,2016,2,Seattle Seahawks,Los Angeles Rams,3.47
-#36a283,#dababf,2005,1,New York Jets,Kansas City Chiefs,3.47
-#3e77ba,#36a283,2012,6,Indianapolis Colts,New York Jets,3.46
-#64c5cc,#36a283,2023,12,Miami Dolphins,New York Jets,3.46
+#847fa4,#e6beb3,2009,10,Baltimore Ravens,Cleveland Browns,3.47
 #36a283,#88b9d8,2002,9,New York Jets,Los Angeles Chargers,3.46
-#376ea6,#dababf,2016,16,Denver Broncos,Kansas City Chiefs,3.46
-#3f728c,#376ea6,2024,11,Houston Texans,Dallas Cowboys,3.46
-#376ea6,#64c5cc,2016,17,New England Patriots,Miami Dolphins,3.46
+#3e77ba,#36a283,2012,6,Indianapolis Colts,New York Jets,3.46
 #3e77ba,#376ea6,2022,13,Indianapolis Colts,Dallas Cowboys,3.46
-#6288cb,#dababf,2014,8,Los Angeles Rams,Kansas City Chiefs,3.46
 #88b9d8,#e8cac0,1999,2,Los Angeles Chargers,Cincinnati Bengals,3.46
+#3f728c,#376ea6,2024,11,Houston Texans,Dallas Cowboys,3.46
+#64c5cc,#36a283,2023,12,Miami Dolphins,New York Jets,3.46
+#6288cb,#dababf,2014,8,Los Angeles Rams,Kansas City Chiefs,3.46
+#376ea6,#dababf,2016,16,Denver Broncos,Kansas City Chiefs,3.46
+#376ea6,#64c5cc,2016,17,New England Patriots,Miami Dolphins,3.46
 #376ea6,#3e77ba,2003,2,Tennessee Titans,Indianapolis Colts,3.46
-#376ea6,#5d84c9,2018,8,New England Patriots,Buffalo Bills,3.45
-#376ea6,#fcfcfc,2024,7,Denver Broncos,New Orleans Saints,3.45
-#4c4c4c,#3e77ba,2005,12,Pittsburgh Steelers,Indianapolis Colts,3.45
 #5d84c9,#376ea6,2004,12,Buffalo Bills,Seattle Seahawks,3.45
-#dababf,#3ba6b2,2009,3,Kansas City Chiefs,Philadelphia Eagles,3.45
-#5f72aa,#376ea6,2017,1,New York Giants,Dallas Cowboys,3.45
-#376ea6,#787878,2016,14,Seattle Seahawks,Green Bay Packers,3.45
-#376ea6,#787878,2020,16,Tennessee Titans,Green Bay Packers,3.45
-#d07373,#5f72aa,2020,3,San Francisco 49ers,New York Giants,3.45
-#d07373,#3ba6b2,2022,Playoff,San Francisco 49ers,Philadelphia Eagles,3.45
 #4c4c4c,#a09ca6,2019,3,Las Vegas Raiders,Minnesota Vikings,3.45
+#376ea6,#5d84c9,2018,8,New England Patriots,Buffalo Bills,3.45
+#4c4c4c,#3e77ba,2005,12,Pittsburgh Steelers,Indianapolis Colts,3.45
 #5f72aa,#e6beb3,2000,10,New York Giants,Cleveland Browns,3.45
-#376ea6,#4c4c4c,2001,7,Tennessee Titans,Pittsburgh Steelers,3.44
-#947373,#5d84c9,2019,9,Washington Commanders,Buffalo Bills,3.44
+#dababf,#3ba6b2,2009,3,Kansas City Chiefs,Philadelphia Eagles,3.45
+#d07373,#5f72aa,2020,3,San Francisco 49ers,New York Giants,3.45
+#5f72aa,#376ea6,2017,1,New York Giants,Dallas Cowboys,3.45
+#d07373,#3ba6b2,2022,Playoff,San Francisco 49ers,Philadelphia Eagles,3.45
+#376ea6,#787878,2016,14,Seattle Seahawks,Green Bay Packers,3.45
+#376ea6,#fcfcfc,2024,7,Denver Broncos,New Orleans Saints,3.45
+#376ea6,#787878,2020,16,Tennessee Titans,Green Bay Packers,3.45
 #5f72aa,#88b9d8,2013,14,New York Giants,Los Angeles Chargers,3.44
-#c0999f,#8bbed8,2019,11,Atlanta Falcons,Carolina Panthers,3.44
 #376ea6,#88b9d8,2008,17,Denver Broncos,Los Angeles Chargers,3.44
+#376ea6,#4c4c4c,2001,7,Tennessee Titans,Pittsburgh Steelers,3.44
 #4db3c4,#88b9d8,2016,2,Jacksonville Jaguars,Los Angeles Chargers,3.44
-#847fa4,#376ea6,2004,12,Baltimore Ravens,New England Patriots,3.43
+#947373,#5d84c9,2019,9,Washington Commanders,Buffalo Bills,3.44
+#c0999f,#8bbed8,2019,11,Atlanta Falcons,Carolina Panthers,3.44
+#e8cac0,#5d84c9,2002,17,Cincinnati Bengals,Buffalo Bills,3.43
 #5e6470,#c0999f,2001,4,Chicago Bears,Atlanta Falcons,3.43
 #e6beb3,#5e6470,2017,16,Cleveland Browns,Chicago Bears,3.43
-#e8cac0,#5d84c9,2002,17,Cincinnati Bengals,Buffalo Bills,3.43
+#847fa4,#376ea6,2004,12,Baltimore Ravens,New England Patriots,3.43
 #8bbed8,#fcfcfc,2014,14,Carolina Panthers,New Orleans Saints,3.43
-#dababf,#847fa4,1999,7,Kansas City Chiefs,Baltimore Ravens,3.42
 #d07373,#6288cb,2015,8,San Francisco 49ers,Los Angeles Rams,3.42
-#8bbed8,#6288cb,1999,10,Carolina Panthers,Los Angeles Rams,3.41
-#88b9d8,#376ea6,2007,2,Los Angeles Chargers,New England Patriots,3.41
-#376ea6,#e8cac0,2003,1,Denver Broncos,Cincinnati Bengals,3.41
+#dababf,#847fa4,1999,7,Kansas City Chiefs,Baltimore Ravens,3.42
 #5d84c9,#64c5cc,2015,3,Buffalo Bills,Miami Dolphins,3.41
-#5e6470,#e8cac0,2001,6,Chicago Bears,Cincinnati Bengals,3.41
 #36a283,#376ea6,2023,2,New York Jets,Dallas Cowboys,3.41
+#8bbed8,#6288cb,1999,10,Carolina Panthers,Los Angeles Rams,3.41
+#376ea6,#e8cac0,2003,1,Denver Broncos,Cincinnati Bengals,3.41
+#88b9d8,#376ea6,2007,2,Los Angeles Chargers,New England Patriots,3.41
+#5e6470,#e8cac0,2001,6,Chicago Bears,Cincinnati Bengals,3.41
 #6288cb,#376ea6,2016,13,Los Angeles Rams,New England Patriots,3.41
-#3f728c,#4c4c4c,2008,1,Houston Texans,Pittsburgh Steelers,3.4
-#5f72aa,#3e77ba,2010,2,New York Giants,Indianapolis Colts,3.4
-#4c4c4c,#376ea6,2010,1,Las Vegas Raiders,Tennessee Titans,3.4
 #376ea6,#88b9d8,2017,7,Denver Broncos,Los Angeles Chargers,3.4
-#4db3c4,#3e77ba,2014,12,Jacksonville Jaguars,Indianapolis Colts,3.4
+#5f72aa,#3e77ba,2010,2,New York Giants,Indianapolis Colts,3.4
 #6288cb,#787878,2004,12,Los Angeles Rams,Green Bay Packers,3.4
+#4db3c4,#3e77ba,2014,12,Jacksonville Jaguars,Indianapolis Colts,3.4
+#4c4c4c,#376ea6,2010,1,Las Vegas Raiders,Tennessee Titans,3.4
+#3f728c,#4c4c4c,2008,1,Houston Texans,Pittsburgh Steelers,3.4
 #4c4c4c,#376ea6,2009,12,Las Vegas Raiders,Dallas Cowboys,3.4
-#88b9d8,#36a283,2023,9,Los Angeles Chargers,New York Jets,3.39
 #64c5cc,#36a283,2004,8,Miami Dolphins,New York Jets,3.39
 #5d84c9,#88b9d8,2017,11,Buffalo Bills,Los Angeles Chargers,3.39
-#7cb4d3,#376ea6,2016,Playoff,Detroit Lions,Seattle Seahawks,3.39
 #5f72aa,#d07373,2005,9,New York Giants,San Francisco 49ers,3.39
-#376ea6,#c0999f,2015,1,Tennessee Titans,Tampa Bay Buccaneers,3.39
 #fcfcfc,#64c5cc,2017,4,New Orleans Saints,Miami Dolphins,3.39
-#3ba6b2,#7cb4d3,2015,12,Philadelphia Eagles,Detroit Lions,3.38
-#6288cb,#3e77ba,2013,10,Los Angeles Rams,Indianapolis Colts,3.38
-#88b9d8,#7cb4d3,2011,16,Los Angeles Chargers,Detroit Lions,3.38
+#88b9d8,#36a283,2023,9,Los Angeles Chargers,New York Jets,3.39
+#7cb4d3,#376ea6,2016,Playoff,Detroit Lions,Seattle Seahawks,3.39
+#376ea6,#c0999f,2015,1,Tennessee Titans,Tampa Bay Buccaneers,3.39
 #88b9d8,#4c4c4c,1999,10,Los Angeles Chargers,Las Vegas Raiders,3.38
-#e8cac0,#4c4c4c,2019,4,Cincinnati Bengals,Pittsburgh Steelers,3.38
+#6288cb,#3e77ba,2013,10,Los Angeles Rams,Indianapolis Colts,3.38
 #36a283,#dababf,2016,3,New York Jets,Kansas City Chiefs,3.38
+#3ba6b2,#7cb4d3,2015,12,Philadelphia Eagles,Detroit Lions,3.38
+#88b9d8,#7cb4d3,2011,16,Los Angeles Chargers,Detroit Lions,3.38
+#e8cac0,#4c4c4c,2019,4,Cincinnati Bengals,Pittsburgh Steelers,3.38
+#8bbed8,#fcfcfc,2023,14,Carolina Panthers,New Orleans Saints,3.37
 #b49fa4,#376ea6,2014,12,Arizona Cardinals,Seattle Seahawks,3.37
 #3ba6b2,#3e77ba,2006,12,Philadelphia Eagles,Indianapolis Colts,3.37
-#4db3c4,#7cb4d3,2022,13,Jacksonville Jaguars,Detroit Lions,3.37
 #376ea6,#88b9d8,2021,17,Denver Broncos,Los Angeles Chargers,3.37
-#8bbed8,#fcfcfc,2023,14,Carolina Panthers,New Orleans Saints,3.37
 #376ea6,#e6beb3,2011,7,Seattle Seahawks,Cleveland Browns,3.37
+#4db3c4,#7cb4d3,2022,13,Jacksonville Jaguars,Detroit Lions,3.37
 #376ea6,#88b9d8,2003,2,Denver Broncos,Los Angeles Chargers,3.37
-#c0999f,#88b9d8,2012,3,Atlanta Falcons,Los Angeles Chargers,3.36
 #376ea6,#4c4c4c,2002,4,Tennessee Titans,Las Vegas Raiders,3.36
 #c0999f,#3e77ba,2007,5,Tampa Bay Buccaneers,Indianapolis Colts,3.36
 #88b9d8,#6288cb,2000,5,Los Angeles Chargers,Los Angeles Rams,3.36
 #e8cac0,#4c4c4c,2000,7,Cincinnati Bengals,Pittsburgh Steelers,3.36
+#c0999f,#88b9d8,2012,3,Atlanta Falcons,Los Angeles Chargers,3.36
 #6288cb,#b49fa4,2018,16,Los Angeles Rams,Arizona Cardinals,3.36
 #376ea6,#4db3c4,2020,14,Tennessee Titans,Jacksonville Jaguars,3.35
-#4c4c4c,#847fa4,2008,8,Las Vegas Raiders,Baltimore Ravens,3.35
-#5d84c9,#847fa4,2024,4,Buffalo Bills,Baltimore Ravens,3.35
 #b49fa4,#5d84c9,2004,8,Arizona Cardinals,Buffalo Bills,3.35
-#e8cac0,#4db3c4,2000,3,Cincinnati Bengals,Jacksonville Jaguars,3.34
-#b49fa4,#8bbed8,2004,11,Arizona Cardinals,Carolina Panthers,3.34
-#4db3c4,#88b9d8,2010,2,Jacksonville Jaguars,Los Angeles Chargers,3.34
-#fcfcfc,#c0999f,2001,15,New Orleans Saints,Tampa Bay Buccaneers,3.34
-#787878,#c0999f,2014,16,Green Bay Packers,Tampa Bay Buccaneers,3.34
-#e8cac0,#7cb4d3,2021,6,Cincinnati Bengals,Detroit Lions,3.34
-#88b9d8,#4db3c4,2013,7,Los Angeles Chargers,Jacksonville Jaguars,3.34
+#5d84c9,#847fa4,2024,4,Buffalo Bills,Baltimore Ravens,3.35
+#4c4c4c,#847fa4,2008,8,Las Vegas Raiders,Baltimore Ravens,3.35
 #8bbed8,#5f72aa,2005,Playoff,Carolina Panthers,New York Giants,3.34
-#c0999f,#c0999f,2002,14,Atlanta Falcons,Tampa Bay Buccaneers,3.34
-#5e6470,#64c5cc,2002,14,Chicago Bears,Miami Dolphins,3.34
 #a09ca6,#6288cb,2014,1,Minnesota Vikings,Los Angeles Rams,3.34
-#6288cb,#847fa4,2007,6,Los Angeles Rams,Baltimore Ravens,3.33
-#376ea6,#4c4c4c,2001,3,Seattle Seahawks,Las Vegas Raiders,3.33
-#3ba6b2,#8bbed8,2009,1,Philadelphia Eagles,Carolina Panthers,3.33
-#c0999f,#3ba6b2,2009,5,Tampa Bay Buccaneers,Philadelphia Eagles,3.33
-#376ea6,#947373,2024,13,Tennessee Titans,Washington Commanders,3.33
-#fcfcfc,#8bbed8,2020,17,New Orleans Saints,Carolina Panthers,3.33
+#e8cac0,#4db3c4,2000,3,Cincinnati Bengals,Jacksonville Jaguars,3.34
+#fcfcfc,#c0999f,2001,15,New Orleans Saints,Tampa Bay Buccaneers,3.34
+#e8cac0,#7cb4d3,2021,6,Cincinnati Bengals,Detroit Lions,3.34
+#4db3c4,#88b9d8,2010,2,Jacksonville Jaguars,Los Angeles Chargers,3.34
+#c0999f,#c0999f,2002,14,Atlanta Falcons,Tampa Bay Buccaneers,3.34
+#787878,#c0999f,2014,16,Green Bay Packers,Tampa Bay Buccaneers,3.34
+#b49fa4,#8bbed8,2004,11,Arizona Cardinals,Carolina Panthers,3.34
+#88b9d8,#4db3c4,2013,7,Los Angeles Chargers,Jacksonville Jaguars,3.34
+#5e6470,#64c5cc,2002,14,Chicago Bears,Miami Dolphins,3.34
 #e8cac0,#e6beb3,2001,11,Cincinnati Bengals,Cleveland Browns,3.33
+#6288cb,#847fa4,2007,6,Los Angeles Rams,Baltimore Ravens,3.33
 #c0999f,#e8cac0,2002,4,Tampa Bay Buccaneers,Cincinnati Bengals,3.33
+#376ea6,#947373,2024,13,Tennessee Titans,Washington Commanders,3.33
+#c0999f,#3ba6b2,2009,5,Tampa Bay Buccaneers,Philadelphia Eagles,3.33
+#3ba6b2,#8bbed8,2009,1,Philadelphia Eagles,Carolina Panthers,3.33
 #376ea6,#fcfcfc,2004,11,Denver Broncos,New Orleans Saints,3.33
-#64c5cc,#dababf,2011,9,Miami Dolphins,Kansas City Chiefs,3.32
-#5e6470,#7cb4d3,2022,17,Chicago Bears,Detroit Lions,3.32
-#c0999f,#fcfcfc,2017,9,Tampa Bay Buccaneers,New Orleans Saints,3.32
-#36a283,#376ea6,2013,4,New York Jets,Tennessee Titans,3.32
+#fcfcfc,#8bbed8,2020,17,New Orleans Saints,Carolina Panthers,3.33
+#376ea6,#4c4c4c,2001,3,Seattle Seahawks,Las Vegas Raiders,3.33
 #b49fa4,#3ba6b2,2008,13,Arizona Cardinals,Philadelphia Eagles,3.32
+#c0999f,#fcfcfc,2017,9,Tampa Bay Buccaneers,New Orleans Saints,3.32
 #3ba6b2,#376ea6,2004,10,Philadelphia Eagles,Dallas Cowboys,3.32
-#36a283,#847fa4,2019,15,New York Jets,Baltimore Ravens,3.31
-#3f728c,#a09ca6,2024,3,Houston Texans,Minnesota Vikings,3.31
-#376ea6,#3ba6b2,2017,9,Denver Broncos,Philadelphia Eagles,3.31
+#36a283,#376ea6,2013,4,New York Jets,Tennessee Titans,3.32
+#5e6470,#7cb4d3,2022,17,Chicago Bears,Detroit Lions,3.32
+#64c5cc,#dababf,2011,9,Miami Dolphins,Kansas City Chiefs,3.32
 #847fa4,#5f72aa,2008,11,Baltimore Ravens,New York Giants,3.31
+#3f728c,#a09ca6,2024,3,Houston Texans,Minnesota Vikings,3.31
+#36a283,#847fa4,2019,15,New York Jets,Baltimore Ravens,3.31
+#376ea6,#3ba6b2,2017,9,Denver Broncos,Philadelphia Eagles,3.31
+#36a283,#5d84c9,2010,4,New York Jets,Buffalo Bills,3.3
+#c0999f,#c0999f,2007,11,Tampa Bay Buccaneers,Atlanta Falcons,3.3
+#36a283,#b49fa4,2024,10,New York Jets,Arizona Cardinals,3.3
 #947373,#376ea6,2015,9,Washington Commanders,New England Patriots,3.3
+#847fa4,#4c4c4c,2000,1,Baltimore Ravens,Pittsburgh Steelers,3.3
 #64c5cc,#5d84c9,2006,15,Miami Dolphins,Buffalo Bills,3.3
 #e6beb3,#376ea6,1999,2,Cleveland Browns,Tennessee Titans,3.3
-#36a283,#5d84c9,2010,4,New York Jets,Buffalo Bills,3.3
-#4c4c4c,#c0999f,2004,14,Las Vegas Raiders,Atlanta Falcons,3.3
-#847fa4,#4c4c4c,2000,1,Baltimore Ravens,Pittsburgh Steelers,3.3
-#c0999f,#c0999f,2007,11,Tampa Bay Buccaneers,Atlanta Falcons,3.3
 #a09ca6,#d07373,2006,9,Minnesota Vikings,San Francisco 49ers,3.3
-#36a283,#b49fa4,2024,10,New York Jets,Arizona Cardinals,3.3
-#a09ca6,#c0999f,2000,9,Minnesota Vikings,Tampa Bay Buccaneers,3.29
-#d07373,#376ea6,2013,2,San Francisco 49ers,Seattle Seahawks,3.29
-#6288cb,#e8cac0,1999,4,Los Angeles Rams,Cincinnati Bengals,3.29
-#7cb4d3,#376ea6,2014,12,Detroit Lions,New England Patriots,3.29
+#4c4c4c,#c0999f,2004,14,Las Vegas Raiders,Atlanta Falcons,3.3
 #36a283,#4c4c4c,2017,2,New York Jets,Las Vegas Raiders,3.29
+#d07373,#376ea6,2013,2,San Francisco 49ers,Seattle Seahawks,3.29
+#a09ca6,#c0999f,2000,9,Minnesota Vikings,Tampa Bay Buccaneers,3.29
 #5e6470,#787878,2017,4,Chicago Bears,Green Bay Packers,3.29
+#7cb4d3,#376ea6,2014,12,Detroit Lions,New England Patriots,3.29
+#6288cb,#e8cac0,1999,4,Los Angeles Rams,Cincinnati Bengals,3.29
+#376ea6,#4c4c4c,2009,3,Denver Broncos,Las Vegas Raiders,3.28
+#3ba6b2,#5f72aa,2022,14,Philadelphia Eagles,New York Giants,3.28
+#376ea6,#e6beb3,2023,3,Tennessee Titans,Cleveland Browns,3.28
 #5d84c9,#36a283,2003,6,Buffalo Bills,New York Jets,3.28
 #6288cb,#c0999f,2004,Playoff,Los Angeles Rams,Atlanta Falcons,3.28
 #5d84c9,#64c5cc,2009,4,Buffalo Bills,Miami Dolphins,3.28
-#376ea6,#4c4c4c,2009,3,Denver Broncos,Las Vegas Raiders,3.28
 #3ba6b2,#4db3c4,2010,3,Philadelphia Eagles,Jacksonville Jaguars,3.28
-#376ea6,#e6beb3,2023,3,Tennessee Titans,Cleveland Browns,3.28
-#3ba6b2,#5f72aa,2022,14,Philadelphia Eagles,New York Giants,3.28
-#dababf,#947373,2001,3,Kansas City Chiefs,Washington Commanders,3.27
-#376ea6,#c0999f,2003,8,Dallas Cowboys,Tampa Bay Buccaneers,3.27
-#c0999f,#4c4c4c,2000,13,Atlanta Falcons,Las Vegas Raiders,3.27
-#fcfcfc,#d07373,2022,12,New Orleans Saints,San Francisco 49ers,3.27
 #64c5cc,#376ea6,2024,3,Miami Dolphins,Seattle Seahawks,3.27
+#376ea6,#c0999f,2003,8,Dallas Cowboys,Tampa Bay Buccaneers,3.27
 #5e6470,#376ea6,2014,8,Chicago Bears,New England Patriots,3.27
+#c0999f,#4c4c4c,2000,13,Atlanta Falcons,Las Vegas Raiders,3.27
+#dababf,#947373,2001,3,Kansas City Chiefs,Washington Commanders,3.27
+#fcfcfc,#d07373,2022,12,New Orleans Saints,San Francisco 49ers,3.27
+#4c4c4c,#5d84c9,2023,2,Las Vegas Raiders,Buffalo Bills,3.26
 #dababf,#c0999f,2012,6,Kansas City Chiefs,Tampa Bay Buccaneers,3.26
 #6288cb,#376ea6,2013,17,Los Angeles Rams,Seattle Seahawks,3.26
-#4c4c4c,#5d84c9,2023,2,Las Vegas Raiders,Buffalo Bills,3.26
-#c0999f,#5f72aa,2006,8,Tampa Bay Buccaneers,New York Giants,3.26
 #6288cb,#5f72aa,2021,6,Los Angeles Rams,New York Giants,3.26
-#5e6470,#4db3c4,2004,14,Chicago Bears,Jacksonville Jaguars,3.26
+#c0999f,#5f72aa,2006,8,Tampa Bay Buccaneers,New York Giants,3.26
 #c0999f,#4c4c4c,2006,13,Tampa Bay Buccaneers,Pittsburgh Steelers,3.26
+#5e6470,#4db3c4,2004,14,Chicago Bears,Jacksonville Jaguars,3.26
 #36a283,#376ea6,2019,3,New York Jets,New England Patriots,3.26
-#376ea6,#5d84c9,2017,13,New England Patriots,Buffalo Bills,3.25
-#376ea6,#3f728c,2015,14,New England Patriots,Houston Texans,3.25
-#3ba6b2,#947373,2010,10,Philadelphia Eagles,Washington Commanders,3.25
 #376ea6,#e8cac0,2020,14,Dallas Cowboys,Cincinnati Bengals,3.25
-#7cb4d3,#376ea6,2003,11,Detroit Lions,Seattle Seahawks,3.24
-#5e6470,#a09ca6,2009,12,Chicago Bears,Minnesota Vikings,3.24
-#376ea6,#847fa4,2009,8,Denver Broncos,Baltimore Ravens,3.24
-#3e77ba,#376ea6,2005,4,Indianapolis Colts,Tennessee Titans,3.24
-#d07373,#376ea6,2020,7,San Francisco 49ers,New England Patriots,3.24
-#376ea6,#c0999f,2013,10,Seattle Seahawks,Atlanta Falcons,3.24
+#376ea6,#3f728c,2015,14,New England Patriots,Houston Texans,3.25
+#376ea6,#5d84c9,2017,13,New England Patriots,Buffalo Bills,3.25
+#3ba6b2,#947373,2010,10,Philadelphia Eagles,Washington Commanders,3.25
 #dababf,#376ea6,2021,7,Kansas City Chiefs,Tennessee Titans,3.24
-#8bbed8,#88b9d8,2012,15,Carolina Panthers,Los Angeles Chargers,3.24
-#787878,#6288cb,2001,Playoff,Green Bay Packers,Los Angeles Rams,3.24
-#d07373,#947373,2013,12,San Francisco 49ers,Washington Commanders,3.24
+#376ea6,#847fa4,2009,8,Denver Broncos,Baltimore Ravens,3.24
 #376ea6,#376ea6,2017,10,New England Patriots,Denver Broncos,3.24
-#b49fa4,#5e6470,2003,13,Arizona Cardinals,Chicago Bears,3.23
-#b49fa4,#d07373,2022,18,Arizona Cardinals,San Francisco 49ers,3.23
+#3e77ba,#376ea6,2005,4,Indianapolis Colts,Tennessee Titans,3.24
+#7cb4d3,#376ea6,2003,11,Detroit Lions,Seattle Seahawks,3.24
+#787878,#6288cb,2001,Playoff,Green Bay Packers,Los Angeles Rams,3.24
+#376ea6,#c0999f,2013,10,Seattle Seahawks,Atlanta Falcons,3.24
+#d07373,#947373,2013,12,San Francisco 49ers,Washington Commanders,3.24
+#5e6470,#a09ca6,2009,12,Chicago Bears,Minnesota Vikings,3.24
+#d07373,#376ea6,2020,7,San Francisco 49ers,New England Patriots,3.24
+#8bbed8,#88b9d8,2012,15,Carolina Panthers,Los Angeles Chargers,3.24
 #b49fa4,#376ea6,2009,6,Arizona Cardinals,Seattle Seahawks,3.23
-#947373,#5f72aa,2019,4,Washington Commanders,New York Giants,3.23
-#3e77ba,#5d84c9,2009,17,Indianapolis Colts,Buffalo Bills,3.23
-#e8cac0,#7cb4d3,2005,15,Cincinnati Bengals,Detroit Lions,3.23
 #e6beb3,#3f728c,2011,9,Cleveland Browns,Houston Texans,3.23
-#a09ca6,#c0999f,2005,4,Minnesota Vikings,Atlanta Falcons,3.22
-#5f72aa,#4c4c4c,2023,9,New York Giants,Las Vegas Raiders,3.22
-#6288cb,#376ea6,2007,4,Los Angeles Rams,Dallas Cowboys,3.22
+#3e77ba,#5d84c9,2009,17,Indianapolis Colts,Buffalo Bills,3.23
+#947373,#5f72aa,2019,4,Washington Commanders,New York Giants,3.23
+#b49fa4,#d07373,2022,18,Arizona Cardinals,San Francisco 49ers,3.23
+#e8cac0,#7cb4d3,2005,15,Cincinnati Bengals,Detroit Lions,3.23
+#b49fa4,#5e6470,2003,13,Arizona Cardinals,Chicago Bears,3.23
 #b49fa4,#fcfcfc,2009,Playoff,Arizona Cardinals,New Orleans Saints,3.22
-#376ea6,#36a283,2012,12,New England Patriots,New York Jets,3.21
-#376ea6,#4c4c4c,2008,1,Denver Broncos,Las Vegas Raiders,3.21
-#376ea6,#4c4c4c,2005,1,Tennessee Titans,Pittsburgh Steelers,3.21
-#3e77ba,#847fa4,2011,14,Indianapolis Colts,Baltimore Ravens,3.21
+#6288cb,#376ea6,2007,4,Los Angeles Rams,Dallas Cowboys,3.22
+#5f72aa,#4c4c4c,2023,9,New York Giants,Las Vegas Raiders,3.22
+#d07373,#5d84c9,2024,13,San Francisco 49ers,Buffalo Bills,3.22
+#a09ca6,#c0999f,2005,4,Minnesota Vikings,Atlanta Falcons,3.22
 #5d84c9,#376ea6,2020,15,Buffalo Bills,Denver Broncos,3.21
-#376ea6,#4c4c4c,2013,17,Denver Broncos,Las Vegas Raiders,3.2
-#d07373,#4db3c4,2021,11,San Francisco 49ers,Jacksonville Jaguars,3.2
+#3e77ba,#847fa4,2011,14,Indianapolis Colts,Baltimore Ravens,3.21
+#376ea6,#4c4c4c,2008,1,Denver Broncos,Las Vegas Raiders,3.21
+#376ea6,#36a283,2012,12,New England Patriots,New York Jets,3.21
+#376ea6,#4c4c4c,2005,1,Tennessee Titans,Pittsburgh Steelers,3.21
 #d07373,#4c4c4c,2023,1,San Francisco 49ers,Pittsburgh Steelers,3.2
-#e6beb3,#376ea6,2012,16,Cleveland Browns,Denver Broncos,3.2
-#3e77ba,#847fa4,2007,14,Indianapolis Colts,Baltimore Ravens,3.2
+#d07373,#4db3c4,2021,11,San Francisco 49ers,Jacksonville Jaguars,3.2
 #d07373,#376ea6,2014,7,San Francisco 49ers,Denver Broncos,3.2
 #e8cac0,#e6beb3,2017,4,Cincinnati Bengals,Cleveland Browns,3.2
-#e6beb3,#e8cac0,2015,9,Cleveland Browns,Cincinnati Bengals,3.2
-#b49fa4,#376ea6,2003,16,Arizona Cardinals,Seattle Seahawks,3.2
+#3e77ba,#847fa4,2007,14,Indianapolis Colts,Baltimore Ravens,3.2
+#e6beb3,#376ea6,2012,16,Cleveland Browns,Denver Broncos,3.2
 #a09ca6,#c0999f,2001,7,Minnesota Vikings,Tampa Bay Buccaneers,3.2
-#5f72aa,#b49fa4,2017,16,New York Giants,Arizona Cardinals,3.19
-#3e77ba,#a09ca6,2016,15,Indianapolis Colts,Minnesota Vikings,3.19
+#e6beb3,#e8cac0,2015,9,Cleveland Browns,Cincinnati Bengals,3.2
+#376ea6,#4c4c4c,2013,17,Denver Broncos,Las Vegas Raiders,3.2
+#b49fa4,#376ea6,2003,16,Arizona Cardinals,Seattle Seahawks,3.2
+#b49fa4,#6288cb,2021,Playoff,Arizona Cardinals,Los Angeles Rams,3.19
+#847fa4,#787878,2017,11,Baltimore Ravens,Green Bay Packers,3.19
 #fcfcfc,#847fa4,1999,15,New Orleans Saints,Baltimore Ravens,3.19
 #c0999f,#8bbed8,2010,14,Atlanta Falcons,Carolina Panthers,3.19
-#847fa4,#787878,2017,11,Baltimore Ravens,Green Bay Packers,3.19
-#b49fa4,#6288cb,2021,Playoff,Arizona Cardinals,Los Angeles Rams,3.19
+#5f72aa,#b49fa4,2017,16,New York Giants,Arizona Cardinals,3.19
 #8bbed8,#d07373,2017,1,Carolina Panthers,San Francisco 49ers,3.19
+#3e77ba,#a09ca6,2016,15,Indianapolis Colts,Minnesota Vikings,3.19
+#a09ca6,#e8cac0,2013,16,Minnesota Vikings,Cincinnati Bengals,3.18
+#c0999f,#8bbed8,2013,9,Atlanta Falcons,Carolina Panthers,3.18
 #5d84c9,#36a283,2018,10,Buffalo Bills,New York Jets,3.18
 #88b9d8,#d07373,2006,6,Los Angeles Chargers,San Francisco 49ers,3.18
 #36a283,#64c5cc,2001,10,New York Jets,Miami Dolphins,3.18
-#c0999f,#8bbed8,2013,9,Atlanta Falcons,Carolina Panthers,3.18
-#a09ca6,#e8cac0,2013,16,Minnesota Vikings,Cincinnati Bengals,3.18
 #3e77ba,#4db3c4,2017,13,Indianapolis Colts,Jacksonville Jaguars,3.18
 #4c4c4c,#3f728c,2005,2,Pittsburgh Steelers,Houston Texans,3.17
-#787878,#a09ca6,2010,11,Green Bay Packers,Minnesota Vikings,3.17
-#4c4c4c,#3f728c,2009,4,Las Vegas Raiders,Houston Texans,3.17
 #dababf,#4c4c4c,2011,7,Kansas City Chiefs,Las Vegas Raiders,3.17
+#4c4c4c,#3f728c,2009,4,Las Vegas Raiders,Houston Texans,3.17
+#787878,#a09ca6,2010,11,Green Bay Packers,Minnesota Vikings,3.17
+#6288cb,#376ea6,2013,3,Los Angeles Rams,Dallas Cowboys,3.16
 #376ea6,#8bbed8,2011,10,Tennessee Titans,Carolina Panthers,3.16
 #36a283,#787878,2006,13,New York Jets,Green Bay Packers,3.16
-#6288cb,#376ea6,2013,3,Los Angeles Rams,Dallas Cowboys,3.16
-#64c5cc,#6288cb,2001,3,Miami Dolphins,Los Angeles Rams,3.15
-#4db3c4,#3f728c,2015,17,Jacksonville Jaguars,Houston Texans,3.15
 #847fa4,#e8cac0,2000,10,Baltimore Ravens,Cincinnati Bengals,3.15
-#376ea6,#5d84c9,2002,9,New England Patriots,Buffalo Bills,3.15
-#8bbed8,#5f72aa,2009,16,Carolina Panthers,New York Giants,3.15
 #4c4c4c,#36a283,2019,12,Las Vegas Raiders,New York Jets,3.15
-#dababf,#3f728c,2005,11,Kansas City Chiefs,Houston Texans,3.14
-#376ea6,#947373,2023,18,Dallas Cowboys,Washington Commanders,3.14
-#3f728c,#376ea6,2006,6,Houston Texans,Dallas Cowboys,3.14
+#8bbed8,#5f72aa,2009,16,Carolina Panthers,New York Giants,3.15
+#376ea6,#5d84c9,2002,9,New England Patriots,Buffalo Bills,3.15
+#4db3c4,#3f728c,2015,17,Jacksonville Jaguars,Houston Texans,3.15
+#64c5cc,#6288cb,2001,3,Miami Dolphins,Los Angeles Rams,3.15
 #376ea6,#376ea6,2015,5,New England Patriots,Dallas Cowboys,3.14
+#376ea6,#947373,2023,18,Dallas Cowboys,Washington Commanders,3.14
+#dababf,#3f728c,2005,11,Kansas City Chiefs,Houston Texans,3.14
+#3f728c,#376ea6,2006,6,Houston Texans,Dallas Cowboys,3.14
 #376ea6,#5d84c9,2005,14,New England Patriots,Buffalo Bills,3.13
-#3e77ba,#4db3c4,2022,2,Indianapolis Colts,Jacksonville Jaguars,3.13
 #376ea6,#a09ca6,2012,5,Tennessee Titans,Minnesota Vikings,3.13
-#e8cac0,#3ba6b2,2004,17,Cincinnati Bengals,Philadelphia Eagles,3.13
 #3ba6b2,#376ea6,2019,7,Philadelphia Eagles,Dallas Cowboys,3.13
-#3ba6b2,#4c4c4c,2004,9,Philadelphia Eagles,Pittsburgh Steelers,3.12
+#e8cac0,#3ba6b2,2004,17,Cincinnati Bengals,Philadelphia Eagles,3.13
+#3e77ba,#4db3c4,2022,2,Indianapolis Colts,Jacksonville Jaguars,3.13
 #3f728c,#4db3c4,2012,2,Houston Texans,Jacksonville Jaguars,3.12
-#fcfcfc,#88b9d8,2004,9,New Orleans Saints,Los Angeles Chargers,3.11
+#3ba6b2,#4c4c4c,2004,9,Philadelphia Eagles,Pittsburgh Steelers,3.12
 #b49fa4,#6288cb,2015,13,Arizona Cardinals,Los Angeles Rams,3.11
 #376ea6,#88b9d8,2006,14,Denver Broncos,Los Angeles Chargers,3.11
 #376ea6,#3e77ba,2018,11,Tennessee Titans,Indianapolis Colts,3.11
 #4db3c4,#c0999f,1999,9,Jacksonville Jaguars,Atlanta Falcons,3.11
-#64c5cc,#376ea6,2014,15,Miami Dolphins,New England Patriots,3.1
+#fcfcfc,#88b9d8,2004,9,New Orleans Saints,Los Angeles Chargers,3.11
 #dababf,#376ea6,2020,7,Kansas City Chiefs,Denver Broncos,3.1
-#376ea6,#e6beb3,2016,9,Dallas Cowboys,Cleveland Browns,3.1
+#64c5cc,#376ea6,2014,15,Miami Dolphins,New England Patriots,3.1
 #376ea6,#d07373,2022,2,Seattle Seahawks,San Francisco 49ers,3.1
-#376ea6,#8bbed8,2023,11,Dallas Cowboys,Carolina Panthers,3.1
+#376ea6,#e6beb3,2016,9,Dallas Cowboys,Cleveland Browns,3.1
 #e8cac0,#4c4c4c,2020,10,Cincinnati Bengals,Pittsburgh Steelers,3.1
+#376ea6,#8bbed8,2023,11,Dallas Cowboys,Carolina Panthers,3.1
 #376ea6,#4c4c4c,2007,5,Seattle Seahawks,Pittsburgh Steelers,3.09
-#7cb4d3,#787878,2001,1,Detroit Lions,Green Bay Packers,3.09
-#3ba6b2,#947373,2012,11,Philadelphia Eagles,Washington Commanders,3.09
 #7cb4d3,#64c5cc,2002,1,Detroit Lions,Miami Dolphins,3.09
+#dababf,#88b9d8,2009,12,Kansas City Chiefs,Los Angeles Chargers,3.09
+#3ba6b2,#947373,2012,11,Philadelphia Eagles,Washington Commanders,3.09
+#7cb4d3,#787878,2001,1,Detroit Lions,Green Bay Packers,3.09
+#dababf,#4c4c4c,2016,4,Kansas City Chiefs,Pittsburgh Steelers,3.09
 #6288cb,#947373,2014,14,Los Angeles Rams,Washington Commanders,3.09
 #3f728c,#c0999f,2003,15,Houston Texans,Tampa Bay Buccaneers,3.09
-#dababf,#4c4c4c,2016,4,Kansas City Chiefs,Pittsburgh Steelers,3.09
-#dababf,#88b9d8,2009,12,Kansas City Chiefs,Los Angeles Chargers,3.09
 #4c4c4c,#847fa4,2011,1,Pittsburgh Steelers,Baltimore Ravens,3.08
 #376ea6,#d07373,2015,7,Seattle Seahawks,San Francisco 49ers,3.08
-#4c4c4c,#3e77ba,2016,12,Pittsburgh Steelers,Indianapolis Colts,3.08
 #c0999f,#376ea6,2006,12,Tampa Bay Buccaneers,Dallas Cowboys,3.08
-#e6beb3,#4c4c4c,2000,4,Cleveland Browns,Las Vegas Raiders,3.07
-#376ea6,#36a283,2015,14,Tennessee Titans,New York Jets,3.07
-#c0999f,#8bbed8,2003,4,Atlanta Falcons,Carolina Panthers,3.07
-#64c5cc,#5d84c9,1999,10,Miami Dolphins,Buffalo Bills,3.07
+#4c4c4c,#3e77ba,2016,12,Pittsburgh Steelers,Indianapolis Colts,3.08
 #376ea6,#947373,2007,17,Dallas Cowboys,Washington Commanders,3.07
+#c0999f,#8bbed8,2003,4,Atlanta Falcons,Carolina Panthers,3.07
 #4c4c4c,#376ea6,2006,9,Las Vegas Raiders,Seattle Seahawks,3.07
-#6288cb,#b49fa4,2009,16,Los Angeles Rams,Arizona Cardinals,3.06
+#e6beb3,#4c4c4c,2000,4,Cleveland Browns,Las Vegas Raiders,3.07
+#64c5cc,#5d84c9,1999,10,Miami Dolphins,Buffalo Bills,3.07
+#376ea6,#36a283,2015,14,Tennessee Titans,New York Jets,3.07
 #a09ca6,#8bbed8,2005,8,Minnesota Vikings,Carolina Panthers,3.06
-#376ea6,#b49fa4,2014,16,Seattle Seahawks,Arizona Cardinals,3.06
+#6288cb,#b49fa4,2009,16,Los Angeles Rams,Arizona Cardinals,3.06
 #847fa4,#e6beb3,2023,4,Baltimore Ravens,Cleveland Browns,3.06
 #3e77ba,#4db3c4,2014,3,Indianapolis Colts,Jacksonville Jaguars,3.06
 #e6beb3,#3ba6b2,2008,15,Cleveland Browns,Philadelphia Eagles,3.06
-#3f728c,#5e6470,2020,14,Houston Texans,Chicago Bears,3.05
-#376ea6,#3f728c,2012,4,Tennessee Titans,Houston Texans,3.05
+#376ea6,#b49fa4,2014,16,Seattle Seahawks,Arizona Cardinals,3.06
 #64c5cc,#b49fa4,2008,2,Miami Dolphins,Arizona Cardinals,3.05
+#376ea6,#3f728c,2012,4,Tennessee Titans,Houston Texans,3.05
 #847fa4,#5f72aa,2000,Playoff,Baltimore Ravens,New York Giants,3.05
+#3f728c,#5e6470,2020,14,Houston Texans,Chicago Bears,3.05
+#376ea6,#b49fa4,2015,17,Seattle Seahawks,Arizona Cardinals,3.04
+#a09ca6,#787878,2017,16,Minnesota Vikings,Green Bay Packers,3.04
 #8bbed8,#c0999f,2008,6,Carolina Panthers,Tampa Bay Buccaneers,3.04
+#4db3c4,#376ea6,2021,8,Jacksonville Jaguars,Seattle Seahawks,3.04
 #376ea6,#4c4c4c,2010,8,Seattle Seahawks,Las Vegas Raiders,3.04
+#e6beb3,#36a283,2019,2,Cleveland Browns,New York Jets,3.04
+#e6beb3,#787878,2001,15,Cleveland Browns,Green Bay Packers,3.04
+#c0999f,#6288cb,1999,3,Atlanta Falcons,Los Angeles Rams,3.04
 #787878,#b49fa4,2009,17,Green Bay Packers,Arizona Cardinals,3.04
 #e8cac0,#847fa4,2001,15,Cincinnati Bengals,Baltimore Ravens,3.04
-#e6beb3,#787878,2001,15,Cleveland Browns,Green Bay Packers,3.04
-#376ea6,#b49fa4,2015,17,Seattle Seahawks,Arizona Cardinals,3.04
-#c0999f,#6288cb,1999,3,Atlanta Falcons,Los Angeles Rams,3.04
 #787878,#88b9d8,1999,7,Green Bay Packers,Los Angeles Chargers,3.04
-#376ea6,#3e77ba,2018,15,Dallas Cowboys,Indianapolis Colts,3.04
 #c0999f,#8bbed8,2015,17,Tampa Bay Buccaneers,Carolina Panthers,3.04
-#e6beb3,#36a283,2019,2,Cleveland Browns,New York Jets,3.04
-#4db3c4,#376ea6,2021,8,Jacksonville Jaguars,Seattle Seahawks,3.04
-#a09ca6,#787878,2017,16,Minnesota Vikings,Green Bay Packers,3.04
-#3e77ba,#5f72aa,2022,17,Indianapolis Colts,New York Giants,3.03
-#8bbed8,#3ba6b2,2004,6,Carolina Panthers,Philadelphia Eagles,3.03
-#6288cb,#b49fa4,2019,13,Los Angeles Rams,Arizona Cardinals,3.03
-#376ea6,#3e77ba,2008,17,Tennessee Titans,Indianapolis Colts,3.03
+#376ea6,#3e77ba,2018,15,Dallas Cowboys,Indianapolis Colts,3.04
 #3ba6b2,#376ea6,2001,2,Philadelphia Eagles,Seattle Seahawks,3.03
-#3ba6b2,#787878,2014,11,Philadelphia Eagles,Green Bay Packers,3.03
-#64c5cc,#4db3c4,1999,Playoff,Miami Dolphins,Jacksonville Jaguars,3.03
 #fcfcfc,#6288cb,1999,12,New Orleans Saints,Los Angeles Rams,3.03
-#847fa4,#376ea6,2007,16,Baltimore Ravens,Seattle Seahawks,3.03
-#376ea6,#947373,2019,5,New England Patriots,Washington Commanders,3.03
+#64c5cc,#4db3c4,1999,Playoff,Miami Dolphins,Jacksonville Jaguars,3.03
+#6288cb,#b49fa4,2019,13,Los Angeles Rams,Arizona Cardinals,3.03
+#8bbed8,#3ba6b2,2004,6,Carolina Panthers,Philadelphia Eagles,3.03
+#3e77ba,#5f72aa,2022,17,Indianapolis Colts,New York Giants,3.03
 #6288cb,#b49fa4,2024,2,Los Angeles Rams,Arizona Cardinals,3.03
+#376ea6,#3e77ba,2008,17,Tennessee Titans,Indianapolis Colts,3.03
+#376ea6,#947373,2019,5,New England Patriots,Washington Commanders,3.03
+#847fa4,#376ea6,2007,16,Baltimore Ravens,Seattle Seahawks,3.03
+#3ba6b2,#787878,2014,11,Philadelphia Eagles,Green Bay Packers,3.03
+#7cb4d3,#3ba6b2,2007,3,Detroit Lions,Philadelphia Eagles,3.02
+#88b9d8,#e8cac0,2002,1,Los Angeles Chargers,Cincinnati Bengals,3.02
 #5f72aa,#6288cb,2008,2,New York Giants,Los Angeles Rams,3.02
 #4c4c4c,#376ea6,2003,3,Las Vegas Raiders,Denver Broncos,3.02
-#88b9d8,#e8cac0,2002,1,Los Angeles Chargers,Cincinnati Bengals,3.02
-#7cb4d3,#3ba6b2,2007,3,Detroit Lions,Philadelphia Eagles,3.02
+#5e6470,#c0999f,2017,2,Chicago Bears,Tampa Bay Buccaneers,3.01
 #5f72aa,#8bbed8,2012,3,New York Giants,Carolina Panthers,3.01
 #b49fa4,#a09ca6,2011,5,Arizona Cardinals,Minnesota Vikings,3.01
-#5e6470,#c0999f,2017,2,Chicago Bears,Tampa Bay Buccaneers,3.01
+#4c4c4c,#4db3c4,2020,11,Pittsburgh Steelers,Jacksonville Jaguars,3.0
 #c0999f,#847fa4,2014,7,Atlanta Falcons,Baltimore Ravens,3.0
 #376ea6,#3f728c,2010,12,Tennessee Titans,Houston Texans,3.0
-#4c4c4c,#4db3c4,2020,11,Pittsburgh Steelers,Jacksonville Jaguars,3.0
+#376ea6,#5d84c9,2006,7,New England Patriots,Buffalo Bills,2.99
+#376ea6,#6288cb,2020,14,New England Patriots,Los Angeles Rams,2.99
+#376ea6,#4db3c4,2005,17,Tennessee Titans,Jacksonville Jaguars,2.99
 #376ea6,#7cb4d3,2003,7,Dallas Cowboys,Detroit Lions,2.99
-#787878,#3ba6b2,2004,13,Green Bay Packers,Philadelphia Eagles,2.99
 #d07373,#3ba6b2,2017,8,San Francisco 49ers,Philadelphia Eagles,2.99
 #376ea6,#947373,2009,16,Dallas Cowboys,Washington Commanders,2.99
-#376ea6,#4db3c4,2005,17,Tennessee Titans,Jacksonville Jaguars,2.99
-#376ea6,#6288cb,2020,14,New England Patriots,Los Angeles Rams,2.99
-#376ea6,#5d84c9,2006,7,New England Patriots,Buffalo Bills,2.99
+#787878,#3ba6b2,2004,13,Green Bay Packers,Philadelphia Eagles,2.99
 #7cb4d3,#5e6470,2005,2,Detroit Lions,Chicago Bears,2.99
 #4c4c4c,#3ba6b2,2016,3,Pittsburgh Steelers,Philadelphia Eagles,2.99
-#e6beb3,#376ea6,2003,8,Cleveland Browns,New England Patriots,2.98
-#847fa4,#376ea6,2018,6,Baltimore Ravens,Tennessee Titans,2.98
-#4db3c4,#3e77ba,2013,17,Jacksonville Jaguars,Indianapolis Colts,2.98
+#847fa4,#8bbed8,2010,11,Baltimore Ravens,Carolina Panthers,2.98
 #5d84c9,#64c5cc,2011,11,Buffalo Bills,Miami Dolphins,2.98
 #787878,#36a283,2010,8,Green Bay Packers,New York Jets,2.98
-#847fa4,#8bbed8,2010,11,Baltimore Ravens,Carolina Panthers,2.98
-#5f72aa,#947373,2004,13,New York Giants,Washington Commanders,2.97
-#5d84c9,#376ea6,2004,10,Buffalo Bills,New England Patriots,2.97
-#5f72aa,#847fa4,2004,14,New York Giants,Baltimore Ravens,2.97
-#6288cb,#d07373,2016,1,Los Angeles Rams,San Francisco 49ers,2.97
-#4c4c4c,#fcfcfc,2022,8,Las Vegas Raiders,New Orleans Saints,2.97
-#376ea6,#b49fa4,1999,8,New England Patriots,Arizona Cardinals,2.97
+#4db3c4,#3e77ba,2013,17,Jacksonville Jaguars,Indianapolis Colts,2.98
+#847fa4,#376ea6,2018,6,Baltimore Ravens,Tennessee Titans,2.98
+#e6beb3,#376ea6,2003,8,Cleveland Browns,New England Patriots,2.98
 #64c5cc,#d07373,2001,14,Miami Dolphins,San Francisco 49ers,2.97
-#376ea6,#e8cac0,2007,12,Tennessee Titans,Cincinnati Bengals,2.97
+#6288cb,#d07373,2016,1,Los Angeles Rams,San Francisco 49ers,2.97
+#5d84c9,#376ea6,2004,10,Buffalo Bills,New England Patriots,2.97
 #fcfcfc,#5f72aa,1999,7,New Orleans Saints,New York Giants,2.97
-#3ba6b2,#5f72aa,2024,7,Philadelphia Eagles,New York Giants,2.96
+#376ea6,#e8cac0,2007,12,Tennessee Titans,Cincinnati Bengals,2.97
+#376ea6,#b49fa4,1999,8,New England Patriots,Arizona Cardinals,2.97
+#4c4c4c,#fcfcfc,2022,8,Las Vegas Raiders,New Orleans Saints,2.97
+#5f72aa,#847fa4,2004,14,New York Giants,Baltimore Ravens,2.97
+#5f72aa,#947373,2004,13,New York Giants,Washington Commanders,2.97
 #376ea6,#4c4c4c,2004,6,Denver Broncos,Las Vegas Raiders,2.96
+#3ba6b2,#5f72aa,2024,7,Philadelphia Eagles,New York Giants,2.96
 #847fa4,#3f728c,2012,7,Baltimore Ravens,Houston Texans,2.96
 #3e77ba,#3f728c,2002,3,Indianapolis Colts,Houston Texans,2.95
-#4db3c4,#376ea6,2005,Playoff,Jacksonville Jaguars,New England Patriots,2.95
-#d07373,#b49fa4,2022,11,San Francisco 49ers,Arizona Cardinals,2.95
 #5f72aa,#a09ca6,2015,16,New York Giants,Minnesota Vikings,2.95
-#36a283,#376ea6,2017,14,New York Jets,Denver Broncos,2.95
 #3f728c,#c0999f,2011,10,Houston Texans,Tampa Bay Buccaneers,2.95
-#a09ca6,#3ba6b2,2001,9,Minnesota Vikings,Philadelphia Eagles,2.94
-#6288cb,#376ea6,2008,3,Los Angeles Rams,Seattle Seahawks,2.94
-#d07373,#c0999f,2002,Playoff,San Francisco 49ers,Tampa Bay Buccaneers,2.94
-#3f728c,#3e77ba,2013,15,Houston Texans,Indianapolis Colts,2.94
-#8bbed8,#c0999f,2010,17,Carolina Panthers,Atlanta Falcons,2.94
+#4db3c4,#376ea6,2005,Playoff,Jacksonville Jaguars,New England Patriots,2.95
+#36a283,#376ea6,2017,14,New York Jets,Denver Broncos,2.95
+#d07373,#b49fa4,2022,11,San Francisco 49ers,Arizona Cardinals,2.95
 #36a283,#376ea6,2017,17,New York Jets,New England Patriots,2.94
+#3f728c,#3e77ba,2013,15,Houston Texans,Indianapolis Colts,2.94
+#a09ca6,#3ba6b2,2001,9,Minnesota Vikings,Philadelphia Eagles,2.94
 #3ba6b2,#8bbed8,1999,9,Philadelphia Eagles,Carolina Panthers,2.94
-#d07373,#376ea6,2018,13,San Francisco 49ers,Seattle Seahawks,2.93
+#8bbed8,#c0999f,2010,17,Carolina Panthers,Atlanta Falcons,2.94
+#d07373,#c0999f,2002,Playoff,San Francisco 49ers,Tampa Bay Buccaneers,2.94
+#6288cb,#376ea6,2008,3,Los Angeles Rams,Seattle Seahawks,2.94
 #d07373,#b49fa4,2012,8,San Francisco 49ers,Arizona Cardinals,2.93
 #3e77ba,#3ba6b2,1999,11,Indianapolis Colts,Philadelphia Eagles,2.93
-#4c4c4c,#d07373,2018,9,Las Vegas Raiders,San Francisco 49ers,2.92
-#376ea6,#36a283,2024,3,New England Patriots,New York Jets,2.92
-#3e77ba,#847fa4,2006,Playoff,Indianapolis Colts,Baltimore Ravens,2.92
-#c0999f,#d07373,2009,5,Atlanta Falcons,San Francisco 49ers,2.92
-#3e77ba,#4c4c4c,2015,13,Indianapolis Colts,Pittsburgh Steelers,2.92
+#d07373,#376ea6,2018,13,San Francisco 49ers,Seattle Seahawks,2.93
 #5e6470,#376ea6,2012,9,Chicago Bears,Tennessee Titans,2.92
-#376ea6,#88b9d8,2007,16,Denver Broncos,Los Angeles Chargers,2.91
-#376ea6,#947373,2005,15,Dallas Cowboys,Washington Commanders,2.91
+#3e77ba,#847fa4,2006,Playoff,Indianapolis Colts,Baltimore Ravens,2.92
+#3e77ba,#4c4c4c,2015,13,Indianapolis Colts,Pittsburgh Steelers,2.92
+#4c4c4c,#d07373,2018,9,Las Vegas Raiders,San Francisco 49ers,2.92
+#c0999f,#d07373,2009,5,Atlanta Falcons,San Francisco 49ers,2.92
+#376ea6,#36a283,2024,3,New England Patriots,New York Jets,2.92
 #3f728c,#3e77ba,2002,13,Houston Texans,Indianapolis Colts,2.91
-#d07373,#a09ca6,2003,4,San Francisco 49ers,Minnesota Vikings,2.91
-#a09ca6,#5e6470,2011,6,Minnesota Vikings,Chicago Bears,2.91
-#4c4c4c,#376ea6,2005,16,Las Vegas Raiders,Denver Broncos,2.91
-#3e77ba,#376ea6,2022,9,Indianapolis Colts,New England Patriots,2.91
+#376ea6,#947373,2005,15,Dallas Cowboys,Washington Commanders,2.91
+#376ea6,#88b9d8,2007,16,Denver Broncos,Los Angeles Chargers,2.91
 #c0999f,#8bbed8,2021,16,Tampa Bay Buccaneers,Carolina Panthers,2.91
+#d07373,#a09ca6,2003,4,San Francisco 49ers,Minnesota Vikings,2.91
+#3e77ba,#376ea6,2022,9,Indianapolis Colts,New England Patriots,2.91
+#4c4c4c,#376ea6,2005,16,Las Vegas Raiders,Denver Broncos,2.91
 #4c4c4c,#e8cac0,2008,7,Pittsburgh Steelers,Cincinnati Bengals,2.91
+#a09ca6,#5e6470,2011,6,Minnesota Vikings,Chicago Bears,2.91
 #947373,#376ea6,2019,17,Washington Commanders,Dallas Cowboys,2.9
 #a09ca6,#d07373,2007,14,Minnesota Vikings,San Francisco 49ers,2.9
 #b49fa4,#c0999f,2004,3,Arizona Cardinals,Atlanta Falcons,2.9
-#fcfcfc,#c0999f,2021,15,New Orleans Saints,Tampa Bay Buccaneers,2.89
-#376ea6,#8bbed8,2000,6,Seattle Seahawks,Carolina Panthers,2.89
-#4c4c4c,#88b9d8,2004,8,Las Vegas Raiders,Los Angeles Chargers,2.89
 #3e77ba,#4db3c4,2018,13,Indianapolis Colts,Jacksonville Jaguars,2.89
 #5f72aa,#3ba6b2,2014,6,New York Giants,Philadelphia Eagles,2.89
+#4c4c4c,#88b9d8,2004,8,Las Vegas Raiders,Los Angeles Chargers,2.89
+#376ea6,#8bbed8,2000,6,Seattle Seahawks,Carolina Panthers,2.89
+#fcfcfc,#c0999f,2021,15,New Orleans Saints,Tampa Bay Buccaneers,2.89
 #dababf,#4db3c4,2013,1,Kansas City Chiefs,Jacksonville Jaguars,2.89
-#64c5cc,#e6beb3,2005,11,Miami Dolphins,Cleveland Browns,2.88
-#847fa4,#4db3c4,2005,10,Baltimore Ravens,Jacksonville Jaguars,2.88
-#3f728c,#376ea6,2012,14,Houston Texans,New England Patriots,2.88
-#5e6470,#7cb4d3,2008,5,Chicago Bears,Detroit Lions,2.88
-#e8cac0,#3e77ba,2014,7,Cincinnati Bengals,Indianapolis Colts,2.88
 #36a283,#4db3c4,2002,4,New York Jets,Jacksonville Jaguars,2.88
+#64c5cc,#e6beb3,2005,11,Miami Dolphins,Cleveland Browns,2.88
 #5d84c9,#36a283,2010,17,Buffalo Bills,New York Jets,2.88
+#e8cac0,#3e77ba,2014,7,Cincinnati Bengals,Indianapolis Colts,2.88
+#5e6470,#7cb4d3,2008,5,Chicago Bears,Detroit Lions,2.88
 #7cb4d3,#787878,2018,17,Detroit Lions,Green Bay Packers,2.88
+#3f728c,#376ea6,2012,14,Houston Texans,New England Patriots,2.88
+#847fa4,#4db3c4,2005,10,Baltimore Ravens,Jacksonville Jaguars,2.88
 #3e77ba,#b49fa4,2013,12,Indianapolis Colts,Arizona Cardinals,2.87
-#5d84c9,#376ea6,2020,16,Buffalo Bills,New England Patriots,2.87
-#376ea6,#e8cac0,2014,3,Tennessee Titans,Cincinnati Bengals,2.87
 #376ea6,#5d84c9,2021,Playoff,New England Patriots,Buffalo Bills,2.87
-#a09ca6,#4c4c4c,2023,14,Minnesota Vikings,Las Vegas Raiders,2.87
 #36a283,#c0999f,2009,14,New York Jets,Tampa Bay Buccaneers,2.87
-#3e77ba,#fcfcfc,2003,4,Indianapolis Colts,New Orleans Saints,2.86
+#376ea6,#e8cac0,2014,3,Tennessee Titans,Cincinnati Bengals,2.87
+#a09ca6,#4c4c4c,2023,14,Minnesota Vikings,Las Vegas Raiders,2.87
+#5d84c9,#376ea6,2020,16,Buffalo Bills,New England Patriots,2.87
 #c0999f,#5f72aa,2024,12,Tampa Bay Buccaneers,New York Giants,2.86
+#3e77ba,#fcfcfc,2003,4,Indianapolis Colts,New Orleans Saints,2.86
+#3ba6b2,#c0999f,2009,13,Philadelphia Eagles,Atlanta Falcons,2.85
 #e6beb3,#376ea6,2003,13,Cleveland Browns,Seattle Seahawks,2.85
+#6288cb,#5f72aa,2017,9,Los Angeles Rams,New York Giants,2.85
 #5f72aa,#b49fa4,2000,13,New York Giants,Arizona Cardinals,2.85
 #6288cb,#c0999f,1999,6,Los Angeles Rams,Atlanta Falcons,2.85
-#6288cb,#5f72aa,2017,9,Los Angeles Rams,New York Giants,2.85
-#3ba6b2,#c0999f,2009,13,Philadelphia Eagles,Atlanta Falcons,2.85
-#64c5cc,#376ea6,2003,10,Miami Dolphins,Tennessee Titans,2.84
+#5e6470,#d07373,2012,11,Chicago Bears,San Francisco 49ers,2.84
 #376ea6,#c0999f,2000,14,Dallas Cowboys,Tampa Bay Buccaneers,2.84
-#5e6470,#a09ca6,2016,17,Chicago Bears,Minnesota Vikings,2.84
 #c0999f,#6288cb,2016,14,Atlanta Falcons,Los Angeles Rams,2.84
+#5e6470,#a09ca6,2016,17,Chicago Bears,Minnesota Vikings,2.84
 #4c4c4c,#36a283,2006,17,Las Vegas Raiders,New York Jets,2.84
 #d07373,#376ea6,2012,16,San Francisco 49ers,Seattle Seahawks,2.84
-#5e6470,#d07373,2012,11,Chicago Bears,San Francisco 49ers,2.84
-#e6beb3,#5d84c9,2004,14,Cleveland Browns,Buffalo Bills,2.83
-#5d84c9,#64c5cc,2001,17,Buffalo Bills,Miami Dolphins,2.83
+#64c5cc,#376ea6,2003,10,Miami Dolphins,Tennessee Titans,2.84
 #376ea6,#4c4c4c,2018,6,Seattle Seahawks,Las Vegas Raiders,2.83
-#847fa4,#c0999f,2014,6,Baltimore Ravens,Tampa Bay Buccaneers,2.82
-#3f728c,#88b9d8,2007,8,Houston Texans,Los Angeles Chargers,2.82
-#3ba6b2,#376ea6,2009,17,Philadelphia Eagles,Dallas Cowboys,2.82
-#376ea6,#5e6470,2006,4,Seattle Seahawks,Chicago Bears,2.82
-#e8cac0,#3f728c,2002,9,Cincinnati Bengals,Houston Texans,2.82
+#5d84c9,#64c5cc,2001,17,Buffalo Bills,Miami Dolphins,2.83
+#e6beb3,#5d84c9,2004,14,Cleveland Browns,Buffalo Bills,2.83
 #3e77ba,#36a283,2016,13,Indianapolis Colts,New York Jets,2.82
-#376ea6,#dababf,2009,13,Denver Broncos,Kansas City Chiefs,2.81
+#3f728c,#88b9d8,2007,8,Houston Texans,Los Angeles Chargers,2.82
+#847fa4,#c0999f,2014,6,Baltimore Ravens,Tampa Bay Buccaneers,2.82
+#e8cac0,#3f728c,2002,9,Cincinnati Bengals,Houston Texans,2.82
+#376ea6,#5e6470,2006,4,Seattle Seahawks,Chicago Bears,2.82
+#3ba6b2,#376ea6,2009,17,Philadelphia Eagles,Dallas Cowboys,2.82
 #5d84c9,#88b9d8,2011,14,Buffalo Bills,Los Angeles Chargers,2.81
 #947373,#5d84c9,2011,8,Washington Commanders,Buffalo Bills,2.81
+#376ea6,#dababf,2009,13,Denver Broncos,Kansas City Chiefs,2.81
 #376ea6,#3ba6b2,2011,8,Dallas Cowboys,Philadelphia Eagles,2.81
-#4c4c4c,#376ea6,2010,7,Las Vegas Raiders,Denver Broncos,2.8
 #c0999f,#3e77ba,2011,9,Atlanta Falcons,Indianapolis Colts,2.8
+#4c4c4c,#376ea6,2010,7,Las Vegas Raiders,Denver Broncos,2.8
 #376ea6,#e6beb3,2004,13,New England Patriots,Cleveland Browns,2.8
-#7cb4d3,#787878,2003,2,Detroit Lions,Green Bay Packers,2.8
 #b49fa4,#6288cb,2003,4,Arizona Cardinals,Los Angeles Rams,2.8
+#7cb4d3,#787878,2003,2,Detroit Lions,Green Bay Packers,2.8
 #376ea6,#376ea6,2006,4,Dallas Cowboys,Tennessee Titans,2.8
-#88b9d8,#64c5cc,2002,12,Los Angeles Chargers,Miami Dolphins,2.79
-#fcfcfc,#c0999f,2009,11,New Orleans Saints,Tampa Bay Buccaneers,2.79
 #e8cac0,#847fa4,2012,1,Cincinnati Bengals,Baltimore Ravens,2.79
 #4db3c4,#a09ca6,2001,15,Jacksonville Jaguars,Minnesota Vikings,2.79
+#fcfcfc,#c0999f,2009,11,New Orleans Saints,Tampa Bay Buccaneers,2.79
+#88b9d8,#64c5cc,2002,12,Los Angeles Chargers,Miami Dolphins,2.79
 #4db3c4,#376ea6,2021,14,Jacksonville Jaguars,Tennessee Titans,2.78
 #6288cb,#787878,2011,6,Los Angeles Rams,Green Bay Packers,2.78
-#376ea6,#dababf,2008,7,Tennessee Titans,Kansas City Chiefs,2.78
 #e8cac0,#8bbed8,1999,3,Cincinnati Bengals,Carolina Panthers,2.78
+#376ea6,#dababf,2008,7,Tennessee Titans,Kansas City Chiefs,2.78
 #947373,#5f72aa,2010,13,Washington Commanders,New York Giants,2.78
-#6288cb,#e8cac0,2015,12,Los Angeles Rams,Cincinnati Bengals,2.77
-#fcfcfc,#c0999f,2010,6,New Orleans Saints,Tampa Bay Buccaneers,2.77
-#88b9d8,#e6beb3,2004,15,Los Angeles Chargers,Cleveland Browns,2.77
-#4c4c4c,#c0999f,2020,12,Las Vegas Raiders,Atlanta Falcons,2.77
-#376ea6,#376ea6,2001,14,Dallas Cowboys,Seattle Seahawks,2.77
-#3ba6b2,#376ea6,2002,16,Philadelphia Eagles,Dallas Cowboys,2.77
 #3ba6b2,#376ea6,2024,10,Philadelphia Eagles,Dallas Cowboys,2.77
-#376ea6,#5d84c9,2012,15,Seattle Seahawks,Buffalo Bills,2.76
-#376ea6,#64c5cc,2000,1,Seattle Seahawks,Miami Dolphins,2.76
-#4c4c4c,#e8cac0,2012,12,Las Vegas Raiders,Cincinnati Bengals,2.76
+#4c4c4c,#c0999f,2020,12,Las Vegas Raiders,Atlanta Falcons,2.77
+#6288cb,#e8cac0,2015,12,Los Angeles Rams,Cincinnati Bengals,2.77
+#3ba6b2,#376ea6,2002,16,Philadelphia Eagles,Dallas Cowboys,2.77
+#88b9d8,#e6beb3,2004,15,Los Angeles Chargers,Cleveland Browns,2.77
+#fcfcfc,#c0999f,2010,6,New Orleans Saints,Tampa Bay Buccaneers,2.77
+#376ea6,#376ea6,2001,14,Dallas Cowboys,Seattle Seahawks,2.77
 #787878,#b49fa4,2015,16,Green Bay Packers,Arizona Cardinals,2.76
-#3f728c,#b49fa4,2021,7,Houston Texans,Arizona Cardinals,2.76
 #a09ca6,#e8cac0,2005,2,Minnesota Vikings,Cincinnati Bengals,2.76
 #376ea6,#376ea6,2008,13,Seattle Seahawks,Dallas Cowboys,2.76
+#4c4c4c,#e8cac0,2012,12,Las Vegas Raiders,Cincinnati Bengals,2.76
+#376ea6,#64c5cc,2000,1,Seattle Seahawks,Miami Dolphins,2.76
+#3f728c,#b49fa4,2021,7,Houston Texans,Arizona Cardinals,2.76
 #5d84c9,#36a283,2021,10,Buffalo Bills,New York Jets,2.76
+#376ea6,#5d84c9,2012,15,Seattle Seahawks,Buffalo Bills,2.76
 #376ea6,#4c4c4c,2000,8,Seattle Seahawks,Las Vegas Raiders,2.75
 #fcfcfc,#8bbed8,2010,9,New Orleans Saints,Carolina Panthers,2.75
 #e8cac0,#4c4c4c,2011,13,Cincinnati Bengals,Pittsburgh Steelers,2.75
-#787878,#d07373,2019,12,Green Bay Packers,San Francisco 49ers,2.74
 #6288cb,#376ea6,2016,15,Los Angeles Rams,Seattle Seahawks,2.74
-#3f728c,#376ea6,2011,7,Houston Texans,Tennessee Titans,2.74
 #3ba6b2,#376ea6,2013,4,Philadelphia Eagles,Denver Broncos,2.74
 #3f728c,#376ea6,2016,3,Houston Texans,New England Patriots,2.74
 #847fa4,#4db3c4,1999,10,Baltimore Ravens,Jacksonville Jaguars,2.74
-#5d84c9,#4c4c4c,2007,2,Buffalo Bills,Pittsburgh Steelers,2.73
+#787878,#d07373,2019,12,Green Bay Packers,San Francisco 49ers,2.74
+#3f728c,#376ea6,2011,7,Houston Texans,Tennessee Titans,2.74
 #376ea6,#dababf,2019,15,Denver Broncos,Kansas City Chiefs,2.73
 #8bbed8,#4db3c4,2023,17,Carolina Panthers,Jacksonville Jaguars,2.73
-#88b9d8,#847fa4,2021,6,Los Angeles Chargers,Baltimore Ravens,2.72
+#5d84c9,#4c4c4c,2007,2,Buffalo Bills,Pittsburgh Steelers,2.73
 #d07373,#376ea6,2000,17,San Francisco 49ers,Denver Broncos,2.72
+#88b9d8,#847fa4,2021,6,Los Angeles Chargers,Baltimore Ravens,2.72
+#b49fa4,#947373,1999,14,Arizona Cardinals,Washington Commanders,2.71
 #847fa4,#c0999f,2006,1,Baltimore Ravens,Tampa Bay Buccaneers,2.71
 #5d84c9,#dababf,2011,1,Buffalo Bills,Kansas City Chiefs,2.71
-#b49fa4,#947373,1999,14,Arizona Cardinals,Washington Commanders,2.71
-#c0999f,#376ea6,2000,2,Atlanta Falcons,Denver Broncos,2.7
-#c0999f,#d07373,2022,14,Tampa Bay Buccaneers,San Francisco 49ers,2.7
 #e6beb3,#5e6470,2009,8,Cleveland Browns,Chicago Bears,2.7
-#6288cb,#b49fa4,2008,14,Los Angeles Rams,Arizona Cardinals,2.7
-#8bbed8,#c0999f,2014,17,Carolina Panthers,Atlanta Falcons,2.7
+#c0999f,#376ea6,2000,2,Atlanta Falcons,Denver Broncos,2.7
 #4c4c4c,#847fa4,2006,2,Las Vegas Raiders,Baltimore Ravens,2.7
+#c0999f,#d07373,2022,14,Tampa Bay Buccaneers,San Francisco 49ers,2.7
+#8bbed8,#c0999f,2014,17,Carolina Panthers,Atlanta Falcons,2.7
+#6288cb,#b49fa4,2008,14,Los Angeles Rams,Arizona Cardinals,2.7
 #64c5cc,#376ea6,2015,8,Miami Dolphins,New England Patriots,2.7
 #5e6470,#847fa4,2009,15,Chicago Bears,Baltimore Ravens,2.69
 #4c4c4c,#e8cac0,2002,6,Pittsburgh Steelers,Cincinnati Bengals,2.68
-#376ea6,#4c4c4c,2017,11,New England Patriots,Las Vegas Raiders,2.68
-#376ea6,#5e6470,2010,14,New England Patriots,Chicago Bears,2.68
 #dababf,#88b9d8,2015,11,Kansas City Chiefs,Los Angeles Chargers,2.68
-#d07373,#787878,2024,12,San Francisco 49ers,Green Bay Packers,2.68
-#36a283,#b49fa4,2016,6,New York Jets,Arizona Cardinals,2.68
 #3ba6b2,#947373,2002,2,Philadelphia Eagles,Washington Commanders,2.68
-#4c4c4c,#fcfcfc,2008,6,Las Vegas Raiders,New Orleans Saints,2.67
-#376ea6,#d07373,2023,5,Dallas Cowboys,San Francisco 49ers,2.67
+#376ea6,#5e6470,2010,14,New England Patriots,Chicago Bears,2.68
+#36a283,#b49fa4,2016,6,New York Jets,Arizona Cardinals,2.68
+#d07373,#787878,2024,12,San Francisco 49ers,Green Bay Packers,2.68
+#376ea6,#4c4c4c,2017,11,New England Patriots,Las Vegas Raiders,2.68
 #5d84c9,#fcfcfc,2021,12,Buffalo Bills,New Orleans Saints,2.67
 #376ea6,#6288cb,2022,16,Denver Broncos,Los Angeles Rams,2.67
+#376ea6,#d07373,2023,5,Dallas Cowboys,San Francisco 49ers,2.67
 #376ea6,#88b9d8,2012,2,Tennessee Titans,Los Angeles Chargers,2.67
-#4c4c4c,#e6beb3,2007,1,Pittsburgh Steelers,Cleveland Browns,2.66
-#dababf,#5e6470,2019,16,Kansas City Chiefs,Chicago Bears,2.66
-#376ea6,#3f728c,2023,17,Tennessee Titans,Houston Texans,2.66
+#4c4c4c,#fcfcfc,2008,6,Las Vegas Raiders,New Orleans Saints,2.67
 #b49fa4,#8bbed8,2015,Playoff,Arizona Cardinals,Carolina Panthers,2.66
+#376ea6,#3f728c,2023,17,Tennessee Titans,Houston Texans,2.66
+#dababf,#5e6470,2019,16,Kansas City Chiefs,Chicago Bears,2.66
+#4c4c4c,#e6beb3,2007,1,Pittsburgh Steelers,Cleveland Browns,2.66
 #3ba6b2,#947373,2003,17,Philadelphia Eagles,Washington Commanders,2.66
-#5f72aa,#947373,2009,15,New York Giants,Washington Commanders,2.65
 #947373,#88b9d8,2001,1,Washington Commanders,Los Angeles Chargers,2.65
+#c0999f,#8bbed8,2011,16,Tampa Bay Buccaneers,Carolina Panthers,2.65
 #376ea6,#a09ca6,2009,11,Seattle Seahawks,Minnesota Vikings,2.65
 #88b9d8,#8bbed8,2024,2,Los Angeles Chargers,Carolina Panthers,2.65
+#5f72aa,#947373,2009,15,New York Giants,Washington Commanders,2.65
 #376ea6,#a09ca6,2015,13,Seattle Seahawks,Minnesota Vikings,2.65
-#c0999f,#8bbed8,2011,16,Tampa Bay Buccaneers,Carolina Panthers,2.65
 #88b9d8,#847fa4,2000,15,Los Angeles Chargers,Baltimore Ravens,2.64
+#64c5cc,#376ea6,2019,3,Miami Dolphins,Dallas Cowboys,2.64
 #36a283,#64c5cc,2002,3,New York Jets,Miami Dolphins,2.64
 #376ea6,#a09ca6,2009,Playoff,Dallas Cowboys,Minnesota Vikings,2.64
-#64c5cc,#376ea6,2019,3,Miami Dolphins,Dallas Cowboys,2.64
 #c0999f,#c0999f,2004,13,Atlanta Falcons,Tampa Bay Buccaneers,2.63
+#e6beb3,#376ea6,2000,7,Cleveland Browns,Denver Broncos,2.63
+#6288cb,#d07373,2018,7,Los Angeles Rams,San Francisco 49ers,2.63
 #4db3c4,#847fa4,2020,15,Jacksonville Jaguars,Baltimore Ravens,2.63
 #5f72aa,#376ea6,2014,14,New York Giants,Tennessee Titans,2.63
-#6288cb,#d07373,2018,7,Los Angeles Rams,San Francisco 49ers,2.63
-#e6beb3,#376ea6,2000,7,Cleveland Browns,Denver Broncos,2.63
-#7cb4d3,#dababf,2003,15,Detroit Lions,Kansas City Chiefs,2.62
 #b49fa4,#d07373,2010,17,Arizona Cardinals,San Francisco 49ers,2.62
 #64c5cc,#947373,2023,13,Miami Dolphins,Washington Commanders,2.62
+#7cb4d3,#dababf,2003,15,Detroit Lions,Kansas City Chiefs,2.62
 #376ea6,#3e77ba,2003,Playoff,Denver Broncos,Indianapolis Colts,2.62
 #a09ca6,#6288cb,2009,5,Minnesota Vikings,Los Angeles Rams,2.61
-#376ea6,#3f728c,2017,4,Tennessee Titans,Houston Texans,2.61
-#376ea6,#d07373,2017,7,Dallas Cowboys,San Francisco 49ers,2.61
-#b49fa4,#88b9d8,2010,4,Arizona Cardinals,Los Angeles Chargers,2.61
+#947373,#3ba6b2,2006,10,Washington Commanders,Philadelphia Eagles,2.61
 #4db3c4,#947373,2014,2,Jacksonville Jaguars,Washington Commanders,2.61
 #376ea6,#4db3c4,2010,6,Tennessee Titans,Jacksonville Jaguars,2.61
-#947373,#3ba6b2,2006,10,Washington Commanders,Philadelphia Eagles,2.61
-#7cb4d3,#dababf,2015,8,Detroit Lions,Kansas City Chiefs,2.61
+#376ea6,#3f728c,2017,4,Tennessee Titans,Houston Texans,2.61
 #4db3c4,#376ea6,2018,6,Jacksonville Jaguars,Dallas Cowboys,2.61
+#376ea6,#d07373,2017,7,Dallas Cowboys,San Francisco 49ers,2.61
+#b49fa4,#88b9d8,2010,4,Arizona Cardinals,Los Angeles Chargers,2.61
+#7cb4d3,#dababf,2015,8,Detroit Lions,Kansas City Chiefs,2.61
 #5d84c9,#787878,2018,4,Buffalo Bills,Green Bay Packers,2.6
-#7cb4d3,#376ea6,2011,8,Detroit Lions,Denver Broncos,2.6
 #4c4c4c,#e8cac0,2021,12,Pittsburgh Steelers,Cincinnati Bengals,2.6
+#7cb4d3,#376ea6,2011,8,Detroit Lions,Denver Broncos,2.6
 #5e6470,#7cb4d3,2001,16,Chicago Bears,Detroit Lions,2.59
 #3f728c,#376ea6,2015,16,Houston Texans,Tennessee Titans,2.59
 #376ea6,#5f72aa,2013,15,Seattle Seahawks,New York Giants,2.58
-#6288cb,#376ea6,2009,1,Los Angeles Rams,Seattle Seahawks,2.58
 #3ba6b2,#947373,2018,17,Philadelphia Eagles,Washington Commanders,2.58
-#7cb4d3,#4c4c4c,2001,15,Detroit Lions,Pittsburgh Steelers,2.58
+#6288cb,#376ea6,2009,1,Los Angeles Rams,Seattle Seahawks,2.58
 #e6beb3,#376ea6,2021,10,Cleveland Browns,New England Patriots,2.58
 #5e6470,#787878,2006,1,Chicago Bears,Green Bay Packers,2.58
-#c0999f,#dababf,2004,7,Atlanta Falcons,Kansas City Chiefs,2.57
+#7cb4d3,#4c4c4c,2001,15,Detroit Lions,Pittsburgh Steelers,2.58
 #376ea6,#947373,2003,15,Dallas Cowboys,Washington Commanders,2.57
 #7cb4d3,#5e6470,2006,2,Detroit Lions,Chicago Bears,2.57
-#36a283,#5d84c9,2023,11,New York Jets,Buffalo Bills,2.56
-#3f728c,#88b9d8,2002,2,Houston Texans,Los Angeles Chargers,2.56
+#c0999f,#dababf,2004,7,Atlanta Falcons,Kansas City Chiefs,2.57
 #847fa4,#e6beb3,1999,9,Baltimore Ravens,Cleveland Browns,2.56
-#88b9d8,#4db3c4,2019,14,Los Angeles Chargers,Jacksonville Jaguars,2.55
+#3f728c,#88b9d8,2002,2,Houston Texans,Los Angeles Chargers,2.56
+#36a283,#5d84c9,2023,11,New York Jets,Buffalo Bills,2.56
+#36a283,#3e77ba,2020,3,New York Jets,Indianapolis Colts,2.55
 #6288cb,#376ea6,2007,7,Los Angeles Rams,Seattle Seahawks,2.55
 #dababf,#36a283,2011,14,Kansas City Chiefs,New York Jets,2.55
-#36a283,#3e77ba,2020,3,New York Jets,Indianapolis Colts,2.55
-#e6beb3,#4c4c4c,2020,6,Cleveland Browns,Pittsburgh Steelers,2.55
-#376ea6,#64c5cc,2012,10,Tennessee Titans,Miami Dolphins,2.55
-#376ea6,#36a283,2002,2,New England Patriots,New York Jets,2.55
 #b49fa4,#3ba6b2,2017,5,Arizona Cardinals,Philadelphia Eagles,2.55
+#376ea6,#64c5cc,2012,10,Tennessee Titans,Miami Dolphins,2.55
+#e6beb3,#4c4c4c,2020,6,Cleveland Browns,Pittsburgh Steelers,2.55
+#88b9d8,#4db3c4,2019,14,Los Angeles Chargers,Jacksonville Jaguars,2.55
 #a09ca6,#787878,2021,17,Minnesota Vikings,Green Bay Packers,2.55
-#376ea6,#7cb4d3,2024,8,Tennessee Titans,Detroit Lions,2.55
 #c0999f,#376ea6,2024,11,Atlanta Falcons,Denver Broncos,2.55
-#376ea6,#3f728c,2009,14,Seattle Seahawks,Houston Texans,2.54
+#376ea6,#7cb4d3,2024,8,Tennessee Titans,Detroit Lions,2.55
+#376ea6,#36a283,2002,2,New England Patriots,New York Jets,2.55
 #b49fa4,#376ea6,2002,17,Arizona Cardinals,Denver Broncos,2.54
-#5d84c9,#376ea6,2007,3,Buffalo Bills,New England Patriots,2.54
+#376ea6,#3f728c,2009,14,Seattle Seahawks,Houston Texans,2.54
 #4c4c4c,#36a283,2003,15,Pittsburgh Steelers,New York Jets,2.54
+#5d84c9,#376ea6,2007,3,Buffalo Bills,New England Patriots,2.54
+#4c4c4c,#dababf,2021,16,Pittsburgh Steelers,Kansas City Chiefs,2.53
 #376ea6,#847fa4,2024,9,Denver Broncos,Baltimore Ravens,2.53
-#d07373,#88b9d8,2010,15,San Francisco 49ers,Los Angeles Chargers,2.53
-#7cb4d3,#376ea6,2021,14,Detroit Lions,Denver Broncos,2.53
 #5e6470,#6288cb,2008,12,Chicago Bears,Los Angeles Rams,2.53
 #88b9d8,#dababf,2009,7,Los Angeles Chargers,Kansas City Chiefs,2.53
-#4c4c4c,#dababf,2021,16,Pittsburgh Steelers,Kansas City Chiefs,2.53
+#d07373,#88b9d8,2010,15,San Francisco 49ers,Los Angeles Chargers,2.53
+#7cb4d3,#376ea6,2021,14,Detroit Lions,Denver Broncos,2.53
 #3e77ba,#3f728c,2011,1,Indianapolis Colts,Houston Texans,2.53
 #64c5cc,#376ea6,2007,16,Miami Dolphins,New England Patriots,2.53
-#3f728c,#847fa4,2019,11,Houston Texans,Baltimore Ravens,2.52
 #36a283,#8bbed8,2005,10,New York Jets,Carolina Panthers,2.52
-#7cb4d3,#376ea6,2022,5,Detroit Lions,New England Patriots,2.52
 #8bbed8,#c0999f,2005,17,Carolina Panthers,Atlanta Falcons,2.52
-#6288cb,#376ea6,2011,7,Los Angeles Rams,Dallas Cowboys,2.51
+#3f728c,#847fa4,2019,11,Houston Texans,Baltimore Ravens,2.52
+#7cb4d3,#376ea6,2022,5,Detroit Lions,New England Patriots,2.52
 #4c4c4c,#4c4c4c,2010,11,Las Vegas Raiders,Pittsburgh Steelers,2.51
 #64c5cc,#376ea6,2010,17,Miami Dolphins,New England Patriots,2.51
 #b49fa4,#88b9d8,2018,12,Arizona Cardinals,Los Angeles Chargers,2.51
-#376ea6,#376ea6,2008,7,Denver Broncos,New England Patriots,2.49
+#6288cb,#376ea6,2011,7,Los Angeles Rams,Dallas Cowboys,2.51
 #5e6470,#4db3c4,2012,5,Chicago Bears,Jacksonville Jaguars,2.49
 #4c4c4c,#376ea6,2012,4,Las Vegas Raiders,Denver Broncos,2.49
+#376ea6,#376ea6,2008,7,Denver Broncos,New England Patriots,2.49
+#4db3c4,#376ea6,2009,16,Jacksonville Jaguars,New England Patriots,2.48
 #7cb4d3,#947373,2007,5,Detroit Lions,Washington Commanders,2.48
 #847fa4,#3e77ba,2008,6,Baltimore Ravens,Indianapolis Colts,2.48
 #5e6470,#dababf,2003,17,Chicago Bears,Kansas City Chiefs,2.48
-#4db3c4,#376ea6,2009,16,Jacksonville Jaguars,New England Patriots,2.48
-#64c5cc,#4c4c4c,2007,12,Miami Dolphins,Pittsburgh Steelers,2.47
 #376ea6,#8bbed8,2001,17,New England Patriots,Carolina Panthers,2.47
-#5d84c9,#dababf,2003,8,Buffalo Bills,Kansas City Chiefs,2.47
-#4c4c4c,#847fa4,2012,10,Las Vegas Raiders,Baltimore Ravens,2.47
-#64c5cc,#376ea6,2021,17,Miami Dolphins,Tennessee Titans,2.47
-#4c4c4c,#787878,2011,14,Las Vegas Raiders,Green Bay Packers,2.47
-#787878,#e6beb3,2009,7,Green Bay Packers,Cleveland Browns,2.47
 #dababf,#376ea6,2011,11,Kansas City Chiefs,New England Patriots,2.47
+#64c5cc,#376ea6,2021,17,Miami Dolphins,Tennessee Titans,2.47
+#4c4c4c,#847fa4,2012,10,Las Vegas Raiders,Baltimore Ravens,2.47
+#787878,#e6beb3,2009,7,Green Bay Packers,Cleveland Browns,2.47
+#4c4c4c,#787878,2011,14,Las Vegas Raiders,Green Bay Packers,2.47
+#5d84c9,#dababf,2003,8,Buffalo Bills,Kansas City Chiefs,2.47
+#64c5cc,#4c4c4c,2007,12,Miami Dolphins,Pittsburgh Steelers,2.47
+#7cb4d3,#a09ca6,2007,13,Detroit Lions,Minnesota Vikings,2.46
 #4db3c4,#376ea6,2013,3,Jacksonville Jaguars,Seattle Seahawks,2.46
 #c0999f,#4c4c4c,2008,9,Atlanta Falcons,Las Vegas Raiders,2.46
-#7cb4d3,#a09ca6,2007,13,Detroit Lions,Minnesota Vikings,2.46
-#e6beb3,#4c4c4c,2000,8,Cleveland Browns,Pittsburgh Steelers,2.46
 #376ea6,#847fa4,2013,16,New England Patriots,Baltimore Ravens,2.46
+#e6beb3,#4c4c4c,2000,8,Cleveland Browns,Pittsburgh Steelers,2.46
 #376ea6,#c0999f,2021,11,New England Patriots,Atlanta Falcons,2.45
 #fcfcfc,#8bbed8,1999,17,New Orleans Saints,Carolina Panthers,2.45
 #5f72aa,#376ea6,2023,10,New York Giants,Dallas Cowboys,2.44
-#6288cb,#c0999f,2001,12,Los Angeles Rams,Atlanta Falcons,2.44
 #4db3c4,#3e77ba,2017,7,Jacksonville Jaguars,Indianapolis Colts,2.44
 #4db3c4,#3f728c,2022,17,Jacksonville Jaguars,Houston Texans,2.44
-#4c4c4c,#4db3c4,2006,2,Pittsburgh Steelers,Jacksonville Jaguars,2.44
+#6288cb,#c0999f,2001,12,Los Angeles Rams,Atlanta Falcons,2.44
 #5e6470,#e8cac0,2009,7,Chicago Bears,Cincinnati Bengals,2.44
-#d07373,#c0999f,2016,15,San Francisco 49ers,Atlanta Falcons,2.43
+#4c4c4c,#4db3c4,2006,2,Pittsburgh Steelers,Jacksonville Jaguars,2.44
 #36a283,#dababf,2020,8,New York Jets,Kansas City Chiefs,2.43
-#376ea6,#64c5cc,2023,3,Denver Broncos,Miami Dolphins,2.43
+#d07373,#c0999f,2016,15,San Francisco 49ers,Atlanta Falcons,2.43
 #376ea6,#376ea6,2013,Playoff,Seattle Seahawks,Denver Broncos,2.43
-#376ea6,#5d84c9,2022,2,Tennessee Titans,Buffalo Bills,2.43
 #3e77ba,#d07373,2005,5,Indianapolis Colts,San Francisco 49ers,2.43
-#6288cb,#7cb4d3,2010,5,Los Angeles Rams,Detroit Lions,2.42
+#376ea6,#64c5cc,2023,3,Denver Broncos,Miami Dolphins,2.43
+#376ea6,#5d84c9,2022,2,Tennessee Titans,Buffalo Bills,2.43
 #787878,#fcfcfc,2021,1,Green Bay Packers,New Orleans Saints,2.42
+#6288cb,#7cb4d3,2010,5,Los Angeles Rams,Detroit Lions,2.42
 #5d84c9,#787878,2010,2,Buffalo Bills,Green Bay Packers,2.42
-#fcfcfc,#5d84c9,2017,10,New Orleans Saints,Buffalo Bills,2.41
-#fcfcfc,#376ea6,2013,13,New Orleans Saints,Seattle Seahawks,2.41
-#c0999f,#847fa4,2002,2,Tampa Bay Buccaneers,Baltimore Ravens,2.41
 #4db3c4,#c0999f,2011,15,Jacksonville Jaguars,Atlanta Falcons,2.41
 #e8cac0,#a09ca6,2017,15,Cincinnati Bengals,Minnesota Vikings,2.41
-#8bbed8,#4c4c4c,2010,16,Carolina Panthers,Pittsburgh Steelers,2.4
+#fcfcfc,#376ea6,2013,13,New Orleans Saints,Seattle Seahawks,2.41
+#c0999f,#847fa4,2002,2,Tampa Bay Buccaneers,Baltimore Ravens,2.41
+#fcfcfc,#5d84c9,2017,10,New Orleans Saints,Buffalo Bills,2.41
 #6288cb,#dababf,2002,14,Los Angeles Rams,Kansas City Chiefs,2.4
-#4c4c4c,#847fa4,2006,12,Pittsburgh Steelers,Baltimore Ravens,2.4
-#e8cac0,#e6beb3,2014,15,Cincinnati Bengals,Cleveland Browns,2.4
-#d07373,#4db3c4,2023,10,San Francisco 49ers,Jacksonville Jaguars,2.4
 #d07373,#4db3c4,1999,1,San Francisco 49ers,Jacksonville Jaguars,2.4
-#376ea6,#5d84c9,2003,1,New England Patriots,Buffalo Bills,2.4
+#e8cac0,#e6beb3,2014,15,Cincinnati Bengals,Cleveland Browns,2.4
 #847fa4,#6288cb,2011,3,Baltimore Ravens,Los Angeles Rams,2.4
+#8bbed8,#4c4c4c,2010,16,Carolina Panthers,Pittsburgh Steelers,2.4
+#d07373,#4db3c4,2023,10,San Francisco 49ers,Jacksonville Jaguars,2.4
+#376ea6,#5d84c9,2003,1,New England Patriots,Buffalo Bills,2.4
+#4c4c4c,#847fa4,2006,12,Pittsburgh Steelers,Baltimore Ravens,2.4
 #376ea6,#5d84c9,2010,16,New England Patriots,Buffalo Bills,2.39
 #e6beb3,#d07373,2019,5,Cleveland Browns,San Francisco 49ers,2.39
 #376ea6,#787878,2003,17,Denver Broncos,Green Bay Packers,2.39
-#3e77ba,#fcfcfc,2019,15,Indianapolis Colts,New Orleans Saints,2.38
-#c0999f,#b49fa4,2016,2,Tampa Bay Buccaneers,Arizona Cardinals,2.38
 #4c4c4c,#8bbed8,2006,15,Pittsburgh Steelers,Carolina Panthers,2.38
+#c0999f,#b49fa4,2016,2,Tampa Bay Buccaneers,Arizona Cardinals,2.38
+#3e77ba,#fcfcfc,2019,15,Indianapolis Colts,New Orleans Saints,2.38
 #88b9d8,#4c4c4c,2006,1,Los Angeles Chargers,Las Vegas Raiders,2.38
 #fcfcfc,#e8cac0,2018,10,New Orleans Saints,Cincinnati Bengals,2.38
-#4c4c4c,#88b9d8,2008,14,Las Vegas Raiders,Los Angeles Chargers,2.37
+#4c4c4c,#3f728c,2017,16,Pittsburgh Steelers,Houston Texans,2.37
 #5d84c9,#8bbed8,2017,2,Buffalo Bills,Carolina Panthers,2.37
-#c0999f,#376ea6,2005,15,Tampa Bay Buccaneers,New England Patriots,2.37
+#4c4c4c,#88b9d8,2008,14,Las Vegas Raiders,Los Angeles Chargers,2.37
+#376ea6,#847fa4,2000,12,Dallas Cowboys,Baltimore Ravens,2.37
 #4c4c4c,#376ea6,2019,1,Pittsburgh Steelers,New England Patriots,2.37
 #3f728c,#3e77ba,2021,6,Houston Texans,Indianapolis Colts,2.37
-#376ea6,#847fa4,2000,12,Dallas Cowboys,Baltimore Ravens,2.37
-#4c4c4c,#3f728c,2017,16,Pittsburgh Steelers,Houston Texans,2.37
+#c0999f,#376ea6,2005,15,Tampa Bay Buccaneers,New England Patriots,2.37
 #376ea6,#847fa4,2015,14,Seattle Seahawks,Baltimore Ravens,2.36
 #dababf,#4c4c4c,2002,17,Kansas City Chiefs,Las Vegas Raiders,2.36
-#3e77ba,#7cb4d3,2004,12,Indianapolis Colts,Detroit Lions,2.35
 #64c5cc,#847fa4,2016,13,Miami Dolphins,Baltimore Ravens,2.35
+#3e77ba,#7cb4d3,2004,12,Indianapolis Colts,Detroit Lions,2.35
 #dababf,#3f728c,2015,Playoff,Kansas City Chiefs,Houston Texans,2.34
 #376ea6,#3ba6b2,2008,17,Dallas Cowboys,Philadelphia Eagles,2.34
 #4c4c4c,#787878,2007,14,Las Vegas Raiders,Green Bay Packers,2.33
-#b49fa4,#6288cb,2017,7,Arizona Cardinals,Los Angeles Rams,2.33
 #64c5cc,#376ea6,2018,4,Miami Dolphins,New England Patriots,2.33
+#b49fa4,#6288cb,2017,7,Arizona Cardinals,Los Angeles Rams,2.33
 #e8cac0,#847fa4,2020,5,Cincinnati Bengals,Baltimore Ravens,2.32
 #88b9d8,#4c4c4c,2023,15,Los Angeles Chargers,Las Vegas Raiders,2.32
 #88b9d8,#376ea6,2023,13,Los Angeles Chargers,New England Patriots,2.32
 #a09ca6,#787878,2014,5,Minnesota Vikings,Green Bay Packers,2.31
-#88b9d8,#376ea6,2009,11,Los Angeles Chargers,Denver Broncos,2.3
 #847fa4,#e6beb3,2003,16,Baltimore Ravens,Cleveland Browns,2.3
+#88b9d8,#376ea6,2009,11,Los Angeles Chargers,Denver Broncos,2.3
 #5f72aa,#c0999f,2009,3,New York Giants,Tampa Bay Buccaneers,2.29
 #847fa4,#4db3c4,2017,3,Baltimore Ravens,Jacksonville Jaguars,2.29
-#7cb4d3,#376ea6,2024,6,Detroit Lions,Dallas Cowboys,2.28
 #e6beb3,#847fa4,2020,1,Cleveland Browns,Baltimore Ravens,2.28
+#8bbed8,#c0999f,2002,7,Carolina Panthers,Atlanta Falcons,2.28
 #3e77ba,#5e6470,2004,11,Indianapolis Colts,Chicago Bears,2.28
 #e8cac0,#3f728c,2008,8,Cincinnati Bengals,Houston Texans,2.28
 #3f728c,#376ea6,2005,6,Houston Texans,Seattle Seahawks,2.28
-#8bbed8,#c0999f,2002,7,Carolina Panthers,Atlanta Falcons,2.28
+#7cb4d3,#376ea6,2024,6,Detroit Lions,Dallas Cowboys,2.28
 #7cb4d3,#847fa4,2023,7,Detroit Lions,Baltimore Ravens,2.28
 #8bbed8,#4db3c4,2007,14,Carolina Panthers,Jacksonville Jaguars,2.27
 #3e77ba,#4db3c4,2013,4,Indianapolis Colts,Jacksonville Jaguars,2.27
-#36a283,#64c5cc,2020,6,New York Jets,Miami Dolphins,2.26
 #5e6470,#787878,2008,11,Chicago Bears,Green Bay Packers,2.26
+#36a283,#64c5cc,2020,6,New York Jets,Miami Dolphins,2.26
 #e8cac0,#e6beb3,2006,12,Cincinnati Bengals,Cleveland Browns,2.26
-#6288cb,#4c4c4c,2011,16,Los Angeles Rams,Pittsburgh Steelers,2.25
 #376ea6,#b49fa4,2018,7,Denver Broncos,Arizona Cardinals,2.25
+#6288cb,#4c4c4c,2011,16,Los Angeles Rams,Pittsburgh Steelers,2.25
 #b49fa4,#376ea6,1999,4,Arizona Cardinals,Dallas Cowboys,2.24
 #88b9d8,#376ea6,2003,11,Los Angeles Chargers,Denver Broncos,2.24
 #64c5cc,#376ea6,2012,17,Miami Dolphins,New England Patriots,2.24
 #6288cb,#d07373,2011,13,Los Angeles Rams,San Francisco 49ers,2.23
 #376ea6,#5f72aa,2002,15,Dallas Cowboys,New York Giants,2.23
-#5d84c9,#e6beb3,2007,15,Buffalo Bills,Cleveland Browns,2.22
-#d07373,#376ea6,2007,10,San Francisco 49ers,Seattle Seahawks,2.22
-#5e6470,#5d84c9,2018,9,Chicago Bears,Buffalo Bills,2.22
-#376ea6,#c0999f,2009,7,New England Patriots,Tampa Bay Buccaneers,2.22
-#fcfcfc,#376ea6,2023,5,New Orleans Saints,New England Patriots,2.22
 #d07373,#36a283,2012,4,San Francisco 49ers,New York Jets,2.22
+#5e6470,#5d84c9,2018,9,Chicago Bears,Buffalo Bills,2.22
+#5d84c9,#e6beb3,2007,15,Buffalo Bills,Cleveland Browns,2.22
+#376ea6,#c0999f,2009,7,New England Patriots,Tampa Bay Buccaneers,2.22
+#d07373,#376ea6,2007,10,San Francisco 49ers,Seattle Seahawks,2.22
+#fcfcfc,#376ea6,2023,5,New Orleans Saints,New England Patriots,2.22
 #5d84c9,#c0999f,2009,16,Buffalo Bills,Atlanta Falcons,2.21
 #36a283,#5d84c9,2014,12,New York Jets,Buffalo Bills,2.21
+#4db3c4,#6288cb,2021,13,Jacksonville Jaguars,Los Angeles Rams,2.2
+#8bbed8,#d07373,2019,8,Carolina Panthers,San Francisco 49ers,2.2
+#e6beb3,#847fa4,2000,13,Cleveland Browns,Baltimore Ravens,2.2
 #fcfcfc,#c0999f,2020,9,New Orleans Saints,Tampa Bay Buccaneers,2.2
 #b49fa4,#c0999f,2010,2,Arizona Cardinals,Atlanta Falcons,2.2
-#4db3c4,#6288cb,2021,13,Jacksonville Jaguars,Los Angeles Rams,2.2
-#e6beb3,#847fa4,2000,13,Cleveland Browns,Baltimore Ravens,2.2
 #5d84c9,#3e77ba,2018,7,Buffalo Bills,Indianapolis Colts,2.2
-#8bbed8,#d07373,2019,8,Carolina Panthers,San Francisco 49ers,2.2
-#376ea6,#4c4c4c,2011,2,Seattle Seahawks,Pittsburgh Steelers,2.19
-#3f728c,#3e77ba,2004,10,Houston Texans,Indianapolis Colts,2.19
-#e8cac0,#c0999f,2002,3,Cincinnati Bengals,Atlanta Falcons,2.19
-#5f72aa,#8bbed8,2013,3,New York Giants,Carolina Panthers,2.19
 #787878,#4c4c4c,2003,16,Green Bay Packers,Las Vegas Raiders,2.19
+#e8cac0,#c0999f,2002,3,Cincinnati Bengals,Atlanta Falcons,2.19
+#376ea6,#4c4c4c,2011,2,Seattle Seahawks,Pittsburgh Steelers,2.19
+#5f72aa,#8bbed8,2013,3,New York Giants,Carolina Panthers,2.19
 #847fa4,#e8cac0,2008,13,Baltimore Ravens,Cincinnati Bengals,2.19
+#3f728c,#3e77ba,2004,10,Houston Texans,Indianapolis Colts,2.19
 #947373,#376ea6,2023,12,Washington Commanders,Dallas Cowboys,2.18
+#64c5cc,#4c4c4c,2000,Playoff,Miami Dolphins,Las Vegas Raiders,2.17
 #36a283,#3ba6b2,2019,5,New York Jets,Philadelphia Eagles,2.17
 #e8cac0,#dababf,2005,17,Cincinnati Bengals,Kansas City Chiefs,2.17
-#64c5cc,#4c4c4c,2000,Playoff,Miami Dolphins,Las Vegas Raiders,2.17
-#dababf,#947373,2013,14,Kansas City Chiefs,Washington Commanders,2.17
 #fcfcfc,#787878,2005,5,New Orleans Saints,Green Bay Packers,2.17
-#376ea6,#376ea6,2023,4,New England Patriots,Dallas Cowboys,2.16
+#dababf,#947373,2013,14,Kansas City Chiefs,Washington Commanders,2.17
 #376ea6,#6288cb,2012,8,New England Patriots,Los Angeles Rams,2.16
+#376ea6,#376ea6,2023,4,New England Patriots,Dallas Cowboys,2.16
 #376ea6,#a09ca6,2022,11,Dallas Cowboys,Minnesota Vikings,2.16
-#3f728c,#4db3c4,2003,14,Houston Texans,Jacksonville Jaguars,2.15
 #5f72aa,#3ba6b2,2022,Playoff,New York Giants,Philadelphia Eagles,2.15
+#3f728c,#4db3c4,2003,14,Houston Texans,Jacksonville Jaguars,2.15
 #4db3c4,#36a283,2011,2,Jacksonville Jaguars,New York Jets,2.14
+#376ea6,#7cb4d3,2007,9,Denver Broncos,Detroit Lions,2.14
+#8bbed8,#376ea6,2016,13,Carolina Panthers,Seattle Seahawks,2.14
 #4c4c4c,#e6beb3,2010,17,Pittsburgh Steelers,Cleveland Browns,2.14
 #3e77ba,#6288cb,2017,1,Indianapolis Colts,Los Angeles Rams,2.14
-#8bbed8,#376ea6,2016,13,Carolina Panthers,Seattle Seahawks,2.14
-#376ea6,#7cb4d3,2007,9,Denver Broncos,Detroit Lions,2.14
-#d07373,#847fa4,2003,13,San Francisco 49ers,Baltimore Ravens,2.13
 #c0999f,#3e77ba,2003,15,Atlanta Falcons,Indianapolis Colts,2.13
-#3f728c,#d07373,2013,5,Houston Texans,San Francisco 49ers,2.12
+#d07373,#847fa4,2003,13,San Francisco 49ers,Baltimore Ravens,2.13
 #e8cac0,#dababf,2018,7,Cincinnati Bengals,Kansas City Chiefs,2.12
+#3f728c,#d07373,2013,5,Houston Texans,San Francisco 49ers,2.12
+#36a283,#376ea6,2021,3,New York Jets,Denver Broncos,2.11
 #5d84c9,#947373,2023,3,Buffalo Bills,Washington Commanders,2.11
 #6288cb,#376ea6,2017,15,Los Angeles Rams,Seattle Seahawks,2.11
-#36a283,#376ea6,2021,3,New York Jets,Denver Broncos,2.11
 #5e6470,#dababf,2023,3,Chicago Bears,Kansas City Chiefs,2.1
 #d07373,#947373,2005,7,San Francisco 49ers,Washington Commanders,2.1
-#4c4c4c,#dababf,2019,13,Las Vegas Raiders,Kansas City Chiefs,2.09
 #4db3c4,#376ea6,2009,5,Jacksonville Jaguars,Seattle Seahawks,2.09
+#4c4c4c,#dababf,2019,13,Las Vegas Raiders,Kansas City Chiefs,2.09
+#5f72aa,#5e6470,2021,17,New York Giants,Chicago Bears,2.08
 #5e6470,#3ba6b2,2013,16,Chicago Bears,Philadelphia Eagles,2.08
 #5e6470,#3ba6b2,2017,12,Chicago Bears,Philadelphia Eagles,2.08
-#5f72aa,#5e6470,2021,17,New York Giants,Chicago Bears,2.08
 #3e77ba,#64c5cc,2001,13,Indianapolis Colts,Miami Dolphins,2.07
 #c0999f,#5e6470,2018,4,Tampa Bay Buccaneers,Chicago Bears,2.06
-#5f72aa,#c0999f,2012,15,New York Giants,Atlanta Falcons,2.06
 #fcfcfc,#376ea6,2020,12,New Orleans Saints,Denver Broncos,2.06
+#5f72aa,#c0999f,2012,15,New York Giants,Atlanta Falcons,2.06
 #fcfcfc,#8bbed8,2019,17,New Orleans Saints,Carolina Panthers,2.06
 #376ea6,#847fa4,2023,9,Seattle Seahawks,Baltimore Ravens,2.05
 #376ea6,#4db3c4,2006,9,Tennessee Titans,Jacksonville Jaguars,2.04
@@ -6744,108 +6745,108 @@ away_color,home_color,season,week,away_team,home_team,game_rating
 #e6beb3,#4c4c4c,2008,17,Cleveland Browns,Pittsburgh Steelers,2.02
 #3ba6b2,#376ea6,2001,10,Philadelphia Eagles,Dallas Cowboys,2.02
 #c0999f,#4c4c4c,1999,15,Tampa Bay Buccaneers,Las Vegas Raiders,2.02
-#847fa4,#4c4c4c,2007,9,Baltimore Ravens,Pittsburgh Steelers,2.0
-#3ba6b2,#5d84c9,1999,3,Philadelphia Eagles,Buffalo Bills,2.0
 #5d84c9,#d07373,2012,5,Buffalo Bills,San Francisco 49ers,2.0
+#3ba6b2,#5d84c9,1999,3,Philadelphia Eagles,Buffalo Bills,2.0
+#847fa4,#4c4c4c,2007,9,Baltimore Ravens,Pittsburgh Steelers,2.0
 #3ba6b2,#5f72aa,2012,17,Philadelphia Eagles,New York Giants,2.0
 #5e6470,#376ea6,2015,3,Chicago Bears,Seattle Seahawks,1.99
-#fcfcfc,#7cb4d3,2008,16,New Orleans Saints,Detroit Lions,1.98
-#5d84c9,#d07373,2004,16,Buffalo Bills,San Francisco 49ers,1.98
 #7cb4d3,#787878,2009,6,Detroit Lions,Green Bay Packers,1.98
+#5d84c9,#d07373,2004,16,Buffalo Bills,San Francisco 49ers,1.98
+#fcfcfc,#7cb4d3,2008,16,New Orleans Saints,Detroit Lions,1.98
 #947373,#376ea6,2021,16,Washington Commanders,Dallas Cowboys,1.98
-#8bbed8,#3e77ba,2019,16,Carolina Panthers,Indianapolis Colts,1.97
-#b49fa4,#d07373,2003,14,Arizona Cardinals,San Francisco 49ers,1.97
 #36a283,#376ea6,2021,7,New York Jets,New England Patriots,1.97
+#b49fa4,#d07373,2003,14,Arizona Cardinals,San Francisco 49ers,1.97
 #dababf,#376ea6,2007,14,Kansas City Chiefs,Denver Broncos,1.97
+#8bbed8,#3e77ba,2019,16,Carolina Panthers,Indianapolis Colts,1.97
 #3e77ba,#376ea6,2014,16,Indianapolis Colts,Dallas Cowboys,1.96
-#376ea6,#88b9d8,2006,2,Tennessee Titans,Los Angeles Chargers,1.95
 #d07373,#947373,2019,7,San Francisco 49ers,Washington Commanders,1.95
-#947373,#5f72aa,2005,8,Washington Commanders,New York Giants,1.95
 #e8cac0,#3e77ba,2008,14,Cincinnati Bengals,Indianapolis Colts,1.95
-#4db3c4,#5d84c9,2024,3,Jacksonville Jaguars,Buffalo Bills,1.94
-#376ea6,#787878,2009,16,Seattle Seahawks,Green Bay Packers,1.94
+#947373,#5f72aa,2005,8,Washington Commanders,New York Giants,1.95
+#376ea6,#88b9d8,2006,2,Tennessee Titans,Los Angeles Chargers,1.95
 #36a283,#376ea6,2005,11,New York Jets,Denver Broncos,1.94
 #8bbed8,#947373,2024,7,Carolina Panthers,Washington Commanders,1.94
-#b49fa4,#e6beb3,2023,9,Arizona Cardinals,Cleveland Browns,1.92
+#376ea6,#787878,2009,16,Seattle Seahawks,Green Bay Packers,1.94
+#4db3c4,#5d84c9,2024,3,Jacksonville Jaguars,Buffalo Bills,1.94
 #4db3c4,#e8cac0,1999,8,Jacksonville Jaguars,Cincinnati Bengals,1.92
+#b49fa4,#e6beb3,2023,9,Arizona Cardinals,Cleveland Browns,1.92
 #d07373,#5e6470,2006,8,San Francisco 49ers,Chicago Bears,1.91
 #376ea6,#376ea6,2000,17,Dallas Cowboys,Tennessee Titans,1.91
-#376ea6,#88b9d8,2020,13,New England Patriots,Los Angeles Chargers,1.89
 #d07373,#c0999f,2004,11,San Francisco 49ers,Tampa Bay Buccaneers,1.89
 #c0999f,#d07373,2011,5,Tampa Bay Buccaneers,San Francisco 49ers,1.89
+#376ea6,#88b9d8,2020,13,New England Patriots,Los Angeles Chargers,1.89
 #c0999f,#8bbed8,2023,18,Tampa Bay Buccaneers,Carolina Panthers,1.89
 #376ea6,#e6beb3,2000,16,Tennessee Titans,Cleveland Browns,1.88
 #36a283,#88b9d8,2014,5,New York Jets,Los Angeles Chargers,1.88
-#847fa4,#e8cac0,2019,10,Baltimore Ravens,Cincinnati Bengals,1.87
-#5f72aa,#376ea6,2010,9,New York Giants,Seattle Seahawks,1.87
 #8bbed8,#fcfcfc,2024,1,Carolina Panthers,New Orleans Saints,1.87
-#3ba6b2,#7cb4d3,2021,8,Philadelphia Eagles,Detroit Lions,1.86
+#5f72aa,#376ea6,2010,9,New York Giants,Seattle Seahawks,1.87
+#847fa4,#e8cac0,2019,10,Baltimore Ravens,Cincinnati Bengals,1.87
 #a09ca6,#5f72aa,2000,Playoff,Minnesota Vikings,New York Giants,1.86
-#36a283,#64c5cc,2023,15,New York Jets,Miami Dolphins,1.83
+#3ba6b2,#7cb4d3,2021,8,Philadelphia Eagles,Detroit Lions,1.86
 #e8cac0,#e6beb3,2015,13,Cincinnati Bengals,Cleveland Browns,1.83
+#36a283,#64c5cc,2023,15,New York Jets,Miami Dolphins,1.83
 #e8cac0,#376ea6,2000,15,Cincinnati Bengals,Tennessee Titans,1.82
 #88b9d8,#376ea6,2007,5,Los Angeles Chargers,Denver Broncos,1.82
-#d07373,#fcfcfc,2001,17,San Francisco 49ers,New Orleans Saints,1.81
 #36a283,#e8cac0,2013,8,New York Jets,Cincinnati Bengals,1.81
+#d07373,#fcfcfc,2001,17,San Francisco 49ers,New Orleans Saints,1.81
+#847fa4,#64c5cc,2019,1,Baltimore Ravens,Miami Dolphins,1.8
 #376ea6,#376ea6,2011,Playoff,Denver Broncos,New England Patriots,1.8
+#4c4c4c,#5d84c9,2022,5,Pittsburgh Steelers,Buffalo Bills,1.8
 #c0999f,#c0999f,2014,3,Tampa Bay Buccaneers,Atlanta Falcons,1.8
 #36a283,#376ea6,2010,13,New York Jets,New England Patriots,1.8
-#4c4c4c,#5d84c9,2022,5,Pittsburgh Steelers,Buffalo Bills,1.8
-#847fa4,#64c5cc,2019,1,Baltimore Ravens,Miami Dolphins,1.8
 #5d84c9,#5e6470,2006,5,Buffalo Bills,Chicago Bears,1.78
 #5d84c9,#376ea6,2011,10,Buffalo Bills,Dallas Cowboys,1.78
 #5f72aa,#fcfcfc,2003,15,New York Giants,New Orleans Saints,1.77
 #4c4c4c,#dababf,2018,17,Las Vegas Raiders,Kansas City Chiefs,1.77
-#b49fa4,#6288cb,2016,17,Arizona Cardinals,Los Angeles Rams,1.76
 #e6beb3,#847fa4,2009,3,Cleveland Browns,Baltimore Ravens,1.76
-#88b9d8,#64c5cc,2014,9,Los Angeles Chargers,Miami Dolphins,1.76
 #c0999f,#fcfcfc,2012,15,Tampa Bay Buccaneers,New Orleans Saints,1.76
+#b49fa4,#6288cb,2016,17,Arizona Cardinals,Los Angeles Rams,1.76
+#88b9d8,#64c5cc,2014,9,Los Angeles Chargers,Miami Dolphins,1.76
 #6288cb,#d07373,2009,4,Los Angeles Rams,San Francisco 49ers,1.75
 #8bbed8,#4c4c4c,2000,17,Carolina Panthers,Las Vegas Raiders,1.75
 #7cb4d3,#88b9d8,2007,15,Detroit Lions,Los Angeles Chargers,1.74
 #b49fa4,#4db3c4,2000,15,Arizona Cardinals,Jacksonville Jaguars,1.74
+#5d84c9,#64c5cc,2021,2,Buffalo Bills,Miami Dolphins,1.73
 #787878,#847fa4,2005,15,Green Bay Packers,Baltimore Ravens,1.73
+#3f728c,#376ea6,2006,15,Houston Texans,New England Patriots,1.73
 #5e6470,#c0999f,2000,2,Chicago Bears,Tampa Bay Buccaneers,1.73
 #5d84c9,#88b9d8,2005,11,Buffalo Bills,Los Angeles Chargers,1.73
-#5d84c9,#64c5cc,2021,2,Buffalo Bills,Miami Dolphins,1.73
-#3f728c,#376ea6,2006,15,Houston Texans,New England Patriots,1.73
 #dababf,#7cb4d3,2011,2,Kansas City Chiefs,Detroit Lions,1.72
-#5d84c9,#d07373,2001,12,Buffalo Bills,San Francisco 49ers,1.71
 #5e6470,#787878,2014,10,Chicago Bears,Green Bay Packers,1.71
+#5d84c9,#d07373,2001,12,Buffalo Bills,San Francisco 49ers,1.71
 #dababf,#4c4c4c,2006,6,Kansas City Chiefs,Pittsburgh Steelers,1.71
 #a09ca6,#787878,2007,10,Minnesota Vikings,Green Bay Packers,1.7
-#d07373,#4db3c4,2013,8,San Francisco 49ers,Jacksonville Jaguars,1.69
-#8bbed8,#6288cb,2001,9,Carolina Panthers,Los Angeles Rams,1.69
 #b49fa4,#376ea6,2000,8,Arizona Cardinals,Dallas Cowboys,1.69
+#8bbed8,#6288cb,2001,9,Carolina Panthers,Los Angeles Rams,1.69
+#d07373,#4db3c4,2013,8,San Francisco 49ers,Jacksonville Jaguars,1.69
 #36a283,#376ea6,2007,12,New York Jets,Dallas Cowboys,1.68
 #c0999f,#6288cb,2003,6,Atlanta Falcons,Los Angeles Rams,1.68
 #376ea6,#787878,2010,9,Dallas Cowboys,Green Bay Packers,1.68
-#376ea6,#376ea6,2009,6,Tennessee Titans,New England Patriots,1.67
 #376ea6,#3e77ba,2005,13,Tennessee Titans,Indianapolis Colts,1.67
-#6288cb,#3ba6b2,2008,1,Los Angeles Rams,Philadelphia Eagles,1.67
 #88b9d8,#dababf,1999,8,Los Angeles Chargers,Kansas City Chiefs,1.67
+#6288cb,#3ba6b2,2008,1,Los Angeles Rams,Philadelphia Eagles,1.67
+#376ea6,#376ea6,2009,6,Tennessee Titans,New England Patriots,1.67
 #b49fa4,#e6beb3,2003,11,Arizona Cardinals,Cleveland Browns,1.66
 #dababf,#8bbed8,2008,5,Kansas City Chiefs,Carolina Panthers,1.66
 #5d84c9,#376ea6,2003,17,Buffalo Bills,New England Patriots,1.64
 #5f72aa,#a09ca6,2009,17,New York Giants,Minnesota Vikings,1.62
 #3e77ba,#3f728c,2021,13,Indianapolis Colts,Houston Texans,1.62
+#847fa4,#6288cb,2019,12,Baltimore Ravens,Los Angeles Rams,1.61
 #3e77ba,#6288cb,2009,7,Indianapolis Colts,Los Angeles Rams,1.61
 #3e77ba,#376ea6,2014,Playoff,Indianapolis Colts,New England Patriots,1.61
-#847fa4,#6288cb,2019,12,Baltimore Ravens,Los Angeles Rams,1.61
-#5e6470,#d07373,2003,1,Chicago Bears,San Francisco 49ers,1.6
 #7cb4d3,#847fa4,2009,14,Detroit Lions,Baltimore Ravens,1.6
-#3ba6b2,#fcfcfc,2018,11,Philadelphia Eagles,New Orleans Saints,1.58
+#5e6470,#d07373,2003,1,Chicago Bears,San Francisco 49ers,1.6
 #376ea6,#787878,2012,16,Tennessee Titans,Green Bay Packers,1.58
+#3ba6b2,#fcfcfc,2018,11,Philadelphia Eagles,New Orleans Saints,1.58
 #c0999f,#8bbed8,2002,12,Atlanta Falcons,Carolina Panthers,1.56
+#847fa4,#e8cac0,2020,17,Baltimore Ravens,Cincinnati Bengals,1.56
 #4db3c4,#7cb4d3,2024,11,Jacksonville Jaguars,Detroit Lions,1.56
 #36a283,#376ea6,2018,17,New York Jets,New England Patriots,1.56
-#847fa4,#e8cac0,2020,17,Baltimore Ravens,Cincinnati Bengals,1.56
-#b49fa4,#6288cb,2018,2,Arizona Cardinals,Los Angeles Rams,1.55
 #b49fa4,#dababf,2002,13,Arizona Cardinals,Kansas City Chiefs,1.55
+#b49fa4,#6288cb,2018,2,Arizona Cardinals,Los Angeles Rams,1.55
 #dababf,#4c4c4c,2012,15,Kansas City Chiefs,Las Vegas Raiders,1.54
 #6288cb,#7cb4d3,2001,4,Los Angeles Rams,Detroit Lions,1.53
-#376ea6,#5f72aa,2008,5,Seattle Seahawks,New York Giants,1.52
 #dababf,#88b9d8,2010,14,Kansas City Chiefs,Los Angeles Chargers,1.52
+#376ea6,#5f72aa,2008,5,Seattle Seahawks,New York Giants,1.52
 #376ea6,#7cb4d3,2008,13,Tennessee Titans,Detroit Lions,1.52
 #3e77ba,#fcfcfc,2011,7,Indianapolis Colts,New Orleans Saints,1.51
 #64c5cc,#847fa4,2017,8,Miami Dolphins,Baltimore Ravens,1.51
@@ -6853,8 +6854,8 @@ away_color,home_color,season,week,away_team,home_team,game_rating
 #d07373,#b49fa4,2015,3,San Francisco 49ers,Arizona Cardinals,1.51
 #b49fa4,#376ea6,2012,14,Arizona Cardinals,Seattle Seahawks,1.49
 #e6beb3,#6288cb,1999,7,Cleveland Browns,Los Angeles Rams,1.49
-#376ea6,#787878,2006,11,New England Patriots,Green Bay Packers,1.48
 #c0999f,#376ea6,2021,10,Atlanta Falcons,Dallas Cowboys,1.48
+#376ea6,#787878,2006,11,New England Patriots,Green Bay Packers,1.48
 #4c4c4c,#4db3c4,2007,16,Las Vegas Raiders,Jacksonville Jaguars,1.47
 #947373,#787878,2001,2,Washington Commanders,Green Bay Packers,1.46
 #c0999f,#5e6470,2002,17,Tampa Bay Buccaneers,Chicago Bears,1.46
@@ -6871,13 +6872,13 @@ away_color,home_color,season,week,away_team,home_team,game_rating
 #36a283,#376ea6,2020,14,New York Jets,Seattle Seahawks,1.4
 #376ea6,#5f72aa,2023,1,Dallas Cowboys,New York Giants,1.37
 #dababf,#376ea6,2012,17,Kansas City Chiefs,Denver Broncos,1.36
-#376ea6,#b49fa4,2003,2,Seattle Seahawks,Arizona Cardinals,1.35
 #376ea6,#3ba6b2,2005,13,Seattle Seahawks,Philadelphia Eagles,1.35
+#376ea6,#b49fa4,2003,2,Seattle Seahawks,Arizona Cardinals,1.35
 #4db3c4,#376ea6,2021,17,Jacksonville Jaguars,New England Patriots,1.33
-#4c4c4c,#dababf,2021,14,Las Vegas Raiders,Kansas City Chiefs,1.31
 #a09ca6,#787878,2011,10,Minnesota Vikings,Green Bay Packers,1.31
-#36a283,#4c4c4c,2009,7,New York Jets,Las Vegas Raiders,1.29
+#4c4c4c,#dababf,2021,14,Las Vegas Raiders,Kansas City Chiefs,1.31
 #4c4c4c,#6288cb,2014,13,Las Vegas Raiders,Los Angeles Rams,1.29
+#36a283,#4c4c4c,2009,7,New York Jets,Las Vegas Raiders,1.29
 #4c4c4c,#5f72aa,2009,5,Las Vegas Raiders,New York Giants,1.28
 #c0999f,#c0999f,2007,15,Atlanta Falcons,Tampa Bay Buccaneers,1.27
 #b49fa4,#376ea6,2008,16,Arizona Cardinals,New England Patriots,1.26
