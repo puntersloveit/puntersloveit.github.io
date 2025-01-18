@@ -23,129 +23,15 @@ layout: default
         color: rgb(152, 11, 0);
       }
     </style>
+    <script src="/assets/js/ratings.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        const seasonDropdown = document.getElementById("season");
-        const weekDropdown = document.getElementById("week");
-        const teamDropdown = document.getElementById("team");
-        const messageElement = document.getElementById("no-records-message");
-        const table = document.getElementById("NcaafGameRatings");
-        const rows = table.getElementsByTagName("tr");
-
-        const dataSeasons = JSON.parse(`{{ site.data.ncaa_unique_seasons | jsonify }}`);
-        const dataTeams = JSON.parse(`{{ site.data.ncaa_teams | jsonify }}`);
-
-        function initializeDropdowns() {
-          populateSeasonDropdown();
-          populateTeamDropdown();
-          updateWeeks();
-          filterRecords();
-          table.style.display = "";
-        }
-
-        function populateSeasonDropdown() {
-          dataSeasons.forEach(season => {
-            const option = document.createElement("option");
-            option.value = season.season;
-            option.textContent = season.season == -1 ? "All Years" : season.season;
-            seasonDropdown.appendChild(option);
-          });
-        }
-
-        function populateTeamDropdown() {
-          const allOption = document.createElement("option");
-          allOption.value = "All";
-          allOption.textContent = "All Teams";
-          teamDropdown.appendChild(allOption);
-
-          dataTeams.teams.forEach(team => {
-            const option = document.createElement("option");
-            option.value = team;
-            option.textContent = team;
-            teamDropdown.appendChild(option);
-          });
-        }
-
-        function updateWeeks() {
-          const selectedSeason = seasonDropdown.value;
-          weekDropdown.innerHTML = "";
-          const selectedData = dataSeasons.find(item => item.season == selectedSeason);
-
-          if (selectedData) {
-            selectedData.weeks.forEach(week => {
-              const option = document.createElement("option");
-              option.value = week;
-              option.textContent = week;
-              weekDropdown.appendChild(option);
-            });
-          }
-          filterRecords();
-        }
-
-        function filterRecords() {
-          const selectedYear = seasonDropdown.value;
-          const selectedWeek = weekDropdown.value;
-          const selectedTeam = teamDropdown.value.trim();
-          let noRecordsFound = true;
-
-          const isBowlsWeek = selectedWeek.toLowerCase() === "bowls";
-          const showYearColumn = selectedYear === "-1";
-          const showWeekColumn = selectedWeek === "All" && !isBowlsWeek;
-          const showBowlsColumn = isBowlsWeek;
-
-          toggleColumnDisplay(0, showYearColumn); // 'Year' column
-          toggleColumnDisplay(1, showWeekColumn); // 'Week' column
-          toggleColumnDisplay(2, showBowlsColumn); // 'Bowls' column
-
-          for (const row of rows) {
-            const cells = row.children;
-            const year = cells[0].textContent.trim();
-            const week = cells[1].textContent.trim().toLowerCase();
-            const notes = cells[2].textContent.trim();
-            const awayTeam = cells[3].textContent.trim().replace(/\(\d+\)/g, "");
-            const homeTeam = cells[4].textContent.trim().replace(/\(\d+\)/g, "");
-
-            const matchesTeam = selectedTeam === "All" || awayTeam === selectedTeam || homeTeam === selectedTeam;
-            const matchesWeek = selectedWeek === "All" || week === selectedWeek.toLowerCase();
-            const matchesYear = selectedYear === "-1" || year === selectedYear;
-
-            const shouldDisplayRow = matchesTeam && matchesWeek && matchesYear;
-
-            row.style.display = shouldDisplayRow ? "" : "none";
-            if (shouldDisplayRow) {
-              noRecordsFound = false;
-            }
-          }
-
-          if (noRecordsFound) {
-            messageElement.textContent = `No records found for ${selectedTeam} in Week ${selectedWeek}, ${selectedYear}.`;
-            messageElement.style.display = "block";
-          } else {
-            messageElement.style.display = "none";
-          }
-        }
-
-        function toggleColumnDisplay(columnIndex, showColumn) {
-          const displayStyle = showColumn ? "" : "none";
-          // Handle header row
-          const headerCells = document.querySelectorAll("#NcaafGameRatings thead th");
-          if (headerCells.length > 0) {
-            headerCells[columnIndex].style.display = displayStyle;
-          }
-          // Iterate over all rows to show/hide the column
-          for (const row of rows) {
-            const cell = row.children[columnIndex];
-            if (cell) {
-              cell.style.display = displayStyle;
-            }
-          }
-        }
-
-        // Initialize page
-        initializeDropdowns();
-        seasonDropdown.addEventListener("change", updateWeeks);
-        weekDropdown.addEventListener("change", filterRecords);
-        teamDropdown.addEventListener("change", filterRecords);
+        initializeDropdowns({
+          tableId: "NcaafGameRatings",
+          seasons: JSON.parse(`{{ site.data.ncaa_unique_seasons | jsonify }}`),
+          teams: JSON.parse(`{{ site.data.ncaa_teams | jsonify }}`),
+          showBowlsColumn: true
+        });
       });
     </script>
   </head>
