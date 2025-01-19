@@ -189,3 +189,33 @@ unique_seasons.append(
     })
 with open('_data/nfl_unique_seasons.yml', 'w') as file:
     yaml.dump(unique_seasons, file)
+
+# Calculate team ratings
+team_ratings = rating_df.groupby(['season', 'home_team']).agg({
+    'game_rating': 'mean',
+    'home_color': 'first'
+}).reset_index()
+
+team_ratings.columns = ['season', 'team', 'avg_game_rating', 'team_color']
+
+# Add away games
+away_ratings = rating_df.groupby(['season', 'away_team']).agg({
+    'game_rating': 'mean',
+    'away_color': 'first'
+}).reset_index()
+
+away_ratings.columns = ['season', 'team', 'avg_game_rating', 'team_color']
+
+# Combine home and away ratings
+team_ratings = pd.concat([team_ratings, away_ratings])
+team_ratings = team_ratings.groupby(['season', 'team']).agg({
+    'avg_game_rating': 'mean',
+    'team_color': 'first'
+}).reset_index()
+
+# Update team ratings
+team_ratings.to_sql('nfl_team_ratings', sql_connection, if_exists='replace', index=False)
+
+# Export team ratings to JSON
+team_ratings = pd.read_sql_query('select * from nfl_team_ratings', sql_connection)
+team_ratings.to_json('_data/nfl_team_ratings.json', orient='records')

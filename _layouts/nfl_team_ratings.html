@@ -1,0 +1,116 @@
+---
+layout: default
+---
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .border-table-style tr {
+        border: 3px solid gray;
+        color: black;
+      }
+
+      .hidden-style {
+        display: none;
+      }
+
+      #no-records-message {
+        display: none;
+        color: rgb(152, 11, 0);
+      }
+    </style>
+    <script src="/assets/js/ratings.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const seasonDropdown = document.getElementById("season");
+        const messageElement = document.getElementById("no-records-message");
+        const table = document.getElementById("NFLTeamRatings");
+        const rows = table.getElementsByTagName("tr");
+
+        // Get unique seasons
+        const allTeams = {{ site.data.nfl_team_ratings | jsonify }};
+        const seasons = [...new Set(allTeams.map(item => item.season))].sort().reverse();
+        const latestSeason = seasons[0];
+        seasons.push(-1); // Add "All Years" option at the end
+
+        // Populate season dropdown
+        seasons.forEach(season => {
+          const option = document.createElement("option");
+          option.value = season;
+          option.textContent = season == -1 ? "All Years" : season;
+          if (season === latestSeason) {
+            option.selected = true;
+          }
+          seasonDropdown.appendChild(option);
+        });
+
+        function filterRecords() {
+          const selectedYear = seasonDropdown.value;
+          let noRecordsFound = true;
+
+          // Show/hide year column
+          const showYearColumn = selectedYear === "-1";
+          const yearCells = document.querySelectorAll(".year-column");
+          yearCells.forEach(cell => {
+            cell.style.display = showYearColumn ? "" : "none";
+          });
+
+          for (const row of rows) {
+            if (row.classList.contains("header-row")) continue;
+            
+            const year = row.querySelector(".year-column").textContent;
+            const shouldDisplayRow = selectedYear === "-1" || year === selectedYear;
+
+            row.style.display = shouldDisplayRow ? "" : "none";
+            if (shouldDisplayRow) {
+              noRecordsFound = false;
+            }
+          }
+
+          if (noRecordsFound) {
+            messageElement.textContent = `No records found for ${selectedYear}.`;
+            messageElement.style.display = "block";
+          } else {
+            messageElement.style.display = "none";
+          }
+        }
+
+        // Initialize page
+        filterRecords();
+        seasonDropdown.addEventListener("change", filterRecords);
+      });
+    </script>
+  </head>
+  <body>
+    <h1>NFL Most Entertaining Teams</h1>
+    <h4>
+      <a href="/nfl_extended">Extended ratings</a> |
+      <a href="/">Game ratings</a>
+    </h4>
+
+    <label for="season">Select Year:</label>
+    <select id="season"></select>
+
+    <div id="no-records-message"></div>
+
+    <table id="NFLTeamRatings" class="border-table-style">
+      <thead>
+        <tr class="header-row">
+          <th>Team</th>
+          <th class="year-column">Year</th>
+          <th>Entertainment Rating</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% assign teams = site.data.nfl_team_ratings | sort: "avg_game_rating" | reverse %}
+        {% for team in teams %}
+          <tr>
+            <td style="background-color:{{ team.team_color }}">{{ team.team }}</td>
+            <td class="year-column">{{ team.season }}</td>
+            <td>{{ team.avg_game_rating | round: 2 }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>

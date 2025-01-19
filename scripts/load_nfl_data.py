@@ -141,7 +141,7 @@ rating_df['home_color'] = rating_df['home_color'].apply(lambda x: saturate_hex_c
 
 rating_df.to_sql('nfl_game_ratings', sql_connection, if_exists='replace', index=False)
 
-# Data for site
+# Export ratings for site
 rating_df[['away_color', 
            'home_color', 
            'season', 
@@ -152,8 +152,39 @@ rating_df[['away_color',
     .sort_values('game_rating', ascending=False)\
         .to_csv('_data/nfl_game_ratings.csv', index=False)
 
-unique_seasons = []
-for y in range(rating_df.season.max(), rating_df.season.min()-1, -1):
+# Calculate team ratings
+home_ratings = rating_df.groupby(['season', 'home_team']).agg({
+    'game_rating': 'mean',
+    'home_color': 'first'
+}).reset_index()
+
+home_ratings.columns = ['season', 'team', 'avg_game_rating', 'team_color']
+
+# Add away games
+away_ratings = rating_df.groupby(['season', 'away_team']).agg({
+    'game_rating': 'mean',
+    'away_color': 'first'
+}).reset_index()
+
+away_ratings.columns = ['season', 'team', 'avg_game_rating', 'team_color']
+
+# Combine home and away ratings
+team_ratings = pd.concat([home_ratings, away_ratings])
+team_ratings = team_ratings.groupby(['season', 'team']).agg({
+    'avg_game_rating': 'mean',
+    'team_color': 'first'
+}).reset_index()
+
+# Update team ratings
+team_ratings.to_sql('nfl_team_ratings', sql_connection, if_exists='replace', index=False)
+
+# Export team ratings to JSON
+team_ratings = pd.read_sql_query('select * from nfl_team_ratings', sql_connection)
+team_ratings.to_json('_data/nfl_team_ratings.json', orient='records')
+
+# Create unique seasons list
+unique_seasons = sorted(rating_df['season'].unique(), reverse=True)
+for y in range(unique_seasons[0], unique_seasons[-1]-1, -1):
     weeks = rating_df.query(f'season == {y}').week.unique().tolist()
     if y == CURRENT_SEASON:
         weeks = weeks[::-1]

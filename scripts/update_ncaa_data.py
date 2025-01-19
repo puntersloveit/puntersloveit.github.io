@@ -324,7 +324,43 @@ game_ratings_update[GAME_RATING_COLUMNS].to_sql('ncaa_game_ratings', sql_connect
 
 ### Prepare Game Ratings to Site
 game_ratings = pd.read_sql_query('select * from ncaa_game_ratings', sql_connection)
+game_ratings['away_color'] = game_ratings['away_color'].apply(lambda x: saturate_hex_color(x, SATURATION_AMOUNT, LIGHTENING_AMOUNT))
+game_ratings['home_color'] = game_ratings['home_color'].apply(lambda x: saturate_hex_color(x, SATURATION_AMOUNT, LIGHTENING_AMOUNT))
 
+# Calculate team ratings
+home_ratings = game_ratings.query('home_division == "fbs"').groupby(['season', 'home_team']).agg({
+    'game_rating': 'mean',
+    'home_color': 'first',
+    'home_conference': 'first'
+}).reset_index()
+
+home_ratings.columns = ['season', 'team', 'avg_game_rating', 'team_color', 'conference']
+
+# Add away games
+away_ratings = game_ratings.query('away_division == "fbs"').groupby(['season', 'away_team']).agg({
+    'game_rating': 'mean',
+    'away_color': 'first',
+    'away_conference': 'first'
+}).reset_index()
+
+away_ratings.columns = ['season', 'team', 'avg_game_rating', 'team_color', 'conference']
+
+# Combine home and away ratings
+team_ratings = pd.concat([home_ratings, away_ratings])
+team_ratings = team_ratings.groupby(['season', 'team']).agg({
+    'avg_game_rating': 'mean',
+    'team_color': 'first',
+    'conference': 'first'
+}).reset_index()
+
+# Update team ratings
+team_ratings.to_sql('ncaa_team_ratings', sql_connection, if_exists='replace', index=False)
+
+# Export team ratings to JSON
+team_ratings = pd.read_sql_query('select * from ncaa_team_ratings', sql_connection)
+team_ratings.to_json('_data/ncaa_team_ratings.json', orient='records')
+
+# Create csv for site
 add_rank_to_team_name = lambda x: f'{x[0]}({int(x[1])})' if x[1] != -1 else x[0]
 game_ratings['away_rank'] = game_ratings['away_rank'].fillna(-1).astype(int)
 game_ratings['home_rank'] = game_ratings['home_rank'].fillna(-1).astype(int)
@@ -333,9 +369,6 @@ game_ratings.loc[game_ratings.season_type == 'postseason', 'week'] = 'Bowls'
 game_ratings['away_team'] = game_ratings[['away_team', 'away_rank']].apply(add_rank_to_team_name, axis=1)
 game_ratings['home_team'] = game_ratings[['home_team', 'home_rank']].apply(add_rank_to_team_name, axis=1)
 game_ratings['game_rating'] = game_ratings['game_rating'].round(2)
-
-game_ratings['away_color'] = game_ratings['away_color'].apply(lambda x: saturate_hex_color(x, SATURATION_AMOUNT, LIGHTENING_AMOUNT))
-game_ratings['home_color'] = game_ratings['home_color'].apply(lambda x: saturate_hex_color(x, SATURATION_AMOUNT, LIGHTENING_AMOUNT))
 
 game_ratings[['away_color', 
               'home_color', 
