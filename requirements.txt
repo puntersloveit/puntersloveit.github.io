@@ -1,6 +1,6 @@
 pyyaml
 numpy==1.26.3
 pandas==2.0.3
-cfbd
+cfbd==4.4.13
 requests
 nfl_data_py
