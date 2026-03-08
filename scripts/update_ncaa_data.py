@@ -12,6 +12,7 @@ from functions import *
 try:
     API_KEY = os.environ['API_KEY']
 except KeyError:
+    API_KEY = ''
     print('Token not available!')
 
 current_year = datetime.datetime.now().year
@@ -21,8 +22,7 @@ DIVISION = 'fbs'
 
 # Configure API key authorization: ApiKeyAuth
 configuration = cfbd.Configuration()
-configuration.api_key['Authorization'] = API_KEY
-configuration.api_key_prefix['Authorization'] = 'Bearer'
+configuration.access_token = API_KEY
 
 sql_connection = sqlite3.connect('_data/puntersloveit.db')
 sql_cursor = sql_connection.cursor()
@@ -108,10 +108,20 @@ api_instance = cfbd.GamesApi(cfbd.ApiClient(configuration))
 for season_type in ['regular', 'postseason']:
     try:
         # Get games and results for %division% and %year%
-        response_result = api_instance.get_games(CURRENT_SEASON, division=DIVISION, season_type=season_type)
+        response_result = api_instance.get_games(CURRENT_SEASON, classification=DIVISION, season_type=season_type)
         if len(response_result) == 0:
             continue
-        df_tmp = pd.DataFrame([i for i in map(cfbd.Game.to_dict, response_result)])
+        df_tmp = pd.DataFrame([
+            game.dict(by_alias=False) if hasattr(game, 'dict') else game.to_dict()
+            for game in response_result
+        ])
+        df_tmp.rename(
+            columns={
+                'home_classification': 'home_division',
+                'away_classification': 'away_division',
+            },
+            inplace=True,
+        )
         df_tmp = df_tmp[GAMES_COLUMNS].query('completed == True')
         # Compare ids from db and response data
         game_ids_from_response = set(
@@ -133,7 +143,7 @@ for season_type in ['regular', 'postseason']:
             print(df_tmp.shape)
             df_tmp.to_sql('ncaa_games', sql_connection, if_exists='append', index=False)
     except ApiException as e:
-        print("Exception when calling GamesApi->get_team_game_stats: %s\n" % e)
+        print("Exception when calling GamesApi->get_games: %s\n" % e)
 
 ### Game Stats Summary Data
 ids_from_games_table = set(pd.read_sql_query(f'select id from ncaa_games', sql_connection).values.flatten())
@@ -142,16 +152,49 @@ new_game_ids = ids_from_games_table - ids_from_stats_table
 
 api_instance = cfbd.GamesApi(cfbd.ApiClient(configuration))
 
-for game_id in new_game_ids:
-    game_id = int(game_id)
-    try:
-        api_response = api_instance.get_team_game_stats(CURRENT_SEASON, game_id=game_id)
-        if len(api_response) == 0:
-            continue
-        game_stats_df = parse_teamgamestats_into_pddf(api_response[0])
-        game_stats_df.to_sql('ncaa_game_stats_summary', sql_connection, if_exists='append', index=False)                
-    except ApiException as e:
-        print(f"Exception when calling GamesApi->get_team_game_stats with game id {game_id}: {e}\n")
+if len(new_game_ids) > 0:
+    new_game_ids_int = {int(game_id) for game_id in new_game_ids}
+    new_game_ids_tuple = (
+        str(tuple(new_game_ids_int)).replace(",", "")
+        if len(new_game_ids_int) == 1
+        else tuple(new_game_ids_int)
+    )
+
+    # /games/teams in v2 requires week/team/conference filters.
+    # Pull by (season_type, week) and keep only ids that are missing in DB.
+    new_games_meta = pd.read_sql_query(
+        f'''
+        SELECT DISTINCT season_type, week
+        FROM ncaa_games
+        WHERE id in {new_game_ids_tuple}
+        ''',
+        sql_connection,
+    )
+
+    for _, game_period in new_games_meta.iterrows():
+        season_type = game_period['season_type']
+        week = int(game_period['week'])
+        try:
+            api_response = api_instance.get_game_team_stats(
+                CURRENT_SEASON,
+                week=week,
+                season_type=season_type,
+                classification=DIVISION,
+            )
+            if len(api_response) == 0:
+                continue
+
+            for game in api_response:
+                game_id = int(game.id)
+                if game_id not in new_game_ids_int:
+                    continue
+                game_stats_df = parse_teamgamestats_into_pddf(game)
+                game_stats_df.to_sql('ncaa_game_stats_summary', sql_connection, if_exists='append', index=False)
+        except ApiException as e:
+            print(
+                f"Exception when calling GamesApi->get_game_team_stats "
+                f"for season_type={season_type}, week={week}: {e}\n"
+            )
 
 ### AP TOP 25 Data
 try:

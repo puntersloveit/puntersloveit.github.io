@@ -21,8 +21,7 @@ DIVISION = 'fbs'
 
 # Configure API key authorization: ApiKeyAuth
 configuration = cfbd.Configuration()
-configuration.api_key['Authorization'] = API_KEY
-configuration.api_key_prefix['Authorization'] = 'Bearer'
+configuration.access_token = API_KEY
 
 sql_connection = sqlite3.connect('_data/puntersloveit.db')
 sql_cursor = sql_connection.cursor()
@@ -117,10 +116,20 @@ for year in range(2015, CURRENT_SEASON + 1):
     for season_type in ['regular', 'postseason']:
         try:
             # Get games and results for %division% and %year%
-            response_result = api_instance.get_games(year, division=DIVISION, season_type=season_type)
+            response_result = api_instance.get_games(year, classification=DIVISION, season_type=season_type)
             if len(response_result) == 0:
                 continue            
-            df_tmp = pd.DataFrame([i for i in map(cfbd.Game.to_dict, response_result)])
+            df_tmp = pd.DataFrame([
+                game.dict(by_alias=False) if hasattr(game, 'dict') else game.to_dict()
+                for game in response_result
+            ])
+            df_tmp.rename(
+                columns={
+                    'home_classification': 'home_division',
+                    'away_classification': 'away_division',
+                },
+                inplace=True,
+            )
             df_tmp['scores_sum'] = df_tmp['home_points'] + df_tmp['away_points']
 
             df_tmp = df_tmp[GAMES_COLUMNS + ['scores_sum']].query('completed == True and scores_sum > 0')
@@ -133,7 +142,7 @@ for year in range(2015, CURRENT_SEASON + 1):
 
             df_tmp.to_sql('ncaa_games', sql_connection, if_exists='append', index=False)
         except ApiException as e:
-            print("Exception when calling GamesApi->get_team_game_stats: %s\n" % e)
+            print("Exception when calling GamesApi->get_games: %s\n" % e)
 
 ### Game Stats Summary Data
 
@@ -143,23 +152,23 @@ for year in range(2015, CURRENT_SEASON + 1):
     for season_type in ['regular', 'postseason']:
         if season_type == 'postseason':
             try:
-                api_response = api_instance.get_team_game_stats(year, week=1, season_type=season_type, classification=DIVISION)
+                api_response = api_instance.get_game_team_stats(year, week=1, season_type=season_type, classification=DIVISION)
                 game_stats_df = pd.DataFrame()
                 for game in api_response:
                     game_stats_df = pd.concat([game_stats_df, parse_teamgamestats_into_pddf(game)], ignore_index=True) 
                 game_stats_df.to_sql('ncaa_game_stats_summary', sql_connection, if_exists='append', index=False)                
             except ApiException as e:
-                print("Exception when calling GamesApi->get_team_game_stats: %s\n" % e)
+                print("Exception when calling GamesApi->get_game_team_stats: %s\n" % e)
         else:
             for week in range(1, 16):
                 try:
-                    api_response = api_instance.get_team_game_stats(year, week=week, season_type=season_type, classification=DIVISION)
+                    api_response = api_instance.get_game_team_stats(year, week=week, season_type=season_type, classification=DIVISION)
                     game_stats_df = pd.DataFrame()
                     for game in api_response:
                         game_stats_df = pd.concat([game_stats_df, parse_teamgamestats_into_pddf(game)], ignore_index=True)
                     game_stats_df.to_sql('ncaa_game_stats_summary', sql_connection, if_exists='append', index=False)
                 except ApiException as e:
-                    print("Exception when calling GamesApi->get_team_game_stats: %s\n" % e)
+                    print("Exception when calling GamesApi->get_game_team_stats: %s\n" % e)
 
 
 ### AP TOP 25 Data
@@ -187,7 +196,14 @@ except ApiException as e:
     print("Exception when calling TeamsApi->get_teams: %s\n" % e)
 
 
-team_info_df = pd.DataFrame([i for i in map(cfbd.models.team.Team.to_dict, api_response)])[TEAM_INFO_COLUMNS]
+team_info_df = pd.DataFrame([
+    team.dict(by_alias=False) if hasattr(team, 'dict') else team.to_dict()
+    for team in api_response
+]).rename(
+    columns={
+        'alternate_color': 'alt_color',
+    }
+)[TEAM_INFO_COLUMNS]
 team_info_df['logo1'] = team_info_df.logos.apply(lambda x: x[0] if x is not None else None)
 team_info_df['logo2'] = team_info_df.logos.apply(lambda x: x[1] if x is not None and len(x) > 1 else None)
 team_info_df.drop(columns='logos', inplace=True)
