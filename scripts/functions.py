@@ -1,8 +1,8 @@
-import cfbd
 import itertools
 import requests
 import pandas as pd
 import colorsys
+from typing import Any
 
 def saturate_hex_color(hex_color, saturation_amount, lightening_amount):
     """
@@ -95,12 +95,12 @@ def compare_scores(scores: pd.core.series.Series) -> list:
 
     return compared_scores
   
-def parse_teamgamestats_into_pddf(game: cfbd.models.team_game.TeamGame) -> pd.DataFrame:
+def parse_teamgamestats_into_pddf(game: Any) -> pd.DataFrame:
     """
-    Parses a cfbd.models.team_game.TeamGame object into a pandas DataFrame.
+    Parses a CFBD game-team-stats object into a pandas DataFrame.
 
     Args:
-        game (cfbd.models.team_game.TeamGame): The team game object to parse.
+        game (Any): The game stats object to parse.
 
     Returns:
         pd.DataFrame: The parsed game statistics as a DataFrame.
@@ -176,7 +176,7 @@ def parse_teamgamestats_into_pddf(game: cfbd.models.team_game.TeamGame) -> pd.Da
     # Return the parsed game statistics DataFrame
     return game_stats_df
 
-def parse_week_ap25_rank_into_pddf(week_rankings: cfbd.models.ranking_week.RankingWeek) -> pd.DataFrame:
+def parse_week_ap25_rank_into_pddf(week_rankings: Any) -> pd.DataFrame:
     """
     Parses the AP Top 25 rankings from a given RankingWeek object and returns a pandas DataFrame.
 
@@ -189,7 +189,10 @@ def parse_week_ap25_rank_into_pddf(week_rankings: cfbd.models.ranking_week.Ranki
     for poll in week_rankings.polls:
         if poll.poll == 'AP Top 25':
             # Create a DataFrame from the ranks and schools in the poll
-            df_ranks = pd.DataFrame([i for i in map(cfbd.Game.to_dict, poll.ranks)])[['rank', 'school']]
+            df_ranks = pd.DataFrame([
+                rank.dict(by_alias=False) if hasattr(rank, 'dict') else rank.to_dict()
+                for rank in poll.ranks
+            ])[['rank', 'school']]
             
             # Add additional columns to the DataFrame
             df_ranks['season'] = week_rankings.season
