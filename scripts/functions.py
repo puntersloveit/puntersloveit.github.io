@@ -2,6 +2,7 @@ import itertools
 import requests
 import pandas as pd
 import colorsys
+import string
 from typing import Any
 
 def saturate_hex_color(hex_color, saturation_amount, lightening_amount):
@@ -20,7 +21,11 @@ def saturate_hex_color(hex_color, saturation_amount, lightening_amount):
     if hex_color is None:
         return '#FFFFFF'
     else:
-        hex_color = hex_color.lstrip('#')
+        hex_color = str(hex_color).strip().lstrip('#')
+        if len(hex_color) != 6:
+            return '#FFFFFF'
+        if any(ch not in string.hexdigits for ch in hex_color):
+            return '#FFFFFF'
 
     # Convert hexadecimal color to RGB
     rgb_color = tuple(int(hex_color[i:i+2], 16) for i in (0, 2, 4))
@@ -202,7 +207,7 @@ def parse_week_ap25_rank_into_pddf(week_rankings: Any) -> pd.DataFrame:
             pass
     return df_ranks
 
-def download_file(url, file_path):
+def download_file(url, file_path, timeout: int = 20) -> bool:
     """
     Downloads a file from the given URL and saves it to the specified file path.
 
@@ -210,7 +215,102 @@ def download_file(url, file_path):
         url (str): The URL from which to download the file.
         file_path (str): The path where the downloaded file should be saved.
     """
-    with requests.get(url, stream=True) as r:
-        with open(file_path, 'wb') as f:
-            for chunk in r.iter_content(chunk_size=8192):
-                f.write(chunk)
+    try:
+        with requests.get(url, stream=True, timeout=timeout) as r:
+            r.raise_for_status()
+            with open(file_path, 'wb') as f:
+                for chunk in r.iter_content(chunk_size=8192):
+                    f.write(chunk)
+        return True
+    except requests.RequestException:
+        return False
+
+def calculate_win_probability_metrics(home_win_probabilities: list[float]) -> tuple[float, float] | None:
+    """
+    Build NFL-style volatility metrics from a sequence of home win probabilities.
+
+    Returns:
+        tuple(max_diff, shifts) or None if not enough valid values.
+    """
+    if home_win_probabilities is None:
+        return None
+
+    wp_series = pd.Series(home_win_probabilities, dtype='float64').dropna()
+    if wp_series.empty:
+        return None
+
+    win_chances_max_diff = float(wp_series.max() - wp_series.min())
+    win_prob_shifts = float(
+        (wp_series - wp_series.shift(-1)).abs().sum()
+        + (wp_series - wp_series.shift(-2)).abs().sum()
+        + (wp_series - wp_series.shift(-3)).abs().sum()
+    )
+    return win_chances_max_diff, win_prob_shifts
+
+def get_pregame_win_probabilities_safe(
+    api_key: str,
+    year: int,
+    week: int,
+    season_type: str,
+    timeout: int = 30,
+) -> list[dict[str, float | int]]:
+    """
+    Fetch pregame win probabilities without SDK model validation failures on null fields.
+    """
+    response = requests.get(
+        'https://api.collegefootballdata.com/metrics/wp/pregame',
+        params={
+            'year': year,
+            'week': week,
+            'seasonType': season_type,
+        },
+        headers={
+            'Authorization': f'Bearer {api_key}',
+        },
+        timeout=timeout,
+    )
+    response.raise_for_status()
+
+    payload = response.json()
+    pregame_values: list[dict[str, float | int]] = []
+    for game in payload:
+        game_id = game.get('gameId')
+        home_win_probability = game.get('homeWinProbability')
+        if game_id is None or home_win_probability is None:
+            continue
+        try:
+            pregame_values.append(
+                {
+                    'game_id': int(game_id),
+                    'home_win_probability': float(home_win_probability),
+                }
+            )
+        except (TypeError, ValueError):
+            continue
+
+    return pregame_values
+
+def is_cfbd_quota_exhausted(error: Exception) -> bool:
+    """
+    Detect CFBD monthly quota exhaustion from SDK exceptions.
+    """
+    status = getattr(error, 'status', None)
+    if status == 429:
+        return True
+    response = getattr(error, 'response', None)
+    if response is not None and getattr(response, 'status_code', None) == 429:
+        return True
+    return 'monthly call quota exceeded' in str(error).lower()
+
+def pregame_wp_to_metrics(home_win_probability: float | None) -> tuple[float, float] | None:
+    """
+    Convert pregame win probability into NFL-style proxy metrics.
+    """
+    if home_win_probability is None:
+        return None
+
+    home_wp = float(home_win_probability)
+    game_balance = max(0.0, 1.0 - abs(home_wp - 0.5) * 2.0)
+    win_chances_max_diff = game_balance
+    win_prob_shifts = game_balance * 40.0
+    return win_chances_max_diff, win_prob_shifts

@@ -16,7 +16,7 @@ These ratings are intended for those who, for various reasons (for example, time
 # What factors does the rating take into account?
 - Score efficiency
 - Proximity of the result, including overtime
-- Game stats (yards, touchdowns, fumbles, sacks, interceptions)
+- Game stats (yards, touchdowns, sacks, interceptions)
 - Surprising outcomes, twists, and turns during the game
 - Number of leadership changes
 
@@ -104,7 +104,7 @@ Everyone must consider these factors individually. For instance, if teams you fa
 ### stat_rating
 1. **Touchdowns rating:**
 
-   ```tds_rating = min(10, max(0, totalTDs - 4))```
+   ```tds_rating = min(10, totalTDs)```
 
 2. **Sacks rating:**
 
@@ -112,79 +112,75 @@ Everyone must consider these factors individually. For instance, if teams you fa
 
 3. **Interceptions rating:**
 
-   ```interceptions_rating = min(5, interceptions) / 0.5```
+   ```interceptions_rating = min(7, interceptions) / 0.7```
 
 4. **Yards rating:**
 
-   ```yards_rating = sqrt(min(700, max(0, totalYards - 500))) / YARDS_DIVIDER```
-   - Where ```YARDS_DIVIDER = sqrt(700) / 10```
+   ```yards_rating = sqrt(min(650, max(0, totalYards - 350))) / YARDS_DIVIDER```
+   - Where ```YARDS_DIVIDER = sqrt(650) / 10```
 
 5. **Overall statistical rating, calculated from all previous ratings:**
 
-   ```stat_rating = 0.1 * tds_rating + 0.1 * sacks_rating + 0.1 * interceptions_rating + 0.7 * yards_rating```
+   ```stat_rating = 0.3 * tds_rating + 0.1 * sacks_rating + 0.1 * interceptions_rating + 0.5 * yards_rating```
 
 ### Additional game excitement ratings
 1. **Efficiency rating:**
 
    ```efficiency_rating = sqrt(scores_sum) / SCORES_SUM_DIVIDER```
-   - Where ```SCORES_SUM_DIVIDER = sqrt(144) / 10```
+   - Where ```SCORES_SUM_DIVIDER = sqrt(100) / 10```
 
 2. **Overtimes rating:**
 
    ```
-   If number_of_quarters > 9:  
-     overtimes_rating = 2  
-   Else if number_of_quarters > 4:  
+   If number_of_quarters > 4:  
      overtimes_rating = 1  
    Else:  
      overtimes_rating = 0
    ```
 
-3. **Excitement rating:**
+3. **Score difference rating:**
 
    ```
-   If excitement_index < 10:  
-     excitement_rating = log(max(excitement_index, 1), 4) / EXCIT_IND_DIVIDER  
+   If scores_diff == 0:  
+     score_diff_rating = 7.5  
    Else:  
-     excitement_rating = 10
+     score_diff_rating = max(-10, (20 - scores_diff) / SCORE_DIFF_DIVIDER)
    ```
 
-   - Where ```EXCIT_IND_DIVIDER = log(10, 4) / 10```
+   - Where ```SCORE_DIFF_DIVIDER = 19 / 10```
 
-4. **Score difference rating:**
+4. **Win probability shifts rating:**
 
-   ```
-   If scores_diff > 29:  
-     score_diff_rating = 0  
-   Else:  
-     score_diff_rating = (30 - scores_diff) / SCORE_DIFF_DIVIDER
-   ```
+   ```win_prob_shifts_rating = min(10, sqrt(win_prob_shifts) / WIN_PROB_SHIFTS_DIVIDER)```
+   - Where ```WIN_PROB_SHIFTS_DIVIDER = sqrt(40) / 10```
 
-   - Where ```SCORE_DIFF_DIVIDER = 29 / 10```
+5. **Maximum win chances difference rating:**
 
-5. **Leader changes rating:**
+   ```win_chances_max_diff_rating = 10 * win_chances_max_diff```
 
-   ```
-   If score_changes > 4:  
-     leader_changes_rating = 10  
-   Else if score_changes == 4:  
-     leader_changes_rating = 9  
-   Else if score_changes == 3:  
-     leader_changes_rating = 6  
-   Else if score_changes == 2:  
-     leader_changes_rating = 3  
-   Else:  
-     leader_changes_rating = 0
-   ```
+6. **Leader changes rating:**
+
+   ```leader_changes_rating = min(10, score_changes)```
+
+> Note: if win probability metrics are unavailable for a game, missing WP values are filled with median values before rating calculation.
 
 ### Overall game rating:
+1. **First, calculate:**
 
    ```
    game_rating = 0.25 * min(efficiency_rating + overtimes_rating, 10)  
-               + 0.25 * score_diff_rating  
-               + 0.25 * stat_rating  
-               + 0.20 * excitement_rating  
-               + 0.05 * leader_changes_rating
+               + 0.25 * win_prob_shifts_rating  
+               + 0.20 * score_diff_rating  
+               + 0.10 * win_chances_max_diff_rating  
+               + 0.10 * stat_rating  
+               + 0.10 * leader_changes_rating
+   ```
+
+2. **Adjustment of the overall game rating:**
+
+   ```
+   If tds_rating == 0:  
+     game_rating = max(0, game_rating - 2)
    ```
 
 # When do game ratings update?

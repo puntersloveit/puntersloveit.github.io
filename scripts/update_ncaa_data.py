@@ -90,10 +90,11 @@ GAME_RATING_COLUMNS = [
  'game_rating',
  ]
 
-SCORES_SUM_DIVIDER = math.sqrt(144) / 10
+SCORES_SUM_DIVIDER = math.sqrt(100) / 10
 EXCIT_IND_DIVIDER = math.log(10, 4) / 10
-SCORE_DIFF_DIVIDER = 29 / 10
-YARDS_DIVIDER = math.sqrt(700) / 10
+SCORE_DIFF_DIVIDER = 19 / 10
+YARDS_DIVIDER = math.sqrt(650) / 10
+WIN_PROB_SHIFTS_DIVIDER = math.sqrt(40) / 10
 
 SATURATION_AMOUNT = 0.5
 LIGHTENING_AMOUNT = 0.3
@@ -235,6 +236,77 @@ new_ids_from_both = new_ids_from_games_table.intersection(new_ids_from_stats_tab
 
 new_ids_from_both_tuple = str(tuple(new_ids_from_both)).replace(",", "") if len(new_ids_from_both) == 1 else tuple(new_ids_from_both)
 
+# Keep a table with NFL-style win-probability metrics for NCAA games.
+try:
+    pd.read_sql_query('SELECT id FROM ncaa_win_probability_metrics LIMIT 1', sql_connection)
+except Exception:
+    pd.DataFrame(columns=['id', 'win_chances_max_diff', 'win_prob_shifts'])\
+        .to_sql('ncaa_win_probability_metrics', sql_connection, if_exists='replace', index=False)
+
+if len(new_ids_from_both) > 0:
+    existing_wp_ids = set(pd.read_sql_query('SELECT id FROM ncaa_win_probability_metrics', sql_connection).values.flatten())
+    wp_ids_to_update = {int(game_id) for game_id in new_ids_from_both} - {int(game_id) for game_id in existing_wp_ids}
+
+    if len(wp_ids_to_update) > 0:
+        games_meta_wp = pd.read_sql_query(
+            'SELECT DISTINCT id, season, season_type, week FROM ncaa_games',
+            sql_connection
+        )
+        games_meta_wp = games_meta_wp[games_meta_wp['id'].isin(wp_ids_to_update)]
+        wp_periods = games_meta_wp[['season', 'season_type', 'week']].drop_duplicates()
+
+        win_probability_metrics = []
+        quota_exhausted = False
+        for _, period in wp_periods.iterrows():
+            year = int(period['season'])
+            season_type = period['season_type']
+            week = int(period['week'])
+            try:
+                pregame_wp_response = get_pregame_win_probabilities_safe(
+                    api_key=API_KEY,
+                    year=year,
+                    week=week,
+                    season_type=season_type,
+                )
+                if len(pregame_wp_response) == 0:
+                    continue
+
+                for game in pregame_wp_response:
+                    game_id = int(game['game_id'])
+                    if game_id not in wp_ids_to_update:
+                        continue
+                    wp_metrics = pregame_wp_to_metrics(game['home_win_probability'])
+                    if wp_metrics is None:
+                        continue
+
+                    win_chances_max_diff, win_prob_shifts = wp_metrics
+                    win_probability_metrics.append(
+                        {
+                            'id': game_id,
+                            'win_chances_max_diff': win_chances_max_diff,
+                            'win_prob_shifts': win_prob_shifts,
+                        }
+                    )
+            except Exception as e:
+                print(
+                    f"Exception when fetching pregame win probabilities "
+                    f"for year={year}, season_type={season_type}, week={week}: {e}\n"
+                )
+                if is_cfbd_quota_exhausted(e):
+                    print('CFBD monthly quota exceeded. Stopping win-probability updates for this run.')
+                    quota_exhausted = True
+                    break
+        if quota_exhausted:
+            print('Win-probability metrics were partially updated due to quota limits.')
+
+        if len(win_probability_metrics) > 0:
+            pd.DataFrame(win_probability_metrics).drop_duplicates(subset=['id']).to_sql(
+                'ncaa_win_probability_metrics',
+                sql_connection,
+                if_exists='append',
+                index=False
+            )
+
 try:
     max_week_current_season = int(
         pd.read_sql_query(f'select max(week) from ncaa_rankings where season == {CURRENT_SEASON}', sql_connection)\
@@ -270,6 +342,8 @@ SELECT
     scores_diff,
     score_changes,
     number_of_quarters,
+    win_chances_max_diff,
+    win_prob_shifts,
     rushingTDs,
     puntReturnTDs,
     passingTDs,
@@ -285,6 +359,8 @@ SELECT
 FROM ncaa_games AS games
 LEFT JOIN ncaa_game_stats_summary AS stats
     ON games.id = stats.id
+LEFT JOIN ncaa_win_probability_metrics AS win_prob_metrics
+    ON games.id = win_prob_metrics.id
 LEFT JOIN (
             select 
                 rank, 
@@ -311,6 +387,26 @@ WHERE games.id in {new_ids_from_both_tuple}
 '''
 game_ratings_update = pd.read_sql_query(query, sql_connection)
 
+numeric_columns = [
+    'rushingTDs',
+    'puntReturnTDs',
+    'passingTDs',
+    'kickReturnTDs',
+    'interceptionTDs',
+    'totalFumbles',
+    'defensiveTDs',
+    'sacks',
+    'interceptions',
+    'rushingYards',
+    'netPassingYards',
+    'totalYards',
+    'win_chances_max_diff',
+    'win_prob_shifts',
+    'excitement_index',
+]
+for col in numeric_columns:
+    game_ratings_update[col] = pd.to_numeric(game_ratings_update[col], errors='coerce')
+
 for col in ['rushingTDs',
             'puntReturnTDs',
             'passingTDs',
@@ -323,40 +419,50 @@ for col in ['rushingTDs',
             'rushingYards',
             'netPassingYards',
             'totalYards',
+            'win_chances_max_diff',
+            'win_prob_shifts',
             'excitement_index',
             ]:
-    game_ratings_update[col].fillna(game_ratings_update[col].median(), inplace=True)
+    median_value = game_ratings_update[col].median()
+    game_ratings_update[col].fillna(0 if pd.isna(median_value) else median_value, inplace=True)
 
 game_ratings_update['totalTDs'] = game_ratings_update['rushingTDs'] + game_ratings_update['puntReturnTDs'] + game_ratings_update['passingTDs'] + game_ratings_update['kickReturnTDs'] + game_ratings_update['interceptionTDs']
 game_ratings_update = game_ratings_update.drop(['rushingTDs', 'puntReturnTDs', 'passingTDs', 'kickReturnTDs', 'interceptionTDs', 'defensiveTDs', 'rushingYards', 'netPassingYards',], axis=1)
 
-game_ratings_update['tds_rating'] = game_ratings_update['totalTDs'].apply(lambda x: min(10, max(0, x - 4)))
+game_ratings_update['tds_rating'] = game_ratings_update['totalTDs'].apply(lambda x: min(10, x))
 game_ratings_update['sacks_rating'] = game_ratings_update['sacks'].apply(lambda x: min(12, x) / 1.2)
-game_ratings_update['interceptions_rating'] = game_ratings_update['interceptions'].apply(lambda x: min(5, x) / 0.5)
-game_ratings_update['yards_rating'] = game_ratings_update['totalYards'].apply(lambda x: math.sqrt(min(700, max(0, x - 500))) / YARDS_DIVIDER)
+game_ratings_update['interceptions_rating'] = game_ratings_update['interceptions'].apply(lambda x: min(7, x) / 0.7)
+game_ratings_update['yards_rating'] = game_ratings_update['totalYards'].apply(lambda x: math.sqrt(min(650, max(0, x - 350))) / YARDS_DIVIDER)
 
-game_ratings_update['stat_rating'] = game_ratings_update['tds_rating'] * 0.1\
+game_ratings_update['stat_rating'] = game_ratings_update['tds_rating'] * 0.3\
                   + game_ratings_update['sacks_rating'] * 0.1\
                   + game_ratings_update['interceptions_rating'] * 0.1\
-                  + game_ratings_update['yards_rating'] * 0.7
+                  + game_ratings_update['yards_rating'] * 0.5
 
 game_ratings_update.loc[:, 'efficiency_rating'] = game_ratings_update.loc[:, 'scores_sum']\
     .apply(lambda x: math.sqrt(x) / SCORES_SUM_DIVIDER)
 game_ratings_update.loc[:, 'overtimes_rating'] = game_ratings_update.loc[:, 'number_of_quarters']\
-    .apply(lambda x: 2 if x > 9 else 1 if x > 4 else 0)
+    .apply(lambda x: 1 if x > 4 else 0)
 game_ratings_update.loc[:, 'excitement_rating'] = game_ratings_update.loc[:, 'excitement_index']\
     .apply(lambda x: math.log(max(x, 1), 4) / EXCIT_IND_DIVIDER if x < 10 else 10)
 game_ratings_update.loc[:, 'score_diff_rating'] = game_ratings_update.loc[:, 'scores_diff']\
-    .apply(lambda x: 0 if x > 29 else (30 - x) / SCORE_DIFF_DIVIDER)
+    .apply(lambda x: 7.5 if x == 0 else max(-10, (20 - x) / SCORE_DIFF_DIVIDER))
 game_ratings_update.loc[:, 'leader_changes_rating'] = game_ratings_update.loc[:, 'score_changes']\
-    .apply(lambda x: 10 if x > 4 else 9 if x == 4 else 6 if x == 3 else 3 if x == 2 else 0)
+    .apply(lambda x: min(10, x))
+game_ratings_update.loc[:, 'win_prob_shifts_rating'] = game_ratings_update.loc[:, 'win_prob_shifts']\
+    .apply(lambda x: min(10, math.sqrt(x) / WIN_PROB_SHIFTS_DIVIDER))
+game_ratings_update.loc[:, 'win_chances_max_diff_rating'] = game_ratings_update.loc[:, 'win_chances_max_diff']\
+    .apply(lambda x: x * 10)
 
 game_ratings_update.loc[:, 'game_rating'] = (game_ratings_update.loc[:, 'efficiency_rating'] + game_ratings_update.loc[:, 'overtimes_rating'])\
                          .apply(lambda x: min(x, 10)) * 0.25\
-                         + game_ratings_update.loc[:, 'score_diff_rating'] * 0.25\
-                         + game_ratings_update.loc[:, 'stat_rating'] * 0.25\
-                         + game_ratings_update.loc[:, 'excitement_rating'] * 0.2\
-                         + game_ratings_update.loc[:, 'leader_changes_rating'] * 0.05
+                         + game_ratings_update.loc[:, 'win_prob_shifts_rating'] * 0.25\
+                         + game_ratings_update.loc[:, 'score_diff_rating'] * 0.20\
+                         + game_ratings_update.loc[:, 'win_chances_max_diff_rating'] * 0.10\
+                         + game_ratings_update.loc[:, 'stat_rating'] * 0.10\
+                         + game_ratings_update.loc[:, 'leader_changes_rating'] * 0.10
+game_ratings_update.loc[:, 'game_rating'] = game_ratings_update.loc[:, ['game_rating', 'tds_rating']]\
+    .apply(lambda x: max(0, x['game_rating'] - 2) if x['tds_rating'] == 0 else x['game_rating'], axis=1).round(2)
 
 delete_irrelevant_notes = lambda x: '' if x is None \
     else x if x.__contains__('bowl') or x.__contains__('kickoff') or x.__contains__('championship') or x.__contains__('classic') else ''
