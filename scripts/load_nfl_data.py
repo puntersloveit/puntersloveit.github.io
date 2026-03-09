@@ -48,7 +48,7 @@ team_info_df = nfl.import_team_desc()[['team_abbr', 'team_name', 'team_color']]
 team_info_df.to_sql('nfl_teams_info', sql_connection, if_exists='replace', index=False)
 
 # Play-by-Play Data
-pbp_data = nfl.import_pbp_data([i for i in range(1999, 2024)], PBP_COLUMNS)
+pbp_data = nfl.import_pbp_data([i for i in range(1999, CURRENT_SEASON + 1)], PBP_COLUMNS)
 pbp_data.query('~(score_differential.isna() | score_differential_post.isna())', inplace=True)
 pbp_data['leader_changes'] = np.sign(pbp_data.score_differential_post) != np.sign(pbp_data.score_differential)
 
@@ -151,6 +151,7 @@ rating_df[['away_color',
            'game_rating']]\
     .sort_values('game_rating', ascending=False)\
         .to_csv('_data/nfl_game_ratings.csv', index=False)
+rating_df.to_csv('_data/nfl_game_ratings_extended.csv', index=False)
 
 # Calculate team ratings
 home_ratings = rating_df.groupby(['season', 'home_team']).agg({
@@ -183,8 +184,8 @@ team_ratings = pd.read_sql_query('select * from nfl_team_ratings', sql_connectio
 team_ratings.to_json('_data/nfl_team_ratings.json', orient='records')
 
 # Create unique seasons list
-unique_seasons = sorted(rating_df['season'].unique(), reverse=True)
-for y in range(unique_seasons[0], unique_seasons[-1]-1, -1):
+unique_seasons = []
+for y in range(rating_df.season.max(), rating_df.season.min() - 1, -1):
     weeks = rating_df.query(f'season == {y}').week.unique().tolist()
     if y == CURRENT_SEASON:
         weeks = weeks[::-1]
@@ -192,7 +193,12 @@ for y in range(unique_seasons[0], unique_seasons[-1]-1, -1):
     {
         'season': y,
         'weeks': weeks + ['All']
-    }       
+    }
     )
+unique_seasons.append(
+    {
+        'season': -1,
+        'weeks': ['All']
+    })
 with open('_data/nfl_unique_seasons.yml', 'w') as file:
     yaml.dump(unique_seasons, file)
