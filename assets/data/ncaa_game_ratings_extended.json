@@ -1,0 +1,4 @@
+---
+layout: null
+---
+{{ site.data.ncaa_game_ratings_extended | jsonify }}
