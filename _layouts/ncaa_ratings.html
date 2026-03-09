@@ -1,84 +1,14 @@
 ---
 layout: default
 ---
-<!DOCTYPE html>
-<html>
-  <head>
-    <style>
-      .bordered-row {
-        border: 1px solid black;
-      }
-
-      .border-table-style tr {
-        border: 3px solid gray;
-        color: black;
-      }
-
-      .hidden-style {
-        display: none;
-      }
-
-      #no-records-message {
-        display: none;
-        color: rgb(152, 11, 0);
-      }
-    </style>
-    <script src="/assets/js/ratings.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        initializeDropdowns({
-          tableId: "NcaafGameRatings",
-          seasons: JSON.parse(`{{ site.data.ncaa_unique_seasons | jsonify }}`),
-          teams: JSON.parse(`{{ site.data.ncaa_teams | jsonify }}`),
-          showBowlsColumn: true
-        });
-      });
-    </script>
-  </head>
-
-  <body>
-    <h1>NCAAF Game Ratings</h1>
-    <h4>
-      <a href="/ncaa_extended">Extended ratings</a> |
-      <a href="/ncaa_team_ratings">Most entertaining teams</a>
-    </h4>
-    <label for="season">Select Year:</label>
-    <select id="season"></select>
-
-    <label for="week">Select Week:</label>
-    <select id="week"></select>
-
-    <label for="team">Select Team:</label>
-    <select id="team"></select>
-
-    <div id="no-records-message"></div>
-
-    <table id="NcaafGameRatings" class="border-table-style" style="display: none;">
-      <thead>
-        <tr>
-          <th>Year</th>
-          <th>Week</th>
-          <th>Bowls</th>
-          <th>Away Team</th>
-          <th>Home Team</th>
-          <th>Game Rating</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% assign table_rows = site.data.ncaa_game_ratings %}
-        {% for row in table_rows %}
-          <tr>
-            {% assign away_color = row.away_color %}
-            {% assign home_color = row.home_color %}
-            <td>{{ row.season }}</td>
-            <td>{{ row.week }}</td>
-            <td style="background-color: rgba(135, 207, 235, 0.332); width: 200px">{{ row.notes }}</td>
-            <td style="background-color:{{ away_color }}">{{ row.away_team }}</td>
-            <td style="background-color:{{ home_color }}">{{ row.home_team }}</td>
-            <td>{{ row.game_rating }}</td>
-          </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-  </body>
-</html>
+{% include game_ratings_page.html
+  page_title="NCAAF Game Ratings"
+  extended_href="/ncaa_extended"
+  teams_href="/ncaa_team_ratings"
+  table_id="NcaafGameRatings"
+  seasons=site.data.ncaa_unique_seasons
+  teams=site.data.ncaa_teams
+  rows=site.data.ncaa_game_ratings
+  show_bowls="true"
+  row_title="false"
+%}

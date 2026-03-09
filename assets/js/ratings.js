@@ -4,7 +4,7 @@ function initializeDropdowns(config) {
   const teamDropdown = document.getElementById("team");
   const messageElement = document.getElementById("no-records-message");
   const table = document.getElementById(config.tableId);
-  const rows = table.getElementsByTagName("tr");
+  const bodyRows = table.querySelectorAll("tbody tr");
 
   function populateSeasonDropdown() {
     config.seasons.forEach(season => {
@@ -62,7 +62,7 @@ function initializeDropdowns(config) {
       toggleColumnDisplay(2, showBowlsColumn); // 'Bowls' column
     }
 
-    for (const row of rows) {
+    for (const row of bodyRows) {
       const cells = row.children;
       const year = cells[0].textContent.trim();
       const week = cells[1].textContent.trim().toLowerCase();
@@ -96,7 +96,7 @@ function initializeDropdowns(config) {
     if (headerCells.length > 0) {
       headerCells[columnIndex].style.display = displayStyle;
     }
-    for (const row of rows) {
+    for (const row of bodyRows) {
       const cell = row.children[columnIndex];
       if (cell) {
         cell.style.display = displayStyle;

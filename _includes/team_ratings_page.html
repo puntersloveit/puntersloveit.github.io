@@ -1,0 +1,159 @@
+<style>
+  .border-table-style tr {
+    border: 3px solid gray;
+    color: black;
+  }
+
+  .hidden-style {
+    display: none;
+  }
+
+  #no-records-message {
+    display: none;
+    color: rgb(152, 11, 0);
+  }
+
+  .filter-group {
+    margin: 10px 0;
+  }
+
+  .filter-group label {
+    margin-right: 10px;
+  }
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const seasonDropdown = document.getElementById("season");
+    const conferenceDropdown = document.getElementById("conference");
+    const messageElement = document.getElementById("no-records-message");
+    const table = document.getElementById("{{ include.table_id }}");
+    const rows = table.getElementsByTagName("tr");
+    const hasConferenceFilter = {% if include.show_conference == "true" %}true{% else %}false{% endif %};
+
+    // Get unique seasons and conferences
+    const allTeams = {{ include.teams_data | jsonify }};
+    const seasons = [...new Set(allTeams.map(item => item.season))].sort().reverse();
+    const latestSeason = seasons[0];
+    seasons.push(-1); // Add "All Years" option at the end
+
+    // Populate season dropdown
+    seasons.forEach(season => {
+      const option = document.createElement("option");
+      option.value = season;
+      option.textContent = season == -1 ? "All Years" : season;
+      if (season === latestSeason) {
+        option.selected = true;
+      }
+      seasonDropdown.appendChild(option);
+    });
+
+    // Populate conference dropdown for NCAA only
+    if (hasConferenceFilter && conferenceDropdown) {
+      const conferences = [...new Set(allTeams.map(item => item.conference))].sort();
+      conferences.unshift("All Conferences");
+
+      conferences.forEach(conference => {
+        const option = document.createElement("option");
+        option.value = conference === "All Conferences" ? "" : conference;
+        option.textContent = conference;
+        conferenceDropdown.appendChild(option);
+      });
+    }
+
+    function filterRecords() {
+      const selectedYear = seasonDropdown.value;
+      const selectedConference = hasConferenceFilter && conferenceDropdown ? conferenceDropdown.value : "";
+      let noRecordsFound = true;
+
+      // Show/hide year column
+      const showYearColumn = selectedYear === "-1";
+      const yearCells = document.querySelectorAll(".year-column");
+      yearCells.forEach(cell => {
+        cell.style.display = showYearColumn ? "" : "none";
+      });
+
+      for (const row of rows) {
+        if (row.classList.contains("header-row")) continue;
+
+        const year = row.querySelector(".year-column").textContent;
+        const matchesYear = selectedYear === "-1" || year === selectedYear;
+        let shouldDisplayRow = matchesYear;
+
+        if (hasConferenceFilter) {
+          const conference = row.querySelector(".conference-column").textContent;
+          const matchesConference = !selectedConference || conference === selectedConference;
+          shouldDisplayRow = matchesYear && matchesConference;
+        }
+
+        row.style.display = shouldDisplayRow ? "" : "none";
+        if (shouldDisplayRow) {
+          noRecordsFound = false;
+        }
+      }
+
+      if (noRecordsFound) {
+        if (hasConferenceFilter) {
+          const yearText = selectedYear === "-1" ? "all years" : selectedYear;
+          const conferenceText = selectedConference || "all conferences";
+          messageElement.textContent = `No records found for ${yearText} in ${conferenceText}.`;
+        } else {
+          messageElement.textContent = `No records found for ${selectedYear}.`;
+        }
+        messageElement.style.display = "block";
+      } else {
+        messageElement.style.display = "none";
+      }
+    }
+
+    // Initialize page
+    filterRecords();
+    seasonDropdown.addEventListener("change", filterRecords);
+    if (hasConferenceFilter && conferenceDropdown) {
+      conferenceDropdown.addEventListener("change", filterRecords);
+    }
+  });
+</script>
+
+<h1>{{ include.page_title }}</h1>
+<h4>
+  <a href="{{ include.extended_href | relative_url }}">Extended ratings</a> |
+  <a href="{{ include.game_href | relative_url }}">Game ratings</a>
+</h4>
+
+<div class="filter-group">
+  <label for="season">Select Year:</label>
+  <select id="season"></select>
+
+  {% if include.show_conference == "true" %}
+    <label for="conference">Conference:</label>
+    <select id="conference"></select>
+  {% endif %}
+</div>
+
+<div id="no-records-message"></div>
+
+<table id="{{ include.table_id }}" class="border-table-style">
+  <thead>
+    <tr class="header-row">
+      <th>Team</th>
+      <th class="year-column">Year</th>
+      {% if include.show_conference == "true" %}
+        <th>Conference</th>
+      {% endif %}
+      <th>Entertainment Rating</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% assign teams = include.teams_data | sort: "avg_game_rating" | reverse %}
+    {% for team in teams %}
+      <tr>
+        <td style="background-color:{{ team.team_color }}">{{ team.team }}</td>
+        <td class="year-column">{{ team.season }}</td>
+        {% if include.show_conference == "true" %}
+          <td class="conference-column">{{ team.conference }}</td>
+        {% endif %}
+        <td>{{ team.avg_game_rating | round: 2 }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
