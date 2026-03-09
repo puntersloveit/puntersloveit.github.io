@@ -3,6 +3,7 @@ import requests
 import pandas as pd
 import colorsys
 import string
+import yaml
 from typing import Any
 
 def saturate_hex_color(hex_color, saturation_amount, lightening_amount):
@@ -33,11 +34,15 @@ def saturate_hex_color(hex_color, saturation_amount, lightening_amount):
     # Convert RGB to HSL
     hls_color = colorsys.rgb_to_hls(rgb_color[0] / 255, rgb_color[1] / 255, rgb_color[2] / 255)
 
-    # Increase the saturation of the HSL color
-    saturated_hls_color = (hls_color[0], max(0.0, hls_color[1] + lightening_amount), max(0.0, hls_color[2] - saturation_amount))
+    # Keep HLS values in bounds so color conversion always stays valid.
+    lightness = min(1.0, max(0.0, hls_color[1] + lightening_amount))
+    saturation = min(1.0, max(0.0, hls_color[2] - saturation_amount))
+    saturated_hls_color = (hls_color[0], lightness, saturation)
 
     # Convert HSL back to RGB
-    saturated_rgb_color = tuple(round(c * 255) for c in colorsys.hls_to_rgb(*saturated_hls_color))
+    saturated_rgb_color = tuple(
+        max(0, min(255, round(c * 255))) for c in colorsys.hls_to_rgb(*saturated_hls_color)
+    )
 
     # Convert RGB to hexadecimal
     saturated_hex_color = '#{:02x}{:02x}{:02x}'.format(*saturated_rgb_color)
@@ -191,6 +196,7 @@ def parse_week_ap25_rank_into_pddf(week_rankings: Any) -> pd.DataFrame:
     Returns:
         df_ranks: A pandas DataFrame containing the parsed rankings.
     """
+    df_ranks = pd.DataFrame(columns=['rank', 'school', 'season', 'week', 'season_type'])
     for poll in week_rankings.polls:
         if poll.poll == 'AP Top 25':
             # Create a DataFrame from the ranks and schools in the poll
@@ -203,8 +209,7 @@ def parse_week_ap25_rank_into_pddf(week_rankings: Any) -> pd.DataFrame:
             df_ranks['season'] = week_rankings.season
             df_ranks['week'] = week_rankings.week
             df_ranks['season_type'] = week_rankings.season_type
-        else:
-            pass
+            break
     return df_ranks
 
 def download_file(url, file_path, timeout: int = 20) -> bool:
@@ -314,3 +319,22 @@ def pregame_wp_to_metrics(home_win_probability: float | None) -> tuple[float, fl
     win_chances_max_diff = game_balance
     win_prob_shifts = game_balance * 40.0
     return win_chances_max_diff, win_prob_shifts
+
+def write_teams_yaml(teams: list[str], output_path: str) -> None:
+    """
+    Export a stable teams.yml payload used by frontend filters.
+    """
+    unique_sorted_teams = sorted(
+        {
+            str(team).strip()
+            for team in teams
+            if team is not None and str(team).strip()
+        }
+    )
+    with open(output_path, 'w', encoding='utf-8') as file:
+        yaml.safe_dump(
+            {'teams': unique_sorted_teams},
+            file,
+            sort_keys=False,
+            allow_unicode=True,
+        )

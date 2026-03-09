@@ -467,6 +467,7 @@ team_ratings.to_sql('ncaa_team_ratings', sql_connection, if_exists='replace', in
 # Export team ratings to JSON
 team_ratings = pd.read_sql_query('select * from ncaa_team_ratings', sql_connection)
 team_ratings.to_json('_data/ncaa_team_ratings.json', orient='records')
+write_teams_yaml(team_ratings['team'].tolist(), '_data/ncaa_teams.yml')
 
 add_rank_to_team_name = lambda x: f'{x[0]}({int(x[1])})' if x[1] != -1 else x[0]
 game_ratings['away_rank'] = game_ratings['away_rank'].fillna(-1).astype(int)

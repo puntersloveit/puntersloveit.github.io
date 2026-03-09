@@ -12,6 +12,7 @@ from functions import (
     is_cfbd_quota_exhausted,
     pregame_wp_to_metrics,
     saturate_hex_color,
+    write_teams_yaml,
 )
 
 SCORES_SUM_DIVIDER = math.sqrt(100) / 10
@@ -387,6 +388,7 @@ def rebuild_ratings(sql_connection: sqlite3.Connection) -> None:
 
     team_ratings = pd.read_sql_query("select * from ncaa_team_ratings", sql_connection)
     team_ratings.to_json("_data/ncaa_team_ratings.json", orient="records")
+    write_teams_yaml(team_ratings["team"].tolist(), "_data/ncaa_teams.yml")
 
     add_rank_to_team_name = lambda x: f"{x[0]}({int(x[1])})" if x[1] != -1 else x[0]
     ratings_for_export["away_rank"] = ratings_for_export["away_rank"].fillna(-1).astype(int)
