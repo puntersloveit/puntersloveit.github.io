@@ -4,6 +4,24 @@ layout: default
 <link href="https://unpkg.com/tabulator-tables@5.4.3/dist/css/tabulator.min.css" rel="stylesheet">
 <script src="https://unpkg.com/tabulator-tables@5.4.3/dist/js/tabulator.min.js"></script>
 <style>
+  .page-content > .wrapper {
+    max-width: none;
+    width: 100%;
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+
+  #columnSelectors {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 8px;
+    margin-bottom: 8px;
+  }
+
+  #columnSelectors label {
+    white-space: nowrap;
+  }
+
   .border-table-style tr {
     border: 3px solid gray;
     color: black;
