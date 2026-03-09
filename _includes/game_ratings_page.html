@@ -1,0 +1,78 @@
+<style>
+  .bordered-row {
+    border: 1px solid black;
+  }
+
+  .border-table-style tr {
+    border: 3px solid gray;
+    color: black;
+  }
+
+  .hidden-style {
+    display: none;
+  }
+
+  #no-records-message {
+    display: none;
+    color: rgb(152, 11, 0);
+  }
+</style>
+<script src="{{ '/assets/js/ratings.js' | relative_url }}"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    initializeDropdowns({
+      tableId: "{{ include.table_id }}",
+      seasons: JSON.parse(`{{ include.seasons | jsonify }}`),
+      teams: JSON.parse(`{{ include.teams | jsonify }}`),
+      showBowlsColumn: {% if include.show_bowls == "true" %}true{% else %}false{% endif %}
+    });
+  });
+</script>
+
+<h1>{{ include.page_title }}</h1>
+<h4>
+  <a href="{{ include.extended_href | relative_url }}">Extended ratings</a> |
+  <a href="{{ include.teams_href | relative_url }}">Most entertaining teams</a>
+</h4>
+<label for="season">Select Year:</label>
+<select id="season"></select>
+
+<label for="week">Select Week:</label>
+<select id="week"></select>
+
+<label for="team">Select Team:</label>
+<select id="team"></select>
+
+<div id="no-records-message"></div>
+
+<table id="{{ include.table_id }}" class="border-table-style" style="display: none;">
+  <thead>
+    <tr>
+      <th>Year</th>
+      <th>Week</th>
+      {% if include.show_bowls == "true" %}
+        <th>Bowls</th>
+      {% endif %}
+      <th>Away Team</th>
+      <th>Home Team</th>
+      <th>Game Rating</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% assign table_rows = include.rows %}
+    {% for row in table_rows %}
+      <tr{% if include.row_title == "true" %} title="{{ row.notes }}"{% endif %}>
+        {% assign away_color = row.away_color %}
+        {% assign home_color = row.home_color %}
+        <td>{{ row.season }}</td>
+        <td>{{ row.week }}</td>
+        {% if include.show_bowls == "true" %}
+          <td style="background-color: rgba(135, 207, 235, 0.332); width: 200px">{{ row.notes }}</td>
+        {% endif %}
+        <td style="background-color:{{ away_color }}">{{ row.away_team }}</td>
+        <td style="background-color:{{ home_color }}">{{ row.home_team }}</td>
+        <td>{{ row.game_rating }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>

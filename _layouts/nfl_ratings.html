@@ -1,81 +1,14 @@
 ---
 layout: default
 ---
-<!DOCTYPE html>
-<html>
-  <head>
-    <style>
-      .bordered-row {
-        border: 1px solid black;
-      }
-
-      .border-table-style tr {
-        border: 3px solid gray;
-        color: black;
-      }
-
-      .hidden-style {
-        display: none;
-      }
-
-      #no-records-message {
-        display: none;
-        color: rgb(152, 11, 0);
-      }
-    </style>
-    <script src="/assets/js/ratings.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        initializeDropdowns({
-          tableId: "NFLGameRatings",
-          seasons: JSON.parse(`{{ site.data.nfl_unique_seasons | jsonify }}`),
-          teams: JSON.parse(`{{ site.data.nfl_teams | jsonify }}`),
-          showBowlsColumn: false
-        });
-      });
-    </script>
-  </head>
-  <body>
-    <h1>NFL Game Ratings</h1>
-    <h4>
-      <a href="/nfl_extended">Extended ratings</a> |
-      <a href="/nfl_team_ratings">Most entertaining teams</a>
-    </h4>
-    <label for="season">Select Year:</label>
-    <select id="season"></select>
-
-    <label for="week">Select Week:</label>
-    <select id="week"></select>
-
-    <label for="team">Select Team:</label>
-    <select id="team"></select>
-
-    <div id="no-records-message"></div>
-
-    <table id="NFLGameRatings" class="border-table-style" style="display: none;">
-      <thead>
-        <tr>
-          <th>Year</th>
-          <th>Week</th>
-          <th>Away Team</th>
-          <th>Home Team</th>
-          <th>Game Rating</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% assign table_rows = site.data.nfl_game_ratings %}
-        {% for row in table_rows %}
-          <tr title="{{ row.notes }}">
-            {% assign away_color = row.away_color %}
-            {% assign home_color = row.home_color %}
-            <td>{{ row.season }}</td>
-            <td>{{ row.week }}</td>
-            <td style="background-color:{{ away_color }}">{{ row.away_team }}</td>
-            <td style="background-color:{{ home_color }}">{{ row.home_team }}</td>
-            <td>{{ row.game_rating }}</td>
-          </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-  </body>
-</html>
+{% include game_ratings_page.html
+  page_title="NFL Game Ratings"
+  extended_href="/nfl_extended"
+  teams_href="/nfl_team_ratings"
+  table_id="NFLGameRatings"
+  seasons=site.data.nfl_unique_seasons
+  teams=site.data.nfl_teams
+  rows=site.data.nfl_game_ratings
+  show_bowls="false"
+  row_title="true"
+%}
