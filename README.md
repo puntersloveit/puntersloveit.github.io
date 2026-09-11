@@ -5,12 +5,12 @@ This site contains game ratings for the two most popular American football compe
 These ratings are intended for those who, for various reasons (for example, time zones), cannot watch games live, but wish to view the most exciting game tapes after the end of the game week or during the offseason.
 
 # How to read game rating (```GR```) values?
-- ```GR > 5.5```, The game is slightly above average.
-- ```GR > 6.5```, 30% of the best games.
-- ```GR > 7.5```, 10% of the best games. These games are in the top 100 in NCAAF and top 30 in the NFL for the season.
-- ```GR > 7.8```, 5% of the best games. These games are in the top 50 in NCAAF and top 10 in the NFL for the season.
-- ```GR > 8.4```, 1% of the best games. These games are in the top 10 in NCAAF and top 3 in the NFL for the season.
-- ```GR > 9```, Represents an incredible game. These games come around once every few years.
+- ```GR < 5```, A below-average game for a neutral viewer.
+- ```GR >= 5```, A typical game that may still be worth watching, especially if you care about either team.
+- ```GR >= 6```, A good game.
+- ```GR >= 7```, A very good game.
+- ```GR >= 8```, An exceptional game and one of the highlights of the season.
+- ```GR >= 9```, An extraordinarily rare, all-time game.
 - ```GR = 10```, An unreachable ideal. These games do not exist.
 
 # What factors does the rating take into account?
@@ -26,7 +26,7 @@ These ratings are intended for those who, for various reasons (for example, time
 - Personal bias or preference for a particular team
 - Having Taylor Swift in the bleachers
 
-Everyone must consider these factors individually. For instance, if teams you favor are playing and the rating shows a ```GR > 5``` (indicating the game is above average), you will likely enjoy watching this game.
+Everyone must consider these factors individually. For instance, if teams you favor are playing and the rating is around ```GR 5-6``` (a typical to above-average game), you will likely enjoy watching it.
 
 # Game Rating Formulas
 ## NFL
@@ -194,4 +194,7 @@ Every man for himself.
 
 # Special Thanks
 Inspired by [wikihoops](https://wikihoops.com/about/)   
-Stats from [CollegeFootballData](https://collegefootballdata.com/) and [nfl_data_py](https://github.com/cooperdff/nfl_data_py)   
+Stats from [CollegeFootballData](https://collegefootballdata.com/) and [nfl_data_py](https://github.com/cooperdff/nfl_data_py)
+
+# Database documentation
+Database tables and relationships are documented in [DATABASE.md](DATABASE.md).

@@ -33,19 +33,19 @@ layout: default
   }
 </style>
 
-<h1><img src="{{ '/favicon.png' | relative_url }}" alt="favicon" style="width:60px; height:60px; vertical-align:middle;"> Extended <a href="{{ '/nfl' | relative_url }}">NFL Game Ratings </a></h1>
+<h1><img src="{{ '/favicon.png' | relative_url }}" alt="" style="width:60px; height:60px; vertical-align:middle;"> <a href="{{ '/nfl' | relative_url }}" data-i18n="extended_nfl_title">Extended NFL Game Ratings</a></h1>
 <div id="columnSelectors">
-    <label><input type="checkbox" value="game_rating" checked> Game Rating</label>
-    <label><input type="checkbox" value="tds_rating" checked> TDs Rating</label>
-    <label><input type="checkbox" value="sacks_rating" checked> Sacks Rating</label>
-    <label><input type="checkbox" value="interceptions_rating" checked> Interceptions Rating</label>
-    <label><input type="checkbox" value="yards_rating" checked> Yards Rating</label>
-    <label><input type="checkbox" value="stat_rating" checked> Stat Rating</label>
-    <label><input type="checkbox" value="efficiency_rating" checked> Efficiency Rating</label>
-    <label><input type="checkbox" value="score_diff_rating" checked> Score Diff Rating</label>
-    <label><input type="checkbox" value="win_prob_shifts_rating" checked> Win Prob Shifts Rating</label>
-    <label><input type="checkbox" value="win_chances_max_diff_rating" checked> Win Chances Max Diff Rating</label>
-    <label><input type="checkbox" value="leader_changes_rating" checked> Leader Changes Rating</label>
+    <label><input type="checkbox" value="game_rating" checked> <span data-i18n="game_rating">Game Rating</span></label>
+    <label><input type="checkbox" value="tds_rating" checked> <span data-i18n="tds_rating">TDs Rating</span></label>
+    <label><input type="checkbox" value="sacks_rating" checked> <span data-i18n="sacks_rating">Sacks Rating</span></label>
+    <label><input type="checkbox" value="interceptions_rating" checked> <span data-i18n="interceptions_rating">Interceptions Rating</span></label>
+    <label><input type="checkbox" value="yards_rating" checked> <span data-i18n="yards_rating">Yards Rating</span></label>
+    <label><input type="checkbox" value="stat_rating" checked> <span data-i18n="stat_rating">Stat Rating</span></label>
+    <label><input type="checkbox" value="efficiency_rating" checked> <span data-i18n="efficiency_rating">Efficiency Rating</span></label>
+    <label><input type="checkbox" value="score_diff_rating" checked> <span data-i18n="score_diff_rating">Score Diff Rating</span></label>
+    <label><input type="checkbox" value="win_prob_shifts_rating" checked> <span data-i18n="win_prob_shifts_rating">Win Prob Shifts Rating</span></label>
+    <label><input type="checkbox" value="win_chances_max_diff_rating" checked> <span data-i18n="win_chances_max_diff_rating">Win Chances Max Diff Rating</span></label>
+    <label><input type="checkbox" value="leader_changes_rating" checked> <span data-i18n="leader_changes_rating">Leader Changes Rating</span></label>
 </div>
 <div id="no-records-message"></div>
 <div id="NFLGameRatingsTable"></div>
@@ -54,6 +54,8 @@ layout: default
   document.addEventListener("DOMContentLoaded", function () {
     const messageElement = document.getElementById("no-records-message");
     const dataUrl = "{{ '/assets/data/nfl_game_ratings_extended.json' | relative_url }}";
+    const translate = key => window.PLI18n ? window.PLI18n.t(key) : key;
+    const columnKeys = {season:"year", week:"week", away_team:"away_team", home_team:"home_team", game_rating:"game_rating", tds_rating:"tds_rating", sacks_rating:"sacks_rating", interceptions_rating:"interceptions_rating", yards_rating:"yards_rating", stat_rating:"stat_rating", efficiency_rating:"efficiency_rating", score_diff_rating:"score_diff_rating", win_prob_shifts_rating:"win_prob_shifts_rating", win_chances_max_diff_rating:"win_chances_max_diff_rating", leader_changes_rating:"leader_changes_rating"};
 
     function initializeTable(data) {
       var table = new Tabulator("#NFLGameRatingsTable", {
@@ -63,21 +65,11 @@ layout: default
         paginationSize: 20,
         paginationSizeSelector: [10, 20, 50, 100, 200, 500],
         columns: [
-          {title: "Year", field: "season", sorter: "number", headerFilter: true},
-          {title: "Week", field: "week", sorter: "number", headerFilter: true},
-          {title: "Away Team", field: "away_team", headerFilter: "input"},
-          {title: "Home Team", field: "home_team", headerFilter: "input"},
-          {title: "Game Rating", field: "game_rating", sorter: "number", headerFilter: true},
-          {title: "TDs Rating", field: "tds_rating", sorter: "number", headerFilter: true},
-          {title: "Sacks Rating", field: "sacks_rating", sorter: "number", headerFilter: true},
-          {title: "Interceptions Rating", field: "interceptions_rating", sorter: "number", headerFilter: true},
-          {title: "Yards Rating", field: "yards_rating", sorter: "number", headerFilter: true},
-          {title: "Stat Rating", field: "stat_rating", sorter: "number", headerFilter: true},
-          {title: "Efficiency Rating", field: "efficiency_rating", sorter: "number", headerFilter: true},
-          {title: "Score Diff Rating", field: "score_diff_rating", sorter: "number", headerFilter: true},
-          {title: "Win Prob Shifts Rating", field: "win_prob_shifts_rating", sorter: "number", headerFilter: true},
-          {title: "Win Chances Max Diff Rating", field: "win_chances_max_diff_rating", sorter: "number", headerFilter: true},
-          {title: "Leader Changes Rating", field: "leader_changes_rating", sorter: "number", headerFilter: true},
+          {title: translate("year"), field: "season", sorter: "number", headerFilter: true},
+          {title: translate("week"), field: "week", sorter: "number", headerFilter: true},
+          {title: translate("away_team"), field: "away_team", headerFilter: "input"},
+          {title: translate("home_team"), field: "home_team", headerFilter: "input"},
+          ...Object.entries(columnKeys).slice(4).map(([field,key]) => ({title: translate(key), field: field, sorter: "number", headerFilter: true})),
         ],
       });
 
@@ -88,6 +80,12 @@ layout: default
           if (column) {
             column.toggle();
           }
+        });
+      });
+      document.addEventListener("puntersloveit:languagechange", function () {
+        Object.entries(columnKeys).forEach(([field,key]) => {
+          const column = table.getColumn(field);
+          if (column) column.updateDefinition({title: translate(key)});
         });
       });
     }
@@ -103,7 +101,7 @@ layout: default
         initializeTable(data);
       })
       .catch(function (error) {
-        messageElement.textContent = "Unable to load extended ratings data.";
+        messageElement.textContent = translate("unable_extended");
         messageElement.style.display = "block";
         console.error(error);
       });

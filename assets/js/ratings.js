@@ -5,12 +5,18 @@ function initializeDropdowns(config) {
   const messageElement = document.getElementById("no-records-message");
   const table = document.getElementById(config.tableId);
   const bodyRows = table.querySelectorAll("tbody tr");
+  const translate = (key, values) => window.PLI18n ? window.PLI18n.t(key, values) : key;
+
+  function optionLabel(value) {
+    const labels = {All: "all", Bowls: "bowls", Playoff: "playoff"};
+    return labels[value] ? translate(labels[value]) : value;
+  }
 
   function populateSeasonDropdown() {
     config.seasons.forEach(season => {
       const option = document.createElement("option");
       option.value = season.season;
-      option.textContent = season.season == -1 ? "All Years" : season.season;
+      option.textContent = season.season == -1 ? translate("all_years") : season.season;
       seasonDropdown.appendChild(option);
     });
   }
@@ -18,7 +24,7 @@ function initializeDropdowns(config) {
   function populateTeamDropdown() {
     const allOption = document.createElement("option");
     allOption.value = "All";
-    allOption.textContent = "All Teams";
+    allOption.textContent = translate("all_teams");
     teamDropdown.appendChild(allOption);
 
     config.teams.teams.forEach(team => {
@@ -38,7 +44,7 @@ function initializeDropdowns(config) {
       selectedData.weeks.forEach(week => {
         const option = document.createElement("option");
         option.value = week;
-        option.textContent = week;
+        option.textContent = optionLabel(week);
         weekDropdown.appendChild(option);
       });
     }
@@ -83,7 +89,11 @@ function initializeDropdowns(config) {
     }
 
     if (noRecordsFound) {
-      messageElement.textContent = `No records found for ${selectedTeam} in ${config.showBowlsColumn ? 'Week ' : ''}${selectedWeek}, ${selectedYear}.`;
+      messageElement.textContent = translate("no_records_games", {
+        team: selectedTeam === "All" ? translate("all_teams") : selectedTeam,
+        week: optionLabel(selectedWeek),
+        year: selectedYear === "-1" ? translate("all_years") : selectedYear
+      });
       messageElement.style.display = "block";
     } else {
       messageElement.style.display = "none";
@@ -115,4 +125,15 @@ function initializeDropdowns(config) {
   seasonDropdown.addEventListener("change", updateWeeks);
   weekDropdown.addEventListener("change", filterRecords);
   teamDropdown.addEventListener("change", filterRecords);
+
+  document.addEventListener("puntersloveit:languagechange", function () {
+    Array.from(seasonDropdown.options).forEach(option => {
+      if (option.value === "-1") option.textContent = translate("all_years");
+    });
+    Array.from(teamDropdown.options).forEach(option => {
+      if (option.value === "All") option.textContent = translate("all_teams");
+    });
+    Array.from(weekDropdown.options).forEach(option => option.textContent = optionLabel(option.value));
+    filterRecords();
+  });
 }

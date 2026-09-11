@@ -1,0 +1,15 @@
+---
+layout: null
+permalink: /sitemap.xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{% assign seo_pages = site.pages | sort: "url" %}
+{% for item in seo_pages %}
+  {% unless item.sitemap == false or item.url contains '/assets/' or item.url == '/404.html' or item.url == '/feed.xml' or item.url == '/robots.txt' or item.url == '/sitemap.xml' %}
+  <url>
+    <loc>{{ item.url | absolute_url }}</loc>
+  </url>
+  {% endunless %}
+{% endfor %}
+</urlset>

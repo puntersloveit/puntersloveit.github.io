@@ -29,6 +29,7 @@
     const table = document.getElementById("{{ include.table_id }}");
     const rows = table.getElementsByTagName("tr");
     const hasConferenceFilter = {% if include.show_conference == "true" %}true{% else %}false{% endif %};
+    const translate = (key, values) => window.PLI18n ? window.PLI18n.t(key, values) : key;
 
     // Get unique seasons and conferences
     const allTeams = {{ include.teams_data | jsonify }};
@@ -40,7 +41,7 @@
     seasons.forEach(season => {
       const option = document.createElement("option");
       option.value = season;
-      option.textContent = season == -1 ? "All Years" : season;
+      option.textContent = season == -1 ? translate("all_years") : season;
       if (season === latestSeason) {
         option.selected = true;
       }
@@ -55,7 +56,7 @@
       conferences.forEach(conference => {
         const option = document.createElement("option");
         option.value = conference === "All Conferences" ? "" : conference;
-        option.textContent = conference;
+        option.textContent = conference === "All Conferences" ? translate("all_conferences") : conference;
         conferenceDropdown.appendChild(option);
       });
     }
@@ -93,11 +94,12 @@
 
       if (noRecordsFound) {
         if (hasConferenceFilter) {
-          const yearText = selectedYear === "-1" ? "all years" : selectedYear;
-          const conferenceText = selectedConference || "all conferences";
-          messageElement.textContent = `No records found for ${yearText} in ${conferenceText}.`;
+          const yearText = selectedYear === "-1" ? translate("all_years") : selectedYear;
+          const conferenceText = selectedConference || translate("all_conferences");
+          messageElement.textContent = translate("no_records_conference", {year: yearText, conference: conferenceText});
         } else {
-          messageElement.textContent = `No records found for ${selectedYear}.`;
+          const yearText = selectedYear === "-1" ? translate("all_years") : selectedYear;
+          messageElement.textContent = translate("no_records_year", {year: yearText});
         }
         messageElement.style.display = "block";
       } else {
@@ -111,21 +113,30 @@
     if (hasConferenceFilter && conferenceDropdown) {
       conferenceDropdown.addEventListener("change", filterRecords);
     }
+    document.addEventListener("puntersloveit:languagechange", function () {
+      Array.from(seasonDropdown.options).forEach(option => {
+        if (option.value === "-1") option.textContent = translate("all_years");
+      });
+      if (conferenceDropdown && conferenceDropdown.options.length) {
+        conferenceDropdown.options[0].textContent = translate("all_conferences");
+      }
+      filterRecords();
+    });
   });
 </script>
 
-<h1>{{ include.page_title }}</h1>
+<h1 data-i18n="{{ include.title_key }}">{{ include.page_title }}</h1>
 <h4>
-  <a href="{{ include.extended_href | relative_url }}">Extended ratings</a> |
-  <a href="{{ include.game_href | relative_url }}">Game ratings</a>
+  <a href="{{ include.extended_href | relative_url }}" data-i18n="extended_ratings">Extended ratings</a> |
+  <a href="{{ include.game_href | relative_url }}" data-i18n="game_ratings">Game ratings</a>
 </h4>
 
 <div class="filter-group">
-  <label for="season">Select Year:</label>
+  <label for="season" data-i18n="select_year">Select Year:</label>
   <select id="season"></select>
 
   {% if include.show_conference == "true" %}
-    <label for="conference">Conference:</label>
+    <label for="conference" data-i18n="conference">Conference:</label>
     <select id="conference"></select>
   {% endif %}
 </div>
@@ -135,12 +146,12 @@
 <table id="{{ include.table_id }}" class="border-table-style">
   <thead>
     <tr class="header-row">
-      <th>Team</th>
-      <th class="year-column">Year</th>
+      <th data-i18n="team">Team</th>
+      <th class="year-column" data-i18n="year">Year</th>
       {% if include.show_conference == "true" %}
-        <th>Conference</th>
+        <th data-i18n="conference">Conference</th>
       {% endif %}
-      <th>Entertainment Rating</th>
+      <th data-i18n="entertainment_rating">Entertainment Rating</th>
     </tr>
   </thead>
   <tbody>

@@ -33,29 +33,29 @@ layout: default
   }
 </style>
 
-<h1><img src="{{ '/favicon.png' | relative_url }}" alt="favicon" style="width:60px; height:60px; vertical-align:middle;"> Extended <a href="{{ '/ncaa' | relative_url }}">NCAA Game Ratings</a></h1>
+<h1><img src="{{ '/favicon.png' | relative_url }}" alt="" style="width:60px; height:60px; vertical-align:middle;"> <a href="{{ '/ncaa' | relative_url }}" data-i18n="extended_ncaa_title">Extended NCAA Game Ratings</a></h1>
 <div id="columnSelectors">
-  <label><input type="checkbox" value="season" checked> Year</label>
-  <label><input type="checkbox" value="week" checked> Week</label>
-  <label><input type="checkbox" value="season_type" checked> Season Type</label>
-  <label><input type="checkbox" value="notes" checked> Notes</label>
-  <label><input type="checkbox" value="home_team" checked> Home Team</label>
-  <label><input type="checkbox" value="away_team" checked> Away Team</label>
-  <label><input type="checkbox" value="home_conference" checked> Home Conference</label>
-  <label><input type="checkbox" value="away_conference" checked> Away Conference</label>
-  <label><input type="checkbox" value="home_division" checked> Home Division</label>
-  <label><input type="checkbox" value="away_division" checked> Away Division</label>
-  <label><input type="checkbox" value="game_rating" checked> Game Rating</label>
-  <label><input type="checkbox" value="tds_rating" checked> TDs Rating</label>
-  <label><input type="checkbox" value="sacks_rating" checked> Sacks Rating</label>
-  <label><input type="checkbox" value="interceptions_rating" checked> Interceptions Rating</label>
-  <label><input type="checkbox" value="yards_rating" checked> Yards Rating</label>
-  <label><input type="checkbox" value="stat_rating" checked> Stat Rating</label>
-  <label><input type="checkbox" value="efficiency_rating" checked> Efficiency Rating</label>
-  <label><input type="checkbox" value="overtimes_rating" checked> Overtimes Rating</label>
-  <label><input type="checkbox" value="excitement_rating" checked> Excitement Rating</label>
-  <label><input type="checkbox" value="score_diff_rating" checked> Score Diff Rating</label>
-  <label><input type="checkbox" value="leader_changes_rating" checked> Leader Changes Rating</label>
+  <label><input type="checkbox" value="season" checked> <span data-i18n="year">Year</span></label>
+  <label><input type="checkbox" value="week" checked> <span data-i18n="week">Week</span></label>
+  <label><input type="checkbox" value="season_type" checked> <span data-i18n="season_type">Season Type</span></label>
+  <label><input type="checkbox" value="notes" checked> <span data-i18n="notes">Notes</span></label>
+  <label><input type="checkbox" value="home_team" checked> <span data-i18n="home_team">Home Team</span></label>
+  <label><input type="checkbox" value="away_team" checked> <span data-i18n="away_team">Away Team</span></label>
+  <label><input type="checkbox" value="home_conference" checked> <span data-i18n="home_conference">Home Conference</span></label>
+  <label><input type="checkbox" value="away_conference" checked> <span data-i18n="away_conference">Away Conference</span></label>
+  <label><input type="checkbox" value="home_division" checked> <span data-i18n="home_division">Home Division</span></label>
+  <label><input type="checkbox" value="away_division" checked> <span data-i18n="away_division">Away Division</span></label>
+  <label><input type="checkbox" value="game_rating" checked> <span data-i18n="game_rating">Game Rating</span></label>
+  <label><input type="checkbox" value="tds_rating" checked> <span data-i18n="tds_rating">TDs Rating</span></label>
+  <label><input type="checkbox" value="sacks_rating" checked> <span data-i18n="sacks_rating">Sacks Rating</span></label>
+  <label><input type="checkbox" value="interceptions_rating" checked> <span data-i18n="interceptions_rating">Interceptions Rating</span></label>
+  <label><input type="checkbox" value="yards_rating" checked> <span data-i18n="yards_rating">Yards Rating</span></label>
+  <label><input type="checkbox" value="stat_rating" checked> <span data-i18n="stat_rating">Stat Rating</span></label>
+  <label><input type="checkbox" value="efficiency_rating" checked> <span data-i18n="efficiency_rating">Efficiency Rating</span></label>
+  <label><input type="checkbox" value="overtimes_rating" checked> <span data-i18n="overtimes_rating">Overtimes Rating</span></label>
+  <label><input type="checkbox" value="excitement_rating" checked> <span data-i18n="excitement_rating">Excitement Rating</span></label>
+  <label><input type="checkbox" value="score_diff_rating" checked> <span data-i18n="score_diff_rating">Score Diff Rating</span></label>
+  <label><input type="checkbox" value="leader_changes_rating" checked> <span data-i18n="leader_changes_rating">Leader Changes Rating</span></label>
 </div>
 <div id="no-records-message"></div>
 
@@ -65,6 +65,8 @@ layout: default
   document.addEventListener("DOMContentLoaded", function () {
     const messageElement = document.getElementById("no-records-message");
     const dataUrl = "{{ '/assets/data/ncaa_game_ratings_extended.json' | relative_url }}";
+    const translate = key => window.PLI18n ? window.PLI18n.t(key) : key;
+    const columnKeys = {season:"year", week:"week", season_type:"season_type", notes:"bowl_name", home_team:"home_team", away_team:"away_team", home_conference:"home_conference", away_conference:"away_conference", home_division:"home_division", away_division:"away_division", game_rating:"game_rating", tds_rating:"tds_rating", sacks_rating:"sacks_rating", interceptions_rating:"interceptions_rating", yards_rating:"yards_rating", stat_rating:"stat_rating", efficiency_rating:"efficiency_rating", overtimes_rating:"overtimes_rating", excitement_rating:"excitement_rating", score_diff_rating:"score_diff_rating", leader_changes_rating:"leader_changes_rating"};
 
     function initializeTable(data) {
       var table = new Tabulator("#NCAAGameRatingsTable", {
@@ -73,29 +75,11 @@ layout: default
         pagination: "local",
         paginationSize: 20,
         paginationSizeSelector: [10, 20, 50, 100, 200, 500],
-        columns: [
-          {title: "Year", field: "season", sorter: "number", headerFilter: true},
-          {title: "Week", field: "week", sorter: "number", headerFilter: true},
-          {title: "Season Type", field: "season_type", headerFilter: "input"},
-          {title: "Bowl Name", field: "notes", headerFilter: "input"},
-          {title: "Home Team", field: "home_team", headerFilter: "input"},
-          {title: "Away Team", field: "away_team", headerFilter: "input"},
-          {title: "Home Conference", field: "home_conference", headerFilter: "input"},
-          {title: "Away Conference", field: "away_conference", headerFilter: "input"},
-          {title: "Home Division", field: "home_division", headerFilter: "input"},
-          {title: "Away Division", field: "away_division", headerFilter: "input"},
-          {title: "Game Rating", field: "game_rating", sorter: "number", headerFilter: true},
-          {title: "TDs Rating", field: "tds_rating", sorter: "number", headerFilter: true},
-          {title: "Sacks Rating", field: "sacks_rating", sorter: "number", headerFilter: true},
-          {title: "Interceptions Rating", field: "interceptions_rating", sorter: "number", headerFilter: true},
-          {title: "Yards Rating", field: "yards_rating", sorter: "number", headerFilter: true},
-          {title: "Stat Rating", field: "stat_rating", sorter: "number", headerFilter: true},
-          {title: "Efficiency Rating", field: "efficiency_rating", sorter: "number", headerFilter: true},
-          {title: "Overtimes Rating", field: "overtimes_rating", sorter: "number", headerFilter: true},
-          {title: "Excitement Rating", field: "excitement_rating", sorter: "number", headerFilter: true},
-          {title: "Score Diff Rating", field: "score_diff_rating", sorter: "number", headerFilter: true},
-          {title: "Leader Changes Rating", field: "leader_changes_rating", sorter: "number", headerFilter: true},
-        ],
+        columns: Object.entries(columnKeys).map(([field,key]) => ({
+          title: translate(key), field: field,
+          sorter: ["season","week"].includes(field) || field.endsWith("_rating") ? "number" : "string",
+          headerFilter: ["season","week"].includes(field) || field.endsWith("_rating") ? true : "input"
+        })),
       });
 
       const checkboxes = document.querySelectorAll("#columnSelectors input[type='checkbox']");
@@ -105,6 +89,12 @@ layout: default
           if (column) {
             column.toggle();
           }
+        });
+      });
+      document.addEventListener("puntersloveit:languagechange", function () {
+        Object.entries(columnKeys).forEach(([field,key]) => {
+          const column = table.getColumn(field);
+          if (column) column.updateDefinition({title: translate(key)});
         });
       });
     }
@@ -120,7 +110,7 @@ layout: default
         initializeTable(data);
       })
       .catch(function (error) {
-        messageElement.textContent = "Unable to load extended ratings data.";
+        messageElement.textContent = translate("unable_extended");
         messageElement.style.display = "block";
         console.error(error);
       });

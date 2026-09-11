@@ -2,9 +2,28 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    (function () {
+      var saved = null;
+      try { saved = localStorage.getItem("puntersloveit-language"); } catch (error) { /* Storage may be disabled. */ }
+      var browserLanguages = navigator.languages || [navigator.language || "en"];
+      var detected = "en";
+      for (var index = 0; index < browserLanguages.length; index += 1) {
+        var candidate = browserLanguages[index].toLowerCase();
+        if (candidate.startsWith("ru")) { detected = "ru"; break; }
+        if (candidate.startsWith("en")) { detected = "en"; break; }
+      }
+      var language = saved || detected;
+      document.documentElement.lang = language === "ru" ? "ru" : "en";
+    })();
+  </script>
   {%- seo -%}
+  {%- if page.url == '/404.html' -%}
+  <meta name="robots" content="noindex">
+  {%- endif -%}
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
   <link rel="icon" type="image/png" href="{{ '/favicon.png' | relative_url }}">
+  <script src="{{ '/assets/js/i18n.js' | relative_url }}" defer></script>
   {%- feed_meta -%}
   {%- if jekyll.environment == 'production' and site.google_analytics -%}
     {%- include google-analytics.html -%}
