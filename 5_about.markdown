@@ -3,6 +3,8 @@ layout: page
 title: About the Spoiler-Free Football Game Ratings
 nav_title: About
 nav_i18n: nav_about
+display_title: About
+display_title_i18n: nav_about
 description: Learn how PuntersLoveIt calculates spoiler-free NFL and NCAA football game ratings and measures game excitement without revealing results.
 permalink: /about
 ---
