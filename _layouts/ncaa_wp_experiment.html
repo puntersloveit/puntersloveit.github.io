@@ -1,0 +1,87 @@
+---
+layout: default
+---
+<link href="https://unpkg.com/tabulator-tables@5.4.3/dist/css/tabulator.min.css" rel="stylesheet">
+<script src="https://unpkg.com/tabulator-tables@5.4.3/dist/js/tabulator.min.js"></script>
+
+<style>
+  .page-content > .wrapper { max-width: none; width: 100%; padding: 0 12px; }
+  .experiment-summary { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+  .experiment-summary span { background: #f2f2f2; border-radius: 4px; padding: 6px 10px; }
+  .experiment-note { max-width: 980px; }
+  #experiment-error { color: #980b00; display: none; }
+</style>
+
+<h1>NCAA rating experiment: CFBD + SportsDataverse WP</h1>
+<p class="experiment-note">
+  <strong>Old GR</strong> is the unchanged production score. <strong>New GR</strong> replaces only
+  the two win-probability components with NFL-style aggregation of spread-aware play-by-play.
+  A blank New GR means the source snapshot has not passed the completion checks yet.
+</p>
+
+<div class="experiment-summary">
+  <span id="summary-total">Loading…</span>
+  <span id="summary-complete"></span>
+  <span id="summary-pending"></span>
+</div>
+<div id="experiment-error"></div>
+<div id="NcaaWpExperimentTable"></div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const dataUrl = "{{ '/assets/data/ncaa_game_ratings_comparison.json' | relative_url }}";
+    fetch(dataUrl)
+      .then(response => {
+        if (!response.ok) throw new Error("Failed to load experiment data");
+        return response.json();
+      })
+      .then(data => {
+        const complete = data.filter(row => row.pbp_status === "complete").length;
+        document.getElementById("summary-total").textContent = `${data.length} CFBD games`;
+        document.getElementById("summary-complete").textContent = `${complete} comparable`;
+        document.getElementById("summary-pending").textContent = `${data.length - complete} awaiting valid PBP`;
+
+        new Tabulator("#NcaaWpExperimentTable", {
+          data: data,
+          layout: "fitColumns",
+          pagination: "local",
+          paginationSize: 50,
+          paginationSizeSelector: [20, 50, 100, 500],
+          columns: [
+            {title: "Season", field: "season", sorter: "number", headerFilter: true, width: 90},
+            {title: "Week", field: "week", sorter: "number", headerFilter: true, width: 80},
+            {title: "Away", field: "away_team", headerFilter: "input"},
+            {title: "Home", field: "home_team", headerFilter: "input"},
+            {title: "Old GR", field: "old_game_rating", sorter: "number", width: 95},
+            {title: "New GR", field: "new_game_rating", sorter: "number", width: 95},
+            {title: "Delta", field: "rating_delta", sorter: "number", width: 90,
+              formatter: cell => {
+                const value = cell.getValue();
+                if (value === null || value === undefined) return "";
+                const color = value > 0 ? "#177245" : value < 0 ? "#a11" : "inherit";
+                const sign = value > 0 ? "+" : "";
+                return `<span style="color:${color}">${sign}${value.toFixed(2)}</span>`;
+              }
+            },
+            {title: "PBP status", field: "pbp_status", headerFilter: "input", width: 175},
+            {title: "Plays", field: "pbp_plays", sorter: "number", width: 80},
+            {title: "Discarded", field: "pbp_discarded_rows", sorter: "number", width: 105},
+            {title: "Pregame home WP", field: "pregame_home_wp", sorter: "number", width: 155,
+              formatter: cell => cell.getValue() == null ? "" : `${(cell.getValue() * 100).toFixed(1)}%`
+            },
+            {title: "WP range", field: "new_win_chances_max_diff", sorter: "number", width: 110,
+              formatter: cell => cell.getValue() == null ? "" : cell.getValue().toFixed(3)
+            },
+            {title: "WP movement", field: "new_win_prob_shifts", sorter: "number", width: 130,
+              formatter: cell => cell.getValue() == null ? "" : cell.getValue().toFixed(3)
+            }
+          ]
+        });
+      })
+      .catch(error => {
+        const element = document.getElementById("experiment-error");
+        element.textContent = error.message;
+        element.style.display = "block";
+      });
+  });
+</script>

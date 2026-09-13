@@ -187,6 +187,13 @@ Everyone must consider these factors individually. For instance, if teams you fa
 - NFL ratings update daily at ~6:30 and ~8:30 UTC, with an additional update at ~4:30 UTC on Monday mornings.
 - NCAA ratings update daily at ~7:30 UTC, with an additional update at ~4:30 UTC on Sunday mornings.
 
+## Experimental NCAA play-by-play comparison
+
+The `codex/ncaa-sdv-wp-experiment` branch contains an opt-in, quota-free
+SportsDataverse comparison that leaves production ratings unchanged. See
+[`docs/ncaa_sdv_wp_experiment.md`](docs/ncaa_sdv_wp_experiment.md) for the data
+contract, completion checks, rerun behaviour and local preview instructions.
+
 UTC time its: -8 USA&Canada Pacific, -6 Mexico City, Guatemala City, Tegucigalpa, San José, San Salvador, -5 USA&Canada Eastern, -4 Santiago, Santo Domingo, Caracas, La Paz, -3 São Paulo, Buenos Aires, Montevideo, +1 Berlin, Madrid, Paris, Rome, +2 Kiyv, Cairo, Jerusalem, +3 Moscow, Istanbul, +4 Dubai, Tbilisi, +5 Tashkent, Karachi, Dushanbe, Yekaterinburg +6 Almaty, Dhaka, +7 Jakarta, Bangkok, Novosibirsk, +8 Shanghai, Taipei, Singapore, +9 Tokyo, Seoul, +10 Sidney, Vladivostok, +12 Auckland, Petropavlovsk-Kamchatsky
 
 # Where do I watch game tapes?
