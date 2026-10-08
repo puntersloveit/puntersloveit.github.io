@@ -23,7 +23,7 @@
     color: rgb(152, 11, 0);
   }
 </style>
-<script src="{{ '/assets/js/ratings.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/ratings.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     initializeDropdowns({
