@@ -2,7 +2,9 @@ name: Update NFL Data
 
 on:
   schedule:
-    - cron: '0 6 * 8-12,1-2 *'
+    # Move the 06:00 UTC attempt 6h43m earlier to offset scheduler delays.
+    # Keep the 08:00 UTC attempt as a fallback for data published later.
+    - cron: '17 23 * 8-12,1-2 *'
     - cron: '0 8 * 8-12,1-2 *'
     - cron: '0 4 * 8-12,1-2 1'
     - cron: '0 12 * 8-12,1-2 0'

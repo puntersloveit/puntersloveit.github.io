@@ -2,8 +2,10 @@ name: Update NCAAF Data
 
 on:
   schedule:
+    # Move the 07:00 UTC attempt 6h31m earlier without adding CFBD requests.
+    # Keep the 09:00 UTC attempt as a fallback for data published later.
+    - cron: '29 0 * 8-12,1-2 *'
     - cron: '0 9 * 8-12,1-2 *'
-    - cron: '0 7 * 8-12,1-2 *'
     - cron: '0 4 * 8-12,1-2 0'
   workflow_dispatch:
 
