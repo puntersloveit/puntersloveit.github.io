@@ -1,10 +1,58 @@
+function buildConferenceIndex(rows) {
+  const seasons = new Map([["-1", new Set()]]);
+  rows.forEach(row => {
+    const year = String(row.season);
+    if (!seasons.has(year)) seasons.set(year, new Set());
+    [[row.awayConference, row.awayDivision], [row.homeConference, row.homeDivision]].forEach(([name, division]) => {
+      if (division === "fbs" && name && name.trim()) {
+        seasons.get(year).add(name.trim());
+        seasons.get("-1").add(name.trim());
+      }
+    });
+  });
+  return new Map(Array.from(seasons, ([year, names]) =>
+    [year, Array.from(names).sort((a, b) => a.localeCompare(b))]));
+}
+
+function getSeasonConferences(rows, season) {
+  return buildConferenceIndex(rows).get(String(season)) || [];
+}
+
+function matchesGameFilters(game, filters) {
+  return (filters.year === "-1" || game.season === filters.year)
+    && (filters.week === "all" || game.week === filters.week)
+    && (filters.team === "All" || game.awayTeam === filters.team || game.homeTeam === filters.team)
+    && (filters.conference === "All" || game.awayConference === filters.conference
+      || game.homeConference === filters.conference);
+}
+
 function initializeDropdowns(config) {
   const seasonDropdown = document.getElementById("season");
   const weekDropdown = document.getElementById("week");
   const teamDropdown = document.getElementById("team");
+  const conferenceDropdown = document.getElementById("conference");
   const messageElement = document.getElementById("no-records-message");
   const table = document.getElementById(config.tableId);
-  const bodyRows = table.querySelectorAll("tbody tr");
+  // Read immutable metadata once, never from DOM cells during filtering.
+  const teamStartIndex = config.showBowlsColumn ? 3 : 2;
+  const games = Array.from(table.querySelectorAll("tbody tr"), row => ({
+    element: row,
+    season: row.children[0].textContent.trim(),
+    week: row.children[1].textContent.trim().toLowerCase(),
+    awayTeam: row.children[teamStartIndex].textContent.trim().replace(/\(\d+\)/g, "").trim(),
+    homeTeam: row.children[teamStartIndex + 1].textContent.trim().replace(/\(\d+\)/g, "").trim(),
+    awayConference: (row.dataset.awayConference || "").trim(),
+    homeConference: (row.dataset.homeConference || "").trim(),
+    awayDivision: row.dataset.awayDivision,
+    homeDivision: row.dataset.homeDivision
+  }));
+  const gamesBySeason = new Map([["-1", games]]);
+  games.forEach(game => {
+    if (!gamesBySeason.has(game.season)) gamesBySeason.set(game.season, []);
+    gamesBySeason.get(game.season).push(game);
+  });
+  const conferencesBySeason = conferenceDropdown ? buildConferenceIndex(games) : new Map();
+  let visibleGames = new Set(games);
   const translate = (key, values) => window.PLI18n ? window.PLI18n.t(key, values) : key;
 
   function optionLabel(value) {
@@ -35,6 +83,24 @@ function initializeDropdowns(config) {
     });
   }
 
+  function updateConferences() {
+    if (!conferenceDropdown) return;
+    const previous = conferenceDropdown.value;
+    const names = conferencesBySeason.get(seasonDropdown.value) || [];
+    conferenceDropdown.replaceChildren();
+    const all = document.createElement("option");
+    all.value = "All";
+    all.textContent = translate("all_conferences");
+    conferenceDropdown.appendChild(all);
+    names.forEach(name => {
+      const option = document.createElement("option");
+      option.value = name;
+      option.textContent = name;
+      conferenceDropdown.appendChild(option);
+    });
+    conferenceDropdown.value = names.includes(previous) ? previous : "All";
+  }
+
   function updateWeeks() {
     const selectedSeason = seasonDropdown.value;
     weekDropdown.innerHTML = "";
@@ -48,6 +114,7 @@ function initializeDropdowns(config) {
         weekDropdown.appendChild(option);
       });
     }
+    updateConferences();
     filterRecords();
   }
 
@@ -55,44 +122,38 @@ function initializeDropdowns(config) {
     const selectedYear = seasonDropdown.value;
     const selectedWeek = weekDropdown.value;
     const selectedTeam = teamDropdown.value.trim();
-    let noRecordsFound = true;
+    const selectedConference = conferenceDropdown ? conferenceDropdown.value : "All";
 
     const isBowlsWeek = selectedWeek.toLowerCase() === "bowls";
     const showYearColumn = selectedYear === "-1";
     const showWeekColumn = selectedWeek === "All" && !isBowlsWeek;
     const showBowlsColumn = config.showBowlsColumn && isBowlsWeek;
 
-    toggleColumnDisplay(0, showYearColumn); // 'Year' column
-    toggleColumnDisplay(1, showWeekColumn); // 'Week' column
+    toggleColumnDisplay("ratings-hide-year", showYearColumn);
+    toggleColumnDisplay("ratings-hide-week", showWeekColumn);
     if (config.showBowlsColumn) {
-      toggleColumnDisplay(2, showBowlsColumn); // 'Bowls' column
+      toggleColumnDisplay("ratings-hide-bowls", showBowlsColumn);
     }
 
-    for (const row of bodyRows) {
-      const cells = row.children;
-      const year = cells[0].textContent.trim();
-      const week = cells[1].textContent.trim().toLowerCase();
-      const teamStartIndex = config.showBowlsColumn ? 3 : 2;
-      const awayTeam = cells[teamStartIndex].textContent.trim().replace(/\(\d+\)/g, "");
-      const homeTeam = cells[teamStartIndex + 1].textContent.trim().replace(/\(\d+\)/g, "");
+    const filters = {year: selectedYear, week: selectedWeek.toLowerCase(),
+      team: selectedTeam, conference: selectedConference};
+    const candidates = gamesBySeason.get(selectedYear) || [];
+    const nextVisible = new Set(candidates.filter(game => matchesGameFilters(game, filters)));
+    // Only touch rows whose visibility changed, including on season switches.
+    visibleGames.forEach(game => {
+      if (!nextVisible.has(game)) game.element.style.display = "none";
+    });
+    nextVisible.forEach(game => {
+      if (!visibleGames.has(game)) game.element.style.display = "";
+    });
+    visibleGames = nextVisible;
 
-      const matchesTeam = selectedTeam === "All" || awayTeam === selectedTeam || homeTeam === selectedTeam;
-      const matchesWeek = selectedWeek === "All" || week === selectedWeek.toLowerCase();
-      const matchesYear = selectedYear === "-1" || year === selectedYear;
-
-      const shouldDisplayRow = matchesTeam && matchesWeek && matchesYear;
-
-      row.style.display = shouldDisplayRow ? "" : "none";
-      if (shouldDisplayRow) {
-        noRecordsFound = false;
-      }
-    }
-
-    if (noRecordsFound) {
-      messageElement.textContent = translate("no_records_games", {
+    if (visibleGames.size === 0) {
+      messageElement.textContent = translate(conferenceDropdown ? "no_records_games_conference" : "no_records_games", {
         team: selectedTeam === "All" ? translate("all_teams") : selectedTeam,
         week: optionLabel(selectedWeek),
-        year: selectedYear === "-1" ? translate("all_years") : selectedYear
+        year: selectedYear === "-1" ? translate("all_years") : selectedYear,
+        conference: selectedConference === "All" ? translate("all_conferences") : selectedConference
       });
       messageElement.style.display = "block";
     } else {
@@ -100,17 +161,10 @@ function initializeDropdowns(config) {
     }
   }
 
-  function toggleColumnDisplay(columnIndex, showColumn) {
-    const displayStyle = showColumn ? "" : "none";
-    const headerCells = document.querySelectorAll(`#${config.tableId} thead th`);
-    if (headerCells.length > 0) {
-      headerCells[columnIndex].style.display = displayStyle;
-    }
-    for (const row of bodyRows) {
-      const cell = row.children[columnIndex];
-      if (cell) {
-        cell.style.display = displayStyle;
-      }
+  function toggleColumnDisplay(className, showColumn) {
+    const hideColumn = !showColumn;
+    if (table.classList.contains(className) !== hideColumn) {
+      table.classList.toggle(className, hideColumn);
     }
   }
 
@@ -118,13 +172,13 @@ function initializeDropdowns(config) {
   populateSeasonDropdown();
   populateTeamDropdown();
   updateWeeks();
-  filterRecords();
   table.style.display = "";
 
   // Add event listeners
   seasonDropdown.addEventListener("change", updateWeeks);
   weekDropdown.addEventListener("change", filterRecords);
   teamDropdown.addEventListener("change", filterRecords);
+  if (conferenceDropdown) conferenceDropdown.addEventListener("change", filterRecords);
 
   document.addEventListener("puntersloveit:languagechange", function () {
     Array.from(seasonDropdown.options).forEach(option => {
@@ -134,6 +188,7 @@ function initializeDropdowns(config) {
       if (option.value === "All") option.textContent = translate("all_teams");
     });
     Array.from(weekDropdown.options).forEach(option => option.textContent = optionLabel(option.value));
+    updateConferences();
     filterRecords();
   });
 }

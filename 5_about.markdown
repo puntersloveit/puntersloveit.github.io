@@ -53,7 +53,7 @@ Every man for himself.
 
 # Special Thanks
 Inspired by [wikihoops](https://wikihoops.com/about/)   
-Stats from [CollegeFootballData](https://collegefootballdata.com/) and [nfl_data_py](https://github.com/cooperdff/nfl_data_py)
+Stats from [CollegeFootballData](https://collegefootballdata.com/) (NCAA games and box scores), [SportsDataverse](https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_cfb_pbp) (NCAA ESPN-derived play-by-play and win probabilities), and [nfl_data_py](https://github.com/cooperdff/nfl_data_py) (NFL).
 
 </div>
 
@@ -102,6 +102,6 @@ Stats from [CollegeFootballData](https://collegefootballdata.com/) and [nfl_data
 
 # Благодарности
 Создано под впечатлением от [wikihoops](https://wikihoops.com/about/).
-Данные предоставлены [CollegeFootballData](https://collegefootballdata.com/) и [nfl_data_py](https://github.com/cooperdff/nfl_data_py).
+Источники данных: [CollegeFootballData](https://collegefootballdata.com/) — матчи и итоговая статистика NCAA; [SportsDataverse](https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_cfb_pbp) — play-by-play NCAA и вероятности победы на основе данных ESPN; [nfl_data_py](https://github.com/cooperdff/nfl_data_py) — NFL.
 
 </div>

@@ -78,7 +78,26 @@ layout: default
         columns: Object.entries(columnKeys).map(([field,key]) => ({
           title: translate(key), field: field,
           sorter: ["season","week"].includes(field) || field.endsWith("_rating") ? "number" : "string",
-          headerFilter: ["season","week"].includes(field) || field.endsWith("_rating") ? true : "input"
+          headerFilter: ["season","week"].includes(field) || field.endsWith("_rating") ? true : "input",
+          ...(field === "game_rating" ? {minWidth: 170, formatter: function (cell) {
+            const wrapper = document.createElement("span");
+            wrapper.className = "rating-with-source";
+            wrapper.textContent = cell.getValue();
+            if (cell.getRow().getData().rating_source === "legacy") {
+              const badge = document.createElement("span");
+              badge.className = "rating-fallback";
+              badge.tabIndex = 0;
+              badge.setAttribute("role", "note");
+              badge.title = translate("simplified_rating_hint");
+              const label = document.createElement("span");
+              label.className = "rating-fallback-label";
+              label.dataset.i18n = "simplified_rating";
+              label.textContent = translate("simplified_rating");
+              badge.append(label);
+              wrapper.append(badge);
+            }
+            return wrapper;
+          }} : {})
         })),
       });
 
@@ -96,6 +115,7 @@ layout: default
           const column = table.getColumn(field);
           if (column) column.updateDefinition({title: translate(key)});
         });
+        table.redraw(true);
       });
     }
 

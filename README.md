@@ -101,6 +101,55 @@ Everyone must consider these factors individually. For instance, if teams you fa
 
 
 ## NCAAF
+
+CFBD provides games, final scores, box-score statistics, rankings and team metadata.
+When validated SportsDataverse play-by-play (PBP) is available, the two
+win-probability components use its spread-aware `home_wp_before` series.
+Their aggregation and weights match NFL; the probability models and the other
+NCAA inputs are not identical to NFL.
+
+### PBP and Simplified ratings
+
+For a PBP rating, probabilities are kept in canonical chronological order:
+
+```text
+win_chances_max_diff = max(wp) - min(wp)
+win_prob_shifts = sum(abs(wp[i] - wp[i+k]) for k in (1, 2, 3) for valid i)
+```
+
+The first available PBP probability is included. A separate CFBD pregame
+probability is not prepended to this series. PBP must pass completion checks:
+completed source flags, at least 40 canonical plays, period 4 or later, final
+scores matching CFBD, an available spread and valid probabilities on every
+canonical play. Missing or rejected PBP does not hide the game.
+
+Games without accepted PBP retain the **Simplified** (`legacy`) rating. Its
+WP components are proxies derived from CFBD's home pregame probability `p`,
+not measured changes during the game:
+
+```text
+balance = max(0, 1 - 2 * abs(p - 0.5))
+win_chances_max_diff = balance
+win_prob_shifts = 40 * balance
+```
+
+A balanced pregame matchup therefore receives larger proxy contributions;
+these proxies cannot capture an actual comeback or upset. If the proxy metrics
+are missing, the legacy calculation fills missing WP inputs with medians from
+the batch being scored. The remaining components and final weights below are
+unchanged between PBP and Simplified ratings.
+
+Each scheduled update rechecks PBP for the current season and enrolled historical
+seasons with Simplified ratings, even when no new CFBD games arrive. Once valid
+PBP appears, the rating and team averages are updated and the Simplified badge
+is removed. Previously accepted PBP metrics survive temporary source failures.
+
+Only per-game WP aggregates, validation state and the original legacy score are
+persisted in SQLite (`ncaa_rating_sources`); raw PBP is not stored in the DB or
+committed. Like the NFL updater, the NCAA updater still needs to read the remote
+season Parquet to discover new or corrected data. Its local `.cache/` download
+is ignored by Git and does not consume CFBD API quota.
+
 ### stat_rating
 1. **Touchdowns rating:**
 
@@ -162,7 +211,8 @@ Everyone must consider these factors individually. For instance, if teams you fa
 
    ```leader_changes_rating = min(10, score_changes)```
 
-> Note: if win probability metrics are unavailable for a game, missing WP values are filled with median values before rating calculation.
+> The WP formulas above apply to either accepted PBP aggregates or the Simplified
+> proxies described above; equal formulas do not mean equal input quality.
 
 ### Overall game rating:
 1. **First, calculate:**
@@ -187,12 +237,24 @@ Everyone must consider these factors individually. For instance, if teams you fa
 - NFL ratings update daily at ~6:30 and ~8:30 UTC, with an additional update at ~4:30 UTC on Monday mornings.
 - NCAA ratings update daily at ~7:30 UTC, with an additional update at ~4:30 UTC on Sunday mornings.
 
-## Experimental NCAA play-by-play comparison
+## NCAA play-by-play pipeline and comparison
 
-The `codex/ncaa-sdv-wp-experiment` branch contains an opt-in, quota-free
-SportsDataverse comparison that leaves production ratings unchanged. See
+The standalone `scripts/ncaa_sdv_wp_experiment.py` comparison is quota-free and
+does not modify the main database. The load/update/rebuild scripts separately
+apply accepted PBP aggregates before exporting site ratings. See
 [`docs/ncaa_sdv_wp_experiment.md`](docs/ncaa_sdv_wp_experiment.md) for the data
 contract, completion checks, rerun behaviour and local preview instructions.
+
+NCAA exports include `rating_source` (`pbp` or `legacy`). Game-rating pages
+mark legacy ratings as “Simplified”, with a spoiler-free explanation. The badge
+reflects the accepted rating source, not the latest download status. Previously
+accepted PBP ratings remain unmarked during temporary source outages. Historical
+seasons not enrolled in the PBP pipeline keep their legacy ratings and the badge.
+
+The NCAA conference filter offers only FBS conferences from each season's exported game metadata,
+not today's team affiliations. A conference matches either team, including
+cross-conference games. Switching seasons preserves the selection only when
+that conference exists in the new season; “All Years” offers the historical union.
 
 UTC time its: -8 USA&Canada Pacific, -6 Mexico City, Guatemala City, Tegucigalpa, San José, San Salvador, -5 USA&Canada Eastern, -4 Santiago, Santo Domingo, Caracas, La Paz, -3 São Paulo, Buenos Aires, Montevideo, +1 Berlin, Madrid, Paris, Rome, +2 Kiyv, Cairo, Jerusalem, +3 Moscow, Istanbul, +4 Dubai, Tbilisi, +5 Tashkent, Karachi, Dushanbe, Yekaterinburg +6 Almaty, Dhaka, +7 Jakarta, Bangkok, Novosibirsk, +8 Shanghai, Taipei, Singapore, +9 Tokyo, Seoul, +10 Sidney, Vladivostok, +12 Auckland, Petropavlovsk-Kamchatsky
 
@@ -201,7 +263,7 @@ Every man for himself.
 
 # Special Thanks
 Inspired by [wikihoops](https://wikihoops.com/about/)   
-Stats from [CollegeFootballData](https://collegefootballdata.com/) and [nfl_data_py](https://github.com/cooperdff/nfl_data_py)
+Stats from [CollegeFootballData](https://collegefootballdata.com/) (NCAA games and box scores), [SportsDataverse](https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_cfb_pbp) (NCAA ESPN-derived PBP and win probabilities), and [nfl_data_py](https://github.com/cooperdff/nfl_data_py) (NFL).
 
 # Database documentation
 Database tables and relationships are documented in [DATABASE.md](DATABASE.md).

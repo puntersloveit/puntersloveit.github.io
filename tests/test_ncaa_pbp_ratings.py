@@ -7,7 +7,7 @@ from unittest.mock import patch
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
-from ncaa_pbp_ratings import refresh_pbp_ratings
+from ncaa_pbp_ratings import refresh_pbp_ratings, ratings_with_sources
 from ncaa_sdv_wp_experiment import inspect_game_pbp
 
 
@@ -40,6 +40,18 @@ class PbpLifecycleTests(unittest.TestCase):
     def rating(self):
         return self.connection.execute('SELECT game_rating FROM ncaa_game_ratings').fetchone()[0]
 
+    def test_export_source_without_enrollment(self):
+        self.assertEqual(ratings_with_sources(self.connection).rating_source.tolist(), ['legacy'])
+
+    def test_export_accepted_source_survives_fetch_failure(self):
+        self.refresh(self.pbp)
+        partial = self.pbp.copy()
+        partial['status_type_completed'] = False
+        self.refresh(partial)
+        self.assertEqual(ratings_with_sources(self.connection).rating_source.tolist(), ['pbp'])
+        self.connection.execute('DELETE FROM ncaa_rating_sources')
+        self.assertEqual(ratings_with_sources(self.connection).rating_source.tolist(), ['legacy'])
+
     def test_partial_then_complete_then_partial_then_offline(self):
         partial = self.pbp.copy()
         partial['status_type_completed'] = False
@@ -66,6 +78,15 @@ class PbpLifecycleTests(unittest.TestCase):
         self.pbp.loc[60, 'end.homeScore'] = 34
         result = inspect_game_pbp(self.pbp, pd.Series({'home_points':31,'away_points':24}))
         self.assertEqual(result['pbp_status'],'complete')
+
+    def test_historical_float_completion_flags(self):
+        self.pbp['status_type_completed'] = 1.0
+        self.pbp['gameSpreadAvailable'] = 1.0
+        self.refresh(self.pbp)
+        self.assertEqual(ratings_with_sources(self.connection).rating_source.tolist(), ['pbp'])
+        self.pbp.loc[20, 'status_type_completed'] = None
+        result = inspect_game_pbp(self.pbp, pd.Series({'home_points':31,'away_points':24}))
+        self.assertEqual(result['pbp_status'], 'source_not_completed')
 
     def test_incomplete_wp_or_wrong_final_score_preserves_legacy(self):
         self.pbp.loc[0,'home_wp_before'] = None

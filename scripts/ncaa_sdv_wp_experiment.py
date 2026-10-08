@@ -80,7 +80,10 @@ def rating_with_wp(row: pd.Series, max_diff: float, shifts: float) -> float:
 def _bool_series(values: pd.Series) -> pd.Series:
     if pd.api.types.is_bool_dtype(values):
         return values.fillna(False)
-    return values.astype(str).str.lower().isin({"true", "1", "yes"})
+    # Older parquet seasons store booleans as nullable floats (1.0 / 0.0).
+    # Do not treat a genuine completed=1.0 as an incomplete game.
+    numeric_true = pd.to_numeric(values, errors="coerce").eq(1)
+    return numeric_true | values.astype(str).str.lower().isin({"true", "yes"})
 
 
 def _final_score(game_pbp: pd.DataFrame, preferred: str, fallback: str) -> int | None:

@@ -12,6 +12,12 @@
     display: none;
   }
 
+  .ratings-hide-year th:nth-child(1), .ratings-hide-year td:nth-child(1),
+  .ratings-hide-week th:nth-child(2), .ratings-hide-week td:nth-child(2),
+  .ratings-hide-bowls th:nth-child(3), .ratings-hide-bowls td:nth-child(3) {
+    display: none;
+  }
+
   #no-records-message {
     display: none;
     color: rgb(152, 11, 0);
@@ -43,6 +49,13 @@
 <label for="team" data-i18n="select_team">Select Team:</label>
 <select id="team"></select>
 
+{% if include.show_conference == "true" %}
+<span style="display: inline-block; white-space: nowrap;">
+<label for="conference" data-i18n="conference">Conference:</label>
+<select id="conference"></select>
+</span>
+{% endif %}
+
 <div id="no-records-message"></div>
 
 <table id="{{ include.table_id }}" class="border-table-style" style="display: none;">
@@ -61,7 +74,7 @@
   <tbody>
     {% assign table_rows = include.rows %}
     {% for row in table_rows %}
-      <tr{% if include.row_title == "true" %} title="{{ row.notes }}"{% endif %}>
+      <tr{% if include.show_conference == "true" %} data-season="{{ row.season }}" data-away-conference="{{ row.away_conference | escape }}" data-home-conference="{{ row.home_conference | escape }}" data-away-division="{{ row.away_division | escape }}" data-home-division="{{ row.home_division | escape }}"{% endif %}{% if include.row_title == "true" %} title="{{ row.notes }}"{% endif %}>
         {% assign away_color = row.away_color %}
         {% assign home_color = row.home_color %}
         <td>{{ row.season }}</td>
@@ -71,7 +84,7 @@
         {% endif %}
         <td style="background-color:{{ away_color }}">{{ row.away_team }}</td>
         <td style="background-color:{{ home_color }}">{{ row.home_team }}</td>
-        <td>{{ row.game_rating }}</td>
+        <td><span class="rating-with-source"><span>{{ row.game_rating }}</span>{% if row.rating_source == "legacy" %}{% include ncaa_rating_badge.html %}{% endif %}</span></td>
       </tr>
     {% endfor %}
   </tbody>

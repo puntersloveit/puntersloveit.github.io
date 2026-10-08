@@ -10,6 +10,19 @@ from ncaa_sdv_wp_experiment import (
 )
 
 
+def ratings_with_sources(connection):
+    """Export provenance of the accepted rating, not the latest fetch status."""
+    ratings = pd.read_sql_query('SELECT * FROM ncaa_game_ratings', connection)
+    if connection.execute("SELECT 1 FROM sqlite_master WHERE name='ncaa_rating_sources'").fetchone():
+        sources = pd.read_sql_query(
+            'SELECT game_id, rating_source FROM ncaa_rating_sources', connection)
+        ratings = ratings.merge(sources, on='game_id', how='left', validate='one_to_one')
+        ratings['rating_source'] = ratings['rating_source'].fillna('legacy')
+    else:
+        ratings['rating_source'] = 'legacy'
+    return ratings
+
+
 def refresh_pbp_ratings(connection: sqlite3.Connection, seasons, local_files=None):
     """Retry all rated games in selected seasons, including already known games.
 

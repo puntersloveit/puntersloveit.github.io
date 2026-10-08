@@ -6,7 +6,7 @@ import sqlite3
 
 import pandas as pd
 import yaml
-from ncaa_pbp_ratings import refresh_current_season
+from ncaa_pbp_ratings import refresh_current_season, ratings_with_sources
 
 from functions import (
     get_pregame_win_probabilities_safe,
@@ -357,7 +357,7 @@ def rebuild_ratings(sql_connection: sqlite3.Connection) -> None:
 
     latest_season = int(game_ratings.season.max())
     refresh_current_season(sql_connection, latest_season)
-    ratings_for_export = pd.read_sql_query("select * from ncaa_game_ratings", sql_connection)
+    ratings_for_export = ratings_with_sources(sql_connection)
     ratings_for_export["away_color"] = ratings_for_export["away_color"].apply(
         lambda x: saturate_hex_color(x, SATURATION_AMOUNT, LIGHTENING_AMOUNT)
     )
@@ -418,6 +418,11 @@ def rebuild_ratings(sql_connection: sqlite3.Connection) -> None:
             "away_team",
             "home_team",
             "game_rating",
+            "rating_source",
+            "away_conference",
+            "home_conference",
+            "away_division",
+            "home_division",
         ]
     ].sort_values("game_rating", ascending=False).to_csv("_data/ncaa_game_ratings.csv", index=False)
     ratings_for_export.to_csv("_data/ncaa_game_ratings_extended.csv", index=False)
