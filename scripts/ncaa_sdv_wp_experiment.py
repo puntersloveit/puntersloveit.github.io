@@ -89,7 +89,7 @@ def _final_score(game_pbp: pd.DataFrame, preferred: str, fallback: str) -> int |
         values = pd.to_numeric(game_pbp[preferred], errors="coerce").dropna()
     if values.empty:
         values = pd.to_numeric(game_pbp[fallback], errors="coerce").dropna()
-    return int(values.max()) if not values.empty else None
+    return int(values.iloc[-1]) if not values.empty else None
 
 
 def inspect_game_pbp(game_pbp: pd.DataFrame, cfbd_game: pd.Series) -> dict[str, object]:
@@ -149,8 +149,11 @@ def inspect_game_pbp(game_pbp: pd.DataFrame, cfbd_game: pd.Series) -> dict[str, 
 
     spreads = pd.to_numeric(game_pbp["gameSpread"], errors="coerce").dropna()
     result["game_spread"] = float(spreads.iloc[0]) if not spreads.empty else None
+    if spreads.empty:
+        result["pbp_status"] = "missing_spread"
+        return result
     wp = pd.to_numeric(game_pbp["home_wp_before"], errors="coerce").dropna()
-    if wp.empty:
+    if wp.empty or len(wp) != len(game_pbp):
         result["pbp_status"] = "missing_win_probability"
         return result
 
@@ -204,7 +207,13 @@ def load_cfbd_baseline(database: Path, seasons: Iterable[int]) -> pd.DataFrame:
     """
     connection = sqlite3.connect(f"file:{database.resolve()}?mode=ro", uri=True)
     try:
-        return pd.read_sql_query(query, connection, params=list(seasons))
+        baseline = pd.read_sql_query(query, connection, params=list(seasons))
+        if connection.execute("SELECT 1 FROM sqlite_master WHERE name='ncaa_rating_sources'").fetchone():
+            legacy = pd.read_sql_query(
+                'SELECT game_id,legacy_game_rating FROM ncaa_rating_sources', connection
+            ).set_index('game_id')['legacy_game_rating']
+            baseline['game_rating'] = baseline.game_id.map(legacy).fillna(baseline.game_rating)
+        return baseline
     finally:
         connection.close()
 

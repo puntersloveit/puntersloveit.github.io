@@ -8,6 +8,7 @@ import yaml
 
 from cfbd.rest import ApiException
 from functions import *
+from ncaa_pbp_ratings import refresh_current_season
 
 try:
     API_KEY = os.environ['API_KEY']
@@ -497,6 +498,7 @@ else:
     print('0 new NCAA games to rate')
 
 ### Prepare Game Ratings to Site
+refresh_current_season(sql_connection, CURRENT_SEASON)
 game_ratings = pd.read_sql_query('select * from ncaa_game_ratings', sql_connection)
 game_ratings['away_color'] = game_ratings['away_color'].apply(lambda x: saturate_hex_color(x, SATURATION_AMOUNT, LIGHTENING_AMOUNT))
 game_ratings['home_color'] = game_ratings['home_color'].apply(lambda x: saturate_hex_color(x, SATURATION_AMOUNT, LIGHTENING_AMOUNT))

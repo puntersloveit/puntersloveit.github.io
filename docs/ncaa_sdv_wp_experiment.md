@@ -48,7 +48,7 @@ newest file rather than considering only previously unseen game ids.
 
 ## Formula parity
 
-The PBP rows are ordered by `sequenceNumber`. The first `home_wp_before` value,
+The canonical PBP rows retain their original increasing `sequenceNumber` order. The first `home_wp_before` value,
 which represents the pregame state before the opening play, is included. The two
 aggregates deliberately match `scripts/load_nfl_data.py`:
 
@@ -70,3 +70,22 @@ other NCAA rating components remain exactly as stored in the production DB.
 
 The main SQLite tables and the production NCAA CSV/JSON exports are never
 modified by this script.
+
+## Automatic upgrade in the NCAA pipeline
+
+The load, update and rebuild scripts now call `ncaa_pbp_ratings` before exporting
+ratings. They retain the legacy calculation as a fallback and apply accepted PBP
+WP metrics to the current season. `ncaa_rating_sources` stores each game's original
+legacy score, active source (`legacy` or `pbp`), latest validation result and
+accepted WP metrics. Existing fallback games are retried on every run, including
+runs with zero new CFBD games and after the season rolls over. Previously
+unenrolled historical seasons are not automatically backfilled.
+
+One season asset is fetched per checked season per run; there are no additional
+CFBD requests or per-game network calls. Previously accepted PBP metrics are
+preserved during source outages or temporary partial snapshots, and are reapplied
+after a CFBD full rebuild. Only valid new snapshots replace accepted metrics.
+
+Final-score validation uses the last canonical state, allowing overtime score
+corrections. Every canonical row must carry a valid WP and a spread must be
+available. All other CFBD components and formula weights remain unchanged.

@@ -8,6 +8,7 @@ import yaml
 
 from cfbd.rest import ApiException
 from functions import *
+from ncaa_pbp_ratings import refresh_current_season
 
 try:
     API_KEY = os.environ['API_KEY']
@@ -434,6 +435,8 @@ game_ratings['notes'] = game_ratings.notes.apply(lambda x: x.lower().replace('"'
 game_ratings[GAME_RATING_COLUMNS].to_sql('ncaa_game_ratings', sql_connection, if_exists='replace', index=False)
 
 ### Prepare Game Ratings to Site
+refresh_current_season(sql_connection, CURRENT_SEASON)
+game_ratings = pd.read_sql_query('select * from ncaa_game_ratings', sql_connection)
 # Calculate team ratings
 rating_df = game_ratings.copy()
 home_ratings = rating_df.query('home_division == "fbs"').groupby(['season', 'home_team']).agg({
