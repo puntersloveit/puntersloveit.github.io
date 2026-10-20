@@ -29,6 +29,75 @@ These ratings are intended for those who, for various reasons (for example, time
 Everyone must consider these factors individually. For instance, if teams you favor are playing and the rating is around ```GR 5-6``` (a typical to above-average game), you will likely enjoy watching it.
 
 # Game Rating Formulas
+
+The formulas below show normalization explicitly: divide by a reference value,
+then multiply by `10` to express the result on the rating scale. For example,
+`10 * sqrt(scores_sum) / sqrt(100)` gives 10 points for 100 combined points
+and 5 points for 25 combined points. Here, `100` is the scoring benchmark;
+`10` sets the rating scale. The square root gives diminishing returns as
+scoring increases.
+
+`min` caps a value, `max` sets a floor, and `sqrt` means square root.
+Game statistics and scores are combined across both teams: `scores_sum` is
+the total points scored, and `scores_diff` is the absolute final score margin.
+These expressions are algebraically equivalent to the pipeline calculations.
+
+## What do the win-probability metrics measure?
+
+Win probability (WP) is a model's estimate of the home team's chance of winning
+at a particular moment in the game. It uses a 0–1 scale: `0.2` means 20%.
+NFL uses `vegas_home_wp`; NCAA games with accepted PBP use `home_wp_before`.
+Both metrics below follow the same team's probability throughout the game.
+
+### `win_chances_max_diff`: how wide was the swing?
+
+This is the distance between the highest and lowest recorded win probability:
+
+```text
+win_chances_max_diff = max(wp) - min(wp)
+```
+
+If the home team's chances range from 20% to 80%, the metric is
+`0.8 - 0.2 = 0.6` (60 percentage points), and its rating component is
+`10 * 0.6 = 6`. It captures the size of the probability range, regardless of
+how often the game moves between those extremes. A single sustained comeback
+can create a large range; repeated reversals are not required. The range alone
+does not tell us which team eventually won.
+
+### `win_prob_shifts`: how much did the chances move throughout the game?
+
+This adds up absolute probability changes over short stretches. Each recorded
+probability is compared with the next one, the one two entries ahead and the
+one three entries ahead, wherever those entries exist:
+
+```text
+win_prob_shifts = sum(abs(wp[i] - wp[i+k]) for k in (1, 2, 3) for valid i)
+```
+
+For a short example, take `20% → 70% → 40% → 80%`:
+
+| Distance between entries | Absolute changes | Sum |
+| --- | --- | --- |
+| 1 entry | 0.50 + 0.30 + 0.40 | 1.20 |
+| 2 entries | 0.20 + 0.10 | 0.30 |
+| 3 entries | 0.60 | 0.60 |
+| **Total `win_prob_shifts`** | | **2.10** |
+
+Changes in either direction add to the total. The overlapping comparisons
+capture movement across several nearby plays, rather than only between
+adjacent entries. This is an accumulated movement measure, not a probability
+or a count of lead changes, so it can exceed 1. The reference value `40` in
+the rating formula is a total movement benchmark, not 40% or 40 reversals.
+Longer games also offer more opportunities to accumulate movement.
+
+Together, the two components describe the **size of the probability range**
+and the **amount of short-term movement**. A steady, one-sided game usually
+has less movement than a game with repeated swings in the estimated chances.
+
+For NCAA **Simplified** ratings, actual in-game WP is unavailable: these same
+field names hold pregame-balance proxies instead. The examples above describe
+the PBP metrics; see the NCAA section below for the proxy calculation.
+
 ## NFL
 ### stat_rating
 1. **Touchdowns rating:**
@@ -37,16 +106,22 @@ Everyone must consider these factors individually. For instance, if teams you fa
 
 2. **Sacks rating:**
 
-   ```sacks_rating = min(12, sack) / 1.2```
+   ```sacks_rating = 10 * min(sack, 12) / 12```
+
+   Twelve combined sacks reach the cap of 10.
 
 3. **Interceptions rating:**
 
-   ```interceptions_rating = min(7, interception) / 0.7```
+   ```interceptions_rating = 10 * min(interception, 7) / 7```
+
+   Seven combined interceptions reach the cap of 10.
 
 4. **Yards rating:**
 
-   ```yards_rating = sqrt(min(650, max(0, yards - 350))) / YARDS_DIVIDER```
-   - Where ```YARDS_DIVIDER = sqrt(650) / 10```
+   ```yards_rating = 10 * sqrt(min(650, max(0, yards - 350))) / sqrt(650)```
+
+   Yards up to 350 contribute zero; 1,000 combined yards reach the cap of 10.
+   The benchmark `650` is the additional yardage above the 350-yard floor.
 
 5. **Overall statistical rating, calculated from all previous ratings:**
 
@@ -55,8 +130,10 @@ Everyone must consider these factors individually. For instance, if teams you fa
 ### Additional game excitement ratings
 1. **Efficiency rating:**
 
-   ```efficiency_rating = sqrt(scores_sum) / SCORES_SUM_DIVIDER```
-   - Where ```SCORES_SUM_DIVIDER = sqrt(100) / 10```
+   ```efficiency_rating = 10 * sqrt(scores_sum) / sqrt(100)```
+
+   The benchmark is 100 combined points for a component value of 10.
+   The overall formula below caps this component, including the overtime bonus, at 10.
 
 2. **Score difference rating:**
 
@@ -64,16 +141,20 @@ Everyone must consider these factors individually. For instance, if teams you fa
    If scores_diff == 0:  
      score_diff_rating = 7.5  
    Else:  
-     score_diff_rating = max(-10, (20 - scores_diff) / SCORE_DIFF_DIVIDER)
+     score_diff_rating = max(-10, 10 * (20 - scores_diff) / 19)
    ```
-   - Where ```SCORE_DIFF_DIVIDER = 19 / 10```
 
-3. **Win probability shifts rating:**
+   A one-point margin gives 10; a 20-point margin gives 0. Wider margins
+   produce a penalty, capped at -10. A tie receives the special value 7.5.
 
-   ```win_prob_shifts_rating = min(10, sqrt(win_prob_shifts) / WIN_PROB_SHIFTS_DIVIDER)```
-   - Where ```WIN_PROB_SHIFTS_DIVIDER = sqrt(40) / 10```
+3. **Win probability movement rating (`win_prob_shifts`):**
 
-4. **Maximum win chances difference rating:**
+   ```win_prob_shifts_rating = 10 * min(1, sqrt(win_prob_shifts) / sqrt(40))```
+
+   The benchmark is 40 units of accumulated probability movement for the cap of 10.
+   Probabilities use the 0–1 scale, so a change from 0.2 to 0.7 contributes 0.5.
+
+4. **Win probability range rating (`win_chances_max_diff`):**
 
    ```win_chances_max_diff_rating = 10 * win_chances_max_diff```
 
@@ -157,16 +238,22 @@ is ignored by Git and does not consume CFBD API quota.
 
 2. **Sacks rating:**
 
-   ```sacks_rating = min(12, sacks) / 1.2```
+   ```sacks_rating = 10 * min(sacks, 12) / 12```
+
+   Twelve combined sacks reach the cap of 10.
 
 3. **Interceptions rating:**
 
-   ```interceptions_rating = min(7, interceptions) / 0.7```
+   ```interceptions_rating = 10 * min(interceptions, 7) / 7```
+
+   Seven combined interceptions reach the cap of 10.
 
 4. **Yards rating:**
 
-   ```yards_rating = sqrt(min(650, max(0, totalYards - 350))) / YARDS_DIVIDER```
-   - Where ```YARDS_DIVIDER = sqrt(650) / 10```
+   ```yards_rating = 10 * sqrt(min(650, max(0, totalYards - 350))) / sqrt(650)```
+
+   Yards up to 350 contribute zero; 1,000 combined yards reach the cap of 10.
+   The benchmark `650` is the additional yardage above the 350-yard floor.
 
 5. **Overall statistical rating, calculated from all previous ratings:**
 
@@ -175,8 +262,10 @@ is ignored by Git and does not consume CFBD API quota.
 ### Additional game excitement ratings
 1. **Efficiency rating:**
 
-   ```efficiency_rating = sqrt(scores_sum) / SCORES_SUM_DIVIDER```
-   - Where ```SCORES_SUM_DIVIDER = sqrt(100) / 10```
+   ```efficiency_rating = 10 * sqrt(scores_sum) / sqrt(100)```
+
+   The benchmark is 100 combined points for a component value of 10.
+   The overall formula below caps this component, including the overtime bonus, at 10.
 
 2. **Overtimes rating:**
 
@@ -193,17 +282,20 @@ is ignored by Git and does not consume CFBD API quota.
    If scores_diff == 0:  
      score_diff_rating = 7.5  
    Else:  
-     score_diff_rating = max(-10, (20 - scores_diff) / SCORE_DIFF_DIVIDER)
+     score_diff_rating = max(-10, 10 * (20 - scores_diff) / 19)
    ```
 
-   - Where ```SCORE_DIFF_DIVIDER = 19 / 10```
+   A one-point margin gives 10; a 20-point margin gives 0. Wider margins
+   produce a penalty, capped at -10. A tie receives the special value 7.5.
 
-4. **Win probability shifts rating:**
+4. **Win probability movement rating (`win_prob_shifts`):**
 
-   ```win_prob_shifts_rating = min(10, sqrt(win_prob_shifts) / WIN_PROB_SHIFTS_DIVIDER)```
-   - Where ```WIN_PROB_SHIFTS_DIVIDER = sqrt(40) / 10```
+   ```win_prob_shifts_rating = 10 * min(1, sqrt(win_prob_shifts) / sqrt(40))```
 
-5. **Maximum win chances difference rating:**
+   The benchmark is 40 units of accumulated probability movement for the cap of 10.
+   Probabilities use the 0–1 scale, so a change from 0.2 to 0.7 contributes 0.5.
+
+5. **Win probability range rating (`win_chances_max_diff`):**
 
    ```win_chances_max_diff_rating = 10 * win_chances_max_diff```
 
